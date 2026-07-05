@@ -28,7 +28,7 @@ export default function Hero() {
         />
       </div>
 
-      <div className="relative mx-auto max-w-7xl px-6 py-28 lg:px-8">
+      <div className="relative w-full px-8 py-28 lg:px-16 xl:px-24">
         <div className="grid items-center gap-20 lg:grid-cols-2">
           {/* LEFT */}
           <div>
@@ -162,3 +162,10 @@ export default function Hero() {
     </section>
   );
 }
+<div className="min-h-screen bg-[#060818]">
+
+{/* Purple Glow */}
+
+<div className="absolute left-1/2 top-0 h-60 w-[900px] -translate-x-1/2 rounded-full bg-violet-600 blur-[160px] opacity-30"></div>
+
+</div>
