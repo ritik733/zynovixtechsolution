@@ -49,7 +49,7 @@ export default function Stats() {
                   <Icon className="text-cyan-400" />
                 </div>
 
-                <h2 className="text-5xl font-black gradient-text">
+                <h2 className="text-5xl font-black bg-gradient-to-r from-orange-400 to-amber-500 bg-clip-text text-transparent">
                   {item.value}
                 </h2>
 

@@ -28,7 +28,7 @@ export default function Hero() {
         />
       </div>
 
-      <div className="relative w-full px-8 py-28 lg:px-16 xl:px-24">
+      <div className="relative mx-auto max-w-screen-2xl px-8 py-28 lg:px-12">
         <div className="grid items-center gap-20 lg:grid-cols-2">
           {/* LEFT */}
           <div>
