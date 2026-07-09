@@ -10,12 +10,12 @@ import {
 const stats = [
   {
     icon: Briefcase,
-    value: "50+",
+    value: "5+",
     title: "Projects Delivered",
   },
   {
     icon: Users,
-    value: "20+",
+    value: "2+",
     title: "Global Clients",
   },
   {

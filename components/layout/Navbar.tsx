@@ -65,7 +65,7 @@ export default function Navbar() {
               href="/contact"
               className="ml-4 flex items-center gap-2 rounded-xl bg-gradient-to-r from-violet-600 to-blue-500 px-7 py-3 font-semibold text-white transition hover:scale-105"
             >
-              Let's Talk
+              Book Free Consultation
 
               <ArrowUpRight size={18} />
             </Link>
