@@ -113,7 +113,7 @@ export default function ServicesPreview() {
 
             <div>
               <h2 className="text-5xl font-bold text-cyan-400">
-                50+
+                5+
               </h2>
               <p className="mt-3 text-slate-400">
                 Successful Projects
@@ -131,7 +131,7 @@ export default function ServicesPreview() {
 
             <div>
               <h2 className="text-5xl font-bold text-cyan-400">
-                20+
+                2+
               </h2>
               <p className="mt-3 text-slate-400">
                 Global Clients
