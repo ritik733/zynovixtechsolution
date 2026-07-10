@@ -4,7 +4,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
-title: "Zenovix tech solutions",
+title: "Zynovix tech solutions",
   description: "Modern software solutions for your business.",
 };
 
