@@ -25,7 +25,7 @@ const teamMembers: TeamMember[] = [
     name: "Pukhraj Tater",
     role: "CEO",
     department: "Executive",
-    image: "/images/team/pukhraj-tater.jpg",
+    image: "/images/team/pukhraj-tater.png",
     bio: "Visionary leader with 4+ years of experience in technology and business strategy. Passionate about building innovative solutions that solve real-world problems.",
     experience: "4+ years in tech leadership",
     social: {
@@ -40,7 +40,7 @@ const teamMembers: TeamMember[] = [
     name: "Piyush Dadhich",
     role: "Lead Developer",
     department: "Engineering",
-    image: "/images/team/jane-smith.jpg",
+    image: "/images/team/Piyush-Dadhich.png",
     bio: "Full-stack developer specialized in React, Next.js, and cloud architecture. Dedicated to writing clean, scalable code and mentoring junior developers.",
     experience: "8+ years in software development",
     social: {
@@ -55,7 +55,7 @@ const teamMembers: TeamMember[] = [
     name: "Praveen Sharma",
     role: "Backend Engineer",
     department: "Engineering",
-    image: "/images/team/mike-johnson.jpg",
+    image: "/images/team/Praveen-sharma.jpeg",
     bio: "Backend engineer with expertise in building scalable and efficient server-side applications. Passionate about optimizing performance and ensuring code quality.",
     experience: "6+ years in backend development",
     social: {
@@ -69,7 +69,7 @@ const teamMembers: TeamMember[] = [
     name: "Chandan Singh Baghela",
     role: "Marketing Director",
     department: "Marketing",
-    image: "/images/team/sarah-williams.jpg",
+    image: "/images/team/Chandan-Singh.png",
     bio: "Data-driven marketing strategist with expertise in digital campaigns, brand building, and growth hacking.",
     experience: "10+ years in digital marketing",
     social: {
@@ -83,7 +83,7 @@ const teamMembers: TeamMember[] = [
     name: "Vinod Kharol",
     role: "Data Scientist",
     department: "Engineering",
-    image: "/images/team/vinod-kharol.jpg",
+    image: "/images/team/vinod-kharol.png",
     bio: "PhD in Computer Science with a focus on machine learning and natural language processing. Builds AI-powered solutions that drive business value.",
     experience: "6+ years in AI/ML",
     social: {
