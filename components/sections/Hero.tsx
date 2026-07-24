@@ -6,7 +6,6 @@ import {
   BrainCircuit,
   Bot,
   Cpu,
-  Sparkles,
   Database,
 } from "lucide-react";
 
@@ -35,10 +34,7 @@ export default function Hero() {
         <div className="grid items-center gap-12 lg:gap-20 lg:grid-cols-2">
           {/* LEFT */}
           <div className="text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm text-cyan-300 mx-auto lg:mx-0">
-              <Sparkles size={16} className="hidden sm:block" />
-              AI • Machine Learning • Automation
-            </div>
+          
 
             <h1 className="mt-6 sm:mt-8 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-tight">
               Build

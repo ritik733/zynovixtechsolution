@@ -9,9 +9,9 @@ export const company = {
 
   location: "Udaipur, Rajasthan, India",
 
-  email: "patwaritik08@gmail.com",
+  email: "work@zynovixtechsolutions.com",
 
-  phone: "+91 73397 95984",
+  phone: "+91 6367500528",
 
   website: "Coming Soon",
 

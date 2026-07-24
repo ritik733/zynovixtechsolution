@@ -116,7 +116,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="text-sm font-semibold text-slate-700">Email</h3>
-                  <p className="text-slate-600 text-sm">hello@yourcompany.com</p>
+                  <p className="text-slate-600 text-sm">work@zynovixtechsolutions.com</p>
                 </div>
               </div>
 
@@ -127,7 +127,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="text-sm font-semibold text-slate-700">Phone</h3>
-                  <p className="text-slate-600 text-sm">+91 98765 43210</p>
+                  <p className="text-slate-600 text-sm">+91 6367500528</p>
                 </div>
               </div>
 
@@ -138,7 +138,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="text-sm font-semibold text-slate-700">Office</h3>
-                  <p className="text-slate-600 text-sm">Jaipur, Rajasthan, India</p>
+                  <p className="text-slate-600 text-sm">Udaipur, Rajasthan, India</p>
                 </div>
               </div>
 
