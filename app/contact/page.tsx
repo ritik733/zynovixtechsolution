@@ -138,7 +138,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="text-sm font-semibold text-slate-700">Office</h3>
-                  <p className="text-slate-600 text-sm">Udaipur, Rajasthan, India</p>
+                  <p className="text-slate-600 text-sm">2nd Floor, 12 Amrit Nagar, Opposite of Pacific University,Debari, Udaipur, Rajasthan, India</p>
                 </div>
               </div>
 

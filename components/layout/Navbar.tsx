@@ -2,13 +2,13 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ChevronDown, ArrowUpRight, Menu, X } from "lucide-react";
+import { ArrowUpRight, Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 
 const navItems = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
-  { name: "Services", href: "/services", dropdown: true },
+  { name: "Services", href: "/services" },
   { name: "Portfolio", href: "/portfolio" },
   { name: "Team", href: "/team" },
   { name: "Contact", href: "/contact" },
@@ -93,7 +93,6 @@ export default function Navbar() {
                   }`}
                 >
                   {item.name}
-                  {item.dropdown && <ChevronDown size={16} />}
                 </Link>
               );
             })}
@@ -141,7 +140,6 @@ export default function Navbar() {
                     }`}
                   >
                     <span>{item.name}</span>
-                    {item.dropdown && <ChevronDown size={18} className="text-slate-400" />}
                   </Link>
                 );
               })}

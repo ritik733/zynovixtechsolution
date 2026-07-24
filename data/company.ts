@@ -7,7 +7,7 @@ export const company = {
 
   founded: 2026,
 
-  location: "Udaipur, Rajasthan, India",
+  location: "2nd Floor, 12 Amrit Nagar, Opposite of Pacific University,Debari, Udaipur, Rajasthan, India",
 
   email: "work@zynovixtechsolutions.com",
 
