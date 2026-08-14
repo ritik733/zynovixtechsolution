@@ -83,7 +83,7 @@ const teamMembers: TeamMember[] = [
     name: "Vinod Kharol",
     role: "Data Scientist",
     department: "Engineering",
-    image: "/images/team/vinod-Kharol.png",
+    image: "/images/team/Vinod-Kharol.png",
     bio: "PhD in Computer Science with a focus on machine learning and natural language processing. Builds AI-powered solutions that drive business value.",
     experience: "6+ years in AI/ML",
     social: {
