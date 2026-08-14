@@ -30,7 +30,7 @@ const projects = [
 
 export default function PortfolioPreview() {
   return (
-    <section className="bg-slate-950 py-24 text-white">
+    <section className="bg-white py-24 text-slate-900 dark:bg-slate-950 dark:text-white">
       <div className="mx-auto max-w-7xl px-6">
         {/* Header */}
         <div className="text-center">
@@ -43,7 +43,7 @@ export default function PortfolioPreview() {
               Software Projects
             </span>
           </h2>
-          <p className="mx-auto mt-6 max-w-3xl text-slate-400">
+          <p className="mx-auto mt-6 max-w-3xl text-slate-600 dark:text-slate-400 font-medium">
             We build scalable AI solutions, enterprise software,
             SaaS platforms, and intelligent automation systems
             for businesses worldwide.
@@ -55,7 +55,7 @@ export default function PortfolioPreview() {
           {projects.map((project) => (
             <div
               key={project.title}
-              className="group overflow-hidden rounded-3xl border border-slate-800 bg-slate-900 transition hover:-translate-y-2 hover:border-cyan-500"
+              className="group overflow-hidden rounded-3xl border border-slate-200/80 bg-white/90 shadow-sm transition hover:-translate-y-2 hover:border-cyan-500 dark:border-slate-800 dark:bg-slate-900 dark:shadow-none"
             >
               {/* Image Container – now uses real image */}
               <div className="relative h-52 w-full bg-slate-800">
@@ -76,16 +76,16 @@ export default function PortfolioPreview() {
 
               {/* Content */}
               <div className="p-8">
-                <span className="text-sm text-cyan-400">
+                <span className="text-sm font-semibold text-cyan-600 dark:text-cyan-400">
                   {project.category}
                 </span>
-                <h3 className="mt-3 text-2xl font-semibold">
+                <h3 className="mt-3 text-2xl font-semibold text-slate-900 dark:text-white">
                   {project.title}
                 </h3>
-                <p className="mt-4 leading-7 text-slate-400">
+                <p className="mt-4 leading-7 text-slate-600 dark:text-slate-400">
                   {project.description}
                 </p>
-                <button className="mt-8 flex items-center text-cyan-400 transition hover:translate-x-2">
+                <button className="mt-8 flex items-center font-medium text-cyan-600 dark:text-cyan-400 transition hover:translate-x-2">
                   View Case Study
                   <ExternalLink className="ml-2 h-4 w-4" />
                 </button>

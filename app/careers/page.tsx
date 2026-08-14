@@ -9,7 +9,7 @@ import FAQ from "@/components/careers/FAQ";
 import CTA from "@/components/careers/CTA";
 export default function CareersPage() {
   return (
-    <main className="min-h-screen bg-[#060818] text-white overflow-hidden">
+    <main className="min-h-screen bg-white text-slate-900 overflow-hidden dark:bg-[#060818] dark:text-white">
       <Navbar />
         
       <CareerHero />

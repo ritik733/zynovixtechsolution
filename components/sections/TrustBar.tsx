@@ -91,17 +91,17 @@ const companies = [
 
 export default function TrustBar() {
   return (
-    <section className="relative overflow-hidden bg-[#050816] py-24">
+    <section className="relative overflow-hidden bg-white py-24 dark:bg-[#050816]">
       {/* Background Glow */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute left-1/2 top-0 h-60 w-[700px] -translate-x-1/2 rounded-full bg-cyan-500/10 blur-[150px]" />
       </div>
       <div className="mx-auto max-w-7xl px-6">
         {/* Heading */}
-        <h2 className="text-center text-2xl font-bold uppercase tracking-[8px] text-white">
+        <h2 className="text-center text-2xl font-bold uppercase tracking-[8px] text-slate-900 dark:text-white">
           Technologies & Platforms
         </h2>
-        <p className="mt-4 text-center text-slate-400">
+        <p className="mt-4 text-center text-slate-600 dark:text-slate-400">
           We build modern AI-powered applications using industry-leading technologies.
         </p>
         {/* Cards */}
@@ -109,32 +109,12 @@ export default function TrustBar() {
           {companies.map((company) => (
             <div
               key={company.name}
-              className="
-                group
-                flex
-                flex-col
-                items-center
-                gap-4
-                rounded-2xl
-                border
-                border-slate-700/50
-                bg-slate-900/60
-                px-4
-                py-8
-                text-center
-                backdrop-blur-xl
-                transition-all
-                duration-300
-                hover:-translate-y-2
-                hover:border-cyan-400/60
-                hover:bg-slate-900/80
-                hover:shadow-[0_0_30px_rgba(34,211,238,0.15)]
-              "
+              className="group flex flex-col items-center gap-4 rounded-2xl border border-slate-200 bg-white/90 px-4 py-8 text-center text-slate-900 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-cyan-500 hover:bg-slate-50 dark:border-slate-700/50 dark:bg-slate-900/60 dark:text-white dark:hover:bg-slate-900 dark:shadow-none"
             >
               <div className="flex h-9 w-9 items-center justify-center">
                 {company.icon}
               </div>
-              <span className="font-semibold text-slate-200 transition group-hover:text-white">
+              <span className="font-semibold text-slate-900 transition group-hover:text-cyan-600 dark:text-white dark:group-hover:text-cyan-400">
                 {company.name}
               </span>
             </div>

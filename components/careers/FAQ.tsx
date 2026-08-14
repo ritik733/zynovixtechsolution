@@ -40,7 +40,7 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="relative py-24 overflow-hidden">
+    <section className="relative py-24 overflow-hidden bg-slate-50 text-slate-900 dark:bg-[#060818] dark:text-white">
 
       {/* Glow */}
       <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-violet-600/10 blur-[150px]" />
@@ -49,15 +49,15 @@ export default function FAQ() {
 
         <div className="text-center mb-16">
 
-          <span className="rounded-full border border-violet-500/30 bg-violet-500/10 px-4 py-2 text-sm text-violet-300">
+          <span className="rounded-full border border-violet-500/30 bg-violet-500/10 px-4 py-2 text-sm text-violet-500 dark:text-violet-300">
             FAQ
           </span>
 
-          <h2 className="mt-6 text-5xl font-bold text-white">
+          <h2 className="mt-6 text-5xl font-bold text-slate-900 dark:text-white">
             Frequently Asked Questions
           </h2>
 
-          <p className="mt-5 text-lg text-slate-400">
+          <p className="mt-5 text-lg text-slate-600 dark:text-slate-400">
             Everything you need to know before applying.
           </p>
 
@@ -72,7 +72,7 @@ export default function FAQ() {
             return (
               <div
                 key={index}
-                className="rounded-2xl border border-violet-500/20 bg-[#0F1438]/80 backdrop-blur-xl"
+                className="rounded-2xl border border-slate-200/70 bg-white/90 backdrop-blur-xl transition-colors duration-300 dark:border-violet-500/20 dark:bg-[#0F1438]/80"
               >
 
                 <button
@@ -82,7 +82,7 @@ export default function FAQ() {
                   className="flex w-full items-center justify-between p-6 text-left"
                 >
 
-                  <span className="text-lg font-semibold text-white">
+                  <span className="text-lg font-semibold text-slate-900 dark:text-white">
                     {faq.question}
                   </span>
 
@@ -99,7 +99,7 @@ export default function FAQ() {
                     open ? "max-h-40" : "max-h-0"
                   }`}
                 >
-                  <p className="px-6 pb-6 text-slate-400 leading-7">
+                  <p className="px-6 pb-6 text-slate-600 dark:text-slate-400 leading-7">
                     {faq.answer}
                   </p>
                 </div>

@@ -66,15 +66,15 @@ export default function OpenPositions() {
 
         <div className="text-center">
 
-          <span className="rounded-full border border-violet-500/30 bg-violet-500/10 px-4 py-2 text-sm text-violet-300">
+          <span className="rounded-full border border-violet-500/30 bg-violet-500/10 px-4 py-2 text-sm text-violet-500 dark:text-violet-300">
             Open Positions
           </span>
 
-          <h2 className="mt-6 text-5xl font-bold text-white">
+          <h2 className="mt-6 text-5xl font-bold text-slate-900 dark:text-white">
             Find Your Dream Role
           </h2>
 
-          <p className="mx-auto mt-5 max-w-3xl text-lg text-slate-400">
+          <p className="mx-auto mt-5 max-w-3xl text-lg text-slate-600 dark:text-slate-400">
             Join an ambitious team building AI-powered digital products for
             businesses around the world.
           </p>
@@ -86,13 +86,13 @@ export default function OpenPositions() {
           {jobs.map((job, index) => (
             <div
               key={index}
-              className="group rounded-3xl border border-violet-500/20 bg-[#0F1438]/80 p-8 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-violet-500/40 hover:shadow-[0_0_45px_rgba(139,92,246,.25)]"
+              className="group rounded-3xl border border-slate-200/70 bg-white/90 p-8 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-violet-500/40 hover:shadow-[0_0_45px_rgba(139,92,246,.25)] dark:border-violet-500/20 dark:bg-[#0F1438]/80"
             >
               <div className="flex items-start justify-between">
 
                 <div>
 
-                  <h3 className="text-2xl font-semibold text-white">
+                  <h3 className="text-2xl font-semibold text-slate-900 dark:text-white">
                     {job.title}
                   </h3>
 
@@ -124,7 +124,7 @@ export default function OpenPositions() {
                 {job.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="rounded-full border border-violet-500/20 bg-violet-500/10 px-4 py-2 text-sm text-violet-300"
+                    className="rounded-full border border-violet-500/20 bg-violet-500/10 px-4 py-2 text-sm text-violet-500 dark:text-violet-300"
                   >
                     {skill}
                   </span>
@@ -134,7 +134,7 @@ export default function OpenPositions() {
 
               <div className="mt-8 flex gap-4">
 
-                <button className="rounded-xl border border-violet-500/30 px-5 py-3 text-white transition hover:bg-violet-500/10">
+                <button className="rounded-xl border border-violet-500/30 px-5 py-3 text-slate-900 transition hover:bg-violet-500/10 hover:text-white dark:text-white">
                   View Details
                 </button>
 

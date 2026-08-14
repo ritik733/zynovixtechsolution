@@ -88,17 +88,17 @@ export default function Benefits() {
             return (
               <div
                 key={index}
-                className="group rounded-3xl border border-white/10 bg-[#0F1438]/80 p-7 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-violet-500/40 hover:shadow-[0_0_35px_rgba(139,92,246,0.25)]"
+                className="group rounded-3xl border border-slate-200/70 bg-white/90 p-7 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-violet-500/40 hover:shadow-[0_0_35px_rgba(139,92,246,0.25)] dark:border-violet-500/20 dark:bg-[#0F1438]/80"
               >
                 <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-violet-600 to-blue-500 transition-transform duration-500 group-hover:rotate-6 group-hover:scale-110">
                   <Icon className="h-7 w-7 text-white" />
                 </div>
 
-                <h3 className="mt-6 text-xl font-semibold text-white">
+                <h3 className="mt-6 text-xl font-semibold text-slate-900 dark:text-white">
                   {benefit.title}
                 </h3>
 
-                <p className="mt-3 text-sm leading-7 text-slate-400">
+                <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-400">
                   {benefit.description}
                 </p>
               </div>

@@ -53,15 +53,15 @@ export default function HiringProcess() {
         {/* Heading */}
         <div className="text-center">
 
-          <span className="rounded-full border border-violet-500/30 bg-violet-500/10 px-4 py-2 text-sm text-violet-300">
+          <span className="rounded-full border border-violet-500/30 bg-violet-500/10 px-4 py-2 text-sm text-violet-500 dark:text-violet-300">
             Hiring Process
           </span>
 
-          <h2 className="mt-6 text-5xl font-bold text-white">
+          <h2 className="mt-6 text-5xl font-bold text-slate-900 dark:text-white">
             How We Hire
           </h2>
 
-          <p className="mx-auto mt-5 max-w-3xl text-lg text-slate-400">
+          <p className="mx-auto mt-5 max-w-3xl text-lg text-slate-600 dark:text-slate-400">
             We've designed a transparent hiring process so you always know
             what comes next.
           </p>
@@ -91,7 +91,7 @@ export default function HiringProcess() {
                   </div>
 
                   {/* Card */}
-                  <div className="group rounded-3xl border border-violet-500/20 bg-[#0F1438]/80 p-8 pt-10 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-violet-500/40 hover:shadow-[0_0_35px_rgba(139,92,246,0.25)]">
+                  <div className="group rounded-3xl border border-slate-200/70 bg-white/90 p-8 pt-10 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-violet-500/40 hover:shadow-[0_0_35px_rgba(139,92,246,0.25)] dark:border-violet-500/20 dark:bg-[#0F1438]/80">
 
                     <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-violet-600 to-blue-500 transition-transform duration-500 group-hover:scale-110">
 
@@ -99,11 +99,11 @@ export default function HiringProcess() {
 
                     </div>
 
-                    <h3 className="mt-6 text-xl font-semibold text-white">
+                    <h3 className="mt-6 text-xl font-semibold text-slate-900 dark:text-white">
                       {step.title}
                     </h3>
 
-                    <p className="mt-4 text-sm leading-7 text-slate-400">
+                    <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400">
                       {step.description}
                     </p>
 

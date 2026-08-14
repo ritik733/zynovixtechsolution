@@ -8,14 +8,14 @@ export const metadata = {
 
 export default function ContactPage() {
   return (
-    <main>
+    <main className="bg-white text-slate-900 dark:bg-slate-950 dark:text-white">
       {/* Hero */}
-      <section className="bg-slate-950 py-20 md:py-28 text-white">
+      <section className="bg-white py-20 md:py-28 text-slate-900 dark:bg-slate-950 dark:text-white">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-slate-900 dark:text-white">
             Let's Build Something Amazing
           </h1>
-          <p className="mt-5 text-base md:text-lg text-slate-300 max-w-2xl mx-auto">
+          <p className="mt-5 text-base md:text-lg text-slate-600 dark:text-slate-300 font-medium max-w-2xl mx-auto">
             Have an idea, project, or business challenge? We'd love to hear
             from you. Fill out the form below and we'll get back to you within
             24 hours.
@@ -24,70 +24,70 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-16 md:py-20 bg-slate-950">
+      <section className="py-16 md:py-20 bg-white dark:bg-slate-950">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
           {/* Contact Form - spans 3 columns */}
-          <div className="lg:col-span-3 bg-white rounded-3xl shadow-md border border-slate-200/70 p-6 md:p-8 transition-shadow hover:shadow-lg">
-            <h2 className="text-3xl font-bold text-slate-900">
+          <div className="lg:col-span-3 bg-white rounded-3xl shadow-md border border-slate-200 p-6 md:p-8 transition-shadow hover:shadow-lg dark:bg-slate-900 dark:border-slate-800">
+            <h2 className="text-3xl font-bold text-slate-900 dark:text-white">
               Book a Free Consultation
             </h2>
-            <p className="text-slate-500 mt-2 text-sm md:text-base">
+            <p className="text-slate-500 dark:text-slate-400 mt-2 text-sm md:text-base">
               Tell us about your project and we'll contact you shortly.
             </p>
 
             <form className="mt-8 space-y-5">
               {/* Full Name */}
               <div>
-                <label className="block text-sm font-semibold text-slate-700 mb-1.5">
+                <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
                   Full Name
                 </label>
                 <input
                   type="text"
                   placeholder="John Doe"
-                  className="w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 py-3.5 text-sm transition focus:bg-white focus:border-blue-600 focus:ring-2 focus:ring-blue-200/60 outline-none placeholder:text-slate-400"
+                  className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm text-slate-900 transition focus:bg-white focus:border-blue-600 focus:ring-2 focus:ring-blue-200/60 outline-none placeholder:text-slate-400 dark:border-slate-700 dark:bg-slate-800/50 dark:text-white"
                 />
               </div>
 
               {/* Email + Phone - inline on md+ */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div>
-                  <label className="block text-sm font-semibold text-slate-700 mb-1.5">
+                  <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
                     Email Address
                   </label>
                   <input
                     type="email"
                     placeholder="john@example.com"
-                    className="w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 py-3.5 text-sm transition focus:bg-white focus:border-blue-600 focus:ring-2 focus:ring-blue-200/60 outline-none placeholder:text-slate-400"
+                    className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm text-slate-900 transition focus:bg-white focus:border-blue-600 focus:ring-2 focus:ring-blue-200/60 outline-none placeholder:text-slate-400 dark:border-slate-700 dark:bg-slate-800/50 dark:text-white"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold text-slate-700 mb-1.5">
+                  <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
                     Phone Number
                   </label>
                   <input
                     type="tel"
                     placeholder="+91 98765 43210"
-                    className="w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 py-3.5 text-sm transition focus:bg-white focus:border-blue-600 focus:ring-2 focus:ring-blue-200/60 outline-none placeholder:text-slate-400"
+                    className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm text-slate-900 transition focus:bg-white focus:border-blue-600 focus:ring-2 focus:ring-blue-200/60 outline-none placeholder:text-slate-400 dark:border-slate-700 dark:bg-slate-800/50 dark:text-white"
                   />
                 </div>
               </div>
 
               {/* Project Details */}
               <div>
-                <label className="block text-sm font-semibold text-slate-700 mb-1.5">
+                <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
                   Project Details
                 </label>
                 <textarea
                   rows={4}
                   placeholder="Tell us about your project..."
-                  className="w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 py-3.5 text-sm transition focus:bg-white focus:border-blue-600 focus:ring-2 focus:ring-blue-200/60 outline-none placeholder:text-slate-400 resize-y"
+                  className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm text-slate-900 transition focus:bg-white focus:border-blue-600 focus:ring-2 focus:ring-blue-200/60 outline-none placeholder:text-slate-400 resize-y dark:border-slate-700 dark:bg-slate-800/50 dark:text-white"
                 />
               </div>
 
               {/* Send Button */}
               <button
                 type="submit"
-                className="w-full rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-semibold py-3.5 text-base transition shadow-sm shadow-blue-200/40 hover:shadow-blue-200/70"
+                className="w-full rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3.5 text-base transition shadow-md shadow-blue-500/20"
               >
                 Send Message
               </button>
@@ -96,12 +96,11 @@ export default function ContactPage() {
 
           {/* Contact Information - spans 2 columns */}
           <div className="lg:col-span-2 space-y-8">
-            {/* Intro - NOW IN WHITE */}
             <div>
-              <h2 className="text-3xl font-bold text-white">
+              <h2 className="text-3xl font-bold text-slate-900 dark:text-white">
                 Get In Touch
               </h2>
-              <p className="mt-3 text-white text-sm md:text-base leading-relaxed">
+              <p className="mt-3 text-slate-600 dark:text-slate-300 text-sm md:text-base leading-relaxed">
                 Whether you're looking to build a website, mobile app, AI
                 solution, or enterprise software, our team is ready to help.
               </p>
@@ -110,46 +109,46 @@ export default function ContactPage() {
             {/* Contact Cards */}
             <div className="space-y-4">
               {/* Email */}
-              <div className="flex items-center gap-4 bg-white rounded-2xl border border-slate-200/80 p-5 shadow-sm hover:shadow-md transition-shadow">
-                <div className="bg-blue-50 rounded-xl p-3 text-blue-600">
+              <div className="flex items-center gap-4 bg-white rounded-2xl border border-slate-200 p-5 shadow-sm hover:shadow-md transition-shadow dark:bg-slate-900 dark:border-slate-800">
+                <div className="bg-cyan-500/10 rounded-xl p-3 text-cyan-600 dark:text-cyan-400">
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="text-sm font-semibold text-slate-700">Email</h3>
-                  <p className="text-slate-600 text-sm">work@zynovixtechsolutions.com</p>
+                  <h3 className="text-sm font-semibold text-slate-900 dark:text-white">Email</h3>
+                  <p className="text-slate-600 dark:text-slate-300 text-sm">work@zynovixtechsolutions.com</p>
                 </div>
               </div>
 
               {/* Phone */}
-              <div className="flex items-center gap-4 bg-white rounded-2xl border border-slate-200/80 p-5 shadow-sm hover:shadow-md transition-shadow">
-                <div className="bg-blue-50 rounded-xl p-3 text-blue-600">
+              <div className="flex items-center gap-4 bg-white rounded-2xl border border-slate-200 p-5 shadow-sm hover:shadow-md transition-shadow dark:bg-slate-900 dark:border-slate-800">
+                <div className="bg-cyan-500/10 rounded-xl p-3 text-cyan-600 dark:text-cyan-400">
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="text-sm font-semibold text-slate-700">Phone</h3>
-                  <p className="text-slate-600 text-sm">+91 6367500528</p>
+                  <h3 className="text-sm font-semibold text-slate-900 dark:text-white">Phone</h3>
+                  <p className="text-slate-600 dark:text-slate-300 text-sm">+91 6367500528</p>
                 </div>
               </div>
 
               {/* Office */}
-              <div className="flex items-center gap-4 bg-white rounded-2xl border border-slate-200/80 p-5 shadow-sm hover:shadow-md transition-shadow">
-                <div className="bg-blue-50 rounded-xl p-3 text-blue-600">
+              <div className="flex items-center gap-4 bg-white rounded-2xl border border-slate-200 p-5 shadow-sm hover:shadow-md transition-shadow dark:bg-slate-900 dark:border-slate-800">
+                <div className="bg-cyan-500/10 rounded-xl p-3 text-cyan-600 dark:text-cyan-400">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="text-sm font-semibold text-slate-700">Office</h3>
-                  <p className="text-slate-600 text-sm">2nd Floor, 12 Amrit Nagar, Opposite of Pacific University,Debari, Udaipur, Rajasthan, India</p>
+                  <h3 className="text-sm font-semibold text-slate-900 dark:text-white">Office</h3>
+                  <p className="text-slate-600 dark:text-slate-300 text-sm">2nd Floor, 12 Amrit Nagar, Opposite of Pacific University,Debari, Udaipur, Rajasthan, India</p>
                 </div>
               </div>
 
               {/* Working Hours */}
-              <div className="flex items-center gap-4 bg-white rounded-2xl border border-slate-200/80 p-5 shadow-sm hover:shadow-md transition-shadow">
-                <div className="bg-blue-50 rounded-xl p-3 text-blue-600">
+              <div className="flex items-center gap-4 bg-white rounded-2xl border border-slate-200 p-5 shadow-sm hover:shadow-md transition-shadow dark:bg-slate-900 dark:border-slate-800">
+                <div className="bg-cyan-500/10 rounded-xl p-3 text-cyan-600 dark:text-cyan-400">
                   <Clock className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="text-sm font-semibold text-slate-700">Working Hours</h3>
-                  <p className="text-slate-600 text-sm leading-tight">
+                  <h3 className="text-sm font-semibold text-slate-900 dark:text-white">Working Hours</h3>
+                  <p className="text-slate-600 dark:text-slate-300 text-sm leading-tight">
                     Monday - Friday
                     <br />
                     9:00 AM - 6:00 PM
@@ -159,11 +158,11 @@ export default function ContactPage() {
             </div>
 
             {/* CTA Card */}
-            <div className="bg-slate-800 rounded-2xl p-6 md:p-7 text-white shadow-xl border border-slate-700">
+            <div className="bg-white rounded-2xl p-6 md:p-7 text-slate-900 shadow-xl border border-slate-200 transition-colors duration-300 dark:bg-slate-900 dark:text-white dark:border-slate-700">
               <h3 className="text-xl md:text-2xl font-bold">
                 Ready to Start Your Project?
               </h3>
-              <p className="text-slate-300 text-sm md:text-base mt-3 leading-relaxed">
+              <p className="text-slate-600 dark:text-slate-300 text-sm md:text-base mt-3 leading-relaxed">
                 Let's discuss your requirements and create a solution that
                 helps your business grow.
               </p>

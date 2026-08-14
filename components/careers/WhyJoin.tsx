@@ -46,15 +46,15 @@ export default function WhyJoin() {
         {/* Heading */}
         <div className="text-center mb-16">
 
-          <span className="rounded-full border border-violet-500/30 bg-violet-500/10 px-4 py-2 text-sm text-violet-300">
+          <span className="rounded-full border border-violet-500/30 bg-violet-500/10 px-4 py-2 text-sm text-violet-500 dark:text-violet-300">
             Why Join Us
           </span>
 
-          <h2 className="mt-6 text-4xl md:text-5xl font-bold text-white">
+          <h2 className="mt-6 text-4xl md:text-5xl font-bold text-slate-900 dark:text-white">
             More Than Just A Job
           </h2>
 
-          <p className="mx-auto mt-6 max-w-3xl text-lg text-slate-400">
+          <p className="mx-auto mt-6 max-w-3xl text-lg text-slate-600 dark:text-slate-400">
             At Zynovix Technologies, you'll work with passionate people,
             modern technologies, and exciting projects that challenge you
             to grow every day.
@@ -71,7 +71,7 @@ export default function WhyJoin() {
             return (
               <div
                 key={index}
-                className="group rounded-3xl border border-violet-500/20 bg-[#0F1438]/80 p-8 backdrop-blur-xl transition-all duration-500 hover:-translate-y-3 hover:border-violet-500/40 hover:shadow-[0_0_40px_rgba(139,92,246,0.25)]"
+                className="group rounded-3xl border border-slate-200/70 bg-white/90 p-8 backdrop-blur-xl transition-all duration-500 hover:-translate-y-3 hover:border-violet-500/40 hover:shadow-[0_0_40px_rgba(139,92,246,0.25)] dark:border-violet-500/20 dark:bg-[#0F1438]/80"
               >
                 {/* Icon */}
                 <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-violet-600 to-blue-500 transition-transform duration-500 group-hover:scale-110">
@@ -79,12 +79,12 @@ export default function WhyJoin() {
                 </div>
 
                 {/* Title */}
-                <h3 className="mt-8 text-2xl font-semibold text-white">
+                <h3 className="mt-8 text-2xl font-semibold text-slate-900 dark:text-white">
                   {item.title}
                 </h3>
 
                 {/* Description */}
-                <p className="mt-4 leading-7 text-slate-400">
+                <p className="mt-4 leading-7 text-slate-600 dark:text-slate-400">
                   {item.description}
                 </p>
               </div>

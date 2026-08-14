@@ -31,12 +31,12 @@ const projects = [
 
 export default function PortfolioPage() {
   return (
-    <main className="bg-[#050816] min-h-screen">
+    <main className="bg-white text-slate-900 min-h-screen dark:bg-[#050816] dark:text-white">
       {/* Hero Section – dark, with top spacing */}
-      <section className="pt-32 pb-20 text-white">
+      <section className="pt-32 pb-20 text-slate-900 dark:text-white">
         <div className="mx-auto max-w-7xl px-6 text-center">
           <h1 className="text-5xl font-bold">Our Portfolio</h1>
-          <p className="mx-auto mt-6 max-w-3xl text-lg text-slate-300">
+          <p className="mx-auto mt-6 max-w-3xl text-lg text-slate-600 dark:text-slate-300 font-medium">
             A selection of projects showcasing our expertise in AI, cloud,
             and modern web development.
           </p>
@@ -47,13 +47,13 @@ export default function PortfolioPage() {
       <section className="py-12">
         <div className="mx-auto max-w-7xl px-6">
           {projects.length === 0 ? (
-            <p className="text-center text-slate-400">No projects to display yet.</p>
+            <p className="text-center text-slate-500 dark:text-slate-400">No projects to display yet.</p>
           ) : (
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
               {projects.map((project) => (
                 <div
                   key={project.title}
-                  className="group rounded-3xl border border-slate-800 bg-slate-900/60 overflow-hidden transition duration-300 hover:-translate-y-2 hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/10"
+                  className="group rounded-3xl border border-slate-200 bg-white/90 shadow-sm overflow-hidden transition duration-300 hover:-translate-y-2 hover:border-cyan-500 dark:border-slate-800 dark:bg-slate-900/90 dark:shadow-none"
                 >
                   {/* Image Container */}
                   <div className="relative h-52 w-full bg-slate-800">
@@ -73,16 +73,16 @@ export default function PortfolioPage() {
 
                   {/* Content */}
                   <div className="p-6">
-                    <span className="text-sm font-medium text-cyan-400">
+                    <span className="text-sm font-semibold text-cyan-600 dark:text-cyan-400">
                       {project.category}
                     </span>
-                    <h3 className="mt-2 text-2xl font-semibold text-white">
+                    <h3 className="mt-2 text-2xl font-semibold text-slate-900 dark:text-white">
                       {project.title}
                     </h3>
-                    <p className="mt-3 text-slate-300">
+                    <p className="mt-3 text-slate-600 dark:text-slate-300">
                       {project.description || "Lorem ipsum dolor sit amet, consectetur adipiscing elit."}
                     </p>
-                    <div className="mt-6 flex items-center text-cyan-400 transition group-hover:translate-x-2">
+                    <div className="mt-6 flex items-center font-medium text-cyan-600 dark:text-cyan-400 transition group-hover:translate-x-2">
                       View Project
                       <svg
                         className="ml-2 h-4 w-4"
@@ -104,13 +104,13 @@ export default function PortfolioPage() {
       {/* CTA Section – dark with gradient button */}
       <section className="py-20 text-center">
         <div className="mx-auto max-w-3xl px-6">
-          <h2 className="text-4xl font-bold text-white">Have a Project in Mind?</h2>
-          <p className="mt-4 text-slate-300">
+          <h2 className="text-4xl font-bold text-slate-900 dark:text-white">Have a Project in Mind?</h2>
+          <p className="mt-4 text-slate-600 dark:text-slate-300 font-medium">
             We'd love to help turn your ideas into reality with our expertise.
           </p>
           <Link
             href="/contact"
-            className="mt-8 inline-block rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 px-8 py-3 font-semibold text-white transition hover:scale-105"
+            className="mt-8 inline-block rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 px-8 py-3 font-semibold text-white transition hover:scale-105 shadow-md shadow-blue-500/20"
           >
             Let's Talk
           </Link>

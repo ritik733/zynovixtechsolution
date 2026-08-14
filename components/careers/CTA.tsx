@@ -16,7 +16,7 @@ export default function CTA() {
 
       <div className="relative mx-auto max-w-6xl px-6">
 
-        <div className="overflow-hidden rounded-[36px] border border-violet-500/20 bg-gradient-to-br from-[#0F1438]/90 to-[#081020]/90 p-10 md:p-16 backdrop-blur-2xl">
+        <div className="overflow-hidden rounded-[36px] border border-slate-200/70 bg-white/90 p-10 md:p-16 backdrop-blur-2xl transition-colors duration-300 dark:border-violet-500/20 dark:bg-[#0F1438]/90">
 
           <div className="text-center">
 
@@ -24,14 +24,14 @@ export default function CTA() {
               <Briefcase className="h-10 w-10 text-white" />
             </div>
 
-            <h2 className="mt-8 text-4xl font-bold text-white md:text-6xl">
+            <h2 className="mt-8 text-4xl font-bold text-slate-900 md:text-6xl dark:text-white">
               Ready to Build
               <span className="block bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">
                 The Future?
               </span>
             </h2>
 
-            <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-400">
+            <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-600 dark:text-slate-300">
               Join a passionate team creating AI-powered solutions,
               scalable cloud platforms, and next-generation digital
               products for businesses around the world.
@@ -49,7 +49,7 @@ export default function CTA() {
 
               <Link
                 href="#open-positions"
-                className="inline-flex items-center justify-center rounded-xl border border-violet-500/30 bg-white/5 px-8 py-4 font-semibold text-white transition hover:bg-white/10"
+                className="inline-flex items-center justify-center rounded-xl border border-violet-500/30 bg-slate-900/5 px-8 py-4 font-semibold text-slate-900 transition hover:bg-slate-100 dark:bg-white/5 dark:text-white dark:hover:bg-white/10"
               >
                 View Open Positions
               </Link>
