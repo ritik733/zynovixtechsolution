@@ -28,16 +28,16 @@ export default function CTA() {
                 style={{ transform: "translateZ(35px)" }}
               >
                 <Sparkles size={15} />
-                Let's Engineer the Future Together
+                Let's Scale Your Business Together
               </span>
 
               <h2
                 className="mt-6 sm:mt-8 text-2xl min-[400px]:text-3xl sm:text-5xl md:text-6xl font-black tracking-tight leading-tight"
                 style={{ transform: "translateZ(30px)" }}
               >
-                Ready to Build
+                Ready to Scale &amp;
                 <span className="block bg-gradient-to-r from-cyan-400 via-sky-300 to-blue-500 bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(34,211,238,0.4)]">
-                  Your Next AI Product?
+                  Automate Operations?
                 </span>
               </h2>
 
@@ -45,9 +45,8 @@ export default function CTA() {
                 className="mx-auto mt-4 sm:mt-6 max-w-2xl text-xs sm:text-base md:text-lg leading-relaxed text-slate-300"
                 style={{ transform: "translateZ(20px)" }}
               >
-                Whether you are launching an AI startup or modernizing enterprise
-                infrastructure, we provide the architecture, models, and engineering
-                power to bring your vision to life.
+                Whether you need a custom-built website, an enterprise ERP system, or automated
+                business workflows, we provide the architecture and engineering power to elevate your business.
               </p>
 
               <div
@@ -58,7 +57,7 @@ export default function CTA() {
                   href="/contact"
                   className="group flex items-center justify-center rounded-xl bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 px-6 sm:px-8 py-3.5 sm:py-4 font-semibold shadow-lg shadow-cyan-500/30 transition-all duration-300 hover:scale-105 hover:shadow-cyan-400/50 text-sm sm:text-base w-full min-[450px]:w-auto min-h-[44px]"
                 >
-                  Book Free Architecture Review
+                  Book Free System Audit
                   <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
 

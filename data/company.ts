@@ -16,39 +16,39 @@ export const company = {
   website: "Coming Soon",
 
   hero: {
-    badge: "🚀 AI-Driven Digital Transformation",
+    badge: "⚡ Modern Web • Enterprise ERP • System Automation",
 
-    title: "Transform Your Business with Intelligent Technology",
+    title: "Transform Your Business with Custom Software & Automation",
 
     description:
-      "At Zynovix Tech Solution, we empower businesses with Artificial Intelligence, Machine Learning, automation, and custom software solutions that improve efficiency, unlock valuable insights, and accelerate business growth.",
+      "At Zynovix Tech Solution, we engineer high-performance websites, custom ERP software, business management solutions, and intelligent system automations that streamline operations, eliminate manual bottlenecks, and accelerate growth.",
   },
 
   about: {
     title: "Who We Are",
 
     description:
-      "Founded in 2026, Zynovix Tech Solution helps businesses embrace modern technologies. We specialize in Artificial Intelligence, Machine Learning, automation, cloud technologies, and software development, delivering innovative solutions that solve real-world business challenges.",
+      "Founded in 2026, Zynovix Tech Solution is a modern digital engineering partner. We specialize in custom web development, enterprise ERP systems, workflow automation, and tailored business software that solve complex operational challenges and scale companies efficiently.",
 
     mission:
-      "To empower businesses with intelligent technology solutions that simplify operations, unlock insights, and drive sustainable growth.",
+      "To empower growing businesses and enterprises with robust digital platforms, modular ERP systems, and automated workflows that simplify operations and maximize productivity.",
 
     vision:
-      "To become a trusted technology partner helping organizations innovate through AI, automation, and modern digital solutions.",
+      "To be the premier software engineering partner for organizations seeking scalable web solutions, seamless business automation, and enterprise-grade software architecture.",
   },
 
   stats: [
     {
-      value: "2026",
-      label: "Founded",
+      value: "50+",
+      label: "Projects Delivered",
     },
     {
-      value: "AI",
-      label: "Focused Solutions",
+      value: "99.9%",
+      label: "System Reliability",
     },
     {
       value: "24/7",
-      label: "Support",
+      label: "Dedicated Support",
     },
     {
       value: "100%",
@@ -57,10 +57,10 @@ export const company = {
   ],
 
   cta: {
-    title: "Let's Build the Future of Your Business",
+    title: "Let's Scale & Automate Your Business Operations",
 
     description:
-      "Whether you're looking to automate workflows, build AI-powered applications, or modernize your business systems, Zynovix Tech Solution is ready to help.",
+      "Whether you need an enterprise ERP system, a high-converting custom website, or automated workflows that save hundreds of hours, Zynovix Tech Solution is ready to build it.",
 
     primaryButton: "Explore Services",
 

@@ -4,7 +4,7 @@ import ContactSection from "@/components/sections/ContactSection";
 export const metadata: Metadata = {
   title: "Contact | Zynovix Tech Solutions",
   description:
-    "Get in touch with Zynovix for custom AI solutions, cloud SaaS architecture, and enterprise software engineering.",
+    "Get in touch with Zynovix for custom web development, enterprise ERP software, and system automation solutions.",
 };
 
 export default function ContactPage() {

@@ -8,24 +8,24 @@ import Reveal3D from "@/components/three/Reveal3D";
 
 const projects = [
   {
-    title: "Zeno AI Assistant",
-    category: "Autonomous AI Agent",
+    title: "Zynovix Enterprise ERP",
+    category: "ERP Software",
     description:
-      "Enterprise local LLM-powered AI assistant for automated reasoning, semantic document QA, and business task orchestration.",
+      "A modular enterprise resource planning system integrating real-time inventory management, automated purchase orders, and financial accounting.",
     image: "/images/team/Zeno_ai.png",
   },
   {
-    title: "OmniCloud SaaS Dashboard",
-    category: "Cloud Architecture",
+    title: "Supply Chain & Order Automation",
+    category: "System Automation",
     description:
-      "High-throughput multi-cloud intelligence platform providing real-time telemetry, automated healing, and cost anomaly alerts.",
+      "Automated logistics pipeline connecting e-commerce storefronts, warehouse tracking systems, invoice generation, and courier webhooks.",
     image: "",
   },
   {
-    title: "Neural Vision QC",
-    category: "Computer Vision",
+    title: "Omnichannel Business Portal",
+    category: "Web Development",
     description:
-      "Deep learning edge vision pipeline detecting micro-defects in manufacturing lines with 99.8% precision at millisecond latency.",
+      "Ultra-fast client portal built with Next.js and Tailwind CSS featuring customer onboarding, account management, and payment processing.",
     image: "",
   },
 ];
@@ -47,14 +47,14 @@ export default function PortfolioPreview() {
               Case Studies
             </span>
             <h2 className="mt-5 sm:mt-6 text-2xl min-[400px]:text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
-              Featured AI &
+              Featured ERP, Web &amp;
               <span className="block bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                Software Deployments
+                Automation Deployments
               </span>
             </h2>
             <p className="mx-auto mt-3 sm:mt-4 max-w-2xl text-xs sm:text-base text-slate-300">
-              We design and ship scalable AI solutions, enterprise SaaS
-              architectures, and high-performance applications for forward-thinking companies.
+              We design and ship robust ERP architectures, custom web platforms,
+              and automated workflow pipelines for forward-thinking businesses.
             </p>
           </div>
         </Reveal3D>

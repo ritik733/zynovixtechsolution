@@ -2,31 +2,39 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Portfolio | Zynovix",
-  description: "Explore our recent work in AI, web development, and cloud solutions.",
+  title: "Portfolio | Zynovix Tech Solutions",
+  description: "Explore our recent work in custom web development, enterprise ERP systems, and workflow automation.",
 };
 
 const projects = [
   {
-    title: "Zeno AI Assistant",
-    category: "AI Chatbot",
+    title: "Zynovix Enterprise ERP",
+    category: "ERP Software",
     image: "/images/team/Zeno_ai.png",
     description:
-      "An intelligent conversational AI powered by LLMs, designed to handle complex queries with human-like understanding.",
+      "A modular enterprise resource planning system integrating real-time inventory management, automated purchase orders, and financial accounting.",
   },
-  // Uncomment more projects as you add them
-  // {
-  //   title: "Corporate Website",
-  //   category: "Web Development",
-  //   image: "/images/portfolio/corporate.jpg",
-  //   description: "Modern, responsive corporate site with dynamic content management.",
-  // },
-  // {
-  //   title: "Healthcare Dashboard",
-  //   category: "Web Application",
-  //   image: "/images/portfolio/healthcare.jpg",
-  //   description: "Real-time patient data analytics and reporting dashboard.",
-  // },
+  {
+    title: "Supply Chain & Order Automation",
+    category: "System Automation",
+    image: "",
+    description:
+      "Automated logistics pipeline connecting e-commerce storefronts, warehouse tracking systems, invoice generation, and courier webhooks.",
+  },
+  {
+    title: "Omnichannel Business Portal",
+    category: "Web Development",
+    image: "",
+    description:
+      "Modern, ultra-fast client portal built with Next.js and Tailwind CSS featuring customer onboarding, account management, and payment processing.",
+  },
+  {
+    title: "Operations & Financial Analytics Dashboard",
+    category: "Business Solutions",
+    image: "",
+    description:
+      "Real-time executive reporting platform aggregating cross-departmental ERP data, profit-and-loss metrics, and operational expense alerts.",
+  },
 ];
 
 export default function PortfolioPage() {
@@ -40,14 +48,14 @@ export default function PortfolioPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 text-center">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/40 border border-cyan-800/40 text-xs sm:text-sm text-cyan-400 mb-4 backdrop-blur-sm">
             <span>✨</span>
-            <span>Case Studies & Projects</span>
+            <span>Case Studies &amp; Projects</span>
           </div>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight">
             Our <span className="bg-gradient-to-r from-cyan-400 via-teal-300 to-blue-500 bg-clip-text text-transparent">Portfolio</span>
           </h1>
           <p className="mx-auto mt-4 sm:mt-6 max-w-3xl text-sm sm:text-base md:text-lg text-slate-300 leading-relaxed px-2">
-            A selection of projects showcasing our expertise in AI, cloud architecture,
-            and cutting-edge web development.
+            A selection of projects showcasing our expertise in enterprise ERP software,
+            custom web applications, and system automation.
           </p>
         </div>
       </section>

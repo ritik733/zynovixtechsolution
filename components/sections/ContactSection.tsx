@@ -63,7 +63,7 @@ export default function ContactSection() {
     name: "",
     email: "",
     phone: "",
-    service: "AI & Machine Learning",
+    service: "Custom Web Development & Portals",
     details: "",
   });
 
@@ -97,9 +97,9 @@ export default function ContactSection() {
             </h1>
 
             <p className="mx-auto mt-4 sm:mt-6 max-w-2xl text-xs sm:text-base md:text-lg leading-relaxed text-slate-300">
-              Have an idea, project, or enterprise challenge? Our team of AI
-              specialists, cloud architects, and full-stack engineers is ready to
-              turn your requirements into reality.
+              Have an idea, project, or operational bottleneck? Our software engineers,
+              ERP architects, and automation specialists are ready to build solutions
+              tailored to your business.
             </p>
 
             {/* Quick trust chips */}
@@ -109,8 +109,8 @@ export default function ContactSection() {
                 <span>NDA &amp; IP Protected</span>
               </div>
               <div className="flex items-center gap-1.5 sm:gap-2">
-                <Bot size={16} className="text-violet-400 shrink-0" />
-                <span>Free Technical Audit</span>
+                <Bot size={16} className="text-blue-400 shrink-0" />
+                <span>Free Operational Audit</span>
               </div>
               <div className="flex items-center gap-1.5 sm:gap-2">
                 <CheckCircle2 size={16} className="text-emerald-400 shrink-0" />
@@ -155,8 +155,8 @@ export default function ContactSection() {
                           Inquiry Received!
                         </h3>
                         <p className="mt-2 text-xs sm:text-sm text-slate-300">
-                          Thank you for reaching out, {formData.name || "friend"}. An
-                          AI solutions engineer will review your project and email you
+                          Thank you for reaching out, {formData.name || "friend"}. A
+                          software solutions engineer will review your project and email you
                           within 24 hours.
                         </p>
                         <button
@@ -235,12 +235,12 @@ export default function ContactSection() {
                             }
                             className="w-full rounded-xl border border-slate-700/80 bg-slate-950/80 px-3.5 py-3 sm:px-4 sm:py-3.5 text-sm text-white transition outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500/20 min-h-[44px]"
                           >
-                            <option>AI &amp; Machine Learning (LLMs, Computer Vision)</option>
-                            <option>AI Chatbots &amp; Autonomous Agents</option>
-                            <option>Cloud Architecture &amp; DevOps (AWS/Azure/K8s)</option>
-                            <option>Full-Stack Web &amp; Enterprise SaaS</option>
-                            <option>Data Engineering &amp; Pipelines</option>
-                            <option>Other Custom Software Solution</option>
+                            <option>Custom Web Development &amp; Portals</option>
+                            <option>Enterprise ERP Software (Inventory, Finance, Frappe)</option>
+                            <option>System &amp; Workflow Automation</option>
+                            <option>Custom Business Solutions &amp; Internal Tools</option>
+                            <option>API &amp; Third-Party Integrations</option>
+                            <option>Cloud Infrastructure &amp; DevOps</option>
                           </select>
                         </div>
 
@@ -319,12 +319,12 @@ export default function ContactSection() {
                 })}
               </div>
 
-              {/* 3D Interactive Cyber Beacon Visual */}
+              {/* 3D Interactive Enterprise Operations Beacon Visual */}
               <Reveal3D delay={0.25} rotate={-15}>
                 <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl border border-slate-800/80 bg-slate-900/60 p-4 sm:p-6 backdrop-blur-xl shadow-[0_0_40px_rgba(34,211,238,0.15)]">
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-cyan-400">
-                      Neural Uplink
+                      Operations Center
                     </span>
                     <span className="flex items-center gap-1.5 text-[11px] sm:text-xs text-emerald-400 font-medium">
                       <span className="h-2 w-2 rounded-full bg-emerald-400 animate-ping" />
@@ -332,7 +332,7 @@ export default function ContactSection() {
                     </span>
                   </div>
                   <p className="text-[11px] sm:text-xs text-slate-400">
-                    Interact with the 3D gyroscope below.
+                    Interact with the 3D enterprise system model below.
                   </p>
 
                   <div className="h-44 sm:h-52 w-full mt-2">

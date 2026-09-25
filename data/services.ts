@@ -1,85 +1,50 @@
 export const services = [
   {
     id: 1,
-
-    title: "Artificial Intelligence",
-
-    short:
-      "AI-powered solutions that automate business operations and improve decision-making.",
-
-    description:
-      "We build intelligent AI applications tailored to your business needs, enabling automation, predictive analytics, and smarter workflows.",
-
-    icon: "Brain",
+    title: "Custom Web Development",
+    short: "High-performance websites, client portals, and responsive web applications.",
+    description: "We build ultra-fast, modern, and SEO-optimized web platforms using Next.js, React, and TypeScript designed to scale your brand and convert visitors.",
+    icon: "Globe",
+    features: ["Next.js & React Applications", "Custom Client Portals", "Responsive UI/UX Engineering"],
   },
-
   {
     id: 2,
-
-    title: "Machine Learning",
-
-    short:
-      "Train intelligent models using your business data.",
-
-    description:
-      "Our Machine Learning solutions analyze historical data to predict trends, detect anomalies, and improve operational efficiency.",
-
-    icon: "Cpu",
+    title: "Enterprise ERP Software",
+    short: "Comprehensive ERP systems designed around your unique operational workflows.",
+    description: "From inventory control and supply chain to financial accounting and multi-branch operations, we build and customize modular ERP platforms that unify your enterprise.",
+    icon: "Database",
+    features: ["Inventory & Supply Chain", "Financial Accounting & Invoicing", "Frappe & Custom ERP Modules"],
   },
-
   {
     id: 3,
-
-    title: "Custom Software Development",
-
-    short:
-      "Scalable software built specifically for your organization.",
-
-    description:
-      "From ERP systems to internal business tools, we create secure and scalable software tailored to your workflows.",
-
-    icon: "Code",
+    title: "System & Workflow Automation",
+    short: "Eliminate repetitive manual tasks with robust system-level automation.",
+    description: "Automate complex business processes, document routing, cross-platform data synchronization, and automated notification triggers to save hundreds of operational hours.",
+    icon: "Workflow",
+    features: ["Process Pipeline Automation", "Scheduled ETL & Triggers", "Data Sync Between Platforms"],
   },
-
   {
     id: 4,
-
-    title: "Web Development",
-
-    short:
-      "Modern websites and business applications built with the latest technologies.",
-
-    description:
-      "Responsive, SEO-friendly, and high-performance websites designed to represent your brand professionally.",
-
-    icon: "Globe",
+    title: "Business Solutions & Consulting",
+    short: "Tailored software solutions solving bottlenecks and driving profitability.",
+    description: "We conduct in-depth business process audits and build custom internal tooling, administrative dashboards, and management software built for your exact needs.",
+    icon: "Code",
+    features: ["Custom Business Dashboards", "Operational Process Audits", "Bespoke Internal Tools"],
   },
-
   {
     id: 5,
-
-    title: "Business Automation",
-
-    short:
-      "Automate repetitive tasks and improve productivity.",
-
-    description:
-      "We streamline business operations using intelligent automation, reducing manual effort and increasing efficiency.",
-
-    icon: "Workflow",
+    title: "API & Third-Party Integrations",
+    short: "Connect your payment gateways, CRMs, logistics, and legacy systems seamlessly.",
+    description: "Build robust REST and GraphQL API layers connecting your websites and ERP to payment systems (Stripe, Razorpay), logistics providers, and external services.",
+    icon: "Layers",
+    features: ["Payment Gateway Connectors", "CRM & Webhook Pipelines", "Legacy System Migration"],
   },
-
   {
     id: 6,
-
-    title: "Cloud & DevOps",
-
-    short:
-      "Secure cloud deployment and infrastructure management.",
-
-    description:
-      "Deploy scalable applications with CI/CD pipelines, cloud hosting, monitoring, and infrastructure optimization.",
-
+    title: "Cloud Infrastructure & DevOps",
+    short: "Secure, reliable cloud hosting with 99.9% uptime and automated CI/CD.",
+    description: "Deploy and manage your business software on AWS, DigitalOcean, or private cloud environments with automated backups, Docker containerization, and 24/7 monitoring.",
     icon: "Cloud",
+    features: ["Docker & Containerization", "Automated Daily Backups", "24/7 Server Monitoring & SLAs"],
   },
 ];

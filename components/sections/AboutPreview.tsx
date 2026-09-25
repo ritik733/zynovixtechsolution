@@ -1,28 +1,28 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Brain, ShieldCheck, Zap, Sparkles } from "lucide-react";
+import { ArrowRight, Database, ShieldCheck, Zap, Sparkles } from "lucide-react";
 import TiltCard from "@/components/three/TiltCard";
 import Reveal3D from "@/components/three/Reveal3D";
 import CyberOrb3D from "@/components/three/CyberOrb3D";
 
 const features = [
   {
-    icon: Brain,
-    title: "AI Innovation",
-    desc: "Intelligent AI systems powered by modern Large Language Models and Machine Learning.",
+    icon: Database,
+    title: "Modular ERP Software",
+    desc: "Custom ERP systems unifying inventory, accounting, order fulfillment, and multi-branch operations.",
     color: "text-cyan-400",
   },
   {
     icon: Zap,
-    title: "Autonomous Workflows",
-    desc: "Automate repetitive workflows and boost team productivity with intelligent agents.",
-    color: "text-violet-400",
+    title: "System & Workflow Automation",
+    desc: "Automate repetitive manual workflows, invoicing, data sync, and operational pipelines to eliminate bottlenecks.",
+    color: "text-emerald-400",
   },
   {
     icon: ShieldCheck,
-    title: "Enterprise Architecture",
-    desc: "Secure, scalable, cloud-native applications designed for mission-critical operations.",
+    title: "Custom Web & Cloud Platforms",
+    desc: "High-performance, secure digital platforms built with Next.js, React, and modern cloud architecture.",
     color: "text-blue-400",
   },
 ];
@@ -33,7 +33,7 @@ export default function AboutPreview() {
       {/* Background glow */}
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute right-10 top-1/4 h-72 sm:h-80 w-72 sm:w-80 rounded-full bg-cyan-600/10 blur-[140px]" />
-        <div className="absolute left-10 bottom-1/4 h-72 sm:h-80 w-72 sm:w-80 rounded-full bg-violet-600/10 blur-[140px]" />
+        <div className="absolute left-10 bottom-1/4 h-72 sm:h-80 w-72 sm:w-80 rounded-full bg-blue-600/10 blur-[140px]" />
       </div>
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -43,27 +43,26 @@ export default function AboutPreview() {
             <Reveal3D rotate={-15}>
               <span className="inline-flex items-center gap-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3.5 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-cyan-300 shadow-[0_0_15px_rgba(34,211,238,0.2)]">
                 <Sparkles size={14} />
-                About Zynovix
+                About Zynovix Tech Solutions
               </span>
 
               <h2 className="mt-5 sm:mt-6 text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
-                AI-First Software
+                Digital Engineering &amp;
                 <span className="block bg-gradient-to-r from-cyan-400 via-sky-300 to-blue-500 bg-clip-text text-transparent">
-                  Engineering Company
+                  Business Solutions Partner
                 </span>
               </h2>
 
               <p className="mt-5 sm:mt-8 text-sm sm:text-base md:text-lg leading-relaxed text-slate-300">
-                We help ambitious startups, enterprises, and growing businesses
-                leverage Artificial Intelligence, Machine Learning, Cloud
-                Computing, and Custom Web Engineering to build intelligent digital
-                products that redefine industries.
+                We help ambitious businesses and growing organizations leverage modern
+                web technologies, tailored ERP platforms, and end-to-end system
+                automation to streamline their day-to-day operations and accelerate growth.
               </p>
 
               <p className="mt-4 sm:mt-6 text-xs sm:text-sm md:text-base text-slate-400 leading-relaxed">
-                From autonomous AI agents and LLM applications to enterprise
-                SaaS platforms and cloud-native microservices, we build software
-                that drives quantifiable real-world value.
+                From scalable corporate websites and client portals to comprehensive
+                ERP integrations and automated data pipelines, we build reliable software
+                that drives measurable business value.
               </p>
 
               <div className="mt-7 sm:mt-10">
@@ -77,16 +76,16 @@ export default function AboutPreview() {
               </div>
             </Reveal3D>
 
-            {/* Embedded 3D Interactive Cyber Orb Visual (visible on mobile and desktop) */}
+            {/* Embedded 3D Interactive Visual */}
             <div className="mt-8 sm:mt-10 block">
               <Reveal3D delay={0.2} rotate={-10}>
                 <div className="h-44 sm:h-56 w-full rounded-2xl border border-slate-800/80 bg-slate-900/40 backdrop-blur-md overflow-hidden relative shadow-[0_0_30px_rgba(34,211,238,0.15)]">
                   <div className="absolute top-3 left-4 z-10">
                     <p className="text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-cyan-400">
-                      Neural Core Model
+                      Modular Architecture
                     </p>
                     <p className="text-[9px] sm:text-[10px] text-slate-400">
-                      Interactive 3D Quantum Gyroscope
+                      Interactive 3D ERP &amp; Automation Stack
                     </p>
                   </div>
                   <CyberOrb3D className="h-full w-full" />

@@ -22,25 +22,25 @@ const teamMembers: TeamMember[] = [
   {
     id: 1,
     name: "Pukhraj Tater",
-    role: "CEO",
+    role: "CEO & Founder",
     department: "Executive",
     image: "/images/team/pukhraj-tater.jpg",
-    bio: "Visionary leader with 4+ years of experience in technology and business strategy. Passionate about building innovative solutions that solve real-world problems.",
+    bio: "Visionary leader with 4+ years of experience in enterprise software strategy, ERP implementations, and business solutions. Passionate about building software that drives real operational efficiency.",
     experience: "4+ years in tech leadership",
     social: {
       linkedin: "https://linkedin.com/in/johndoe",
       twitter: "https://twitter.com/johndoe",
       email: "john@company.com",
     },
-    skills: ["Leadership", "Strategy", "Innovation", "AI/ML"],
+    skills: ["Leadership", "Business Strategy", "ERP Systems", "Digital Transformation"],
   },
   {
     id: 2,
     name: "Piyush Dadhich",
-    role: "Lead Developer",
+    role: "Lead Full-Stack Developer",
     department: "Engineering",
     image: "/images/team/jane-smith.jpg",
-    bio: "Full-stack developer specialized in React, Next.js, and cloud architecture. Dedicated to writing clean, scalable code and mentoring junior developers.",
+    bio: "Full-stack engineer specialized in React, Next.js, and modern cloud architecture. Dedicated to building high-converting websites and scalable business platforms.",
     experience: "8+ years in software development",
     social: {
       linkedin: "https://linkedin.com/in/janesmith",
@@ -52,16 +52,16 @@ const teamMembers: TeamMember[] = [
   {
     id: 3,
     name: "Praveen Sharma",
-    role: "Backend Engineer",
+    role: "Backend & Systems Engineer",
     department: "Engineering",
     image: "/images/team/mike-johnson.jpg",
-    bio: "Backend engineer with expertise in building scalable and efficient server-side applications. Passionate about optimizing performance and ensuring code quality.",
+    bio: "Backend engineer with expertise in building scalable server-side systems, database architecture, and workflow automation pipelines.",
     experience: "6+ years in backend development",
     social: {
       linkedin: "https://linkedin.com/in/mikejohnson",
       twitter: "https://twitter.com/mikejohnson",
     },
-    skills: ["Node.js", "Python", "Database Design", "API Development"],
+    skills: ["Node.js", "Python", "Database Design", "Workflow Automation"],
   },
   {
     id: 4,
@@ -69,27 +69,27 @@ const teamMembers: TeamMember[] = [
     role: "Marketing Director",
     department: "Marketing",
     image: "/images/team/sarah-williams.jpg",
-    bio: "Data-driven marketing strategist with expertise in digital campaigns, brand building, and growth hacking.",
+    bio: "Growth strategist with expertise in B2B tech campaigns, client acquisition, brand positioning, and digital market expansion.",
     experience: "10+ years in digital marketing",
     social: {
       linkedin: "https://linkedin.com/in/sarahwilliams",
       twitter: "https://twitter.com/sarahwilliams",
     },
-    skills: ["SEO", "Content Strategy", "Analytics", "Brand Management"],
+    skills: ["B2B Strategy", "Growth Marketing", "Analytics", "Brand Management"],
   },
   {
     id: 5,
     name: "Vinod Kharol",
-    role: "Data Scientist",
+    role: "ERP & Systems Architect",
     department: "Engineering",
     image: "/images/team/vinod-kharol.jpg",
-    bio: "PhD in Computer Science with a focus on machine learning and natural language processing. Builds AI-powered solutions that drive business value.",
-    experience: "6+ years in AI/ML",
+    bio: "Senior systems engineer specializing in enterprise resource planning, Frappe / ERPNext ecosystems, and multi-branch database integrations that optimize operations.",
+    experience: "6+ years in systems architecture",
     social: {
       linkedin: "https://linkedin.com/in/vinodkharol",
       github: "https://github.com/vinodkharol",
     },
-    skills: ["Python", "TensorFlow", "PyTorch", "NLP", "Data Analysis"],
+    skills: ["ERP Systems", "Frappe", "PostgreSQL", "System Automation", "Python"],
   },
 //   {
 //     id: 6,
@@ -135,21 +135,16 @@ export default function TeamPage() {
           </h1>
           <p className="text-gray-300 text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed px-2">
             We're a diverse group of passionate professionals dedicated to 
-            delivering exceptional results with modern AI, cloud, and engineering.
+            delivering exceptional results with modern web engineering, ERP systems, and business automation.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mt-6 sm:mt-8">
             <div className="flex -space-x-3 sm:-space-x-4">
               {teamMembers.slice(0, 5).map((member) => (
                 <div
                   key={member.id}
-                  className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-violet-500/50 overflow-hidden relative shadow-md shadow-violet-500/20"
+                  className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-violet-500/50 overflow-hidden relative shadow-md shadow-violet-500/20 bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center text-white text-xs sm:text-sm font-bold"
                 >
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    fill
-                    className="object-cover"
-                  />
+                  {member.name.split(" ").map(n => n[0]).join("")}
                 </div>
               ))}
               <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-violet-500/20 border-2 border-violet-500/50 flex items-center justify-center text-violet-400 text-xs sm:text-sm font-semibold">
@@ -184,13 +179,8 @@ export default function TeamPage() {
                     {/* Card content with horizontal/vertical responsive layout */}
                     <div className="flex flex-col sm:flex-row items-center sm:items-start gap-5 sm:gap-6">
                       {/* Image */}
-                      <div className="relative w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-violet-500/40 group-hover:border-violet-400 transition-colors shrink-0 shadow-lg shadow-violet-500/10">
-                        <Image
-                          src={member.image}
-                          alt={member.name}
-                          fill
-                          className="object-cover"
-                        />
+                      <div className="relative w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-violet-500/40 group-hover:border-violet-400 transition-colors shrink-0 shadow-lg shadow-violet-500/10 bg-gradient-to-br from-violet-600 to-cyan-500 flex items-center justify-center text-white text-2xl sm:text-3xl font-extrabold">
+                        {member.name.split(" ").map(n => n[0]).join("")}
                       </div>
 
                       {/* Info */}

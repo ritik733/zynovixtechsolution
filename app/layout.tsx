@@ -14,9 +14,9 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Zynovix Tech Solutions | AI & Cloud Innovations",
+  title: "Zynovix Tech Solutions | Web Development, ERP Software & System Automation",
   description:
-    "Cutting-edge AI-powered software, machine learning, cloud SaaS, and modern digital engineering solutions.",
+    "High-performance websites, custom enterprise ERP software, tailored business management solutions, and intelligent system automation.",
 };
 
 export default function RootLayout({
@@ -25,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark scroll-smooth">
+    <html lang="en" className="dark">
       <body className="min-h-screen bg-[#030712] text-slate-100 antialiased selection:bg-cyan-500/30 selection:text-cyan-200 overflow-x-hidden relative">
         {/* 3D Global Interactive Background Canvas */}
         <BackgroundCanvasWrapper />

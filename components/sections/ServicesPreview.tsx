@@ -19,58 +19,40 @@ import Reveal3D from "@/components/three/Reveal3D";
 
 const services = [
   {
-    icon: BrainCircuit,
-    title: "Artificial Intelligence",
-    desc: "Custom AI solutions, Generative AI, and intelligent business automation.",
-    features: ["LLM fine‑tuning", "Computer vision", "NLP pipelines"],
-  },
-  {
-    icon: Bot,
-    title: "AI Chatbots & Agents",
-    desc: "Build LLM‑powered assistants using OpenAI, LangChain, and RAG.",
-    features: ["Conversational AI", "Document QA", "Autonomous agents"],
-  },
-  {
-    icon: Cpu,
-    title: "Machine Learning",
-    desc: "Predictive analytics, recommendation engines, and ML model deployment.",
-    features: ["Regression/Classification", "Time‑series forecasting", "MLOps"],
-  },
-  {
-    icon: Cloud,
-    title: "Cloud Solutions",
-    desc: "AWS, Azure, Docker, Kubernetes, and cloud‑native architecture.",
-    features: ["Infrastructure as Code", "Serverless", "Multi‑cloud strategy"],
-  },
-  {
     icon: Globe,
-    title: "Web & SaaS Development",
-    desc: "Scalable enterprise applications using Next.js, React, and Node.js.",
-    features: ["Micro‑frontends", "API design", "Real‑time features"],
+    title: "Custom Web Development",
+    desc: "Modern websites, client portals, and responsive web applications built for performance and growth.",
+    features: ["Next.js & React Applications", "Custom Client Portals", "Responsive UI/UX Engineering"],
   },
   {
     icon: Database,
-    title: "Data Engineering",
-    desc: "Data pipelines, analytics dashboards, and business intelligence.",
-    features: ["ETL/ELT", "Data warehousing", "BI reporting"],
+    title: "Enterprise ERP Software",
+    desc: "Modular ERP solutions designed around your unique operational and inventory workflows.",
+    features: ["Inventory & Supply Chain", "Financial Accounting & Invoicing", "Frappe & Custom ERP Modules"],
   },
   {
-    icon: Shield,
-    title: "Cybersecurity",
-    desc: "Zero‑trust architectures, penetration testing, and compliance frameworks.",
-    features: ["Threat monitoring", "Vulnerability assessment", "GDPR/HIPAA"],
+    icon: Cpu,
+    title: "System & Workflow Automation",
+    desc: "Eliminate repetitive manual tasks, automate approval pipelines, and sync disparate platforms.",
+    features: ["Process Pipeline Automation", "Scheduled ETL & Triggers", "Data Sync Between Platforms"],
   },
   {
     icon: Blocks,
-    title: "Blockchain",
-    desc: "Decentralised applications, smart contracts, and tokenisation.",
-    features: ["Ethereum/Solana", "DeFi protocols", "NFT marketplaces"],
+    title: "Custom Business Solutions",
+    desc: "Tailored internal tools, executive dashboards, and management platforms solving core bottlenecks.",
+    features: ["Custom Business Dashboards", "Operational Process Audits", "Bespoke Internal Tools"],
   },
   {
     icon: Wifi,
-    title: "IoT & Edge Computing",
-    desc: "Connected device ecosystems, real‑time analytics, and edge AI.",
-    features: ["Sensor data ingestion", "Edge inference", "Device management"],
+    title: "API & System Integrations",
+    desc: "Connect payment gateways, CRMs, logistics, warehouse systems, and third-party webhooks.",
+    features: ["Payment Gateway Connectors", "CRM & Webhook Pipelines", "Legacy System Migration"],
+  },
+  {
+    icon: Cloud,
+    title: "Cloud Infrastructure & DevOps",
+    desc: "High-availability cloud hosting, containerized deployments, and robust security management.",
+    features: ["Docker & Containerization", "Automated Daily Backups", "24/7 Server Monitoring & SLAs"],
   },
 ];
 
@@ -80,7 +62,7 @@ export default function ServicesPreview() {
       {/* Background Glows */}
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute left-1/3 top-0 h-72 sm:h-96 w-72 sm:w-96 rounded-full bg-cyan-600/10 blur-[160px]" />
-        <div className="absolute right-10 bottom-1/4 h-72 sm:h-80 w-72 sm:w-80 rounded-full bg-violet-600/10 blur-[150px]" />
+        <div className="absolute right-10 bottom-1/4 h-72 sm:h-80 w-72 sm:w-80 rounded-full bg-blue-600/10 blur-[150px]" />
       </div>
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -89,18 +71,17 @@ export default function ServicesPreview() {
           <div className="text-center">
             <span className="inline-flex items-center gap-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3.5 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-cyan-300 shadow-[0_0_15px_rgba(34,211,238,0.2)]">
               <Sparkles size={14} />
-              Our Capabilities
+              Our Core Services
             </span>
             <h2 className="mt-5 sm:mt-6 text-2xl min-[400px]:text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
-              Enterprise Services &
+              Enterprise Services &amp;
               <span className="block bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                Intelligent Tech Stacks
+                Software Solutions
               </span>
             </h2>
             <p className="mx-auto mt-3 sm:mt-4 max-w-2xl text-xs sm:text-base text-slate-300">
-              We combine Artificial Intelligence, Machine Learning, Cloud
-              Infrastructure, and Modern Web Engineering to build future‑ready digital
-              products.
+              We engineer scalable websites, enterprise ERP software, and automated
+              digital systems that streamline operations and drive business performance.
             </p>
           </div>
         </Reveal3D>

@@ -1,12 +1,15 @@
 "use client";
 
+import Reveal3D from "@/components/three/Reveal3D";
+import TiltCard from "@/components/three/TiltCard";
+
 const companies = [
   {
-    name: "OpenAI",
-    color: "#10A37F",
+    name: "PostgreSQL",
+    color: "#336791",
     icon: (
-      <svg viewBox="0 0 24 24" className="h-9 w-9" fill="currentColor">
-        <path d="M22.28 9.82a5.98 5.98 0 0 0-.52-4.91 6.05 6.05 0 0 0-6.51-2.9A6.07 6.07 0 0 0 4.98 4.18a5.98 5.98 0 0 0-4 2.9 6.05 6.05 0 0 0 .74 7.1 5.98 5.98 0 0 0 .51 4.91 6.05 6.05 0 0 0 6.51 2.9 5.98 5.98 0 0 0 4.51 2.01 6.07 6.07 0 0 0 5.78-4.19 5.98 5.98 0 0 0 4-2.9 6.05 6.05 0 0 0-.75-7.09Zm-9.03 12.61a4.48 4.48 0 0 1-2.88-1.04l.14-.08 4.78-2.76a.79.79 0 0 0 .4-.68v-6.74l2.02 1.17a.07.07 0 0 1 .04.06v5.58a4.5 4.5 0 0 1-4.5 4.49ZM3.97 18.1a4.47 4.47 0 0 1-.54-3.01l.14.08 4.78 2.76a.78.78 0 0 0 .78 0l5.84-3.37v2.33a.07.07 0 0 1-.03.06l-4.83 2.79a4.5 4.5 0 0 1-6.14-1.64Zm-1.26-10.5a4.47 4.47 0 0 1 2.35-1.97v5.68a.78.78 0 0 0 .39.68l5.83 3.37-2.02 1.17a.07.07 0 0 1-.07 0L4.36 13.7a4.5 4.5 0 0 1-1.65-6.1Zm16.6 3.86-5.84-3.38 2.02-1.16a.07.07 0 0 1 .07 0l4.83 2.79a4.5 4.5 0 0 1-.7 8.11v-5.68a.79.79 0 0 0-.38-.68Zm2.01-3.02-.14-.09-4.78-2.77a.78.78 0 0 0-.79 0l-5.83 3.37V6.62a.06.06 0 0 1 .03-.06l4.83-2.78a4.5 4.5 0 0 1 6.68 4.66ZM9.02 12.86l-2.02-1.16a.07.07 0 0 1-.04-.06V6.06a4.5 4.5 0 0 1 7.38-3.45l-.14.08-4.78 2.76a.79.79 0 0 0-.4.68l-.01 6.73Zm1.1-2.36 2.6-1.5 2.6 1.5v3l-2.6 1.5-2.6-1.5v-3Z" />
+      <svg viewBox="0 0 24 24" className="h-9 w-9" fill="#336791">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.06 17.5c-2.88 0-4.63-1.63-4.63-4.33 0-2.48 1.48-4.08 3.96-4.08 1.05 0 1.94.34 2.47.88v-3.4h2.17v10.93h-1.92l-.12-.87c-.57.6-1.37.87-1.93.87zm.42-2.12c1.37 0 2.22-.97 2.22-2.48 0-1.52-.85-2.48-2.22-2.48s-2.22.95-2.22 2.48c0 1.51.85 2.48 2.22 2.48z" />
       </svg>
     ),
   },
@@ -57,13 +60,11 @@ const companies = [
     ),
   },
   {
-    name: "LangChain",
-    color: "#1C3C3C",
+    name: "Node.js",
+    color: "#339933",
     icon: (
-      <svg viewBox="0 0 24 24" className="h-9 w-9" fill="none" stroke="#3ECFA0" strokeWidth="1.6">
-        <circle cx="8" cy="8" r="3.4" />
-        <circle cx="16" cy="16" r="3.4" />
-        <path d="M10.4 10.4a3.4 3.4 0 0 1 4.8 0M8 11.4V16a3.4 3.4 0 0 0 3.4 3.4" />
+      <svg viewBox="0 0 24 24" className="h-9 w-9" fill="#339933">
+        <path d="M12 2l9.5 5.5v11L12 24l-9.5-5.5v-11L12 2zm0 2.3L4.5 8.6v6.8L12 19.7l7.5-4.3V8.6L12 4.3z" />
       </svg>
     ),
   },
@@ -89,9 +90,6 @@ const companies = [
   },
 ];
 
-import Reveal3D from "@/components/three/Reveal3D";
-import TiltCard from "@/components/three/TiltCard";
-
 export default function TrustBar() {
   return (
     <section className="relative overflow-hidden bg-transparent py-14 sm:py-24">
@@ -106,7 +104,7 @@ export default function TrustBar() {
             Technologies &amp; Platforms
           </h2>
           <p className="mt-3 sm:mt-4 text-center text-xs sm:text-base text-slate-400 max-w-xl mx-auto">
-            We build modern AI-powered applications using industry-leading technologies.
+            We build scalable websites, enterprise ERP software, and automation pipelines with industry-leading technologies.
           </p>
         </Reveal3D>
 

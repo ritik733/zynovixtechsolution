@@ -7,27 +7,27 @@ import Reveal3D from "@/components/three/Reveal3D";
 const stats = [
   {
     icon: Briefcase,
-    value: "5+",
+    value: "50+",
     title: "Projects Delivered",
     color: "from-cyan-400 to-blue-500",
   },
   {
-    icon: Users,
-    value: "2+",
-    title: "Global Clients",
+    icon: Rocket,
+    value: "99.9%",
+    title: "System Reliability",
     color: "from-blue-400 to-indigo-500",
   },
   {
-    icon: Rocket,
-    value: "98%",
-    title: "Success Rate",
-    color: "from-indigo-400 to-purple-500",
+    icon: Users,
+    value: "100+",
+    title: "Workflows Automated",
+    color: "from-indigo-400 to-emerald-400",
   },
   {
     icon: Award,
     value: "24/7",
-    title: "Technical Support",
-    color: "from-purple-400 to-cyan-400",
+    title: "Enterprise Support",
+    color: "from-emerald-400 to-cyan-400",
   },
 ];
 

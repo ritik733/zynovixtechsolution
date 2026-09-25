@@ -59,12 +59,12 @@ export default function Footer() {
               Capabilities
             </h3>
             <ul className="space-y-3 sm:space-y-4 text-sm sm:text-base text-slate-400">
-              <li>Artificial Intelligence</li>
-              <li>Machine Learning</li>
-              <li>Autonomous Agents</li>
-              <li>Enterprise SaaS</li>
-              <li>Cloud Architecture</li>
-              <li>Data Engineering</li>
+              <li>Custom Web Development</li>
+              <li>Enterprise ERP Software</li>
+              <li>System &amp; Workflow Automation</li>
+              <li>Business Software Solutions</li>
+              <li>API &amp; System Integration</li>
+              <li>Cloud Infrastructure &amp; DevOps</li>
             </ul>
           </div>
 
