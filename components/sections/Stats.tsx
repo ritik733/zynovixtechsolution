@@ -33,32 +33,32 @@ const stats = [
 
 export default function Stats() {
   return (
-    <section className="relative overflow-hidden bg-transparent py-24">
+    <section className="relative overflow-hidden bg-transparent py-12 sm:py-24">
       {/* Background glow */}
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-72 w-[800px] rounded-full bg-cyan-600/10 blur-[150px]" />
       </div>
 
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 md:gap-8">
           {stats.map((item, idx) => {
             const Icon = item.icon;
 
             return (
-              <Reveal3D key={item.title} delay={idx * 0.1} rotate={-25}>
-                <TiltCard intensity={18} className="h-full">
-                  <div className="group relative h-full rounded-3xl border border-slate-800/80 bg-slate-900/60 p-10 text-center backdrop-blur-md transition-all duration-300 hover:border-cyan-400/50 hover:bg-slate-900/80 hover:shadow-[0_0_35px_rgba(34,211,238,0.2)]">
+              <Reveal3D key={item.title} delay={idx * 0.08} rotate={-20}>
+                <TiltCard intensity={16} className="h-full">
+                  <div className="group relative h-full rounded-2xl sm:rounded-3xl border border-slate-800/80 bg-slate-900/60 p-4 sm:p-7 lg:p-10 text-center backdrop-blur-md transition-all duration-300 hover:border-cyan-400/50 hover:bg-slate-900/80 hover:shadow-[0_0_35px_rgba(34,211,238,0.2)]">
                     {/* 3D Floating Icon */}
                     <div
-                      className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-cyan-500/10 transition-transform duration-300 group-hover:scale-110"
+                      className="mx-auto mb-3 sm:mb-6 flex h-11 w-11 sm:h-16 sm:w-16 items-center justify-center rounded-xl sm:rounded-2xl bg-cyan-500/10 transition-transform duration-300 group-hover:scale-110"
                       style={{ transform: "translateZ(35px)" }}
                     >
-                      <Icon className="text-cyan-400" size={32} />
+                      <Icon className="text-cyan-400 h-5 w-5 sm:h-8 sm:w-8" />
                     </div>
 
                     {/* 3D Floating Stat Value */}
                     <h2
-                      className={`text-5xl font-black bg-gradient-to-r ${item.color} bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(34,211,238,0.3)]`}
+                      className={`text-2xl sm:text-4xl lg:text-5xl font-black bg-gradient-to-r ${item.color} bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(34,211,238,0.3)]`}
                       style={{ transform: "translateZ(25px)" }}
                     >
                       {item.value}
@@ -66,7 +66,7 @@ export default function Stats() {
 
                     {/* Title */}
                     <p
-                      className="mt-4 font-medium text-slate-300"
+                      className="mt-1.5 sm:mt-4 text-xs sm:text-sm lg:text-base font-medium text-slate-300"
                       style={{ transform: "translateZ(15px)" }}
                     >
                       {item.title}

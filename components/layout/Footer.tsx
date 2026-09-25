@@ -13,178 +13,108 @@ export default function Footer() {
   return (
     <footer
       id="contact"
-      className="bg-slate-950 text-slate-300"
+      className="bg-slate-950/85 backdrop-blur-xl border-t border-slate-800/60 text-slate-300 relative z-10"
     >
-      <div className="mx-auto max-w-7xl px-6 py-20">
-
-        <div className="grid gap-14 lg:grid-cols-4">
-
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 py-12 sm:py-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 lg:gap-14">
           {/* Company */}
-
-          <div>
-
-            <div className="mb-5 flex items-center gap-3">
-
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 text-xl font-bold text-white">
+          <div className="sm:col-span-2 lg:col-span-1">
+            <div className="mb-4 sm:mb-5 flex items-center gap-3">
+              <div className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 text-lg sm:text-xl font-bold text-white shadow-md shadow-cyan-500/20">
                 Z
               </div>
-
               <div>
-                <h2 className="text-xl font-bold text-white">
+                <h2 className="text-lg sm:text-xl font-bold text-white">
                   {company.name}
                 </h2>
               </div>
-
             </div>
-
-            <p className="leading-8">
+            <p className="leading-relaxed text-sm sm:text-base text-slate-400">
               {company.about.description}
             </p>
-
           </div>
 
           {/* Navigation */}
-
           <div>
-
-            <h3 className="mb-6 text-lg font-semibold text-white">
+            <h3 className="mb-4 sm:mb-6 text-base sm:text-lg font-semibold text-white">
               Navigation
             </h3>
-
-            <ul className="space-y-4">
-
+            <ul className="space-y-3 sm:space-y-4 text-sm sm:text-base">
               {navigation.map((item) => (
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="transition hover:text-blue-400"
+                    className="transition hover:text-cyan-400 inline-block py-0.5"
                   >
                     {item.name}
                   </Link>
                 </li>
               ))}
-
             </ul>
-
           </div>
 
           {/* Services */}
-
           <div>
-
-            <h3 className="mb-6 text-lg font-semibold text-white">
-              Services
+            <h3 className="mb-4 sm:mb-6 text-base sm:text-lg font-semibold text-white">
+              Capabilities
             </h3>
-
-            <ul className="space-y-4">
-
+            <ul className="space-y-3 sm:space-y-4 text-sm sm:text-base text-slate-400">
               <li>Artificial Intelligence</li>
-
               <li>Machine Learning</li>
-
-              <li>Custom Software</li>
-
-              <li>Web Development</li>
-
-              <li>Business Automation</li>
-
-              <li>Cloud Solutions</li>
-
+              <li>Autonomous Agents</li>
+              <li>Enterprise SaaS</li>
+              <li>Cloud Architecture</li>
+              <li>Data Engineering</li>
             </ul>
-
           </div>
 
           {/* Contact */}
-
           <div>
-
-            <h3 className="mb-6 text-lg font-semibold text-white">
+            <h3 className="mb-4 sm:mb-6 text-base sm:text-lg font-semibold text-white">
               Contact
             </h3>
-
-            <div className="space-y-5">
-
+            <div className="space-y-4 sm:space-y-5 text-sm sm:text-base">
               <div className="flex items-start gap-3">
-
-                <MapPin
-                  className="mt-1 text-blue-400"
-                  size={20}
-                />
-
-                <span>
-                  {company.location}
-                </span>
-
+                <MapPin className="mt-1 text-cyan-400 shrink-0" size={18} />
+                <span>{company.location}</span>
               </div>
-
               <div className="flex items-center gap-3">
-
-                <Phone
-                  className="text-blue-400"
-                  size={20}
-                />
-
-                <span>
-                  {company.phone}
-                </span>
-
+                <Phone className="text-cyan-400 shrink-0" size={18} />
+                <span>{company.phone}</span>
               </div>
-
               <div className="flex items-center gap-3">
-
-                <Mail
-                  className="text-blue-400"
-                  size={20}
-                />
-
-                <span>
-                  {company.email}
-                </span>
-
+                <Mail className="text-cyan-400 shrink-0" size={18} />
+                <span className="break-all">{company.email}</span>
               </div>
-
             </div>
-
           </div>
-
         </div>
 
-        <div className="my-12 h-px bg-slate-800" />
+        <div className="my-8 sm:my-12 h-px bg-slate-800" />
 
         {/* CTA */}
-
-        <div className="flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center">
-
+        <div className="flex flex-col items-start justify-between gap-6 sm:gap-8 lg:flex-row lg:items-center">
           <div>
-
-            <h2 className="text-3xl font-bold text-white">
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white">
               {company.cta.title}
             </h2>
-
-            <p className="mt-3 max-w-2xl text-slate-400">
+            <p className="mt-2 text-xs sm:text-sm md:text-base text-slate-400 max-w-2xl">
               {company.cta.description}
             </p>
-
           </div>
 
           <Link
             href="/services"
-            className="flex items-center gap-2 rounded-xl bg-blue-600 px-6 py-4 font-semibold text-white transition hover:bg-blue-700"
+            className="flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 px-6 py-3.5 sm:py-4 font-semibold text-white transition hover:scale-105 shadow-lg shadow-cyan-500/25 w-full sm:w-auto min-h-[44px] text-sm sm:text-base"
           >
-            {company.cta.primaryButton}
-
+            <span>{company.cta.primaryButton}</span>
             <ArrowUpRight size={18} />
-
           </Link>
-
         </div>
 
-        <div className="mt-14 border-t border-slate-800 pt-8 text-center text-sm text-slate-500">
-
+        <div className="mt-8 sm:mt-14 border-t border-slate-800/80 pt-6 sm:pt-8 text-center text-xs sm:text-sm text-slate-500">
           © {new Date().getFullYear()} {company.name}. All Rights Reserved.
-
         </div>
-
       </div>
     </footer>
   );

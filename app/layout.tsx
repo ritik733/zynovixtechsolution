@@ -1,10 +1,17 @@
 import "./globals.css";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import SmoothScroll from "@/components/SmoothScroll";
 import BackgroundCanvasWrapper from "@/components/three/BackgroundCanvasWrapper";
 import Cursor3D from "@/components/three/Cursor3D";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#030712",
+};
 
 export const metadata: Metadata = {
   title: "Zynovix Tech Solutions | AI & Cloud Innovations",

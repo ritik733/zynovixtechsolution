@@ -8,7 +8,7 @@ import { useState, useEffect } from "react";
 const navItems = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
-  { name: "Services", href: "/services", dropdown: true },
+  { name: "Services", href: "/services" },
   { name: "Portfolio", href: "/portfolio" },
   { name: "Team", href: "/team" },
   { name: "Contact", href: "/contact" },
@@ -24,7 +24,7 @@ export default function Navbar() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -38,10 +38,10 @@ export default function Navbar() {
     if (isOpen) {
       document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "unset";
+      document.body.style.overflow = "";
     }
     return () => {
-      document.body.style.overflow = "unset";
+      document.body.style.overflow = "";
     };
   }, [isOpen]);
 
@@ -54,26 +54,33 @@ export default function Navbar() {
   };
 
   return (
-    <header className={`fixed inset-x-0 top-2 z-50 transition-all duration-300 ${
-      isScrolled ? "top-0" : "top-2"
-    }`}>
-      <div className="mx-auto max-w-[1650px] px-4 sm:px-6 lg:px-8">
-        {/* Outer Glass */}
-        <div className={`flex h-16 sm:h-20 lg:h-24 items-center justify-between rounded-[28px] border border-violet-500/30 bg-[#070B18]/80 px-4 sm:px-6 lg:px-10 backdrop-blur-2xl shadow-[0_0_60px_rgba(110,80,255,.35)] transition-all duration-300 ${
-          isScrolled ? "rounded-[20px] shadow-[0_0_40px_rgba(110,80,255,.25)]" : ""
-        }`}>
-          
+    <header
+      className={`fixed inset-x-0 top-2 z-50 transition-all duration-300 ${
+        isScrolled ? "top-0 sm:top-1" : "top-2"
+      }`}
+    >
+      <div className="mx-auto max-w-[1650px] px-3 sm:px-6 lg:px-8">
+        {/* Outer Glass Bar */}
+        <div
+          className={`flex h-14 sm:h-20 lg:h-22 items-center justify-between rounded-2xl sm:rounded-[28px] border border-violet-500/30 bg-[#070B18]/90 px-3.5 sm:px-6 lg:px-10 backdrop-blur-2xl shadow-[0_0_40px_rgba(110,80,255,.25)] transition-all duration-300 ${
+            isScrolled ? "shadow-[0_0_30px_rgba(110,80,255,.2)]" : ""
+          }`}
+        >
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 sm:gap-4 flex-shrink-0" onClick={handleLinkClick}>
-            <div className="flex h-10 w-10 sm:h-12 sm:w-12 lg:h-14 lg:w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-400 to-blue-600 text-lg sm:text-xl lg:text-2xl font-bold text-white">
+          <Link
+            href="/"
+            className="flex items-center gap-2.5 sm:gap-4 flex-shrink-0"
+            onClick={handleLinkClick}
+          >
+            <div className="flex h-9 w-9 sm:h-12 sm:w-12 items-center justify-center rounded-xl sm:rounded-2xl bg-gradient-to-br from-cyan-400 to-blue-600 text-base sm:text-xl font-bold text-white shadow-[0_0_15px_rgba(34,211,238,0.4)]">
               Z
             </div>
-            <div className="hidden sm:block">
-              <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-white leading-tight">
+            <div className="block">
+              <h2 className="text-base sm:text-xl font-bold text-white leading-tight tracking-tight">
                 Zynovix
               </h2>
-              <p className="text-xs sm:text-sm text-slate-400 leading-tight">
-                Tech Solution
+              <p className="text-[10px] sm:text-xs text-slate-400 leading-tight">
+                Tech Solutions
               </p>
             </div>
           </Link>
@@ -86,46 +93,46 @@ export default function Navbar() {
                 <Link
                   key={index}
                   href={item.href}
-                  className={`flex items-center gap-1 rounded-xl px-4 xl:px-6 py-2 xl:py-3 text-sm xl:text-[15px] transition-all duration-300 whitespace-nowrap ${
+                  className={`flex items-center gap-1 rounded-xl px-4 xl:px-6 py-2 xl:py-2.5 text-sm xl:text-[15px] font-medium transition-all duration-300 whitespace-nowrap ${
                     active
                       ? "bg-white/10 text-white"
                       : "text-slate-300 hover:text-white hover:bg-white/5"
                   }`}
                 >
                   {item.name}
-                  {item.dropdown && <ChevronDown size={16} />}
                 </Link>
               );
             })}
 
             <Link
               href="/contact"
-              className="ml-2 xl:ml-4 flex items-center gap-2 rounded-xl bg-gradient-to-r from-violet-600 to-blue-500 px-5 xl:px-7 py-2 xl:py-3 font-semibold text-white transition hover:scale-105 text-sm xl:text-base whitespace-nowrap"
+              className="ml-2 xl:ml-4 flex items-center gap-2 rounded-xl bg-gradient-to-r from-violet-600 to-blue-500 px-5 xl:px-7 py-2 xl:py-2.5 font-semibold text-white transition hover:scale-105 text-sm xl:text-base whitespace-nowrap shadow-md shadow-violet-600/30"
             >
               Book Free Consultation
               <ArrowUpRight size={16} className="hidden sm:inline" />
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button - 44px min touch target */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden flex items-center justify-center w-10 h-10 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300 text-white"
-            aria-label="Toggle menu"
+            className="lg:hidden flex items-center justify-center min-w-[44px] min-h-[44px] w-11 h-11 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 active:scale-95 transition-all text-white cursor-pointer"
+            aria-label="Toggle navigation menu"
+            aria-expanded={isOpen}
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
 
-        {/* Mobile Navigation Menu */}
+        {/* Mobile Navigation Drawer */}
         <div
-          className={`lg:hidden fixed inset-x-0 top-[72px] sm:top-[88px] mx-4 sm:mx-6 transition-all duration-300 ease-in-out transform ${
+          className={`lg:hidden fixed inset-x-0 top-[68px] sm:top-[88px] mx-3 sm:mx-6 transition-all duration-300 ease-in-out transform ${
             isOpen
               ? "opacity-100 translate-y-0 pointer-events-auto"
               : "opacity-0 -translate-y-4 pointer-events-none"
           }`}
         >
-          <div className="bg-[#070B18]/95 backdrop-blur-2xl border border-violet-500/30 rounded-2xl p-4 shadow-[0_20px_60px_rgba(0,0,0,0.8)] max-h-[calc(100vh-120px)] overflow-y-auto">
+          <div className="bg-[#070B18]/95 backdrop-blur-2xl border border-violet-500/30 rounded-2xl p-4 shadow-[0_20px_60px_rgba(0,0,0,0.85)] max-h-[calc(100dvh-100px)] overflow-y-auto">
             <div className="flex flex-col space-y-1">
               {navItems.map((item, index) => {
                 const active = isActive(item.href);
@@ -134,14 +141,13 @@ export default function Navbar() {
                     key={index}
                     href={item.href}
                     onClick={handleLinkClick}
-                    className={`flex items-center justify-between px-4 py-3 rounded-xl text-base font-medium transition-all duration-200 ${
+                    className={`flex items-center justify-between px-4 py-3 rounded-xl text-base font-medium transition-all duration-200 min-h-[44px] ${
                       active
-                        ? "bg-violet-500/20 text-white"
+                        ? "bg-violet-500/20 text-white font-semibold"
                         : "text-slate-300 hover:text-white hover:bg-white/5"
                     }`}
                   >
                     <span>{item.name}</span>
-                    {item.dropdown && <ChevronDown size={18} className="text-slate-400" />}
                   </Link>
                 );
               })}
@@ -150,7 +156,7 @@ export default function Navbar() {
                 <Link
                   href="/contact"
                   onClick={handleLinkClick}
-                  className="flex items-center justify-center gap-2 w-full rounded-xl bg-gradient-to-r from-violet-600 to-blue-500 px-6 py-3.5 font-semibold text-white transition hover:scale-[1.02] text-base"
+                  className="flex items-center justify-center gap-2 w-full rounded-xl bg-gradient-to-r from-violet-600 to-blue-500 px-6 py-3.5 font-semibold text-white transition hover:scale-[1.02] active:scale-98 text-base shadow-lg shadow-violet-600/30 min-h-[44px]"
                 >
                   Book Free Consultation
                   <ArrowUpRight size={18} />
@@ -160,11 +166,12 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Mobile Overlay */}
+        {/* Fullscreen Mobile Backdrop Overlay */}
         {isOpen && (
           <div
-            className="lg:hidden fixed inset-0 bg-black/60 backdrop-blur-sm -z-10"
+            className="lg:hidden fixed inset-0 top-0 left-0 w-screen h-screen bg-black/70 backdrop-blur-sm -z-10 cursor-pointer"
             onClick={() => setIsOpen(false)}
+            aria-hidden="true"
           />
         )}
       </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
-import { useRef, useState, type ReactNode } from "react";
+import { useRef, useState, useEffect, type ReactNode } from "react";
 
 interface TiltCardProps {
   children: ReactNode;
@@ -18,6 +18,16 @@ export default function TiltCard({
 }: TiltCardProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [isHovered, setIsHovered] = useState(false);
+  const [isTouch, setIsTouch] = useState(false);
+
+  useEffect(() => {
+    if (
+      typeof window !== "undefined" &&
+      (window.innerWidth < 768 || window.matchMedia("(hover: none)").matches)
+    ) {
+      setIsTouch(true);
+    }
+  }, []);
 
   // Position between -0.5 and 0.5
   const x = useMotionValue(0);
@@ -33,6 +43,7 @@ export default function TiltCard({
   const rotateY = useTransform(sx, [-0.5, 0.5], [`-${intensity}deg`, `${intensity}deg`]);
 
   const onMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (isTouch) return;
     const r = ref.current?.getBoundingClientRect();
     if (!r) return;
     const px = (e.clientX - r.left) / r.width;
@@ -46,7 +57,9 @@ export default function TiltCard({
     }
   };
 
-  const onEnter = () => setIsHovered(true);
+  const onEnter = () => {
+    if (!isTouch) setIsHovered(true);
+  };
   const onLeave = () => {
     setIsHovered(false);
     x.set(0);
@@ -59,27 +72,28 @@ export default function TiltCard({
       onMouseMove={onMove}
       onMouseEnter={onEnter}
       onMouseLeave={onLeave}
+      onTouchEnd={onLeave}
       data-interactive="true"
-      style={{ perspective: 1200 }}
+      style={{ perspective: isTouch ? undefined : 1200 }}
       className={`relative ${className}`}
     >
       <motion.div
         style={{
-          rotateX,
-          rotateY,
-          transformStyle: "preserve-3d",
+          rotateX: isTouch ? 0 : rotateX,
+          rotateY: isTouch ? 0 : rotateY,
+          transformStyle: isTouch ? "flat" : "preserve-3d",
         }}
         animate={{
-          scale: isHovered ? 1.02 : 1,
-          translateZ: isHovered ? 20 : 0,
+          scale: isHovered && !isTouch ? 1.02 : 1,
+          translateZ: isHovered && !isTouch ? 20 : 0,
         }}
         transition={{ duration: 0.25, ease: "easeOut" }}
         className="relative h-full w-full"
       >
         {children}
 
-        {/* Dynamic Holographic Specular Glare Overlay */}
-        {glare && isHovered && (
+        {/* Dynamic Holographic Specular Glare Overlay (desktop only) */}
+        {glare && isHovered && !isTouch && (
           <div
             className="pointer-events-none absolute inset-0 rounded-[inherit] transition-opacity duration-300 z-30"
             style={{

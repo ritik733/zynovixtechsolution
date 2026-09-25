@@ -145,15 +145,19 @@ function CosmicParticles({ count = 3000 }: { count?: number }) {
    CYBERNETIC 3D WAVE GRID (Digital ocean in depth)
    Undulates with procedural waves & ripples near cursor
    ============================================================ */
-function CyberWaveGrid() {
+function CyberWaveGrid({ isMobile }: { isMobile: boolean }) {
   const meshRef = useRef<THREE.Mesh>(null);
   const geomRef = useRef<THREE.PlaneGeometry>(null);
 
+  const segments = isMobile ? 24 : 48;
+
   // Store base original Z coordinates
   const originalZ = useMemo(() => {
-    const geo = new THREE.PlaneGeometry(80, 80, 50, 50);
-    return new Float32Array(geo.attributes.position.array);
-  }, []);
+    const geo = new THREE.PlaneGeometry(80, 80, segments, segments);
+    const arr = new Float32Array(geo.attributes.position.array);
+    geo.dispose();
+    return arr;
+  }, [segments]);
 
   useFrame(({ clock }) => {
     if (!geomRef.current) return;
@@ -189,7 +193,7 @@ function CyberWaveGrid() {
       position={[0, -10, -10]}
       rotation={[-Math.PI / 2.3, 0, 0]}
     >
-      <planeGeometry ref={geomRef} args={[80, 80, 50, 50]} />
+      <planeGeometry ref={geomRef} args={[80, 80, segments, segments]} />
       <meshStandardMaterial
         color="#0891b2"
         emissive="#06b6d4"
@@ -304,8 +308,8 @@ function BackgroundScene({ isMobile, reduced }: { isMobile: boolean; reduced: bo
     <>
       <CameraAndLightRig />
       <Suspense fallback={null}>
-        <CosmicParticles count={isMobile ? 1200 : 2800} />
-        <CyberWaveGrid />
+        <CosmicParticles count={isMobile ? 800 : 2800} />
+        <CyberWaveGrid isMobile={isMobile} />
         <FloatingCrystals />
       </Suspense>
     </>

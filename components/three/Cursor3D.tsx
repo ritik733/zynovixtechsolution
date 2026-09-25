@@ -26,7 +26,10 @@ export default function Cursor3D() {
 
   useEffect(() => {
     setMounted(true);
-    if (window.matchMedia("(hover: none)").matches) {
+    if (
+      typeof window !== "undefined" &&
+      (window.innerWidth < 768 || window.matchMedia("(hover: none)").matches)
+    ) {
       setIsTouch(true);
       return;
     }

@@ -94,27 +94,27 @@ import TiltCard from "@/components/three/TiltCard";
 
 export default function TrustBar() {
   return (
-    <section className="relative overflow-hidden bg-transparent py-24">
+    <section className="relative overflow-hidden bg-transparent py-14 sm:py-24">
       {/* Background Glow */}
       <div className="absolute inset-0 -z-10 pointer-events-none">
         <div className="absolute left-1/2 top-0 h-60 w-[700px] -translate-x-1/2 rounded-full bg-cyan-500/10 blur-[150px]" />
       </div>
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
         {/* Heading with 3D reveal */}
         <Reveal3D rotate={-15}>
-          <h2 className="text-center text-2xl font-bold uppercase tracking-[8px] text-white">
-            Technologies & Platforms
+          <h2 className="text-center text-lg sm:text-2xl font-bold uppercase tracking-[3px] sm:tracking-[8px] text-white">
+            Technologies &amp; Platforms
           </h2>
-          <p className="mt-4 text-center text-slate-400">
+          <p className="mt-3 sm:mt-4 text-center text-xs sm:text-base text-slate-400 max-w-xl mx-auto">
             We build modern AI-powered applications using industry-leading technologies.
           </p>
         </Reveal3D>
 
         {/* Cards with 3D Tilt and Layered Pop-Out */}
-        <div className="mt-14 grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-4 lg:grid-cols-8">
+        <div className="mt-8 sm:mt-14 grid grid-cols-2 min-[480px]:grid-cols-3 sm:grid-cols-4 lg:grid-cols-8 gap-2.5 sm:gap-4 md:gap-6">
           {companies.map((company, idx) => (
-            <Reveal3D key={company.name} delay={idx * 0.05} rotate={-25}>
-              <TiltCard intensity={22} className="h-full">
+            <Reveal3D key={company.name} delay={idx * 0.04} rotate={-20}>
+              <TiltCard intensity={20} className="h-full">
                 <div
                   className="
                     group
@@ -124,30 +124,30 @@ export default function TrustBar() {
                     flex-col
                     items-center
                     justify-center
-                    gap-4
-                    rounded-2xl
+                    gap-2.5 sm:gap-4
+                    rounded-xl sm:rounded-2xl
                     border
                     border-slate-800/80
                     bg-slate-900/60
-                    px-4
-                    py-8
+                    px-2.5 sm:px-4
+                    py-5 sm:py-7
                     text-center
                     backdrop-blur-md
                     transition-colors
                     duration-300
                     hover:border-cyan-400/60
                     hover:bg-slate-900/80
-                    hover:shadow-[0_0_30px_rgba(34,211,238,0.2)]
+                    hover:shadow-[0_0_25px_rgba(34,211,238,0.2)]
                   "
                 >
                   <div
-                    className="flex h-10 w-10 items-center justify-center transition-transform duration-300 group-hover:scale-110"
+                    className="flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center transition-transform duration-300 group-hover:scale-110"
                     style={{ transform: "translateZ(30px)" }}
                   >
                     {company.icon}
                   </div>
                   <span
-                    className="font-semibold text-slate-200 transition group-hover:text-cyan-300 text-sm"
+                    className="font-semibold text-slate-200 transition group-hover:text-cyan-300 text-xs sm:text-sm tracking-tight"
                     style={{ transform: "translateZ(20px)" }}
                   >
                     {company.name}
