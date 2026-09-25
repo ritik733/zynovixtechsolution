@@ -31,7 +31,7 @@ const projects = [
 
 export default function PortfolioPage() {
   return (
-    <main className="bg-[#050816] min-h-screen">
+    <main className="bg-transparent text-white relative min-h-screen">
       {/* Hero Section – dark, with top spacing */}
       <section className="pt-32 pb-20 text-white">
         <div className="mx-auto max-w-7xl px-6 text-center">

@@ -17,7 +17,7 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <main className="bg-[#050816]">
+    <main className="bg-transparent text-white relative min-h-screen">
       {/* Hero Section – dark, with more top padding */}
       <section className="pt-32 pb-24 text-white">
         <div className="mx-auto max-w-7xl px-6 text-center">

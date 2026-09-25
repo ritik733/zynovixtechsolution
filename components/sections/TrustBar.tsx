@@ -89,55 +89,72 @@ const companies = [
   },
 ];
 
+import Reveal3D from "@/components/three/Reveal3D";
+import TiltCard from "@/components/three/TiltCard";
+
 export default function TrustBar() {
   return (
-    <section className="relative overflow-hidden bg-[#050816] py-24">
+    <section className="relative overflow-hidden bg-transparent py-24">
       {/* Background Glow */}
-      <div className="absolute inset-0 -z-10">
+      <div className="absolute inset-0 -z-10 pointer-events-none">
         <div className="absolute left-1/2 top-0 h-60 w-[700px] -translate-x-1/2 rounded-full bg-cyan-500/10 blur-[150px]" />
       </div>
       <div className="mx-auto max-w-7xl px-6">
-        {/* Heading */}
-        <h2 className="text-center text-2xl font-bold uppercase tracking-[8px] text-white">
-          Technologies & Platforms
-        </h2>
-        <p className="mt-4 text-center text-slate-400">
-          We build modern AI-powered applications using industry-leading technologies.
-        </p>
-        {/* Cards */}
-        <div className="mt-14 grid grid-cols-2 gap-6 md:grid-cols-4 lg:grid-cols-8">
-          {companies.map((company) => (
-            <div
-              key={company.name}
-              className="
-                group
-                flex
-                flex-col
-                items-center
-                gap-4
-                rounded-2xl
-                border
-                border-slate-700/50
-                bg-slate-900/60
-                px-4
-                py-8
-                text-center
-                backdrop-blur-xl
-                transition-all
-                duration-300
-                hover:-translate-y-2
-                hover:border-cyan-400/60
-                hover:bg-slate-900/80
-                hover:shadow-[0_0_30px_rgba(34,211,238,0.15)]
-              "
-            >
-              <div className="flex h-9 w-9 items-center justify-center">
-                {company.icon}
-              </div>
-              <span className="font-semibold text-slate-200 transition group-hover:text-white">
-                {company.name}
-              </span>
-            </div>
+        {/* Heading with 3D reveal */}
+        <Reveal3D rotate={-15}>
+          <h2 className="text-center text-2xl font-bold uppercase tracking-[8px] text-white">
+            Technologies & Platforms
+          </h2>
+          <p className="mt-4 text-center text-slate-400">
+            We build modern AI-powered applications using industry-leading technologies.
+          </p>
+        </Reveal3D>
+
+        {/* Cards with 3D Tilt and Layered Pop-Out */}
+        <div className="mt-14 grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-4 lg:grid-cols-8">
+          {companies.map((company, idx) => (
+            <Reveal3D key={company.name} delay={idx * 0.05} rotate={-25}>
+              <TiltCard intensity={22} className="h-full">
+                <div
+                  className="
+                    group
+                    relative
+                    flex
+                    h-full
+                    flex-col
+                    items-center
+                    justify-center
+                    gap-4
+                    rounded-2xl
+                    border
+                    border-slate-800/80
+                    bg-slate-900/60
+                    px-4
+                    py-8
+                    text-center
+                    backdrop-blur-md
+                    transition-colors
+                    duration-300
+                    hover:border-cyan-400/60
+                    hover:bg-slate-900/80
+                    hover:shadow-[0_0_30px_rgba(34,211,238,0.2)]
+                  "
+                >
+                  <div
+                    className="flex h-10 w-10 items-center justify-center transition-transform duration-300 group-hover:scale-110"
+                    style={{ transform: "translateZ(30px)" }}
+                  >
+                    {company.icon}
+                  </div>
+                  <span
+                    className="font-semibold text-slate-200 transition group-hover:text-cyan-300 text-sm"
+                    style={{ transform: "translateZ(20px)" }}
+                  >
+                    {company.name}
+                  </span>
+                </div>
+              </TiltCard>
+            </Reveal3D>
           ))}
         </div>
       </div>

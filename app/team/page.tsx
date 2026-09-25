@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import Navbar from "@/components/layout/Navbar";
 
 interface TeamMember {
   id: number;
@@ -119,12 +118,10 @@ export default function TeamPage() {
   }, {} as Record<string, TeamMember[]>);
 
   return (
-    <main className="relative overflow-hidden bg-[#060818] min-h-screen">
+    <main className="relative overflow-hidden bg-transparent min-h-screen">
       {/* Background Glow Effects */}
-      <div className="absolute left-1/2 top-[-120px] -translate-x-1/2 w-[900px] h-[300px] rounded-full bg-violet-600/30 blur-[140px]" />
-      <div className="absolute right-0 top-1/2 w-[500px] h-[500px] rounded-full bg-blue-600/10 blur-[120px]" />
-      
-      <Navbar />
+      <div className="absolute left-1/2 top-[-120px] -translate-x-1/2 w-[900px] h-[300px] rounded-full bg-violet-600/30 blur-[140px] pointer-events-none" />
+      <div className="absolute right-0 top-1/2 w-[500px] h-[500px] rounded-full bg-blue-600/10 blur-[120px] pointer-events-none" />
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-4 md:px-8">
