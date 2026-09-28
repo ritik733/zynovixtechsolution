@@ -1,38 +1,13 @@
 import { NextResponse } from "next/server";
-
-const GOOGLE_SCRIPT_URL = process.env.GOOGLE_SCRIPT_URL;
+import { supabase } from "../../../lib/supabase";
 
 export async function POST(request: Request) {
   try {
-    console.log("=== CONTACT FORM START ===");
-
-    // Check environment variable
-    if (!GOOGLE_SCRIPT_URL) {
-      console.error("GOOGLE_SCRIPT_URL is missing");
-
-      return NextResponse.json(
-        {
-          success: false,
-          error: "GOOGLE_SCRIPT_URL is missing from environment variables",
-        },
-        { status: 500 }
-      );
-    }
-
-    console.log("Google Script URL exists");
-
-    // Read request body
     const body = await request.json();
 
-    console.log("Received form data:", {
-      name: body.name,
-      email: body.email,
-      phone: body.phone,
-      project: body.project,
-    });
+    const { name, email, phone, project } = body;
 
-    // Validate required fields
-    if (!body.name || !body.email || !body.phone || !body.project) {
+    if (!name || !email || !phone || !project) {
       return NextResponse.json(
         {
           success: false,
@@ -42,82 +17,38 @@ export async function POST(request: Request) {
       );
     }
 
-    // Prepare data for Google Apps Script
-    const formData = new URLSearchParams();
+    const { error } = await supabase
+      .from("contact_leads")
+      .insert({
+        full_name: String(name),
+        email: String(email),
+        phone: String(phone),
+        project_details: String(project),
+      });
 
-    formData.append("name", String(body.name));
-    formData.append("email", String(body.email));
-    formData.append("phone", String(body.phone));
-    formData.append("project", String(body.project));
+    if (error) {
+      console.error("Supabase error:", error);
 
-    console.log("Sending data to Google Apps Script...");
-
-    // Send request to Google Apps Script
-    const googleResponse = await fetch(GOOGLE_SCRIPT_URL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
-      body: formData.toString(),
-      redirect: "follow",
-      cache: "no-store",
-    });
-
-    console.log("Google response status:", googleResponse.status);
-    console.log("Google response URL:", googleResponse.url);
-
-    const googleText = await googleResponse.text();
-
-    console.log("Google response:", googleText);
-
-    if (!googleResponse.ok) {
       return NextResponse.json(
         {
           success: false,
-          error: `Google Apps Script returned HTTP ${googleResponse.status}`,
-          details: googleText,
+          error: "Failed to save your message",
         },
-        { status: 502 }
+        { status: 500 }
       );
     }
-
-    // Try to parse Google's response
-    let googleResult;
-
-    try {
-      googleResult = JSON.parse(googleText);
-    } catch {
-      googleResult = null;
-    }
-
-    // If Apps Script explicitly returned success:false
-    if (googleResult && googleResult.success === false) {
-      return NextResponse.json(
-        {
-          success: false,
-          error: googleResult.error || "Google Apps Script failed",
-        },
-        { status: 502 }
-      );
-    }
-
-    console.log("=== CONTACT FORM SUCCESS ===");
 
     return NextResponse.json({
       success: true,
-      message: "Form submitted successfully",
+      message: "Contact form submitted successfully",
     });
   } catch (error) {
-    console.error("=== CONTACT FORM ERROR ===");
-    console.error(error);
+    console.error("Contact API error:", error);
 
     return NextResponse.json(
       {
         success: false,
-        error:
-          error instanceof Error
-            ? error.message
-            : "Unknown server error",
+        error: "Something went wrong",
       },
       { status: 500 }
     );
