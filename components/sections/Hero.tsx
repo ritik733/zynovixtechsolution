@@ -4,9 +4,9 @@ import Link from "next/link";
 import {
   ArrowRight,
   BrainCircuit,
-  Bot,
   Cpu,
   Database,
+  Globe,
 } from "lucide-react";
 
 export default function Hero() {
@@ -37,17 +37,17 @@ export default function Hero() {
           
 
             <h1 className="mt-6 sm:mt-8 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-tight">
-              Build
+              Modern Websites,
               <span className="block bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                Intelligent AI
+                Frappe ERPNext
               </span>
-              Solutions for the Future
+              & Custom Software
             </h1>
 
             <p className="mt-4 sm:mt-6 md:mt-8 max-w-xl text-base sm:text-lg leading-relaxed sm:leading-8 text-slate-600 dark:text-slate-300 mx-auto lg:mx-0 font-normal">
-              We develop AI-powered software, intelligent automation,
-              enterprise SaaS, and scalable cloud applications that help
-              businesses innovate, automate, and grow faster.
+              We develop high-performance websites, customized Frappe ERPNext solutions,
+              and specialized business tools like hotel management systems to streamline
+              your operations and grow your enterprise.
             </p>
 
             <div className="mt-8 sm:mt-10 flex flex-wrap gap-3 sm:gap-4 justify-center lg:justify-start">
@@ -92,22 +92,22 @@ export default function Hero() {
               <div className="absolute h-[200px] w-[200px] sm:h-[280px] sm:w-[280px] md:h-[320px] md:w-[320px] rounded-full border border-cyan-500/20 animate-pulse" />
               <div className="absolute h-[140px] w-[140px] sm:h-[200px] sm:w-[200px] md:h-[240px] md:w-[240px] rounded-full border border-blue-500/20" />
 
-              {/* AI Agents - Top Left */}
+              {/* Web Development - Top Left */}
               <div className="absolute top-[2%] left-[2%] sm:top-[4%] sm:left-[4%] md:top-[6%] md:left-[6%] rounded-xl border border-slate-200 bg-white/90 p-2 sm:p-3 backdrop-blur shadow-lg text-slate-900 dark:border-slate-700 dark:bg-slate-900/80 dark:text-white">
-                <Bot className="mb-1 sm:mb-2 h-4 w-4 sm:h-5 sm:w-5 text-cyan-500 dark:text-cyan-400" />
-                <p className="text-[10px] sm:text-xs font-semibold whitespace-nowrap">AI Agents</p>
+                <Globe className="mb-1 sm:mb-2 h-4 w-4 sm:h-5 sm:w-5 text-cyan-500 dark:text-cyan-400" />
+                <p className="text-[10px] sm:text-xs font-semibold whitespace-nowrap">Web Development</p>
               </div>
 
-              {/* Machine Learning - Top Right */}
+              {/* Frappe ERPNext - Top Right */}
               <div className="absolute top-[2%] right-[2%] sm:top-[4%] sm:right-[4%] md:top-[6%] md:right-[6%] rounded-xl border border-slate-200 bg-white/90 p-2 sm:p-3 backdrop-blur shadow-lg text-slate-900 dark:border-slate-700 dark:bg-slate-900/80 dark:text-white">
-                <Cpu className="mb-1 sm:mb-2 h-4 w-4 sm:h-5 sm:w-5 text-blue-600 dark:text-blue-400" />
-                <p className="text-[10px] sm:text-xs font-semibold whitespace-nowrap">Machine Learning</p>
+                <Database className="mb-1 sm:mb-2 h-4 w-4 sm:h-5 sm:w-5 text-blue-600 dark:text-blue-400" />
+                <p className="text-[10px] sm:text-xs font-semibold whitespace-nowrap">Frappe ERPNext</p>
               </div>
 
-              {/* Big Data - Bottom Center */}
+              {/* Hotel & Custom Tools - Bottom Center */}
               <div className="absolute bottom-[2%] sm:bottom-[4%] md:bottom-[6%] left-1/2 -translate-x-1/2 rounded-xl border border-slate-200 bg-white/90 p-2 sm:p-3 backdrop-blur shadow-lg text-slate-900 dark:border-slate-700 dark:bg-slate-900/80 dark:text-white">
-                <Database className="mb-1 sm:mb-2 h-4 w-4 sm:h-5 sm:w-5 text-cyan-500 dark:text-cyan-400 mx-auto" />
-                <p className="text-[10px] sm:text-xs font-semibold whitespace-nowrap">Big Data</p>
+                <Cpu className="mb-1 sm:mb-2 h-4 w-4 sm:h-5 sm:w-5 text-cyan-500 dark:text-cyan-400 mx-auto" />
+                <p className="text-[10px] sm:text-xs font-semibold whitespace-nowrap">Hotel & Custom Tools</p>
               </div>
 
               {/* Center Icon */}
@@ -117,10 +117,10 @@ export default function Hero() {
                   className="sm:w-[80px] sm:h-[80px] md:w-[100px] md:h-[100px] lg:w-[110px] lg:h-[110px] mx-auto text-cyan-500 dark:text-cyan-400"
                 />
                 <p className="mt-3 sm:mt-4 md:mt-6 text-center text-lg sm:text-xl font-bold">
-                  AI Core Engine
+                  Zynovix Core Suite
                 </p>
                 <p className="mt-1 sm:mt-2 text-center text-xs sm:text-sm font-medium text-slate-500 dark:text-slate-400">
-                  Intelligent • Scalable • Secure
+                  Custom • Scalable • Reliable
                 </p>
               </div>
             </div>
@@ -135,17 +135,19 @@ export default function Hero() {
 
           <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4">
             {[
-              "OpenAI",
-              "LangChain",
+              "Website Development",
+              "Frappe",
+              "ERPNext",
               "Python",
-              "TensorFlow",
-              "PyTorch",
               "Next.js",
               "React",
               "Node.js",
-              "AWS",
+              "MariaDB",
+              "PostgreSQL",
+              "Hotel Software",
+              "Tailwind CSS",
               "Docker",
-              "Azure",
+              "AWS",
             ].map((tech) => (
               <span
                 key={tech}

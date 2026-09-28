@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Brain, ShieldCheck, Zap } from "lucide-react";
+import { ArrowRight, Globe, Database, Hotel } from "lucide-react";
 
 export default function AboutPreview() {
   return (
@@ -14,23 +14,22 @@ export default function AboutPreview() {
             </span>
 
             <h2 className="mt-6 text-4xl font-bold md:text-5xl">
-              AI-First Software
+              Modern Web & ERP
               <span className="block text-cyan-400">
-                Development Company
+                Software Development
               </span>
             </h2>
 
             <p className="mt-8 text-lg leading-8 text-slate-600 dark:text-slate-400 font-medium">
-              We help startups, enterprises, and growing businesses
-              leverage Artificial Intelligence, Machine Learning,
-              Cloud Computing, and Custom Software Development to
-              build intelligent digital products.
+              We help businesses, hotels, and enterprises streamline operations
+              and accelerate growth with modern website development, Frappe ERPNext
+              implementations, and bespoke management software.
             </p>
 
             <p className="mt-6 text-slate-600 dark:text-slate-400">
-              From AI chatbots and LLM applications to enterprise SaaS
-              platforms and cloud-native solutions, we create software
-              that scales with your business.
+              From custom web applications and client portals to comprehensive ERPNext
+              modules and specialized hotel management tools, we build solutions
+              tailored specifically to your business workflows.
             </p>
 
             <Link
@@ -46,35 +45,32 @@ export default function AboutPreview() {
           <div className="grid gap-6">
 
             <div className="rounded-2xl border border-slate-200 bg-white/90 p-6 shadow-sm backdrop-blur dark:border-slate-800 dark:bg-slate-900/60 dark:shadow-none">
-              <Brain className="mb-4 text-cyan-500 dark:text-cyan-400" size={42} />
+              <Globe className="mb-4 text-cyan-500 dark:text-cyan-400" size={42} />
               <h3 className="text-xl font-semibold text-slate-900 dark:text-white">
-                AI Innovation
+                Custom Website Development
               </h3>
               <p className="mt-3 text-slate-600 dark:text-slate-400">
-                Intelligent AI systems powered by modern
-                Large Language Models and Machine Learning.
+                Fast, responsive, and SEO-optimized web applications built with Next.js, React, and modern web frameworks.
               </p>
             </div>
 
             <div className="rounded-2xl border border-slate-200 bg-white/90 p-6 shadow-sm backdrop-blur dark:border-slate-800 dark:bg-slate-900/60 dark:shadow-none">
-              <Zap className="mb-4 text-cyan-500 dark:text-cyan-400" size={42} />
+              <Database className="mb-4 text-cyan-500 dark:text-cyan-400" size={42} />
               <h3 className="text-xl font-semibold text-slate-900 dark:text-white">
-                Automation
+                Frappe ERPNext Solutions
               </h3>
               <p className="mt-3 text-slate-600 dark:text-slate-400">
-                Automate repetitive workflows and improve
-                productivity using AI-powered solutions.
+                End-to-end ERP implementations, custom Doctypes, accounting, inventory, and automated business workflows.
               </p>
             </div>
 
             <div className="rounded-2xl border border-slate-200 bg-white/90 p-6 shadow-sm backdrop-blur dark:border-slate-800 dark:bg-slate-900/60 dark:shadow-none">
-              <ShieldCheck className="mb-4 text-cyan-500 dark:text-cyan-400" size={42} />
+              <Hotel className="mb-4 text-cyan-500 dark:text-cyan-400" size={42} />
               <h3 className="text-xl font-semibold text-slate-900 dark:text-white">
-                Enterprise Ready
+                Hotel & Management Tools
               </h3>
               <p className="mt-3 text-slate-600 dark:text-slate-400">
-                Secure, scalable, cloud-native applications
-                designed for modern businesses.
+                Purpose-built tools for room reservation, billing, guest check-in, and hospitality operational management.
               </p>
             </div>
 

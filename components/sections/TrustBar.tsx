@@ -102,7 +102,7 @@ export default function TrustBar() {
           Technologies & Platforms
         </h2>
         <p className="mt-4 text-center text-slate-600 dark:text-slate-400">
-          We build modern AI-powered applications using industry-leading technologies.
+          We build modern websites, Frappe ERPNext solutions, and custom business management software using industry-leading technologies.
         </p>
         {/* Cards */}
         <div className="mt-14 grid grid-cols-2 gap-6 md:grid-cols-4 lg:grid-cols-8">

@@ -4,28 +4,29 @@ import { ArrowRight, ExternalLink } from "lucide-react";
 
 const projects = [
   {
-    title: "Zeno AI Assistant",
-    category: "AI Chatbot",
+    title: "Frappe ERPNext Enterprise Setup",
+    category: "Frappe ERPNext",
     description:
-      "Local LLM-powered AI assistant for business automation, document QA, and task management.",
-    image: "/images/team/Zeno_ai.png", // ✅ image path added
+      "Comprehensive ERPNext implementation featuring custom Doctypes, automated billing, multi-location inventory, and role-based permissions.",
+    image: "/images/team/Zeno_ai.png",
+    icon: "⚙️",
   },
-  // Uncomment and add more projects with their own images later
-  // {
-  //   title: "Healthcare AI Assistant",
-  //   category: "Machine Learning",
-  //   description:
-  //     "AI assistant helping doctors with medical documentation and patient insights.",
-  //   image: "/images/portfolio/healthcare.jpg",
-  // },
-  // {
-  //   title: "Enterprise ERP",
-  //   category: "Cloud SaaS",
-  //   description:
-  //     "Modern ERP platform for inventory, HR, finance, and analytics.",
-  //   image: "/images/portfolio/erp.jpg",
-  // },
-  // ... etc.
+  {
+    title: "Hospitality & Hotel Management Suite",
+    category: "Custom Software",
+    description:
+      "All-in-one software for hotel bookings, room inventory, guest check-in/out, POS billing, and housekeeping management.",
+    image: null,
+    icon: "🏨",
+  },
+  {
+    title: "High-Performance Corporate Web Portal",
+    category: "Website Development",
+    description:
+      "Responsive, SEO-optimized business web platform and customer portal built with Next.js, React, and modern UI design.",
+    image: null,
+    icon: "🌐",
+  },
 ];
 
 export default function PortfolioPreview() {
@@ -38,15 +39,14 @@ export default function PortfolioPreview() {
             Portfolio
           </span>
           <h2 className="mt-6 text-4xl font-bold md:text-5xl">
-            Featured AI &
+            Featured Web, ERP &
             <span className="block text-cyan-400">
-              Software Projects
+              Software Deployments
             </span>
           </h2>
           <p className="mx-auto mt-6 max-w-3xl text-slate-600 dark:text-slate-400 font-medium">
-            We build scalable AI solutions, enterprise software,
-            SaaS platforms, and intelligent automation systems
-            for businesses worldwide.
+            Discover our proven track record delivering responsive websites, customized Frappe ERPNext
+            systems, and tailor-made business management tools like hotel solutions.
           </p>
         </div>
 
@@ -69,7 +69,7 @@ export default function PortfolioPreview() {
                 ) : (
                   // Fallback gradient if no image is provided
                   <div className="flex h-full items-center justify-center bg-gradient-to-br from-cyan-500/20 to-blue-600/20 text-6xl">
-                    🤖
+                    {project.icon || "💼"}
                   </div>
                 )}
               </div>

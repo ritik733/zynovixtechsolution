@@ -17,16 +17,15 @@ export default function CTA() {
         </span>
 
         <h2 className="mt-8 text-4xl font-bold md:text-6xl text-slate-900 dark:text-white">
-          Ready to Build
+          Ready to Upgrade Your
           <span className="block bg-gradient-to-r from-cyan-500 to-blue-600 dark:from-cyan-400 dark:to-blue-500 bg-clip-text text-transparent">
-            Your AI Product?
+            Web & ERP Systems?
           </span>
         </h2>
 
         <p className="mx-auto mt-8 max-w-2xl text-lg text-slate-600 dark:text-slate-400 font-medium">
-          Whether you're a startup or an enterprise,
-          we help transform ideas into intelligent,
-          scalable, AI-powered software solutions.
+          Whether you need a modern website, a custom Frappe ERPNext implementation,
+          or tailored software like hotel management systems, we are ready to bring your vision to life.
         </p>
 
         <div className="mt-12 flex flex-wrap justify-center gap-4">
