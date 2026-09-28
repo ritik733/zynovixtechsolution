@@ -22,10 +22,10 @@ interface TeamMember {
 const teamMembers: TeamMember[] = [
   {
     id: 1,
-    name: "Pukhraj Tater",
+    name: "Praveen Sharma",
     role: "CEO",
     department: "Executive",
-    image: "/images/team/Pukhraj-tater.png",
+    image: "/images/team/Praveen-Sharma.jpeg",
     bio: "Visionary leader with 4+ years of experience in technology and business strategy. Passionate about building innovative solutions that solve real-world problems.",
     experience: "4+ years in tech leadership",
     social: {
@@ -52,10 +52,10 @@ const teamMembers: TeamMember[] = [
   },
   {
     id: 3,
-    name: "Praveen Sharma",
+    name: "Pukhraj Tater",
     role: "Backend Engineer",
     department: "Engineering",
-    image: "/images/team/Praveen-Sharma.jpeg",
+    image: "/images/team/Pukhraj-tater.png",
     bio: "Backend engineer with expertise in building scalable and efficient server-side applications. Passionate about optimizing performance and ensuring code quality.",
     experience: "6+ years in backend development",
     social: {
