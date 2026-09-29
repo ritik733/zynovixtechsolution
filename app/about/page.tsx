@@ -12,7 +12,7 @@ import {
 
 export const metadata = {
   title: "About Us | Zynovix",
-  description: "Learn about Zynovix – our mission, values, and how we deliver AI-driven, cloud-native solutions for forward-thinking businesses.",
+  description: "Learn about Zynovix – our mission, values, and how we deliver modern websites, Frappe ERPNext solutions, and custom business software.",
 };
 
 export default function AboutPage() {
@@ -22,25 +22,25 @@ export default function AboutPage() {
       <section className="pt-32 pb-24 text-slate-900 dark:text-white">
         <div className="mx-auto max-w-7xl px-6 text-center">
           <h1 className="text-5xl font-bold">
-            Building the Future,<br />One Line of Code at a Time
+            Modern Web & ERP,<br />Built for Your Business
           </h1>
           <p className="mx-auto mt-6 max-w-3xl text-lg text-slate-600 dark:text-slate-300 font-medium">
-            We are a team of engineers, designers, and AI specialists dedicated
-            to creating intelligent, scalable, and beautiful digital products
-            that solve real business problems.
+            We help businesses, hotels, and enterprises streamline operations
+            and accelerate growth with modern website development, Frappe
+            ERPNext implementations, and bespoke management software.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-6">
             <div className="flex items-center gap-2 font-semibold text-cyan-600 dark:text-cyan-400">
               <CheckCircle className="h-5 w-5" />
-              <span>AI & ML Experts</span>
+              <span>Custom • Scalable • Reliable</span>
             </div>
             <div className="flex items-center gap-2 font-semibold text-cyan-600 dark:text-cyan-400">
               <CheckCircle className="h-5 w-5" />
-              <span>Cloud-Native</span>
+              <span>Frappe ERPNext Specialists</span>
             </div>
             <div className="flex items-center gap-2 font-semibold text-cyan-600 dark:text-cyan-400">
               <CheckCircle className="h-5 w-5" />
-              <span>Agile Delivery</span>
+              <span>24/7 Technical Support</span>
             </div>
           </div>
         </div>
@@ -54,45 +54,46 @@ export default function AboutPage() {
               <h2 className="mb-6 text-3xl font-bold text-slate-900 dark:text-white">Our Story</h2>
               <p className="mb-4 text-slate-600 dark:text-slate-300">
                 Founded in 2020, Zynovix was born from a shared passion for
-                leveraging cutting-edge technology to drive business
-                transformation. What started as a small consultancy has grown
-                into a full-service digital innovation partner trusted by
-                startups and enterprises alike.
+                leveraging modern technology to drive business transformation.
+                What started as a small consultancy has grown into a
+                full-service digital innovation partner trusted by startups,
+                hotels, and enterprises alike.
               </p>
               <p className="mb-4 text-slate-600 dark:text-slate-300">
                 We believe that the best solutions emerge from a deep
-                understanding of our clients' goals, combined with technical
+                understanding of our clients' workflows, combined with technical
                 excellence and creative thinking. Our culture is built on
                 curiosity, continuous learning, and a commitment to delivering
                 measurable outcomes.
               </p>
               <p className="text-slate-600 dark:text-slate-300">
-                Today, we specialize in Artificial Intelligence, Machine
-                Learning, cloud infrastructure, and modern web development – but
-                our core mission remains the same: empower businesses with
-                technology that works for them.
+                Today, we specialize in modern website development, Frappe
+                ERPNext implementations, and custom business tools like hotel
+                management software – but our core mission remains the same:
+                empower businesses with technology that works for them.
               </p>
             </div>
             <div className="rounded-3xl border border-slate-200 bg-white/80 p-8 backdrop-blur dark:border-slate-800 dark:bg-slate-900/60">
               <h3 className="mb-4 text-2xl font-semibold text-slate-900 dark:text-white">Our Mission</h3>
               <p className="text-slate-600 dark:text-slate-300">
-                To democratise access to advanced technology by delivering
-                affordable, high‑performance AI and cloud solutions that enable
-                businesses to compete and thrive in the digital economy.
+                To empower businesses with affordable, high‑performance web,
+                ERP, and custom software solutions that streamline operations
+                and drive sustainable growth in the digital economy.
               </p>
               <hr className="my-6 border-slate-700" />
               <h3 className="mb-4 text-2xl font-semibold text-slate-900 dark:text-white">Our Vision</h3>
               <p className="text-slate-600 dark:text-slate-300">
-                To be the global benchmark for ethical, human‑centric AI and
-                cloud innovation – where technology amplifies human potential
-                and drives sustainable growth.
+                To be the go-to partner for modern web development, Frappe
+                ERPNext solutions, and custom business software – where
+                technology is tailored to amplify human potential and business
+                results.
               </p>
               <hr className="my-6 border-slate-700" />
               <h3 className="mb-4 text-2xl font-semibold text-slate-900 dark:text-white">Our Approach</h3>
               <ul className="space-y-2 text-slate-600 dark:text-slate-300">
                 <li className="flex items-start gap-2">
                   <span className="mt-1 text-cyan-400">▸</span>
-                  <span>Collaborative discovery and requirement mapping</span>
+                  <span>Collaborative discovery and workflow mapping</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1 text-cyan-400">▸</span>
@@ -163,19 +164,19 @@ export default function AboutPage() {
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             <div className="text-center">
               <div className="text-5xl font-bold text-cyan-500 dark:text-cyan-400">5+</div>
-              <p className="mt-2 text-slate-600 dark:text-slate-300">Successful Projects</p>
+              <p className="mt-2 text-slate-600 dark:text-slate-300">Projects Delivered</p>
             </div>
             <div className="text-center">
               <div className="text-5xl font-bold text-cyan-500 dark:text-cyan-400">98%</div>
-              <p className="mt-2 text-slate-600 dark:text-slate-300">Client Satisfaction</p>
+              <p className="mt-2 text-slate-600 dark:text-slate-300">Success Rate</p>
             </div>
             <div className="text-center">
               <div className="text-5xl font-bold text-cyan-500 dark:text-cyan-400">24/7</div>
-              <p className="mt-2 text-slate-600 dark:text-slate-300">Support</p>
+              <p className="mt-2 text-slate-600 dark:text-slate-300">Technical Support</p>
             </div>
             <div className="text-center">
-              <div className="text-5xl font-bold text-cyan-500 dark:text-cyan-400">10+</div>
-              <p className="mt-2 text-slate-600 dark:text-slate-300">Tech Experts</p>
+              <div className="text-5xl font-bold text-cyan-500 dark:text-cyan-400">2+</div>
+              <p className="mt-2 text-slate-600 dark:text-slate-300">Global Clients</p>
             </div>
           </div>
           <div className="mt-12 grid gap-6 md:grid-cols-2">
@@ -205,9 +206,9 @@ export default function AboutPage() {
                 <h3 className="text-lg font-semibold text-slate-900 dark:text-white">Modern Tech Stack</h3>
               </div>
               <p className="mt-2 text-slate-600 dark:text-slate-300">
-                We leverage the latest frameworks (Next.js, React, Node.js),
-                cloud platforms (AWS, Azure), and AI tools (LangChain, OpenAI)
-                to deliver cutting‑edge solutions.
+                We leverage modern frameworks (Next.js, React, Node.js), Frappe
+                ERPNext, and cloud platforms (AWS, Docker) to deliver
+                high‑performance, scalable solutions.
               </p>
             </div>
             <div className="rounded-3xl border border-slate-200 bg-white/90 p-6 dark:border-slate-800 dark:bg-slate-900/60">
@@ -216,8 +217,9 @@ export default function AboutPage() {
                 <h3 className="text-lg font-semibold text-slate-900 dark:text-white">Proven Track Record</h3>
               </div>
               <p className="mt-2 text-slate-600 dark:text-slate-300">
-                Our portfolio includes successful products used by thousands of
-                users, with measurable improvements in efficiency and revenue.
+                Our portfolio includes successful web platforms, ERPNext
+                deployments, and hotel management systems with measurable
+                improvements in efficiency and revenue.
               </p>
             </div>
           </div>
@@ -232,20 +234,6 @@ export default function AboutPage() {
             We are a passionate group of engineers, designers, and problem‑solvers
             who love what we do. Here are a few of the faces behind our work.
           </p>
-          {/* <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              { name: "Pukhraj Tater", role: "CEO & Founder" },
-              { name: "Piyush Dadhich", role: "Lead Developer" },
-              { name: "Vinod Kharol", role: "Data Scientist" },
-              { name: "Chandan Singh Baghela", role: "Marketing Director" },
-            ].map((member) => (
-              <div key={member.name} className="rounded-3xl border border-slate-200 bg-white/90 p-6 transition hover:-translate-y-1 hover:border-cyan-500 dark:border-slate-800 dark:bg-slate-900/60">
-                <div className="mx-auto h-24 w-24 rounded-full bg-gradient-to-br from-cyan-400 to-blue-500" />
-                <h3 className="mt-4 text-lg font-semibold text-slate-900 dark:text-white">{member.name}</h3>
-                <p className="text-sm text-slate-600 dark:text-slate-400">{member.role}</p>
-              </div>
-            ))}
-          </div> */}
           <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {[
               {

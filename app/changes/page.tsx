@@ -146,7 +146,7 @@ const fileChangesData: FileChange[] = [
     category: "config",
     categoryLabel: "Root Layout",
     typeBadge: "Edited Page",
-    whatAddedHi: "<ThemeProvider attribute='class' defaultTheme='dark'> wrapper aur <WhatsAppButton /> component.",
+    whatAddedHi: "<ThemeProvider attribute='class' defaultTheme='light'> wrapper aur <WhatsAppButton /> component.",
     whatRemovedHi: "Single raw <body> wrapper without theme provider context.",
     summaryHi: "Global Root Layout me ThemeProvider aur WhatsAppButton integrate kiye gaye.",
     summaryEn: "Wrapped main application in ThemeProvider and added persistent floating WhatsApp widget.",
