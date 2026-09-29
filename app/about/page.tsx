@@ -226,69 +226,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Meet the Team – updated with real members */}
-      <section className="py-20">
-        <div className="mx-auto max-w-7xl px-6 text-center">
-          <h2 className="mb-4 text-4xl font-bold text-slate-900 dark:text-white">Meet the Team</h2>
-          <p className="mx-auto max-w-2xl text-slate-600 dark:text-slate-300">
-            We are a passionate group of engineers, designers, and problem‑solvers
-            who love what we do. Here are a few of the faces behind our work.
-          </p>
-          <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              {
-                name: "Pukhraj Tater",
-                role: "CEO & Founder",
-                image: "/images/team/Pukhraj-tater.png",
-              },
-              {
-                name: "Piyush Dadhich",
-                role: "Lead Developer",
-                image: "/images/team/Piyush-Dadhich.png",
-              },
-              {
-                name: "Vinod Kharol",
-                role: "Data Scientist",
-                image: "/images/team/Vinod-Kharol.png",
-              },
-              {
-                name: "Chandan Singh Baghela",
-                role: "Marketing Director",
-                image: "/images/team/Chandan-Singh.png",
-              },
-            ].map((member) => (
-              <div
-                key={member.name}
-                className="rounded-3xl border border-slate-200 bg-white/90 p-6 transition hover:-translate-y-1 hover:border-cyan-500 dark:border-slate-800 dark:bg-slate-900/60"
-              >
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="mx-auto h-24 w-24 rounded-full object-cover"
-                />
-
-                <h3 className="mt-4 text-lg font-semibold text-slate-900 dark:text-white">
-                  {member.name}
-                </h3>
-
-                <p className="text-sm text-slate-600 dark:text-slate-400">
-                  {member.role}
-                </p>
-              </div>
-            ))}
-          </div>
-          {/* Link to full Team page */}
-          <div className="mt-8">
-            <Link
-              href="/team"
-              className="inline-block text-cyan-400 hover:text-cyan-300 transition-colors text-sm font-medium border-b border-cyan-400/30 hover:border-cyan-400"
-            >
-              View full team →
-            </Link>
-          </div>
-        </div>
-      </section>
-
       {/* CTA – dark with gradient buttons */}
       <section className="py-20 text-center">
         <div className="mx-auto max-w-3xl px-6">
