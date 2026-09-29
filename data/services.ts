@@ -1,85 +1,61 @@
 export const services = [
   {
     id: 1,
-
-    title: "Artificial Intelligence",
-
+    title: "Custom Website Development",
     short:
-      "AI-powered solutions that automate business operations and improve decision-making.",
-
+      "Modern, high-performance websites and web apps built with Next.js and React.",
     description:
-      "We build intelligent AI applications tailored to your business needs, enabling automation, predictive analytics, and smarter workflows.",
-
-    icon: "Brain",
-  },
-
-  {
-    id: 2,
-
-    title: "Machine Learning",
-
-    short:
-      "Train intelligent models using your business data.",
-
-    description:
-      "Our Machine Learning solutions analyze historical data to predict trends, detect anomalies, and improve operational efficiency.",
-
-    icon: "Cpu",
-  },
-
-  {
-    id: 3,
-
-    title: "Custom Software Development",
-
-    short:
-      "Scalable software built specifically for your organization.",
-
-    description:
-      "From ERP systems to internal business tools, we create secure and scalable software tailored to your workflows.",
-
-    icon: "Code",
-  },
-
-  {
-    id: 4,
-
-    title: "Web Development",
-
-    short:
-      "Modern websites and business applications built with the latest technologies.",
-
-    description:
-      "Responsive, SEO-friendly, and high-performance websites designed to represent your brand professionally.",
-
+      "High-performance websites, corporate portals, and responsive web applications designed to engage visitors and drive conversions. Built with Next.js, React, and modern UI frameworks.",
     icon: "Globe",
   },
 
   {
-    id: 5,
-
-    title: "Business Automation",
-
+    id: 2,
+    title: "Frappe & ERPNext Solutions",
     short:
-      "Automate repetitive tasks and improve productivity.",
-
+      "End-to-end ERP implementation with custom modules and automated workflows.",
     description:
-      "We streamline business operations using intelligent automation, reducing manual effort and increasing efficiency.",
+      "Complete Frappe ERPNext implementations covering accounting, inventory, HR, and custom Doctypes — with automated business workflows tailored to your operations.",
+    icon: "Code",
+  },
 
+  {
+    id: 3,
+    title: "Hotel Management Software",
+    short:
+      "All-in-one hospitality software for bookings, billing, and front desk.",
+    description:
+      "Purpose-built hospitality tools for room reservations, guest check-in/out, POS billing, housekeeping management, and front-desk operations — designed for hotels and resorts.",
     icon: "Workflow",
   },
 
   {
-    id: 6,
-
-    title: "Cloud & DevOps",
-
+    id: 4,
+    title: "Custom Business Software",
     short:
-      "Secure cloud deployment and infrastructure management.",
-
+      "Tailor-made software engineered around your unique workflows.",
     description:
-      "Deploy scalable applications with CI/CD pipelines, cloud hosting, monitoring, and infrastructure optimization.",
+      "Bespoke software applications built around your operational bottlenecks — from internal admin dashboards and workflow automation to role-based access systems.",
+    icon: "Cpu",
+  },
 
+  {
+    id: 5,
+    title: "API & System Integrations",
+    short:
+      "Seamless connectivity between ERPNext, websites, and third-party tools.",
+    description:
+      "Connect your ERPNext, website, payment gateways, and SaaS tools with reliable REST APIs and webhook sync — so your systems talk to each other automatically.",
     icon: "Cloud",
+  },
+
+  {
+    id: 6,
+    title: "Cloud Hosting & Maintenance",
+    short:
+      "Reliable hosting, monitoring, backups, and 24/7 technical support.",
+    description:
+      "Cloud infrastructure setup, Frappe & web server hosting, performance monitoring, automated backups, and dedicated 24/7 technical maintenance for your systems.",
+    icon: "Brain",
   },
 ];

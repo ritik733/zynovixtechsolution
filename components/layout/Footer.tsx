@@ -78,17 +78,17 @@ export default function Footer() {
 
             <ul className="space-y-4 text-slate-600 dark:text-slate-400 font-medium">
 
-              <li>Artificial Intelligence</li>
+              <li>Custom Website Development</li>
 
-              <li>Machine Learning</li>
+              <li>Frappe & ERPNext Solutions</li>
 
-              <li>Custom Software</li>
+              <li>Hotel Management Software</li>
 
-              <li>Web Development</li>
+              <li>Custom Business Software</li>
 
-              <li>Business Automation</li>
+              <li>API & System Integrations</li>
 
-              <li>Cloud Solutions</li>
+              <li>Cloud Hosting & Maintenance</li>
 
             </ul>
 

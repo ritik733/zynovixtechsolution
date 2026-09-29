@@ -1,71 +1,50 @@
 import Link from "next/link";
 import {
   ArrowRight,
-  Bot,
-  BrainCircuit,
-  Cpu,
+  Code,
+  Hotel,
+  LayoutDashboard,
+  Plug,
   Cloud,
-  Database,
   Globe,
-  Shield,
-  Blocks,
-  Wifi,
 } from "lucide-react";
 
 const services = [
   {
-    icon: BrainCircuit,
-    title: "Artificial Intelligence",
-    desc: "Custom AI solutions, Generative AI, and intelligent business automation.",
-    features: ["LLM fine‑tuning", "Computer vision", "NLP pipelines"],
+    icon: Globe,
+    title: "Custom Website Development",
+    desc: "High-performance websites, corporate portals, and responsive web applications designed to engage visitors and drive conversions.",
+    features: ["Next.js & React UI", "Mobile-responsive layouts", "SEO & Core Web Vitals"],
   },
   {
-    icon: Bot,
-    title: "AI Chatbots & Agents",
-    desc: "Build LLM‑powered assistants using OpenAI, LangChain, and RAG.",
-    features: ["Conversational AI", "Document QA", "Autonomous agents"],
+    icon: Code,
+    title: "Frappe & ERPNext Solutions",
+    desc: "End-to-end ERP implementation, custom Frappe modules, accounting, inventory, and automated business workflows.",
+    features: ["Custom Doctypes & Workflows", "Multi-warehouse inventory", "Accounting & finance setup"],
   },
   {
-    icon: Cpu,
-    title: "Machine Learning",
-    desc: "Predictive analytics, recommendation engines, and ML model deployment.",
-    features: ["Regression/Classification", "Time‑series forecasting", "MLOps"],
+    icon: Hotel,
+    title: "Hotel Management Software",
+    desc: "Complete hospitality management tools for hotel bookings, room inventory, guest check-in/out, and front desk operations.",
+    features: ["Room reservation system", "Front desk & billing POS", "Housekeeping & guest records"],
+  },
+  {
+    icon: LayoutDashboard,
+    title: "Custom Business Software",
+    desc: "Tailor-made software applications engineered around your unique operational bottlenecks and administrative needs.",
+    features: ["Internal admin dashboards", "Workflow automation", "Role-based access security"],
+  },
+  {
+    icon: Plug,
+    title: "API & System Integrations",
+    desc: "Seamless connectivity between ERPNext, websites, payment gateways, and third-party SaaS tools.",
+    features: ["Payment gateway integrations", "REST API & webhook sync", "Third-party platform bridging"],
   },
   {
     icon: Cloud,
-    title: "Cloud Solutions",
-    desc: "AWS, Azure, Docker, Kubernetes, and cloud‑native architecture.",
-    features: ["Infrastructure as Code", "Serverless", "Multi‑cloud strategy"],
-  },
-  {
-    icon: Globe,
-    title: "Web & SaaS Development",
-    desc: "Scalable enterprise applications using Next.js, React, and Node.js.",
-    features: ["Micro‑frontends", "API design", "Real‑time features"],
-  },
-  {
-    icon: Database,
-    title: "Data Engineering",
-    desc: "Data pipelines, analytics dashboards, and business intelligence.",
-    features: ["ETL/ELT", "Data warehousing", "BI reporting"],
-  },
-  {
-    icon: Shield,
-    title: "Cybersecurity",
-    desc: "Zero‑trust architectures, penetration testing, and compliance frameworks.",
-    features: ["Threat monitoring", "Vulnerability assessment", "GDPR/HIPAA"],
-  },
-  {
-    icon: Blocks,
-    title: "Blockchain",
-    desc: "Decentralised applications, smart contracts, and tokenisation.",
-    features: ["Ethereum/Solana", "DeFi protocols", "NFT marketplaces"],
-  },
-  {
-    icon: Wifi,
-    title: "IoT & Edge Computing",
-    desc: "Connected device ecosystems, real‑time analytics, and edge AI.",
-    features: ["Sensor data ingestion", "Edge inference", "Device management"],
+    title: "Cloud Hosting & Maintenance",
+    desc: "Reliable cloud infrastructure setup, performance monitoring, continuous backups, and dedicated technical maintenance.",
+    features: ["Frappe & web server hosting", "Automated backups & security", "24/7 technical support"],
   },
 ];
 
@@ -77,15 +56,15 @@ export default function ServicesPage() {
         {/* Heading – less flashy, no badge */}
         <div className="text-center">
           <h2 className="text-3xl font-semibold text-slate-900 md:text-4xl dark:text-slate-200">
-            Our Services
+            Our Core Services
           </h2>
           <p className="mt-2 text-lg text-slate-600 dark:text-slate-400 font-medium">
-            Welcome to the Services page.
+            Websites • Frappe ERPNext • Custom Business Software
           </p>
           <p className="mx-auto mt-4 max-w-2xl text-slate-600 dark:text-slate-400">
-            We combine Artificial Intelligence, Machine Learning,
-            Cloud Infrastructure, and Modern Web Technologies
-            to build future‑ready digital products.
+            We provide specialized web development, robust Frappe ERPNext
+            implementations, and custom management systems like hotel software
+            designed to empower your business.
           </p>
         </div>
 
@@ -126,11 +105,11 @@ export default function ServicesPage() {
           <div className="mt-12 grid gap-8 text-center md:grid-cols-4">
             <div>
               <h2 className="text-5xl font-bold text-cyan-500 dark:text-cyan-400">5+</h2>
-              <p className="mt-3 text-slate-600 dark:text-slate-400 font-medium">Successful Projects</p>
+              <p className="mt-3 text-slate-600 dark:text-slate-400 font-medium">Projects Delivered</p>
             </div>
             <div>
               <h2 className="text-5xl font-bold text-cyan-500 dark:text-cyan-400">98%</h2>
-              <p className="mt-3 text-slate-600 dark:text-slate-400 font-medium">Client Satisfaction</p>
+              <p className="mt-3 text-slate-600 dark:text-slate-400 font-medium">Success Rate</p>
             </div>
             <div>
               <h2 className="text-5xl font-bold text-cyan-500 dark:text-cyan-400">2+</h2>
