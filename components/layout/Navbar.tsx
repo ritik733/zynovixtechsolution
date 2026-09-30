@@ -55,12 +55,12 @@ export default function Navbar() {
   };
 
   return (
-    <header className={`fixed inset-x-0 top-2 z-50 transition-all duration-300 ${
+    <header className={`fixed inset-x-0 top-2 z-50 transition-[colors,transform] duration-300 ${
       isScrolled ? "top-0" : "top-2"
     }`}>
       <div className="mx-auto max-w-[1650px] px-4 sm:px-6 lg:px-8">
         {/* Outer Glass */}
-        <div className={`flex h-16 sm:h-20 lg:h-24 items-center justify-between rounded-[28px] border border-violet-500/30 bg-white/80 px-4 sm:px-6 lg:px-10 backdrop-blur-2xl shadow-[0_0_60px_rgba(110,80,255,.15)] transition-all duration-300 dark:bg-[#070B18]/80 dark:shadow-[0_0_60px_rgba(110,80,255,.35)] ${
+        <div className={`flex h-16 sm:h-20 lg:h-24 items-center justify-between rounded-[28px] border border-violet-500/30 bg-white/80 px-4 sm:px-6 lg:px-10 backdrop-blur-2xl shadow-[0_0_60px_rgba(110,80,255,.15)] transition-[colors,transform] duration-300 dark:bg-[#070B18]/80 dark:shadow-[0_0_60px_rgba(110,80,255,.35)] ${
           isScrolled ? "rounded-[20px] shadow-[0_0_40px_rgba(110,80,255,.25)]" : ""
         }`}>
           
@@ -87,7 +87,7 @@ export default function Navbar() {
                 <Link
                   key={index}
                   href={item.href}
-                  className={`flex items-center gap-1 rounded-xl px-4 xl:px-6 py-2 xl:py-3 text-sm xl:text-[15px] font-medium transition-all duration-300 whitespace-nowrap ${
+                  className={`flex items-center gap-1 rounded-xl px-4 xl:px-6 py-2 xl:py-3 text-sm xl:text-[15px] font-medium transition-[colors,transform] duration-300 whitespace-nowrap ${
                     active
                       ? "bg-white text-slate-900 shadow-sm dark:bg-white/10 dark:text-white font-semibold"
                       : "text-slate-700 hover:text-slate-900 hover:bg-slate-200/70 dark:text-slate-300 dark:hover:text-white dark:hover:bg-white/5"
@@ -110,7 +110,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden flex items-center justify-center w-10 h-10 rounded-xl bg-slate-100 border border-slate-200 hover:bg-slate-200 transition-all duration-300 text-slate-800 dark:bg-white/5 dark:border-white/10 dark:hover:bg-white/10 dark:text-white"
+            className="lg:hidden flex items-center justify-center w-10 h-10 rounded-xl bg-slate-100 border border-slate-200 hover:bg-slate-200 transition-[colors,transform] duration-300 text-slate-800 dark:bg-white/5 dark:border-white/10 dark:hover:bg-white/10 dark:text-white"
             aria-label="Toggle menu"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -119,7 +119,7 @@ export default function Navbar() {
 
         {/* Mobile Navigation Menu */}
         <div
-          className={`lg:hidden fixed inset-x-0 top-[72px] sm:top-[88px] mx-4 sm:mx-6 transition-all duration-300 ease-in-out transform ${
+          className={`lg:hidden fixed inset-x-0 top-[72px] sm:top-[88px] mx-4 sm:mx-6 transition-[colors,transform] duration-300 ease-in-out transform ${
             isOpen
               ? "opacity-100 translate-y-0 pointer-events-auto"
               : "opacity-0 -translate-y-4 pointer-events-none"
@@ -134,7 +134,7 @@ export default function Navbar() {
                     key={index}
                     href={item.href}
                     onClick={handleLinkClick}
-                    className={`flex items-center justify-between px-4 py-3 rounded-xl text-base font-medium transition-all duration-200 ${
+                    className={`flex items-center justify-between px-4 py-3 rounded-xl text-base font-medium transition-[colors,transform] duration-200 ${
                       active
                         ? "bg-violet-50 text-violet-700 font-semibold dark:bg-violet-500/20 dark:text-white"
                         : "text-slate-700 hover:text-slate-900 hover:bg-slate-100 dark:text-slate-300 dark:hover:text-white dark:hover:bg-white/5"
