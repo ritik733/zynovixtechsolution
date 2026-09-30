@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { motion } from "framer-motion";
 import {
   ArrowRight,
   BrainCircuit,
@@ -8,6 +9,22 @@ import {
   Database,
   Globe,
 } from "lucide-react";
+
+// Reusable animation variants
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  show: { opacity: 1, y: 0 },
+};
+
+const container = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.1,
+    },
+  },
+};
 
 export default function Hero() {
   return (
@@ -33,24 +50,39 @@ export default function Hero() {
       <div className="relative mx-auto max-w-screen-2xl px-4 sm:px-6 md:px-8 lg:px-12 py-16 sm:py-20 md:py-24 lg:py-28">
         <div className="grid items-center gap-12 lg:gap-20 lg:grid-cols-2">
           {/* LEFT */}
-          <div className="text-center lg:text-left">
-          
-
-            <h1 className="mt-6 sm:mt-8 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-tight">
+          <motion.div
+            variants={container}
+            initial="hidden"
+            animate="show"
+            className="text-center lg:text-left"
+          >
+            <motion.h1
+              variants={fadeUp}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+              className="mt-6 sm:mt-8 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-tight"
+            >
               Modern Websites,
               <span className="block bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
                 Frappe ERPNext
               </span>
               & Custom Software
-            </h1>
+            </motion.h1>
 
-            <p className="mt-4 sm:mt-6 md:mt-8 max-w-xl text-base sm:text-lg leading-relaxed sm:leading-8 text-slate-600 dark:text-slate-300 mx-auto lg:mx-0 font-normal">
+            <motion.p
+              variants={fadeUp}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+              className="mt-4 sm:mt-6 md:mt-8 max-w-xl text-base sm:text-lg leading-relaxed sm:leading-8 text-slate-600 dark:text-slate-300 mx-auto lg:mx-0 font-normal"
+            >
               We develop high-performance websites, customized Frappe ERPNext solutions,
               and specialized business tools like hotel management systems to streamline
               your operations and grow your enterprise.
-            </p>
+            </motion.p>
 
-            <div className="mt-8 sm:mt-10 flex flex-wrap gap-3 sm:gap-4 justify-center lg:justify-start">
+            <motion.div
+              variants={fadeUp}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+              className="mt-8 sm:mt-10 flex flex-wrap gap-3 sm:gap-4 justify-center lg:justify-start"
+            >
               <Link
                 href="/contact"
                 className="inline-flex items-center rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 px-5 sm:px-7 py-3 sm:py-4 text-sm sm:text-base font-semibold text-white transition hover:scale-105 shadow-md shadow-blue-500/20"
@@ -65,10 +97,14 @@ export default function Hero() {
               >
                 View Portfolio
               </Link>
-            </div>
+            </motion.div>
 
             {/* Stats */}
-            <div className="mt-12 sm:mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+            <motion.div
+              variants={fadeUp}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+              className="mt-12 sm:mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6"
+            >
               {[
                 ["5+", "Projects"],
                 ["98%", "Success"],
@@ -82,36 +118,61 @@ export default function Hero() {
                   <p className="text-xs sm:text-sm font-medium text-slate-600 dark:text-slate-400">{label}</p>
                 </div>
               ))}
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* RIGHT - Orbiting Cards Inside Circle */}
-          <div className="relative flex justify-center mt-8 lg:mt-0">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.85 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+            className="relative flex justify-center mt-8 lg:mt-0"
+          >
             <div className="relative flex h-[320px] w-[320px] sm:h-[420px] sm:w-[420px] md:h-[480px] md:w-[480px] lg:h-[520px] lg:w-[520px] items-center justify-center rounded-full border border-cyan-500/20 bg-gradient-to-br from-blue-600/10 to-cyan-400/10 backdrop-blur-xl">
               {/* Animated Rings */}
               <div className="absolute h-[200px] w-[200px] sm:h-[280px] sm:w-[280px] md:h-[320px] md:w-[320px] rounded-full border border-cyan-500/20 animate-pulse" />
               <div className="absolute h-[140px] w-[140px] sm:h-[200px] sm:w-[200px] md:h-[240px] md:w-[240px] rounded-full border border-blue-500/20" />
 
               {/* Web Development - Top Left */}
-              <div className="absolute top-[2%] left-[2%] sm:top-[4%] sm:left-[4%] md:top-[6%] md:left-[6%] rounded-xl border border-slate-200 bg-white/90 p-2 sm:p-3 backdrop-blur shadow-lg text-slate-900 dark:border-slate-700 dark:bg-slate-900/80 dark:text-white">
+              <motion.div
+                initial={{ opacity: 0, x: -20, y: -20 }}
+                animate={{ opacity: 1, x: 0, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.7 }}
+                className="absolute top-[2%] left-[2%] sm:top-[4%] sm:left-[4%] md:top-[6%] md:left-[6%] rounded-xl border border-slate-200 bg-white/90 p-2 sm:p-3 backdrop-blur shadow-lg text-slate-900 dark:border-slate-700 dark:bg-slate-900/80 dark:text-white"
+              >
                 <Globe className="mb-1 sm:mb-2 h-4 w-4 sm:h-5 sm:w-5 text-cyan-500 dark:text-cyan-400" />
                 <p className="text-[10px] sm:text-xs font-semibold whitespace-nowrap">Web Development</p>
-              </div>
+              </motion.div>
 
               {/* Frappe ERPNext - Top Right */}
-              <div className="absolute top-[2%] right-[2%] sm:top-[4%] sm:right-[4%] md:top-[6%] md:right-[6%] rounded-xl border border-slate-200 bg-white/90 p-2 sm:p-3 backdrop-blur shadow-lg text-slate-900 dark:border-slate-700 dark:bg-slate-900/80 dark:text-white">
+              <motion.div
+                initial={{ opacity: 0, x: 20, y: -20 }}
+                animate={{ opacity: 1, x: 0, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.8 }}
+                className="absolute top-[2%] right-[2%] sm:top-[4%] sm:right-[4%] md:top-[6%] md:right-[6%] rounded-xl border border-slate-200 bg-white/90 p-2 sm:p-3 backdrop-blur shadow-lg text-slate-900 dark:border-slate-700 dark:bg-slate-900/80 dark:text-white"
+              >
                 <Database className="mb-1 sm:mb-2 h-4 w-4 sm:h-5 sm:w-5 text-blue-600 dark:text-blue-400" />
                 <p className="text-[10px] sm:text-xs font-semibold whitespace-nowrap">Frappe ERPNext</p>
-              </div>
+              </motion.div>
 
               {/* Hotel & Custom Tools - Bottom Center */}
-              <div className="absolute bottom-[2%] sm:bottom-[4%] md:bottom-[6%] left-1/2 -translate-x-1/2 rounded-xl border border-slate-200 bg-white/90 p-2 sm:p-3 backdrop-blur shadow-lg text-slate-900 dark:border-slate-700 dark:bg-slate-900/80 dark:text-white">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.9 }}
+                className="absolute bottom-[2%] sm:bottom-[4%] md:bottom-[6%] left-1/2 -translate-x-1/2 rounded-xl border border-slate-200 bg-white/90 p-2 sm:p-3 backdrop-blur shadow-lg text-slate-900 dark:border-slate-700 dark:bg-slate-900/80 dark:text-white"
+              >
                 <Cpu className="mb-1 sm:mb-2 h-4 w-4 sm:h-5 sm:w-5 text-cyan-500 dark:text-cyan-400 mx-auto" />
                 <p className="text-[10px] sm:text-xs font-semibold whitespace-nowrap">Hotel & Custom Tools</p>
-              </div>
+              </motion.div>
 
               {/* Center Icon */}
-              <div className="rounded-2xl sm:rounded-3xl border border-slate-200 bg-white/95 p-4 sm:p-6 md:p-8 shadow-2xl backdrop-blur-xl z-10 text-slate-900 dark:border-white/10 dark:bg-slate-900/70 dark:text-white">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.7, delay: 0.5 }}
+                className="rounded-2xl sm:rounded-3xl border border-slate-200 bg-white/95 p-4 sm:p-6 md:p-8 shadow-2xl backdrop-blur-xl z-10 text-slate-900 dark:border-white/10 dark:bg-slate-900/70 dark:text-white"
+              >
                 <BrainCircuit
                   size={60}
                   className="sm:w-[80px] sm:h-[80px] md:w-[100px] md:h-[100px] lg:w-[110px] lg:h-[110px] mx-auto text-cyan-500 dark:text-cyan-400"
@@ -122,16 +183,22 @@ export default function Hero() {
                 <p className="mt-1 sm:mt-2 text-center text-xs sm:text-sm font-medium text-slate-500 dark:text-slate-400">
                   Custom • Scalable • Reliable
                 </p>
-              </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
         </div>
 
         {/* Technologies */}
         <div className="mt-16 sm:mt-20 md:mt-24">
-          <p className="mb-6 sm:mb-8 text-center text-slate-500 dark:text-slate-400 text-xs sm:text-sm uppercase font-semibold tracking-[3px] sm:tracking-[4px]">
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mb-6 sm:mb-8 text-center text-slate-500 dark:text-slate-400 text-xs sm:text-sm uppercase font-semibold tracking-[3px] sm:tracking-[4px]"
+          >
             Technologies We Use
-          </p>
+          </motion.p>
 
           <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4">
             {[
@@ -148,13 +215,17 @@ export default function Hero() {
               "Tailwind CSS",
               "Docker",
               "AWS",
-            ].map((tech) => (
-              <span
+            ].map((tech, i) => (
+              <motion.span
                 key={tech}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.04 }}
                 className="rounded-full border border-slate-200 bg-slate-100/90 px-3 sm:px-4 md:px-5 py-1.5 sm:py-2 md:py-3 text-[10px] sm:text-xs md:text-sm font-medium text-slate-700 shadow-sm backdrop-blur transition hover:border-cyan-500 hover:text-cyan-600 dark:border-slate-700 dark:bg-slate-900/70 dark:text-slate-300 dark:hover:text-white"
               >
                 {tech}
-              </span>
+              </motion.span>
             ))}
           </div>
         </div>

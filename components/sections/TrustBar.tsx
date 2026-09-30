@@ -137,7 +137,7 @@ export default function TrustBar() {
           {companies.map((company) => (
             <div
               key={company.name}
-              className="group flex flex-col items-center gap-4 rounded-2xl border border-slate-200 bg-white/90 px-4 py-8 text-center text-slate-900 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-cyan-500 hover:bg-slate-50 dark:border-slate-700/50 dark:bg-slate-900/60 dark:text-white dark:hover:bg-slate-900 dark:shadow-none"
+              className="group flex flex-col items-center gap-4 rounded-2xl border border-slate-200 bg-white/90 px-4 py-8 text-center ... transition-[transform,border-color,background-color] duration-300 hover:-translate-y-2 hover:border-cyan-500 hover:bg-slate-50 ..."
             >
               <div className="flex h-9 w-9 items-center justify-center">
                 {company.icon}
