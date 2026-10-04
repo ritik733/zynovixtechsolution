@@ -6,47 +6,19 @@ import ServicesPreview from "@/components/sections/ServicesPreview";
 import PortfolioPreview from "@/components/sections/PortfolioPreview";
 import CTA from "@/components/sections/CTA";
 import Navbar from "@/components/layout/Navbar";
+import MouseGlow from "@/components/MouseGlow";
 
 export default function Home() {
   return (
-    <main>
-
+    <main className="relative">
+      <MouseGlow />
       <Hero />
-
       <TrustBar />
-
       <Stats />
-
       <AboutPreview />
-
       <ServicesPreview />
-
       <PortfolioPreview />
-
       <CTA />
-
     </main>
   );
 }
-
-// export default function Home() {
-//   return (
-//     <main className="relative overflow-hidden bg-[#060818]">
-
-//       {/* Purple Glow */}
-//       <div className="absolute left-1/2 top-[-120px]
-//       -translate-x-1/2
-//       w-[900px]
-//       h-[300px]
-//       rounded-full
-//       bg-violet-600/30
-//       blur-[140px]" />
-
-//       <Navbar />
-
-//       <Hero />
-
-//       ...
-//     </main>
-//   )
-// }
