@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { motion } from "framer-motion";
 import {
   ArrowRight,
   Globe,
@@ -8,6 +11,8 @@ import {
   Cloud,
   Shield,
 } from "lucide-react";
+import FadeIn from "@/components/FadeIn";
+import Counter from "@/components/Counter";
 
 const services = [
   {
@@ -54,26 +59,36 @@ export default function ServicesPage() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
 
         {/* Heading */}
-        <div className="text-center">
-          <h2 className="text-3xl font-semibold text-slate-900 md:text-4xl dark:text-slate-200">
-            Our Core Services
-          </h2>
-          <p className="mt-2 text-lg text-cyan-600 dark:text-cyan-400 font-medium">
-            Websites • Frappe ERPNext • Custom Business Software
-          </p>
-          <p className="mx-auto mt-4 max-w-2xl text-slate-600 dark:text-slate-400">
-            We provide specialized web development, robust Frappe ERPNext implementations,
-            and custom management systems like hotel software designed to empower your business.
-          </p>
-        </div>
+        <FadeIn>
+          <div className="text-center">
+            <h2 className="text-3xl font-semibold text-slate-900 md:text-4xl dark:text-slate-200">
+              Our Core Services
+            </h2>
+            <p className="mt-2 text-lg text-cyan-600 dark:text-cyan-400 font-medium">
+              Websites • Frappe ERPNext • Custom Business Software
+            </p>
+            <p className="mx-auto mt-4 max-w-2xl text-slate-600 dark:text-slate-400">
+              We provide specialized web development, robust Frappe ERPNext implementations,
+              and custom management systems like hotel software designed to empower your business.
+            </p>
+          </div>
+        </FadeIn>
 
         {/* Service Cards – with extra features */}
         <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {services.map((service) => {
+          {services.map((service, i) => {
             const Icon = service.icon;
             return (
-              <div
+              <motion.div
                 key={service.title}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{
+                  duration: 0.5,
+                  delay: i * 0.1,
+                  ease: "easeOut",
+                }}
                 className="group rounded-3xl border border-slate-200 bg-white/90 p-8 shadow-sm transition duration-300 hover:-translate-y-2 hover:border-cyan-500 dark:border-slate-800 dark:bg-slate-900/60 dark:shadow-none"
               >
                 <div className="mb-6 inline-flex rounded-2xl bg-cyan-500/10 p-4">
@@ -93,42 +108,52 @@ export default function ServicesPage() {
                   Learn More
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>
 
         {/* Why Choose Us */}
-        <div className="mt-24 rounded-3xl border border-slate-200/80 bg-slate-100/90 p-12 text-slate-900 shadow-md dark:border-slate-800 dark:bg-gradient-to-r dark:from-slate-900 dark:to-slate-800 dark:text-white">
-          <h3 className="text-center text-4xl font-bold">Why Choose Us?</h3>
-          <div className="mt-12 grid gap-8 text-center md:grid-cols-4">
-            <div>
-              <h2 className="text-5xl font-bold text-cyan-500 dark:text-cyan-400">5+</h2>
-              <p className="mt-3 text-slate-600 dark:text-slate-400 font-medium">Successful Projects</p>
+        <FadeIn delay={0.1}>
+          <div className="mt-24 rounded-3xl border border-slate-200/80 bg-slate-100/90 p-12 text-slate-900 shadow-md dark:border-slate-800 dark:bg-gradient-to-r dark:from-slate-900 dark:to-slate-800 dark:text-white">
+            <h3 className="text-center text-4xl font-bold">Why Choose Us?</h3>
+            <div className="mt-12 grid gap-8 text-center md:grid-cols-4">
+              <div>
+                <h2 className="text-5xl font-bold text-cyan-500 dark:text-cyan-400">
+                  <Counter end={5} suffix="+" />
+                </h2>
+                <p className="mt-3 text-slate-600 dark:text-slate-400 font-medium">Successful Projects</p>
+              </div>
+              <div>
+                <h2 className="text-5xl font-bold text-cyan-500 dark:text-cyan-400">
+                  <Counter end={98} suffix="%" />
+                </h2>
+                <p className="mt-3 text-slate-600 dark:text-slate-400 font-medium">Client Satisfaction</p>
+              </div>
+              <div>
+                <h2 className="text-5xl font-bold text-cyan-500 dark:text-cyan-400">
+                  <Counter end={2} suffix="+" />
+                </h2>
+                <p className="mt-3 text-slate-600 dark:text-slate-400 font-medium">Global Clients</p>
+              </div>
+              <div>
+                <h2 className="text-5xl font-bold text-cyan-500 dark:text-cyan-400">
+                  24/7
+                </h2>
+                <p className="mt-3 text-slate-600 dark:text-slate-400 font-medium">Technical Support</p>
+              </div>
             </div>
-            <div>
-              <h2 className="text-5xl font-bold text-cyan-500 dark:text-cyan-400">98%</h2>
-              <p className="mt-3 text-slate-600 dark:text-slate-400 font-medium">Client Satisfaction</p>
-            </div>
-            <div>
-              <h2 className="text-5xl font-bold text-cyan-500 dark:text-cyan-400">2+</h2>
-              <p className="mt-3 text-slate-600 dark:text-slate-400 font-medium">Global Clients</p>
-            </div>
-            <div>
-              <h2 className="text-5xl font-bold text-cyan-500 dark:text-cyan-400">24/7</h2>
-              <p className="mt-3 text-slate-600 dark:text-slate-400 font-medium">Technical Support</p>
+            <div className="mt-12 text-center">
+              <Link
+                href="/contact"
+                className="inline-flex items-center rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 px-8 py-4 font-semibold text-white transition hover:scale-105 shadow-md shadow-blue-500/20"
+              >
+                Book Free Consultation
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
             </div>
           </div>
-          <div className="mt-12 text-center">
-            <Link
-              href="/contact"
-              className="inline-flex items-center rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 px-8 py-4 font-semibold text-white transition hover:scale-105 shadow-md shadow-blue-500/20"
-            >
-              Book Free Consultation
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-          </div>
-        </div>
+        </FadeIn>
       </div>
     </section>
   );
