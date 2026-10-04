@@ -5,54 +5,17 @@ import {
   Briefcase,
   Clock3,
   MapPin,
+  GraduationCap,
 } from "lucide-react";
 
-const jobs = [
-  {
-    title: "Frontend Developer",
-    location: "Remote / Jaipur",
-    type: "Full Time",
-    experience: "1-3 Years",
-    skills: ["React", "Next.js", "TypeScript"],
-  },
-  {
-    title: "Backend Developer",
-    location: "Remote",
-    type: "Full Time",
-    experience: "2+ Years",
-    skills: ["Node.js", "Python", "MongoDB"],
-  },
-  {
-    title: "AI Engineer",
-    location: "Remote",
-    type: "Full Time",
-    experience: "2+ Years",
-    skills: ["Python", "LLMs", "LangChain"],
-  },
-  {
-    title: "UI/UX Designer",
-    location: "Jaipur",
-    type: "Internship",
-    experience: "Freshers Welcome",
-    skills: ["Figma", "Adobe XD", "UI Design"],
-  },
-  {
-    title: "Digital Marketing Executive",
-    location: "Hybrid",
-    type: "Full Time",
-    experience: "1+ Years",
-    skills: ["SEO", "Meta Ads", "Google Ads"],
-  },
-  {
-    title: "Business Development Executive",
-    location: "Jaipur",
-    type: "Full Time",
-    experience: "Freshers Welcome",
-    skills: ["Sales", "Communication", "CRM"],
-  },
-];
-
 export default function OpenPositions() {
+  const scrollToForm = () => {
+    document.getElementById("application-form")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
   return (
     <section
       id="open-positions"
@@ -65,88 +28,114 @@ export default function OpenPositions() {
       <div className="relative mx-auto max-w-7xl px-6">
 
         <div className="text-center">
-
           <span className="rounded-full border border-violet-500/30 bg-violet-500/10 px-4 py-2 text-sm text-violet-500 dark:text-violet-300">
-            Open Positions
+            Current Opening
           </span>
 
           <h2 className="mt-6 text-5xl font-bold text-slate-900 dark:text-white">
-            Find Your Dream Role
+            Fresher Interns Wanted
           </h2>
 
           <p className="mx-auto mt-5 max-w-3xl text-lg text-slate-600 dark:text-slate-400">
-            Join an ambitious team building AI-powered digital products for
-            businesses around the world.
+            Kickstart your career with real projects in Web Development,
+            Frappe ERPNext, and Custom Software. We're looking for eager
+            learners ready to grow with us.
           </p>
-
         </div>
 
-        <div className="mt-16 grid gap-8 lg:grid-cols-2">
+        {/* Single Intern Card */}
+        <div className="mx-auto mt-16 max-w-4xl">
+          <div className="group rounded-3xl border border-slate-200/70 bg-white/90 p-8 sm:p-10 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-violet-500/40 hover:shadow-[0_0_45px_rgba(139,92,246,.25)] dark:border-violet-500/20 dark:bg-[#0F1438]/80">
 
-          {jobs.map((job, index) => (
-            <div
-              key={index}
-              className="group rounded-3xl border border-slate-200/70 bg-white/90 p-8 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-violet-500/40 hover:shadow-[0_0_45px_rgba(139,92,246,.25)] dark:border-violet-500/20 dark:bg-[#0F1438]/80"
-            >
-              <div className="flex items-start justify-between">
-
-                <div>
-
-                  <h3 className="text-2xl font-semibold text-slate-900 dark:text-white">
-                    {job.title}
-                  </h3>
-
-                  <div className="mt-4 flex flex-wrap gap-4 text-slate-400">
-
-                    <div className="flex items-center gap-2">
-                      <MapPin size={18} />
-                      {job.location}
-                    </div>
-
-                    <div className="flex items-center gap-2">
-                      <Briefcase size={18} />
-                      {job.type}
-                    </div>
-
-                    <div className="flex items-center gap-2">
-                      <Clock3 size={18} />
-                      {job.experience}
-                    </div>
-
-                  </div>
-
-                </div>
-
+            {/* Header */}
+            <div className="flex items-start gap-5">
+              <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-violet-600 to-blue-500">
+                <GraduationCap className="h-8 w-8 text-white" />
               </div>
 
-              <div className="mt-8 flex flex-wrap gap-3">
-
-                {job.skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="rounded-full border border-violet-500/20 bg-violet-500/10 px-4 py-2 text-sm text-violet-500 dark:text-violet-300"
-                  >
-                    {skill}
-                  </span>
-                ))}
-
-              </div>
-
-              <div className="mt-8 flex gap-4">
-
-                <button className="rounded-xl border border-violet-500/30 px-5 py-3 text-slate-900 transition hover:bg-violet-500/10 hover:text-white dark:text-white">
-                  View Details
-                </button>
-
-                <button className="flex items-center gap-2 rounded-xl bg-gradient-to-r from-violet-600 to-blue-500 px-6 py-3 font-semibold text-white transition hover:scale-105">
-                  Apply Now
-                  <ArrowRight size={18} />
-                </button>
-
+              <div>
+                <h3 className="text-3xl font-semibold text-slate-900 dark:text-white">
+                  Fresher Internship Program
+                </h3>
+                <p className="mt-2 text-slate-500 dark:text-slate-400 font-medium">
+                  Learn, build, and ship real products with our team.
+                </p>
               </div>
             </div>
-          ))}
 
+            {/* Meta info */}
+            <div className="mt-8 grid gap-4 sm:grid-cols-3">
+              <div className="flex items-center gap-3 text-slate-500 dark:text-slate-400">
+                <MapPin size={18} className="text-violet-500" />
+                <span className="font-medium">Udaipur / Hybrid</span>
+              </div>
+
+              <div className="flex items-center gap-3 text-slate-500 dark:text-slate-400">
+                <Briefcase size={18} className="text-violet-500" />
+                <span className="font-medium">Internship</span>
+              </div>
+
+              <div className="flex items-center gap-3 text-slate-500 dark:text-slate-400">
+                <Clock3 size={18} className="text-violet-500" />
+                <span className="font-medium">3–6 Months</span>
+              </div>
+            </div>
+
+            {/* What you'll work on */}
+            <div className="mt-8">
+              <h4 className="text-lg font-semibold text-slate-900 dark:text-white mb-4">
+                What you'll work on
+              </h4>
+              <ul className="space-y-2 text-slate-600 dark:text-slate-400">
+                <li className="flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-violet-500" />
+                  Modern websites with Next.js & React
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-violet-500" />
+                  Frappe / ERPNext implementations
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-violet-500" />
+                  Custom business software & integrations
+                </li>
+              </ul>
+            </div>
+
+            {/* Who can apply */}
+            <div className="mt-8">
+              <h4 className="text-lg font-semibold text-slate-900 dark:text-white mb-4">
+                Who can apply
+              </h4>
+              <div className="flex flex-wrap gap-3">
+                {[
+                  "Final-year students",
+                  "Recent graduates",
+                  "Any degree (CS/IT preferred)",
+                  "Strong basics & willingness to learn",
+                ].map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-full border border-violet-500/20 bg-violet-500/10 px-4 py-2 text-sm text-violet-500 dark:text-violet-300"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* CTA */}
+            <div className="mt-10">
+              <button
+                onClick={scrollToForm}
+                className="flex items-center gap-2 rounded-xl bg-gradient-to-r from-violet-600 to-blue-500 px-8 py-4 font-semibold text-white transition hover:scale-105 shadow-md shadow-violet-500/20"
+              >
+                Apply Now
+                <ArrowRight size={18} />
+              </button>
+            </div>
+
+          </div>
         </div>
 
       </div>
