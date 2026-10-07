@@ -3,7 +3,7 @@ import nodemailer from "nodemailer";
 import { supabase } from "../../../lib/supabase";
 
 const RECIPIENTS = [
-  "patwaritik08@gmail.com",
+  "zynovixtechsolutions@gmail.com",
   "praveens9699@gmail.com",
 ];
 
@@ -60,7 +60,6 @@ export async function POST(request: Request) {
       const info = await transporter.sendMail({
         from: `"Zynovix Website" <${process.env.GMAIL_USER}>`,
         to: RECIPIENTS.join(", "),
-        replyTo: String(email),
         subject: `New Contact Form Lead — ${String(name)}`,
         html: `
           <div style="font-family: Arial, sans-serif; max-width: 650px; margin: 0 auto; padding: 20px;">
