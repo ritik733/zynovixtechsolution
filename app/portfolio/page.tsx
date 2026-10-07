@@ -1,119 +1,137 @@
-import Image from "next/image";
+"use client";
+
+import { useState, useMemo } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
+import Navbar from "@/components/layout/Navbar";
+import ProjectCard from "@/components/portfolio/ProjectCard";
+import FilterTabs from "@/components/portfolio/FilterTabs";
+import {
+  portfolioProjects,
+  type PortfolioCategory,
+} from "@/data/portfolio";
 
-export const metadata = {
-  title: "Portfolio | Zynovix",
-  description: "Explore our recent work in AI, web development, and cloud solutions.",
-};
-
-const projects = [
-  {
-    title: "Zeno AI Assistant",
-    category: "AI Chatbot",
-    image: "/images/team/Zeno_ai.png",
-    description:
-      "An intelligent conversational AI powered by LLMs, designed to handle complex queries with human-like understanding.",
-  },
-  // Uncomment more projects as you add them
-  // {
-  //   title: "Corporate Website",
-  //   category: "Web Development",
-  //   image: "/images/portfolio/corporate.jpg",
-  //   description: "Modern, responsive corporate site with dynamic content management.",
-  // },
-  // {
-  //   title: "Healthcare Dashboard",
-  //   category: "Web Application",
-  //   image: "/images/portfolio/healthcare.jpg",
-  //   description: "Real-time patient data analytics and reporting dashboard.",
-  // },
-];
+type Filter = "All" | PortfolioCategory;
 
 export default function PortfolioPage() {
+  const [filter, setFilter] = useState<Filter>("All");
+
+  const filtered = useMemo(() => {
+    if (filter === "All") return portfolioProjects;
+    return portfolioProjects.filter((p) => p.category === filter);
+  }, [filter]);
+
+  const counts = useMemo(() => {
+    return {
+      All: portfolioProjects.length,
+      ERP: portfolioProjects.filter((p) => p.category === "ERP").length,
+      "Web App": portfolioProjects.filter((p) => p.category === "Web App").length,
+      "Custom Software": portfolioProjects.filter((p) => p.category === "Custom Software").length,
+    };
+  }, []);
+
   return (
     <main className="bg-white text-slate-900 min-h-screen dark:bg-[#050816] dark:text-white">
-      {/* Hero Section – dark, with top spacing */}
-      <section className="pt-32 pb-20 text-slate-900 dark:text-white">
-        <div className="mx-auto max-w-7xl px-6 text-center">
-          <h1 className="text-5xl font-bold">Our Portfolio</h1>
-          <p className="mx-auto mt-6 max-w-3xl text-lg text-slate-600 dark:text-slate-300 font-medium">
-            A selection of projects showcasing our expertise in AI, cloud,
-            and modern web development.
-          </p>
+      <Navbar />
+
+      <section className="pt-32 pb-12 text-center">
+        <div className="mx-auto max-w-7xl px-6">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-5xl font-bold"
+          >
+            Our <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Portfolio</span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="mx-auto mt-6 max-w-3xl text-lg text-slate-600 dark:text-slate-300 font-medium"
+          >
+            Real projects. Real results. Explore our work across ERP systems,
+            web applications, and custom software.
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="mt-4 text-sm uppercase font-semibold tracking-[4px] text-slate-500 dark:text-slate-400"
+          >
+            ERP • Web Apps • Custom Software
+          </motion.p>
         </div>
       </section>
 
-      {/* Projects Grid */}
-      <section className="py-12">
+      <section className="pb-8">
         <div className="mx-auto max-w-7xl px-6">
-          {projects.length === 0 ? (
-            <p className="text-center text-slate-500 dark:text-slate-400">No projects to display yet.</p>
-          ) : (
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {projects.map((project) => (
-                <div
-                  key={project.title}
-                  className="group rounded-3xl border border-slate-200 bg-white/90 shadow-sm overflow-hidden transition duration-300 hover:-translate-y-2 hover:border-cyan-500 dark:border-slate-800 dark:bg-slate-900/90 dark:shadow-none"
-                >
-                  {/* Image Container */}
-                  <div className="relative h-52 w-full bg-slate-800">
-                    {project.image ? (
-                      <Image
-                        src={project.image}
-                        alt={project.title}
-                        fill
-                        className="object-cover transition duration-300 group-hover:scale-105"
-                      />
-                    ) : (
-                      <div className="flex h-full items-center justify-center text-slate-500">
-                        No image
-                      </div>
-                    )}
-                  </div>
+          <FilterTabs active={filter} onChange={setFilter} counts={counts} />
+        </div>
+      </section>
 
-                  {/* Content */}
-                  <div className="p-6">
-                    <span className="text-sm font-semibold text-cyan-600 dark:text-cyan-400">
-                      {project.category}
-                    </span>
-                    <h3 className="mt-2 text-2xl font-semibold text-slate-900 dark:text-white">
-                      {project.title}
-                    </h3>
-                    <p className="mt-3 text-slate-600 dark:text-slate-300">
-                      {project.description || "Lorem ipsum dolor sit amet, consectetur adipiscing elit."}
-                    </p>
-                    <div className="mt-6 flex items-center font-medium text-cyan-600 dark:text-cyan-400 transition group-hover:translate-x-2">
-                      View Project
-                      <svg
-                        className="ml-2 h-4 w-4"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+      <section className="py-8 pb-24">
+        <div className="mx-auto max-w-7xl px-6">
+          {filtered.length === 0 ? (
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="text-center text-slate-500 dark:text-slate-400 py-20"
+            >
+              No projects in this category yet. Check back soon!
+            </motion.p>
+          ) : (
+            <motion.div
+              layout
+              className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
+            >
+              <AnimatePresence mode="popLayout">
+                {filtered.map((project) => (
+                  <ProjectCard key={project.id} project={project} />
+                ))}
+              </AnimatePresence>
+            </motion.div>
           )}
         </div>
       </section>
 
-      {/* CTA Section – dark with gradient button */}
       <section className="py-20 text-center">
         <div className="mx-auto max-w-3xl px-6">
-          <h2 className="text-4xl font-bold text-slate-900 dark:text-white">Have a Project in Mind?</h2>
-          <p className="mt-4 text-slate-600 dark:text-slate-300 font-medium">
-            We'd love to help turn your ideas into reality with our expertise.
-          </p>
-          <Link
-            href="/contact"
-            className="mt-8 inline-block rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 px-8 py-3 font-semibold text-white transition hover:scale-105 shadow-md shadow-blue-500/20"
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-4xl font-bold"
           >
-            Let's Talk
-          </Link>
+            Have a Project in Mind?
+          </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="mt-4 text-slate-600 dark:text-slate-300 font-medium"
+          >
+            We'd love to help turn your ideas into reality.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            <Link
+              href="/contact"
+              className="mt-8 inline-block rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 px-8 py-3 font-semibold text-white transition hover:scale-105 shadow-md shadow-blue-500/20"
+            >
+              Let's Talk
+            </Link>
+          </motion.div>
         </div>
       </section>
     </main>
