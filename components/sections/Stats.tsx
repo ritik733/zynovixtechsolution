@@ -66,7 +66,7 @@ export default function Stats() {
                   <Icon className="text-cyan-500 dark:text-cyan-400" />
                 </motion.div>
 
-                <h2 className="text-5xl font-black bg-gradient-to-r from-orange-500 to-amber-600 dark:from-orange-400 dark:to-amber-500 bg-clip-text text-transparent">
+                <h2 className="text-5xl font-black bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
                   {item.static ? (
                     item.static
                   ) : (
