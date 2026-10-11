@@ -65,15 +65,15 @@ export default function Benefits() {
 
         <div className="text-center">
 
-          <span className="rounded-full border border-violet-500/30 bg-violet-500/10 px-4 py-2 text-sm text-violet-300">
+          <span className="rounded-full border border-violet-500/30 bg-violet-500/10 px-4 py-2 text-sm text-violet-600 dark:text-violet-300">
             Benefits & Perks
           </span>
 
-          <h2 className="mt-6 text-4xl md:text-5xl font-bold text-white">
+          <h2 className="mt-6 text-4xl md:text-5xl font-bold text-slate-900 dark:text-white">
             Why You'll Love Working Here
           </h2>
 
-          <p className="mx-auto mt-5 max-w-3xl text-lg text-slate-400">
+          <p className="mx-auto mt-5 max-w-3xl text-lg text-slate-600 dark:text-slate-400">
             We believe great people deserve a great workplace. That's why
             we invest in your growth, wellbeing, and success.
           </p>
