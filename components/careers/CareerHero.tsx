@@ -54,25 +54,6 @@ export default function CareerHero() {
         </div>
 
         {/* Stats */}
-        <div className="mt-20 grid grid-cols-2 gap-6 md:grid-cols-4">
-
-          {[
-            ["10+", "Open Positions"],
-            ["100%", "Remote Friendly"],
-            ["24/7", "Learning Culture"],
-            ["5★", "Team Environment"],
-          ].map(([value, label]) => (
-            <div
-              key={label}
-              className="rounded-2xl border border-slate-200/70 bg-slate-100/90 p-6 backdrop-blur-xl dark:border-white/10 dark:bg-slate-900/30"
-            >
-              <h3 className="text-3xl font-bold text-slate-900 dark:text-white">{value}</h3>
-              <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">{label}</p>
-            </div>
-          ))}
-
-        </div>
-
       </div>
     </section>
   );
