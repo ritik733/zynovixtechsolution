@@ -11,7 +11,7 @@ export default function ContactPage() {
   return (
     <main className="bg-white text-slate-900 dark:bg-slate-950 dark:text-white">
       {/* Hero */}
-      <section className="bg-white py-20 text-slate-900 dark:bg-slate-950 dark:text-white md:py-28">
+      <section className="bg-white pt-32 pb-20 text-slate-900 dark:bg-slate-950 dark:text-white md:pt-40 md:pb-28">
         <div className="mx-auto max-w-4xl px-6 text-center">
           <h1 className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white md:text-5xl">
             Let's Build Something Amazing
