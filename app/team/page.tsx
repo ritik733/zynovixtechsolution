@@ -151,9 +151,11 @@ export default function TeamPage() {
                   />
                 </div>
               ))}
-              <div className="w-12 h-12 rounded-full bg-violet-500/20 border-2 border-violet-500/50 flex items-center justify-center text-violet-600 dark:text-violet-400 text-sm font-semibold">
-                +{teamMembers.length - 5}
-              </div>
+              {teamMembers.length > 5 && (
+                <div className="w-12 h-12 rounded-full bg-violet-500/20 border-2 border-violet-500/50 flex items-center justify-center text-violet-600 dark:text-violet-400 text-sm font-semibold">
+                  +{teamMembers.length - 5}
+                </div>
+              )}
             </div>
             <p className="text-slate-500 dark:text-gray-400 self-center font-medium">
               {teamMembers.length}+ team members ready to help
