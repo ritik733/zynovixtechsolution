@@ -158,27 +158,7 @@ export default function AboutPage() {
       {/* Why Choose Us – dark stats and cards */}
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-6">
-          <h2 className="mb-12 text-center text-4xl font-bold text-slate-900 dark:text-white">
-            Why Choose Zynovix?
-          </h2>
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-            <div className="text-center">
-              <div className="text-5xl font-bold text-cyan-500 dark:text-cyan-400">5+</div>
-              <p className="mt-2 text-slate-600 dark:text-slate-300">Projects Delivered</p>
-            </div>
-            <div className="text-center">
-              <div className="text-5xl font-bold text-cyan-500 dark:text-cyan-400">98%</div>
-              <p className="mt-2 text-slate-600 dark:text-slate-300">Success Rate</p>
-            </div>
-            <div className="text-center">
-              <div className="text-5xl font-bold text-cyan-500 dark:text-cyan-400">24/7</div>
-              <p className="mt-2 text-slate-600 dark:text-slate-300">Technical Support</p>
-            </div>
-            <div className="text-center">
-              <div className="text-5xl font-bold text-cyan-500 dark:text-cyan-400">2+</div>
-              <p className="mt-2 text-slate-600 dark:text-slate-300">Global Clients</p>
-            </div>
-          </div>
+      
           <div className="mt-12 grid gap-6 md:grid-cols-2">
             <div className="rounded-3xl border border-slate-200 bg-white/90 p-6 dark:border-slate-800 dark:bg-slate-900/60">
               <div className="flex items-center gap-3">
