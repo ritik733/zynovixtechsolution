@@ -40,3 +40,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 *.bak
+generate_report.py
+Website_Changes_Report.html
+*.docx
