@@ -46,13 +46,14 @@ export const portfolioProjects: PortfolioProject[] = [
   },
   {
     id: "web-2",
-    title: "High-Performance Corporate Web Portal",
+    title: "High-Performance E-commerce Web Portal",
     category: "Web App",
     image: "/images/team/Zeno_ai.png",
     description:
-      "Responsive, SEO-optimized business web platform and customer portal built with Next.js, React, and modern UI design.",
-    tags: ["Next.js", "React", "Tailwind", "SEO"],
-  },  {
+      "Full-featured e-commerce platform with product catalog, cart, secure checkout, and order management — built with Next.js, React, and Stripe integration.",
+    tags: ["Next.js", "React", "E-commerce", "Stripe"],
+  },  
+  {
     id: "custom-2",
     title: "Business Workflow Automation Platform",
     category: "Custom Software",
