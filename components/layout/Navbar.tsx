@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ArrowUpRight, Menu, X } from "lucide-react";
@@ -66,15 +67,20 @@ export default function Navbar() {
           
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 sm:gap-4 flex-shrink-0" onClick={handleLinkClick}>
-            <div className="flex h-10 w-10 sm:h-12 sm:w-12 lg:h-14 lg:w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-400 to-blue-600 text-lg sm:text-xl lg:text-2xl font-bold text-white shadow-md shadow-blue-500/20">
-              Z
-            </div>
+            <Image
+              src="/images/logo/Zynovix-logo-Z.png"
+              alt="Zynovix"
+              width={197}
+              height={146}
+              className="h-10 w-10 sm:h-12 sm:w-12 lg:h-14 lg:w-14 object-contain"
+              priority
+            />
             <div className="hidden sm:block">
               <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-slate-900 dark:text-white leading-tight">
                 Zynovix
               </h2>
-              <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 leading-tight font-medium">
-                Tech Solution
+              <p className="text-[10px] sm:text-[11px] font-semibold tracking-[0.25em] uppercase text-slate-500 dark:text-slate-400 leading-tight">
+                Tech Solutions
               </p>
             </div>
           </Link>
