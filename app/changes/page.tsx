@@ -786,7 +786,7 @@ export default function ChangesReportPage() {
               </div>
             </div>
             <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-              Root Layout, Global CSS, About, Contact, Services, Portfolio, Team & Careers pages par light mode support, color contrast aur input styling add ki gayi.
+              Root Layout, ∑, About, Contact, Services, Portfolio, Team & Careers pages par light mode support, color contrast aur input styling add ki gayi.
             </p>
           </div>
 
@@ -999,7 +999,7 @@ export default function ChangesReportPage() {
 
         {/* Footer Note */}
         <div className="mt-12 text-center text-xs text-slate-500 dark:text-slate-400 border-t border-slate-200 dark:border-slate-800 pt-6">
-          Zynovix Tech Solution — Interactive Code Audit & Diffs Dashboard
+          Zynovix Tech Solutions — Interactive Code Audit & Diffs Dashboard
         </div>
       </div>
     </div>

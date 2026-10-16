@@ -39,7 +39,7 @@ def create_report():
     # Document Title
     p_title = doc.add_paragraph()
     p_title.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    run_title = p_title.add_run("Zynovix Tech Solution")
+    run_title = p_title.add_run("Zynovix Tech Solutions")
     run_title.font.name = "Arial"
     run_title.font.size = Pt(24)
     run_title.font.bold = True

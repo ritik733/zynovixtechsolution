@@ -1,5 +1,5 @@
 export const company = {
-  name: "Zynovix Tech Solution",
+  name: "Zynovix Tech Solutions",
 
   shortName: "Zynovix",
 

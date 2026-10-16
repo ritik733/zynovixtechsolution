@@ -33,13 +33,11 @@ export default function OpenPositions() {
           </span>
 
           <h2 className="mt-6 text-5xl font-bold text-slate-900 dark:text-white">
-            Fresher Interns Wanted
+            Who We're Looking For
           </h2>
 
           <p className="mx-auto mt-5 max-w-3xl text-lg text-slate-600 dark:text-slate-400">
-            Kickstart your career with real projects in Web Development,
-            Frappe ERPNext, and Custom Software. We're looking for eager
-            learners ready to grow with us.
+            We're looking for passionate developers, designers, and problem-solvers at any level — freshers, interns, and experienced professionals ready to build real projects in Web Development, Frappe ERPNext, and Custom Software.
           </p>
         </div>
 

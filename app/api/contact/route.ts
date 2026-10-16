@@ -64,7 +64,7 @@ export async function POST(request: Request) {
         html: `
           <div style="font-family: Arial, sans-serif; max-width: 650px; margin: 0 auto; padding: 20px;">
             <h2 style="color: #2563eb;">New Contact Form Lead</h2>
-            <p>A new inquiry has been submitted through the <strong>Zynovix Tech Solution</strong> website.</p>
+            <p>A new inquiry has been submitted through the <strong>Zynovix Tech Solutions</strong> website.</p>
             <hr style="border: 0; border-top: 1px solid #ddd; margin: 20px 0;" />
             <h3>Contact Details</h3>
             <table style="width: 100%; border-collapse: collapse;">
@@ -77,7 +77,7 @@ export async function POST(request: Request) {
               ${escapeHtml(String(project))}
             </div>
             <hr style="border: 0; border-top: 1px solid #ddd; margin: 25px 0;" />
-            <p style="color: #64748b; font-size: 13px;">This email was automatically generated from the Zynovix Tech Solution contact form.</p>
+            <p style="color: #64748b; font-size: 13px;">This email was automatically generated from the Zynovix Tech Solutions contact form.</p>
           </div>
         `,
       });

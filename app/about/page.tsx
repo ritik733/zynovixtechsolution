@@ -53,7 +53,7 @@ export default function AboutPage() {
             <div>
               <h2 className="mb-6 text-3xl font-bold text-slate-900 dark:text-white">Our Story</h2>
               <p className="mb-4 text-slate-600 dark:text-slate-300">
-                Founded in 2020, Zynovix was born from a shared passion for
+                Founded in 2026, Zynovix was born from a shared passion for
                 leveraging modern technology to drive business transformation.
                 What started as a small consultancy has grown into a
                 full-service digital innovation partner trusted by startups,
