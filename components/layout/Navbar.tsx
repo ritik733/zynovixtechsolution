@@ -72,11 +72,11 @@ export default function Navbar() {
               alt="Zynovix"
               width={197}
               height={146}
-              className="h-10 w-10 sm:h-12 sm:w-12 lg:h-14 lg:w-14 object-contain"
+              className="h-12 w-auto sm:h-14 lg:h-16 object-contain drop-shadow-sm"
               priority
             />
             <div className="hidden sm:block">
-              <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-slate-900 dark:text-white leading-tight">
+              <h2 className="text-lg sm:text-xl lg:text-2xl font-black tracking-widest uppercase text-slate-900 dark:text-white leading-tight">
                 Zynovix
               </h2>
               <p className="text-[10px] sm:text-[11px] font-semibold tracking-[0.25em] uppercase text-slate-500 dark:text-slate-400 leading-tight">

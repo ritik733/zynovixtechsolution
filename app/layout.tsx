@@ -6,7 +6,7 @@ import ThemeProvider from "@/components/ThemeProvider";
 import ThemeControls from "@/components/ThemeControls";
 
 export const metadata: Metadata = {
-  title: "Zynovix Tech Solutions",
+  title: "Zynovix Tech ffSolutions",
   description: "Modern software solutions for your business.",
 };
 
