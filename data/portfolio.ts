@@ -28,7 +28,7 @@ export const portfolioProjects: PortfolioProject[] = [
     title: "Frappe Retail Management System",
     category: "ERP",
     client: "Retail Chain",
-    image: "/images/team/Zeno_ai.png",
+    image: "/images/portfolio/frappe-retail.png",
     description:
       "Complete retail solution built on Frappe — POS billing, multi-store inventory, customer loyalty, and real-time sales analytics.",
     tags: ["Frappe", "ERPNext", "POS", "Retail"],
