@@ -112,7 +112,7 @@ export default function ServicesPage() {
               <p className="mt-3 text-slate-600 dark:text-slate-400 font-medium">Success Rate</p>
             </div>
             <div>
-              <h2 className="text-5xl font-bold text-cyan-500 dark:text-cyan-400">2+</h2>
+              <h2 className="text-5xl font-bold text-cyan-500 dark:text-cyan-400">8+</h2>
               <p className="mt-3 text-slate-600 dark:text-slate-400 font-medium">Global Clients</p>
             </div>
             <div>

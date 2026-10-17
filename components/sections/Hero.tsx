@@ -108,7 +108,7 @@ export default function Hero() {
               {[
                 ["5+", "Projects"],
                 ["98%", "Success"],
-                ["2+", "Clients"],
+                ["8+", "Clients"],
                 ["24/7", "Support"],
               ].map(([value, label]) => (
                 <div key={label}>

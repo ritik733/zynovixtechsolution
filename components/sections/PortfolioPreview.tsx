@@ -20,10 +20,10 @@ const projects = [
     icon: "🏨",
   },
   {
-    title: "High-Performance Corporate Web Portal",
+    title: "High-Performance E-commerce Web Portal",
     category: "Website Development",
     description:
-      "Responsive, SEO-optimized business web platform and customer portal built with Next.js, React, and modern UI design.",
+      "Full-featured e-commerce platform with product catalog, cart, secure checkout, and order management — built with Next.js, React, and Stripe integration.",
     image: null,
     icon: "🌐",
   },
