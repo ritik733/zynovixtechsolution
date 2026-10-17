@@ -4,6 +4,7 @@ import { ArrowRight, ExternalLink } from "lucide-react";
 
 const projects = [
   {
+    id: "erp-1",
     title: "Frappe ERPNext Enterprise Setup",
     category: "Frappe ERPNext",
     description:
@@ -12,6 +13,7 @@ const projects = [
     icon: "⚙️",
   },
   {
+    id: "web-1",
     title: "Hospitality & Hotel Management Suite",
     category: "Custom Software",
     description:
@@ -20,6 +22,7 @@ const projects = [
     icon: "🏨",
   },
   {
+    id: "web-2",
     title: "High-Performance E-commerce Web Portal",
     category: "Website Development",
     description:
@@ -85,10 +88,13 @@ export default function PortfolioPreview() {
                 <p className="mt-4 leading-7 text-slate-600 dark:text-slate-400">
                   {project.description}
                 </p>
-                <button className="mt-8 flex items-center font-medium text-cyan-600 dark:text-cyan-400 transition hover:translate-x-2">
+                <Link
+                  href={`/portfolio/${project.id}`}
+                  className="mt-8 flex items-center font-medium text-cyan-600 dark:text-cyan-400 transition hover:translate-x-2"
+                >
                   View Case Study
                   <ExternalLink className="ml-2 h-4 w-4" />
-                </button>
+                </Link>
               </div>
             </div>
           ))}

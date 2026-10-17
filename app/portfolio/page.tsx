@@ -116,7 +116,7 @@ export default function PortfolioPage() {
             transition={{ duration: 0.6, delay: 0.15 }}
             className="mt-4 text-slate-600 dark:text-slate-300 font-medium"
           >
-            We'd love to help turn your ideas into reality.
+            We&apos;d love to help turn your ideas into reality.
           </motion.p>
 
           <motion.div
@@ -129,7 +129,7 @@ export default function PortfolioPage() {
               href="/contact"
               className="mt-8 inline-block rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 px-8 py-3 font-semibold text-white transition hover:scale-105 shadow-md shadow-blue-500/20"
             >
-              Let's Talk
+              Let&apos;s Talk
             </Link>
           </motion.div>
         </div>
