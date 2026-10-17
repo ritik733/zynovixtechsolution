@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-  title: "About Us | Zynovix",
+  // title: "About Us | Zynovix",
   description: "Learn about Zynovix – our mission, values, and how we deliver modern websites, Frappe ERPNext solutions, and custom business software.",
 };
 
