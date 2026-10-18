@@ -68,7 +68,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 sm:gap-4 flex-shrink-0" onClick={handleLinkClick}>
             <Image
-              src="/images/logo/Zynovix-logo-Z.png"
+              src="/images/logo/Zynovix-logo-Z.webp"
               alt="Zynovix"
               width={197}
               height={146}

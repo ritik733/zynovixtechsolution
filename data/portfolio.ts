@@ -46,7 +46,7 @@ export const portfolioProjects: PortfolioProject[] = [
     title: "Frappe ERPNext Enterprise Setup",
     category: "ERP",
     client: "Apex Manufacturing Ltd.",
-    image: "/images/portfolio/erpnext.png",
+    image: "/images/portfolio/erpnext.webp",
     description:
       "Comprehensive ERPNext implementation with custom Doctypes, automated billing, multi-location inventory, and role-based permissions.",
     tags: ["Frappe", "ERPNext", "MariaDB", "Python"],
@@ -116,7 +116,7 @@ export const portfolioProjects: PortfolioProject[] = [
     title: "Frappe Retail Management System",
     category: "ERP",
     client: "Multi-Store Retail Chain",
-    image: "/images/portfolio/frappe-retail.png",
+    image: "/images/portfolio/frappe-retail.webp",
     description:
       "Complete retail solution built on Frappe — POS billing, multi-store inventory, customer loyalty, and real-time sales analytics.",
     tags: ["Frappe", "ERPNext", "POS", "Retail"],
@@ -185,7 +185,7 @@ export const portfolioProjects: PortfolioProject[] = [
     title: "Hospitality & Hotel Management Suite",
     category: "Web App",
     client: "Boutique Hotel & Resort",
-    image: "/images/portfolio/hotel-suite.png",
+    image: "/images/portfolio/hotel-suite.webp",
     description:
       "All-in-one software for hotel bookings, room inventory, guest check-in/out, POS billing, and housekeeping management.",
     tags: ["Next.js", "React", "PostgreSQL", "Stripe"],
@@ -255,7 +255,7 @@ export const portfolioProjects: PortfolioProject[] = [
     title: "High-Performance E-commerce Web Portal",
     category: "Web App",
     client: "Direct-to-Consumer (D2C) Brand",
-    image: "/images/portfolio/e-commerce.png",
+    image: "/images/portfolio/e-commerce.webp",
     description:
       "Full-featured e-commerce platform with product catalog, cart, secure checkout, and order management — built with Next.js, React, and Stripe integration.",
     tags: ["Next.js", "React", "E-commerce", "Stripe"],
@@ -324,7 +324,7 @@ export const portfolioProjects: PortfolioProject[] = [
     title: "Business Workflow Automation Platform",
     category: "Custom Software",
     client: "Logistics & Freight Corporation",
-    image: "/images/portfolio/automation.png",
+    image: "/images/portfolio/automation.webp",
     description:
       "Custom admin dashboard and workflow automation tool that reduced manual data entry by 70% for a logistics company.",
     tags: ["React", "Node.js", "PostgreSQL"],

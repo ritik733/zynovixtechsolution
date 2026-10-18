@@ -9,7 +9,7 @@ const projects = [
     category: "Frappe ERPNext",
     description:
       "Comprehensive ERPNext implementation featuring custom Doctypes, automated billing, multi-location inventory, and role-based permissions.",
-    image: "/images/team/Zeno_ai.png",
+    image: "/images/team/Zeno_ai.webp",
     icon: "⚙️",
   },
   {
