@@ -18,13 +18,42 @@ const transporter = nodemailer.createTransport({
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { name, email, phone, project } = body;
+    const { name, email, phone, project, serviceName, company, ...extraFields } = body;
 
-    if (!name || !email || !phone || !project) {
+    if (!name || !email) {
       return NextResponse.json(
-        { success: false, error: "All fields are required" },
+        { success: false, error: "Name and email are required" },
         { status: 400 }
       );
+    }
+
+    const resolvedPhone = phone || extraFields.contactDetails || "Not provided";
+
+    // Format all submitted details into project_details
+    let formattedDetails = "";
+    if (serviceName) formattedDetails += `Service: ${serviceName}\n`;
+    if (company) formattedDetails += `Company: ${company}\n`;
+
+    // Process any custom fields
+    const extraEntries = Object.entries(extraFields).filter(
+      ([key, val]) => val !== undefined && val !== null && val !== "" && key !== "contactDetails"
+    );
+
+    for (const [key, val] of extraEntries) {
+      const formattedKey = key
+        .replace(/([A-Z])/g, " $1")
+        .replace(/_/g, " ")
+        .replace(/^./, (str) => str.toUpperCase());
+      const formattedVal = Array.isArray(val) ? val.join(", ") : String(val);
+      formattedDetails += `${formattedKey}: ${formattedVal}\n`;
+    }
+
+    if (project) {
+      formattedDetails += `\nProject / Notes:\n${String(project)}`;
+    }
+
+    if (!formattedDetails.trim()) {
+      formattedDetails = "Service Inquiry from landing page";
     }
 
     if (!process.env.GMAIL_USER || !process.env.GMAIL_APP_PASSWORD) {
@@ -41,8 +70,8 @@ export async function POST(request: Request) {
       .insert({
         full_name: String(name),
         email: String(email),
-        phone: String(phone),
-        project_details: String(project),
+        phone: String(resolvedPhone),
+        project_details: formattedDetails.trim(),
       });
 
     if (supabaseError) {
@@ -57,27 +86,30 @@ export async function POST(request: Request) {
 
     // 2. SEND EMAIL THROUGH GMAIL
     try {
+      const subjectPrefix = serviceName ? `[${serviceName}]` : "New Contact Form Lead";
       const info = await transporter.sendMail({
         from: `"Zynovix Website" <${process.env.GMAIL_USER}>`,
         to: RECIPIENTS.join(", "),
-        subject: `New Contact Form Lead — ${String(name)}`,
+        subject: `${subjectPrefix} Inquiry — ${String(name)}`,
         html: `
           <div style="font-family: Arial, sans-serif; max-width: 650px; margin: 0 auto; padding: 20px;">
-            <h2 style="color: #2563eb;">New Contact Form Lead</h2>
+            <h2 style="color: #2563eb;">${escapeHtml(serviceName ? `${serviceName} Inquiry` : "New Contact Form Lead")}</h2>
             <p>A new inquiry has been submitted through the <strong>Zynovix Tech Solutions</strong> website.</p>
             <hr style="border: 0; border-top: 1px solid #ddd; margin: 20px 0;" />
             <h3>Contact Details</h3>
             <table style="width: 100%; border-collapse: collapse;">
-              <tr><td style="padding: 8px 0; font-weight: bold;">Full Name</td><td style="padding: 8px 0;">${escapeHtml(String(name))}</td></tr>
+              <tr><td style="padding: 8px 0; font-weight: bold; width: 140px;">Full Name</td><td style="padding: 8px 0;">${escapeHtml(String(name))}</td></tr>
               <tr><td style="padding: 8px 0; font-weight: bold;">Email</td><td style="padding: 8px 0;">${escapeHtml(String(email))}</td></tr>
-              <tr><td style="padding: 8px 0; font-weight: bold;">Phone</td><td style="padding: 8px 0;">${escapeHtml(String(phone))}</td></tr>
+              <tr><td style="padding: 8px 0; font-weight: bold;">Phone</td><td style="padding: 8px 0;">${escapeHtml(String(resolvedPhone))}</td></tr>
+              ${company ? `<tr><td style="padding: 8px 0; font-weight: bold;">Company</td><td style="padding: 8px 0;">${escapeHtml(String(company))}</td></tr>` : ""}
             </table>
-            <h3 style="margin-top: 25px;">Project Details</h3>
-            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 15px; white-space: pre-wrap;">
-              ${escapeHtml(String(project))}
+
+            <h3 style="margin-top: 25px;">Requirements & Details</h3>
+            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 15px; white-space: pre-wrap; font-family: monospace, sans-serif; font-size: 14px; line-height: 1.6;">
+              ${escapeHtml(formattedDetails.trim())}
             </div>
             <hr style="border: 0; border-top: 1px solid #ddd; margin: 25px 0;" />
-            <p style="color: #64748b; font-size: 13px;">This email was automatically generated from the Zynovix Tech Solutions contact form.</p>
+            <p style="color: #64748b; font-size: 13px;">This email was automatically generated from the Zynovix Tech Solutions website.</p>
           </div>
         `,
       });

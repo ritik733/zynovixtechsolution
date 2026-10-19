@@ -6,7 +6,11 @@ import ThemeProvider from "@/components/ThemeProvider";
 import ThemeControls from "@/components/ThemeControls";
 
 export const metadata: Metadata = {
-  title: "Zynovix Tech Solutions",
+  metadataBase: new URL("https://zynovixtechsolutions.com"),
+  title: {
+    default: "Zynovix Tech Solutions | Modern Web, ERP & Custom Software",
+    template: "%s",
+  },
   description: "Modern software solutions for your business.",
 };
 

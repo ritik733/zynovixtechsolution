@@ -13,36 +13,42 @@ const services = [
   {
     icon: Globe,
     title: "Custom Website Development",
+    href: "/services/custom-website-development",
     desc: "High-performance websites, corporate portals, and responsive web applications designed to engage visitors and drive conversions.",
     features: ["Next.js & React UI", "Mobile-responsive layouts", "SEO & Core Web Vitals"],
   },
   {
     icon: Code,
     title: "Frappe & ERPNext Solutions",
+    href: "/services/frappe-erpnext-solutions",
     desc: "End-to-end ERP implementation, custom Frappe modules, accounting, inventory, and automated business workflows.",
     features: ["Custom Doctypes & Workflows", "Multi-warehouse inventory", "Accounting & finance setup"],
   },
   {
     icon: Hotel,
     title: "Hotel Management Software",
+    href: "/services/hotel-management-software",
     desc: "Complete hospitality management tools for hotel bookings, room inventory, guest check-in/out, and front desk operations.",
     features: ["Room reservation system", "Front desk & billing POS", "Housekeeping & guest records"],
   },
   {
     icon: LayoutDashboard,
     title: "Custom Business Software",
+    href: "/services/custom-business-software",
     desc: "Tailor-made software applications engineered around your unique operational bottlenecks and administrative needs.",
     features: ["Internal admin dashboards", "Workflow automation", "Role-based access security"],
   },
   {
     icon: Plug,
     title: "API & System Integrations",
+    href: "/services/api-system-integrations",
     desc: "Seamless connectivity between ERPNext, websites, payment gateways, and third-party SaaS tools.",
     features: ["Payment gateway integrations", "REST API & webhook sync", "Third-party platform bridging"],
   },
   {
     icon: Cloud,
     title: "Cloud Hosting & Maintenance",
+    href: "/services/cloud-hosting-maintenance",
     desc: "Reliable cloud infrastructure setup, performance monitoring, continuous backups, and dedicated technical maintenance.",
     features: ["Frappe & web server hosting", "Automated backups & security", "24/7 technical support"],
   },
@@ -55,9 +61,9 @@ export default function ServicesPage() {
       <div className="mx-auto max-w-7xl px-6 pt-32 pb-24">
         {/* Heading – less flashy, no badge */}
         <div className="text-center">
-          <h2 className="text-3xl font-semibold text-slate-900 md:text-4xl dark:text-slate-200">
+          <h1 className="text-3xl font-semibold text-slate-900 md:text-4xl dark:text-slate-200">
             Our Core Services
-          </h2>
+          </h1>
           <p className="mt-2 text-lg text-slate-600 dark:text-slate-400 font-medium">
             Websites • Frappe ERPNext • Custom Business Software
           </p>
@@ -73,28 +79,31 @@ export default function ServicesPage() {
           {services.map((service) => {
             const Icon = service.icon;
             return (
-              <div
+              <Link
                 key={service.title}
-                className="group rounded-3xl border border-slate-200 bg-white/90 p-8 shadow-sm transition duration-300 hover:-translate-y-2 hover:border-cyan-500 dark:border-slate-800 dark:bg-slate-900/60 dark:shadow-none"
+                href={service.href}
+                className="group flex flex-col justify-between rounded-3xl border border-slate-200 bg-white/90 p-8 shadow-sm transition duration-300 hover:-translate-y-2 hover:border-cyan-500 hover:shadow-lg dark:border-slate-800 dark:bg-slate-900/60 dark:shadow-none"
               >
-                <div className="mb-6 inline-flex rounded-2xl bg-cyan-500/10 p-4">
-                  <Icon size={36} className="text-cyan-500 dark:text-cyan-400" />
+                <div>
+                  <div className="mb-6 inline-flex rounded-2xl bg-cyan-500/10 p-4">
+                    <Icon size={36} className="text-cyan-500 dark:text-cyan-400" />
+                  </div>
+                  <h2 className="text-2xl font-semibold text-slate-900 dark:text-white">{service.title}</h2>
+                  <p className="mt-4 leading-7 text-slate-600 dark:text-slate-400">{service.desc}</p>
+                  <ul className="mt-4 space-y-1 text-sm text-slate-600 dark:text-slate-400">
+                    {service.features.map((feature) => (
+                      <li key={feature} className="flex items-center gap-2">
+                        <span className="h-1.5 w-1.5 rounded-full bg-cyan-500 dark:bg-cyan-400/60" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <h3 className="text-2xl font-semibold text-slate-900 dark:text-white">{service.title}</h3>
-                <p className="mt-4 leading-7 text-slate-600 dark:text-slate-400">{service.desc}</p>
-                <ul className="mt-4 space-y-1 text-sm text-slate-600 dark:text-slate-400">
-                  {service.features.map((feature) => (
-                    <li key={feature} className="flex items-center gap-2">
-                      <span className="h-1.5 w-1.5 rounded-full bg-cyan-500 dark:bg-cyan-400/60" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
                 <div className="mt-8 flex items-center font-medium text-cyan-600 dark:text-cyan-400 transition group-hover:translate-x-2">
-                  Learn More
+                  Explore Service
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </div>
-              </div>
+              </Link>
             );
           })}
         </div>

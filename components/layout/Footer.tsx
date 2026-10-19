@@ -78,17 +78,41 @@ export default function Footer() {
 
             <ul className="space-y-4 text-slate-600 dark:text-slate-400 font-medium">
 
-              <li>Custom Website Development</li>
+              <li>
+                <Link href="/services/custom-website-development" className="transition hover:text-cyan-600 dark:hover:text-cyan-400">
+                  Custom Website Development
+                </Link>
+              </li>
 
-              <li>Frappe & ERPNext Solutions</li>
+              <li>
+                <Link href="/services/frappe-erpnext-solutions" className="transition hover:text-cyan-600 dark:hover:text-cyan-400">
+                  Frappe & ERPNext Solutions
+                </Link>
+              </li>
 
-              <li>Hotel Management Software</li>
+              <li>
+                <Link href="/services/hotel-management-software" className="transition hover:text-cyan-600 dark:hover:text-cyan-400">
+                  Hotel Management Software
+                </Link>
+              </li>
 
-              <li>Custom Business Software</li>
+              <li>
+                <Link href="/services/custom-business-software" className="transition hover:text-cyan-600 dark:hover:text-cyan-400">
+                  Custom Business Software
+                </Link>
+              </li>
 
-              <li>API & System Integrations</li>
+              <li>
+                <Link href="/services/api-system-integrations" className="transition hover:text-cyan-600 dark:hover:text-cyan-400">
+                  API & System Integrations
+                </Link>
+              </li>
 
-              <li>Cloud Hosting & Maintenance</li>
+              <li>
+                <Link href="/services/cloud-hosting-maintenance" className="transition hover:text-cyan-600 dark:hover:text-cyan-400">
+                  Cloud Hosting & Maintenance
+                </Link>
+              </li>
 
             </ul>
 
