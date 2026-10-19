@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import Navbar from "@/components/layout/Navbar";
+import { TechDotGrid, AmbientAtmosphereGlow } from "@/components/ui/TechPattern";
 
 interface TeamMember {
   id: number;
@@ -23,17 +23,15 @@ const teamMembers: TeamMember[] = [
   {
     id: 1,
     name: "Praveen Sharma",
-    role: "CEO",
+    role: "CEO & Co-Founder",
     department: "Executive",
     image: "/images/team/Praveen-Sharma.jpeg",
-    bio: "Visionary leader with 4+ years of experience in technology and business strategy. Passionate about building innovative solutions that solve real-world problems.",
+    bio: "Visionary leader with deep expertise in enterprise software architectures, ERPNext implementations, and technology strategy for growing organizations.",
     experience: "4+ years in tech leadership",
     social: {
-      linkedin: "https://linkedin.com/in/johndoe",
-      twitter: "https://twitter.com/johndoe",
-      email: "john@company.com",
+      email: "praveens9699@gmail.com",
     },
-    skills: ["Leadership", "Strategy", "Innovation", "AI/ML"],
+    skills: ["Leadership", "ERP Strategy", "System Architecture", "B2B Tech"],
   },
   {
     id: 2,
@@ -41,28 +39,25 @@ const teamMembers: TeamMember[] = [
     role: "Lead Developer",
     department: "Engineering",
     image: "/images/team/Piyush-Dadhich.webp",
-    bio: "Full-stack developer specialized in React, Next.js, and cloud architecture. Dedicated to writing clean, scalable code and mentoring junior developers.",
-    experience: "8+ years in software development",
+    bio: "Full-stack engineer specialized in Next.js, React, TypeScript, and scalable cloud applications with sub-second performance.",
+    experience: "Software Engineering Specialist",
     social: {
-      linkedin: "https://linkedin.com/in/janesmith",
-      github: "https://github.com/janesmith",
-      twitter: "https://twitter.com/janesmith",
+      email: "work@zynovixtechsolutions.com",
     },
-    skills: ["React", "Next.js", "TypeScript", "AWS", "Node.js"],
+    skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Node.js"],
   },
   {
     id: 3,
     name: "Pukhraj Tater",
-    role: "Backend Engineer",
+    role: "Backend & ERP Engineer",
     department: "Engineering",
     image: "/images/team/Pukhraj-tater.webp",
-    bio: "Backend engineer with expertise in building scalable and efficient server-side applications. Passionate about optimizing performance and ensuring code quality.",
-    experience: "6+ years in backend development",
+    bio: "Backend and ERP engineer experienced in Frappe Framework, Python, MariaDB, and automated business workflows.",
+    experience: "Backend & ERP Architecture",
     social: {
-      linkedin: "https://linkedin.com/in/mikejohnson",
-      twitter: "https://twitter.com/mikejohnson",
+      email: "work@zynovixtechsolutions.com",
     },
-    skills: ["Node.js", "Python", "Database Design", "API Development"],
+    skills: ["Frappe", "ERPNext", "Python", "MariaDB", "REST APIs"],
   },
   {
     id: 4,
@@ -70,13 +65,12 @@ const teamMembers: TeamMember[] = [
     role: "Marketing Director",
     department: "Marketing",
     image: "/images/team/Chandan-Singh.webp",
-    bio: "Data-driven marketing strategist with expertise in digital campaigns, brand building, and growth hacking.",
-    experience: "10+ years in digital marketing",
+    bio: "Data-driven marketing strategist with expertise in SEO growth, B2B customer acquisition, and technology brand building.",
+    experience: "Growth & Digital Strategy",
     social: {
-      linkedin: "https://linkedin.com/in/sarahwilliams",
-      twitter: "https://twitter.com/sarahwilliams",
+      email: "work@zynovixtechsolutions.com",
     },
-    skills: ["SEO", "Content Strategy", "Analytics", "Brand Management"],
+    skills: ["SEO", "Growth Strategy", "Content Marketing", "B2B Outreach"],
   },
   {
     id: 5,
@@ -84,28 +78,14 @@ const teamMembers: TeamMember[] = [
     role: "Data Scientist",
     department: "Engineering",
     image: "/images/team/Vinod-Kharol.webp",
-    bio: "PhD in Computer Science with a focus on machine learning and natural language processing. Builds AI-powered solutions that drive business value.",
-    experience: "6+ years in AI/ML",
+    bio: "Data scientist specialized in machine learning, statistical data pipelines, and workflow optimization algorithms.",
+    experience: "Data Analytics & ML",
     social: {
       linkedin: "https://linkedin.com/in/vinodkharol",
       github: "https://github.com/vinodkharol",
     },
-    skills: ["Python", "TensorFlow", "PyTorch", "NLP", "Data Analysis"],
+    skills: ["Python", "Machine Learning", "Data Analysis", "Database Design"],
   },
-  //   {
-  //     id: 6,
-  //     name: "Emily Davis",
-  //     role: "Project Manager",
-  //     department: "Operations",
-  //     image: "/images/team/emily-davis.jpg",
-  //     bio: "Certified PMP with a talent for keeping projects on track and teams motivated. Ensures smooth delivery of all client projects.",
-  //     experience: "9+ years in project management",
-  //     social: {
-  //       linkedin: "https://linkedin.com/in/emilydavis",
-  //       email: "emily@company.com",
-  //     },
-  //     skills: ["Agile", "Scrum", "Risk Management", "Communication"],
-  //   },
 ];
 
 export default function TeamPage() {
@@ -120,11 +100,9 @@ export default function TeamPage() {
 
   return (
     <main className="relative overflow-hidden bg-white text-slate-900 min-h-screen dark:bg-[#060818] dark:text-white">
-      {/* Background Glow Effects */}
-      <div className="absolute left-1/2 top-[-120px] -translate-x-1/2 w-[900px] h-[300px] rounded-full bg-violet-600/30 blur-[140px]" />
-      <div className="absolute right-0 top-1/2 w-[500px] h-[500px] rounded-full bg-blue-600/10 blur-[120px]" />
-
-      <Navbar />
+      {/* Background Decor to fill empty space */}
+      <TechDotGrid opacity={0.035} />
+      <AmbientAtmosphereGlow variant="violet-cyan" />
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-4 md:px-8">
@@ -147,6 +125,7 @@ export default function TeamPage() {
                     src={member.image}
                     alt={member.name}
                     fill
+                    sizes="48px"
                     className="object-cover"
                   />
                 </div>
@@ -190,6 +169,7 @@ export default function TeamPage() {
                           src={member.image}
                           alt={member.name}
                           fill
+                          sizes="128px"
                           className="object-cover"
                         />
                       </div>

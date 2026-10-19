@@ -1,26 +1,34 @@
 import Link from "next/link";
-import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import { Suspense } from "react";
+import { Mail, Phone, MapPin, Clock, Sparkles, ShieldCheck } from "lucide-react";
 import ContactForm from "./ContactForm";
+import { TechDotGrid, AmbientAtmosphereGlow, BlueprintGrid } from "@/components/ui/TechPattern";
 
 export const metadata = {
-  title: "Contact | Zynovix",
-  description: "Get in touch with us for your next project.",
+  title: "Contact Us | Zynovix Tech Solutions",
+  description: "Get in touch with us for your next modern web, Frappe ERPNext, or custom software project.",
 };
 
 export default function ContactPage() {
   return (
-    <main className="bg-white text-slate-900 dark:bg-slate-950 dark:text-white">
+    <main className="relative overflow-hidden bg-white text-slate-900 dark:bg-slate-950 dark:text-white">
+      {/* Background Decor to fill empty space */}
+      <TechDotGrid opacity={0.035} />
+      <BlueprintGrid />
+      <AmbientAtmosphereGlow variant="cyan-blue" />
+
       {/* Hero */}
-      <section className="bg-white pt-32 pb-20 text-slate-900 dark:bg-slate-950 dark:text-white md:pt-40 md:pb-28">
+      <section className="relative pt-32 pb-16 text-slate-900 dark:text-white md:pt-40 md:pb-24">
         <div className="mx-auto max-w-4xl px-6 text-center">
-          <h1 className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white md:text-5xl">
-            Let's Build Something Amazing
+          <div className="inline-flex items-center gap-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-cyan-600 dark:text-cyan-400">
+            <Sparkles size={14} /> Direct Architectural Discovery
+          </div>
+          <h1 className="mt-4 text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white md:text-5xl">
+            Let's Build Something Extraordinary
           </h1>
 
-          <p className="mx-auto mt-5 max-w-2xl text-base font-medium text-slate-600 dark:text-slate-300 md:text-lg">
-            Have an idea, project, or business challenge? We'd love to hear
-            from you. Fill out the form below and we'll get back to you within
-            24 hours.
+          <p className="mx-auto mt-4 max-w-2xl text-base font-medium text-slate-600 dark:text-slate-300 md:text-lg leading-relaxed">
+            Have an idea, project, or enterprise business bottleneck? Talk directly with our senior software engineers and receive a comprehensive architecture roadmap within 24 hours.
           </p>
         </div>
       </section>
@@ -40,7 +48,9 @@ export default function ContactPage() {
             </p>
 
             {/* Functional Contact Form */}
-            <ContactForm />
+            <Suspense fallback={<div className="h-64 animate-pulse rounded-xl bg-slate-100 dark:bg-slate-800" />}>
+              <ContactForm />
+            </Suspense>
           </div>
 
           {/* Contact Information */}

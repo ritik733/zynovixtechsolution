@@ -3,8 +3,10 @@ import TrustBar from "@/components/sections/TrustBar";
 import Stats from "@/components/sections/Stats";
 import AboutPreview from "@/components/sections/AboutPreview";
 import ServicesPreview from "@/components/sections/ServicesPreview";
+import PortfolioPreview from "@/components/sections/PortfolioPreview";
+import ProjectEstimator from "@/components/interactive/ProjectEstimator";
+import Testimonials from "@/components/sections/Testimonials";
 import CTA from "@/components/sections/CTA";
-import Navbar from "@/components/layout/Navbar";
 import MouseGlow from "@/components/MouseGlow";
 
 export default function Home() {
@@ -16,6 +18,9 @@ export default function Home() {
       <Stats />
       <AboutPreview />
       <ServicesPreview />
+      <PortfolioPreview />
+      <ProjectEstimator />
+      <Testimonials />
       <CTA />
     </main>
   );

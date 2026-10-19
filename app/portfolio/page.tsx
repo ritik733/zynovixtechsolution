@@ -3,13 +3,13 @@
 import { useState, useMemo } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
-import Navbar from "@/components/layout/Navbar";
 import ProjectCard from "@/components/portfolio/ProjectCard";
 import FilterTabs from "@/components/portfolio/FilterTabs";
 import {
   portfolioProjects,
   type PortfolioCategory,
 } from "@/data/portfolio";
+import { TechDotGrid, AmbientAtmosphereGlow } from "@/components/ui/TechPattern";
 
 type Filter = "All" | PortfolioCategory;
 
@@ -31,10 +31,10 @@ export default function PortfolioPage() {
   }, []);
 
   return (
-    <main className="bg-white text-slate-900 min-h-screen dark:bg-[#050816] dark:text-white">
-      <Navbar />
-
-      <section className="pt-32 pb-12 text-center">
+    <main className="relative overflow-hidden bg-white text-slate-900 min-h-screen dark:bg-[#050816] dark:text-white">
+      <TechDotGrid opacity={0.035} />
+      <AmbientAtmosphereGlow variant="cyan-blue" />
+      <section className="relative pt-32 pb-12 text-center">
         <div className="mx-auto max-w-7xl px-6">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}

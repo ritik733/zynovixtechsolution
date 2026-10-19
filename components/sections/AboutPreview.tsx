@@ -1,79 +1,111 @@
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Globe, Database, Hotel } from "lucide-react";
+import { ArrowRight, CheckCircle2, ShieldCheck, Users, Zap } from "lucide-react";
+import { TechDotGrid, TechCircuitMesh, AmbientAtmosphereGlow } from "@/components/ui/TechPattern";
 
 export default function AboutPreview() {
   return (
-    <section className="bg-white text-slate-900 py-24 dark:bg-slate-950 dark:text-white">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid items-center gap-16 lg:grid-cols-2">
+    <section className="relative overflow-hidden bg-white text-slate-900 py-24 dark:bg-slate-950 dark:text-white">
+      {/* Decorative Background Tech Patterns to utilize empty space */}
+      <TechDotGrid opacity={0.04} />
+      <TechCircuitMesh />
+      <AmbientAtmosphereGlow variant="violet-cyan" />
 
-          {/* Left */}
-          <div>
-            <span className="rounded-full bg-cyan-500/10 px-4 py-2 text-sm font-medium text-cyan-400">
-              About Us
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="grid items-center gap-12 lg:gap-16 lg:grid-cols-12">
+
+          {/* Left - Narrative & Core Strengths (5 cols) */}
+          <div className="lg:col-span-5">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-cyan-600 dark:text-cyan-400">
+              <Zap size={14} /> Who We Are
             </span>
 
-            <h2 className="mt-6 text-4xl font-bold md:text-5xl">
-              Modern Web & ERP
-              <span className="block text-cyan-400">
+            <h2 className="mt-5 text-3xl font-extrabold md:text-5xl tracking-tight leading-[1.15]">
+              Modern Web & ERP{" "}
+              <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent dark:from-blue-400 dark:to-cyan-400">
                 Software Development
               </span>
             </h2>
 
-            <p className="mt-8 text-lg leading-8 text-slate-600 dark:text-slate-400 font-medium">
-              We help businesses, hotels, and enterprises streamline operations
-              and accelerate growth with modern website development, Frappe ERPNext
-              implementations, and bespoke management software.
+            <p className="mt-6 text-base md:text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+              We empower startups, hotels, and established enterprises to modernize operations
+              and accelerate digital revenue through high-velocity web engineering and robust Frappe ERPNext deployments.
             </p>
 
-            <p className="mt-6 text-slate-600 dark:text-slate-400">
-              From custom web applications and client portals to comprehensive ERPNext
-              modules and specialized hotel management tools, we build solutions
-              tailored specifically to your business workflows.
-            </p>
+            <div className="mt-8 space-y-3 text-sm text-slate-700 dark:text-slate-300">
+              <div className="flex items-center gap-3">
+                <CheckCircle2 size={18} className="text-cyan-500 flex-shrink-0" />
+                <span>Tailored architecture aligned directly with your business bottlenecks</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <CheckCircle2 size={18} className="text-cyan-500 flex-shrink-0" />
+                <span>Zero vendor lock-in with open-source Frappe & Next.js frameworks</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <CheckCircle2 size={18} className="text-cyan-500 flex-shrink-0" />
+                <span>Direct collaboration with senior engineers & architects</span>
+              </div>
+            </div>
 
             <Link
               href="/about"
-              className="mt-10 inline-flex items-center rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 px-6 py-3 font-semibold text-white transition hover:scale-105 shadow-md shadow-blue-500/20"
+              className="mt-10 inline-flex items-center rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 px-7 py-3.5 font-semibold text-white transition hover:scale-105 shadow-md shadow-blue-500/20"
             >
-              Learn More
-              <ArrowRight className="ml-2 h-5 w-5" />
+              Explore Our Story & Values
+              <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </div>
 
-          {/* Right */}
-          <div className="grid gap-6">
+          {/* Right - High-Impact Team Showcase Visual (7 cols) */}
+          <div className="relative lg:col-span-7">
+            {/* Visual Container Frame with Studio Glow */}
+            <div className="relative overflow-hidden rounded-3xl border border-slate-200/90 bg-white/60 p-2 shadow-2xl backdrop-blur-xl dark:border-slate-800 dark:bg-slate-900/60">
+              <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl bg-slate-900">
+                <Image
+                  src="/images/about/engineering-collaboration.webp"
+                  alt="Zynovix senior engineering team collaborating on modern web application architectures and Frappe ERPNext workflows in open tech lab"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 55vw"
+                  className="object-cover transition-transform duration-700 hover:scale-105"
+                  priority
+                />
+                {/* Gradient Rim Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
 
-            <div className="rounded-2xl border border-slate-200 bg-white/90 p-6 shadow-sm backdrop-blur dark:border-slate-800 dark:bg-slate-900/60 dark:shadow-none">
-              <Globe className="mb-4 text-cyan-500 dark:text-cyan-400" size={42} />
-              <h3 className="text-xl font-semibold text-slate-900 dark:text-white">
-                Custom Website Development
-              </h3>
-              <p className="mt-3 text-slate-600 dark:text-slate-400">
-                Fast, responsive, and SEO-optimized web applications built with Next.js, React, and modern web frameworks.
-              </p>
+                {/* Floating Badge Top Left */}
+                <div className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-xl border border-white/20 bg-slate-900/80 px-3.5 py-1.5 backdrop-blur-md text-xs font-semibold text-white shadow-lg">
+                  <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+                  <span>Engineering Pod • Live Sprints</span>
+                </div>
+
+                {/* Floating Metric Badge Bottom Right */}
+                <div className="absolute bottom-4 right-4 max-w-[280px] rounded-2xl border border-cyan-500/30 bg-slate-950/85 p-3.5 backdrop-blur-md shadow-xl text-white">
+                  <div className="flex items-center gap-2 text-cyan-400">
+                    <ShieldCheck size={18} />
+                    <span className="text-xs font-bold uppercase tracking-wider">Enterprise Guarantee</span>
+                  </div>
+                  <p className="mt-1 text-xs text-slate-300 font-medium leading-snug">
+                    99.4% Client Satisfaction & Zero-Downtime Data Migration Protocols
+                  </p>
+                </div>
+              </div>
             </div>
 
-            <div className="rounded-2xl border border-slate-200 bg-white/90 p-6 shadow-sm backdrop-blur dark:border-slate-800 dark:bg-slate-900/60 dark:shadow-none">
-              <Database className="mb-4 text-cyan-500 dark:text-cyan-400" size={42} />
-              <h3 className="text-xl font-semibold text-slate-900 dark:text-white">
-                Frappe ERPNext Solutions
-              </h3>
-              <p className="mt-3 text-slate-600 dark:text-slate-400">
-                End-to-end ERP implementations, custom Doctypes, accounting, inventory, and automated business workflows.
-              </p>
+            {/* Micro Feature Triad below Image */}
+            <div className="mt-4 grid grid-cols-3 gap-3">
+              <div className="rounded-xl border border-slate-200/80 bg-white/80 p-3 text-center dark:border-slate-800 dark:bg-slate-900/60 shadow-sm">
+                <p className="text-xs font-bold text-slate-900 dark:text-white">Next.js 16 SSR</p>
+                <p className="text-[10px] text-slate-500 dark:text-slate-400">Edge-Cached Speed</p>
+              </div>
+              <div className="rounded-xl border border-slate-200/80 bg-white/80 p-3 text-center dark:border-slate-800 dark:bg-slate-900/60 shadow-sm">
+                <p className="text-xs font-bold text-slate-900 dark:text-white">Frappe ERPNext</p>
+                <p className="text-[10px] text-slate-500 dark:text-slate-400">Custom Accounting & CRM</p>
+              </div>
+              <div className="rounded-xl border border-slate-200/80 bg-white/80 p-3 text-center dark:border-slate-800 dark:bg-slate-900/60 shadow-sm">
+                <p className="text-xs font-bold text-slate-900 dark:text-white">Hotel PMS Core</p>
+                <p className="text-[10px] text-slate-500 dark:text-slate-400">0 Overbookings</p>
+              </div>
             </div>
-
-            <div className="rounded-2xl border border-slate-200 bg-white/90 p-6 shadow-sm backdrop-blur dark:border-slate-800 dark:bg-slate-900/60 dark:shadow-none">
-              <Hotel className="mb-4 text-cyan-500 dark:text-cyan-400" size={42} />
-              <h3 className="text-xl font-semibold text-slate-900 dark:text-white">
-                Hotel & Management Tools
-              </h3>
-              <p className="mt-3 text-slate-600 dark:text-slate-400">
-                Purpose-built tools for room reservation, billing, guest check-in, and hospitality operational management.
-              </p>
-            </div>
-
           </div>
 
         </div>

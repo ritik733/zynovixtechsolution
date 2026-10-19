@@ -1,11 +1,35 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 
 export default function ContactForm() {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
   const [success, setSuccess] = useState(false);
+  const [projectText, setProjectText] = useState("");
+
+  const searchParams = useSearchParams();
+  const serviceParam = searchParams.get("service");
+  const tierParam = searchParams.get("tier");
+
+  useEffect(() => {
+    if (serviceParam) {
+      const serviceNames: Record<string, string> = {
+        website: "Custom Website Development",
+        erpnext: "Frappe & ERPNext Solution",
+        hospitality: "Hotel Management Software",
+        custom_software: "Custom Business Platform",
+        integrations: "API & System Integrations",
+        cloud: "Cloud DevOps & Maintenance",
+      };
+      const svc = serviceNames[serviceParam] || serviceParam;
+      const tier = tierParam ? ` (${tierParam.toUpperCase()} Scope)` : "";
+      setProjectText(
+        `Hi Zynovix team, I am interested in your ${svc}${tier}. Please share the technical architecture proposal and schedule a discovery consultation.`
+      );
+    }
+  }, [serviceParam, tierParam]);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -46,6 +70,7 @@ export default function ContactForm() {
       );
 
       form.reset();
+      setProjectText("");
     } catch (error) {
       console.error("Contact form error:", error);
 
@@ -139,6 +164,8 @@ export default function ContactForm() {
           name="project"
           required
           rows={4}
+          value={projectText}
+          onChange={(e) => setProjectText(e.target.value)}
           placeholder="Tell us about your project..."
           className="w-full resize-y rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-blue-600 focus:bg-white focus:ring-2 focus:ring-blue-200/60 dark:border-slate-700 dark:bg-slate-800/50 dark:text-white dark:focus:bg-slate-800"
         />
