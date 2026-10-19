@@ -19,6 +19,7 @@ import {
   getProjectById,
   getRelatedProjects,
 } from "@/data/portfolio";
+import { HeroAtmosphereGlow } from "@/components/ui/TechPattern";
 
 export function generateStaticParams() {
   return portfolioProjects.flatMap((p) => [
@@ -78,9 +79,12 @@ export default async function ProjectDetailPage({
   const catTheme = categoryStyles[project.category] || categoryStyles["Web App"];
 
   return (
-    <main className="min-h-screen bg-white text-slate-900 dark:bg-[#050816] dark:text-white">
+    <main className="relative overflow-hidden min-h-screen bg-white text-slate-900 dark:bg-[#050816] dark:text-white">
+      {/* Background Decor - Exact match to Homepage Hero */}
+      <HeroAtmosphereGlow />
+
       {/* Top Hero Section */}
-      <section className="pt-32 pb-12">
+      <section className="relative pt-32 pb-12">
         <div className="mx-auto max-w-6xl px-6">
           {/* Breadcrumb / Back button */}
           <div className="mb-8">

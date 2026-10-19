@@ -19,6 +19,7 @@ import {
   Settings,
   CheckCircle2
 } from "lucide-react";
+import { HeroAtmosphereGlow } from "@/components/ui/TechPattern";
 
 interface DiffLine {
   type: "add" | "remove" | "context";
@@ -678,7 +679,8 @@ export default function ChangesReportPage() {
   const componentFilesCount = fileChangesData.filter((f) => f.category === "layout" || f.category === "section" || f.category === "career").length;
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-[#030712] text-slate-900 dark:text-slate-100 transition-colors duration-300 pb-24">
+    <div className="relative min-h-screen bg-slate-50 dark:bg-[#050816] text-slate-900 dark:text-slate-100 transition-colors duration-300 pb-24 overflow-hidden">
+      <HeroAtmosphereGlow />
       {/* Header Banner */}
       <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white border-b border-slate-800 py-12 px-6 shadow-md">
         <div className="max-w-6xl mx-auto">

@@ -66,8 +66,8 @@ export default function WhyJoin() {
         <div className="mb-16 relative overflow-hidden rounded-3xl border border-violet-500/30 bg-white/60 p-3 shadow-2xl backdrop-blur-xl dark:border-violet-500/20 dark:bg-slate-900/60">
           <div className="relative aspect-[21/9] min-h-[260px] w-full overflow-hidden rounded-2xl bg-slate-950">
             <Image
-              src="/images/about/engineering-collaboration.webp"
-              alt="Zynovix engineering and product team working collaboratively in a modern high-tech office space"
+              src="/images/about/team-culture-careers.webp"
+              alt="Dynamic and collaborative software engineering team smiling and working together at a modern wooden desk in sunlit tech studio"
               fill
               sizes="(max-width: 1200px) 100vw, 1200px"
               className="object-cover"

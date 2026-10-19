@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import Testimonials from "@/components/sections/Testimonials";
 import {
   CheckCircle,
   Users,
@@ -15,7 +14,7 @@ import {
   Eye,
   CheckCircle2,
 } from "lucide-react";
-import { TechDotGrid, TechCircuitMesh, AmbientAtmosphereGlow, BlueprintGrid } from "@/components/ui/TechPattern";
+import { HeroAtmosphereGlow } from "@/components/ui/TechPattern";
 
 export const metadata = {
   title: "About Us | Zynovix Tech Solutions",
@@ -25,9 +24,8 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <main className="relative min-h-screen bg-white text-slate-900 dark:bg-[#050816] dark:text-white overflow-hidden">
-      {/* Background Decor to utilize empty space */}
-      <TechDotGrid opacity={0.035} />
-      <AmbientAtmosphereGlow variant="cyan-blue" />
+      {/* Background Decor - Exact match to Homepage Hero */}
+      <HeroAtmosphereGlow />
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 text-slate-900 dark:text-white">
@@ -65,7 +63,6 @@ export default function AboutPage() {
 
       {/* Our Story – with Team Collaboration Image */}
       <section className="relative py-20 border-t border-slate-200/70 dark:border-white/5">
-        <TechCircuitMesh />
         <div className="relative mx-auto max-w-7xl px-6">
           <div className="grid items-center gap-12 lg:grid-cols-12">
             {/* Story Text (6 cols) */}
@@ -103,8 +100,8 @@ export default function AboutPage() {
               <div className="relative overflow-hidden rounded-3xl border border-slate-200/90 bg-white/60 p-3 shadow-2xl backdrop-blur-xl dark:border-slate-800 dark:bg-slate-900/60">
                 <div className="relative aspect-[16/11] w-full overflow-hidden rounded-2xl bg-slate-900">
                   <Image
-                    src="/images/about/engineering-collaboration.webp"
-                    alt="Zynovix engineering and software architecture team collaborating on enterprise digital systems in tech studio"
+                    src="/images/about/cross-disciplinary-squads.webp"
+                    alt="Zynovix senior engineering squad collaborating around an illuminated transparent glass whiteboard mapping microservices, Frappe ERPNext workflows, and cloud architectures"
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover transition-transform duration-700 hover:scale-105"
@@ -132,8 +129,7 @@ export default function AboutPage() {
       </section>
 
       {/* Mission & Vision – with Innovation 3D Graphic */}
-      <section className="relative py-20 bg-slate-50/70 dark:bg-slate-900/30 border-y border-slate-200/70 dark:border-white/5">
-        <BlueprintGrid />
+      <section className="relative py-20 bg-slate-50/70 dark:bg-transparent border-y border-slate-200/70 dark:border-white/5">
         <div className="relative mx-auto max-w-7xl px-6">
           <div className="grid items-center gap-12 lg:grid-cols-12">
             {/* Visual Graphic (5 cols) */}
@@ -271,7 +267,7 @@ export default function AboutPage() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="relative py-20 bg-slate-50/60 dark:bg-slate-900/20 border-t border-slate-200/70 dark:border-white/5">
+      <section className="relative py-20 bg-slate-50/60 dark:bg-transparent border-t border-slate-200/70 dark:border-white/5">
         <div className="relative mx-auto max-w-7xl px-6">
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             <div className="rounded-3xl border border-slate-200/90 bg-white/90 p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900/60">
@@ -313,9 +309,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
-      {/* Client Testimonials */}
-      <Testimonials />
 
       {/* CTA */}
       <section className="relative py-20 text-center">

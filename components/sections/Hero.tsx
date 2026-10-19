@@ -9,6 +9,7 @@ import {
   Database,
   Globe,
 } from "lucide-react";
+import { HeroAtmosphereGlow } from "@/components/ui/TechPattern";
 
 // Reusable animation variants
 const fadeUp = {
@@ -29,23 +30,8 @@ const container = {
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-white text-slate-900 dark:bg-[#050816] dark:text-white min-h-screen">
-      {/* Background */}
-      <div className="absolute inset-0">
-        <div className="absolute left-[-150px] top-[-100px] h-96 w-96 rounded-full bg-blue-600/20 blur-3xl" />
-        <div className="absolute right-[-120px] bottom-[-100px] h-96 w-96 rounded-full bg-cyan-500/20 blur-3xl" />
-
-        {/* Purple Glow - Centered */}
-        <div className="absolute left-1/2 top-0 h-60 w-[900px] -translate-x-1/2 rounded-full bg-violet-600 blur-[160px] opacity-30" />
-
-        <div
-          className="absolute inset-0 opacity-10"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px)",
-            backgroundSize: "60px 60px",
-          }}
-        />
-      </div>
+      {/* Background - Identical Shared Gradient */}
+      <HeroAtmosphereGlow />
 
       <div className="relative mx-auto max-w-screen-2xl px-4 sm:px-6 md:px-8 lg:px-12 py-16 sm:py-20 md:py-24 lg:py-28">
         <div className="grid items-center gap-12 lg:gap-20 lg:grid-cols-2">
@@ -107,7 +93,7 @@ export default function Hero() {
             >
               {[
                 ["5+", "Projects"],
-                ["98%", "Success"],
+                ["99%", "Success"],
                 ["8+", "Clients"],
                 ["24/7", "Support"],
               ].map(([value, label]) => (
@@ -186,48 +172,6 @@ export default function Hero() {
               </motion.div>
             </div>
           </motion.div>
-        </div>
-
-        {/* Technologies */}
-        <div className="mt-16 sm:mt-20 md:mt-24">
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="mb-6 sm:mb-8 text-center text-slate-500 dark:text-slate-400 text-xs sm:text-sm uppercase font-semibold tracking-[3px] sm:tracking-[4px]"
-          >
-            Technologies We Use
-          </motion.p>
-
-          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4">
-            {[
-              "Website Development",
-              "Frappe",
-              "ERPNext",
-              "Python",
-              "Next.js",
-              "React",
-              "Node.js",
-              "MariaDB",
-              "PostgreSQL",
-              "Hotel Software",
-              "Tailwind CSS",
-              "Docker",
-              "AWS",
-            ].map((tech, i) => (
-              <motion.span
-                key={tech}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.04 }}
-                className="rounded-full border border-slate-200 bg-slate-100/90 px-3 sm:px-4 md:px-5 py-1.5 sm:py-2 md:py-3 text-[10px] sm:text-xs md:text-sm font-medium text-slate-700 shadow-sm backdrop-blur transition hover:border-cyan-500 hover:text-cyan-600 dark:border-slate-700 dark:bg-slate-900/70 dark:text-slate-300 dark:hover:text-white"
-              >
-                {tech}
-              </motion.span>
-            ))}
-          </div>
         </div>
       </div>
     </section>

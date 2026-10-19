@@ -1,14 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, ShieldCheck, Users, Zap } from "lucide-react";
-import { TechDotGrid, TechCircuitMesh, AmbientAtmosphereGlow } from "@/components/ui/TechPattern";
+import { AmbientAtmosphereGlow } from "@/components/ui/TechPattern";
 
 export default function AboutPreview() {
   return (
-    <section className="relative overflow-hidden bg-white text-slate-900 py-24 dark:bg-slate-950 dark:text-white">
-      {/* Decorative Background Tech Patterns to utilize empty space */}
-      <TechDotGrid opacity={0.04} />
-      <TechCircuitMesh />
+    <section className="relative overflow-hidden bg-white text-slate-900 py-24 dark:bg-[#050816] dark:text-white">
+      {/* Decorative Atmosphere Glow */}
       <AmbientAtmosphereGlow variant="violet-cyan" />
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
@@ -62,8 +60,8 @@ export default function AboutPreview() {
             <div className="relative overflow-hidden rounded-3xl border border-slate-200/90 bg-white/60 p-2 shadow-2xl backdrop-blur-xl dark:border-slate-800 dark:bg-slate-900/60">
               <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl bg-slate-900">
                 <Image
-                  src="/images/about/engineering-collaboration.webp"
-                  alt="Zynovix senior engineering team collaborating on modern web application architectures and Frappe ERPNext workflows in open tech lab"
+                  src="/images/about/engineering-pod-sprint.webp"
+                  alt="Zynovix engineering pod executing live agile sprint with dual ultrawide displays showing TypeScript Next.js code and sprint Kanban board"
                   fill
                   sizes="(max-width: 1024px) 100vw, 55vw"
                   className="object-cover transition-transform duration-700 hover:scale-105"

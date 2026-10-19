@@ -8,7 +8,7 @@ import {
   Award,
 } from "lucide-react";
 import Counter from "@/components/Counter";
-import { TechDotGrid, AmbientAtmosphereGlow } from "@/components/ui/TechPattern";
+import { AmbientAtmosphereGlow } from "@/components/ui/TechPattern";
 
 const stats = [
   {
@@ -42,9 +42,8 @@ const stats = [
 
 export default function Stats() {
   return (
-    <section className="relative overflow-hidden bg-white py-20 dark:bg-[#030712]">
+    <section className="relative overflow-hidden bg-white py-20 dark:bg-[#050816]">
       {/* Pattern decor */}
-      <TechDotGrid opacity={0.035} />
       <AmbientAtmosphereGlow variant="cyan-blue" />
 
       <div className="relative mx-auto max-w-7xl px-6">

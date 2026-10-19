@@ -153,7 +153,7 @@ export default function Navbar() {
       <div className="mx-auto max-w-[1650px] px-4 sm:px-6 lg:px-8">
         {/* Outer Glass */}
         <div
-          className={`flex h-16 sm:h-20 lg:h-24 items-center justify-between rounded-[28px] border border-violet-500/30 bg-white/80 px-4 sm:px-6 lg:px-10 backdrop-blur-2xl shadow-[0_0_60px_rgba(110,80,255,.15)] transition-[colors,transform] duration-300 dark:bg-[#070B18]/80 dark:shadow-[0_0_60px_rgba(110,80,255,.35)] ${
+          className={`flex h-16 sm:h-20 lg:h-24 items-center justify-between rounded-[28px] border border-violet-500/30 bg-white/80 px-4 sm:px-6 lg:px-10 backdrop-blur-2xl shadow-[0_0_60px_rgba(110,80,255,.15)] transition-[colors,transform] duration-300 dark:bg-[#050816]/80 dark:shadow-[0_0_60px_rgba(110,80,255,.35)] ${
             isScrolled ? "rounded-[20px] shadow-[0_0_40px_rgba(110,80,255,.25)]" : ""
           }`}
         >
@@ -215,7 +215,7 @@ export default function Navbar() {
                     {/* Services Mega-Menu Dropdown */}
                     {servicesDropdownOpen && (
                       <div className="absolute left-1/2 -translate-x-1/2 top-full pt-3 w-[720px] z-50">
-                        <div className="rounded-2xl border border-slate-200/90 bg-white/95 p-5 shadow-2xl backdrop-blur-2xl dark:border-violet-500/30 dark:bg-[#070B18]/95 dark:shadow-[0_20px_60px_rgba(0,0,0,0.85)]">
+                        <div className="rounded-2xl border border-slate-200/90 bg-white/95 p-5 shadow-2xl backdrop-blur-2xl dark:border-violet-500/30 dark:bg-[#050816]/95 dark:shadow-[0_20px_60px_rgba(0,0,0,0.85)]">
                           {/* Dropdown Header */}
                           <div className="flex items-center justify-between pb-3 mb-3 border-b border-slate-200/70 dark:border-white/10">
                             <div className="flex items-center gap-2">
@@ -335,7 +335,7 @@ export default function Navbar() {
               : "opacity-0 -translate-y-4 pointer-events-none"
           }`}
         >
-          <div className="bg-white/95 text-slate-900 border border-slate-200/80 backdrop-blur-2xl rounded-2xl p-4 shadow-2xl dark:bg-[#070B18]/95 dark:text-white dark:border-violet-500/30 dark:shadow-[0_20px_60px_rgba(0,0,0,0.8)] max-h-[calc(100vh-120px)] overflow-y-auto">
+          <div className="bg-white/95 text-slate-900 border border-slate-200/80 backdrop-blur-2xl rounded-2xl p-4 shadow-2xl dark:bg-[#050816]/95 dark:text-white dark:border-violet-500/30 dark:shadow-[0_20px_60px_rgba(0,0,0,0.8)] max-h-[calc(100vh-120px)] overflow-y-auto">
             <div className="flex flex-col space-y-1">
               {navItems.map((item, index) => {
                 const active = isActive(item.href);

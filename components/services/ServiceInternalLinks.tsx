@@ -34,7 +34,7 @@ export default function ServiceInternalLinks({
   ],
 }: ServiceInternalLinksProps) {
   return (
-    <section className="py-16 bg-white dark:bg-[#050816] border-t border-slate-200/80 dark:border-slate-800">
+    <section className="py-16 bg-white dark:bg-transparent border-t border-slate-200/80 dark:border-slate-800">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-10 text-center sm:text-left">
           <span className="text-xs font-bold uppercase tracking-widest text-cyan-600 dark:text-cyan-400">

@@ -29,6 +29,7 @@ import ServiceEnquiryForm, { FormFieldConfig } from "@/components/services/Servi
 import ServiceInternalLinks from "@/components/services/ServiceInternalLinks";
 import ServiceJsonLd from "@/components/services/ServiceJsonLd";
 import { ApiIntegrationsVisual } from "@/components/services/ServiceVisuals";
+import { HeroAtmosphereGlow } from "@/components/ui/TechPattern";
 
 export const metadata: Metadata = {
   title: "API Integration Services & System Connectivity | Zynovix",
@@ -309,7 +310,9 @@ const relatedServices = [
 
 export default function ApiSystemIntegrationsPage() {
   return (
-    <main className="min-h-screen bg-white text-slate-900 dark:bg-[#050816] dark:text-white">
+    <main className="relative min-h-screen bg-white text-slate-900 overflow-hidden dark:bg-[#050816] dark:text-white">
+      {/* Background Decor - Exact match to Homepage Hero */}
+      <HeroAtmosphereGlow />
       <ServiceJsonLd
         serviceName="API & System Integrations"
         serviceDescription="Connect ERP systems, websites, payment gateways and third-party platforms with API integration, data synchronization and workflow automation."
@@ -334,7 +337,7 @@ export default function ApiSystemIntegrationsPage() {
       />
 
       {/* 2. Integration Problems */}
-      <section className="py-20 bg-slate-50/70 dark:bg-[#070B18]/70 border-y border-slate-200/80 dark:border-slate-800">
+      <section className="py-20 bg-slate-50/70 dark:bg-transparent border-y border-slate-200/80 dark:border-slate-800">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-14">
             <span className="text-xs font-bold uppercase tracking-widest text-cyan-600 dark:text-cyan-400">
@@ -394,7 +397,7 @@ export default function ApiSystemIntegrationsPage() {
       </section>
 
       {/* 3. Integration Services */}
-      <section id="services" className="py-20 bg-white dark:bg-[#050816]">
+      <section id="services" className="py-20 bg-white dark:bg-transparent">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-xs font-bold uppercase tracking-widest text-cyan-600 dark:text-cyan-400">
@@ -438,7 +441,7 @@ export default function ApiSystemIntegrationsPage() {
       />
 
       {/* 5. Security & Reliability Standards */}
-      <section className="py-20 bg-slate-50/70 dark:bg-[#070B18]/70 border-t border-slate-200/80 dark:border-slate-800">
+      <section className="py-20 bg-slate-50/70 dark:bg-transparent border-t border-slate-200/80 dark:border-slate-800">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-xs font-bold uppercase tracking-widest text-cyan-600 dark:text-cyan-400">
@@ -475,7 +478,7 @@ export default function ApiSystemIntegrationsPage() {
       </section>
 
       {/* 6. Practical Use Cases Showcase */}
-      <section className="py-20 bg-white dark:bg-[#050816]">
+      <section className="py-20 bg-white dark:bg-transparent">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-12">
             <span className="text-xs font-bold uppercase tracking-widest text-cyan-600 dark:text-cyan-400">

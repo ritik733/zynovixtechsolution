@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import ShowcaseSlider from "./ShowcaseSlider";
 import {
   siMariadb,
   siPostgresql,
@@ -212,13 +213,16 @@ export default function TrustBar() {
   const marqueeRowTwo = [...rowTwo, ...rowTwo, ...rowTwo];
 
   return (
-    <section className="relative overflow-hidden bg-slate-50/70 py-20 dark:bg-[#050816]">
+    <section className="relative overflow-hidden bg-slate-50/70 pt-0 pb-20 dark:bg-[#050816]">
       {/* Background Ambience */}
       <div className="absolute inset-0 -z-10 pointer-events-none">
         <div className="absolute left-1/2 top-0 h-72 w-[850px] -translate-x-1/2 rounded-full bg-cyan-500/10 blur-[160px]" />
       </div>
 
-      <div className="mx-auto max-w-7xl px-6 text-center">
+      {/* 6-Image Showcase Slider directly above Engineered On Proven Foundations */}
+      <ShowcaseSlider />
+
+      <div className="mx-auto max-w-7xl px-6 text-center mt-16 sm:mt-20">
         <div className="inline-flex items-center gap-2 rounded-full border border-violet-500/30 bg-violet-500/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-violet-600 dark:text-violet-400">
           Engineered On Proven Foundations
         </div>

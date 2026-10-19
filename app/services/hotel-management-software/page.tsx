@@ -29,6 +29,7 @@ import ServiceEnquiryForm, { FormFieldConfig } from "@/components/services/Servi
 import ServiceInternalLinks from "@/components/services/ServiceInternalLinks";
 import ServiceJsonLd from "@/components/services/ServiceJsonLd";
 import { HotelMockupVisual } from "@/components/services/ServiceVisuals";
+import { HeroAtmosphereGlow } from "@/components/ui/TechPattern";
 
 export const metadata: Metadata = {
   title: "Hotel Management Software for Reservations & Front Desk | Zynovix",
@@ -275,7 +276,8 @@ const relatedServices = [
 
 export default function HotelManagementSoftwarePage() {
   return (
-    <main className="min-h-screen bg-white text-slate-900 dark:bg-[#050816] dark:text-white">
+    <main className="relative min-h-screen bg-white text-slate-900 overflow-hidden dark:bg-[#050816] dark:text-white">
+      <HeroAtmosphereGlow />
       <ServiceJsonLd
         serviceName="Hotel Management Software"
         serviceDescription="Explore hotel management software for room reservations, guest records, check-in/check-out, billing and daily hospitality operations."
@@ -300,7 +302,7 @@ export default function HotelManagementSoftwarePage() {
       />
 
       {/* 2. Who It Serves */}
-      <section className="py-20 bg-slate-50/70 dark:bg-[#070B18]/70 border-y border-slate-200/80 dark:border-slate-800">
+      <section className="py-20 bg-slate-50/70 dark:bg-transparent border-y border-slate-200/80 dark:border-slate-800">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-xs font-bold uppercase tracking-widest text-cyan-600 dark:text-cyan-400">
@@ -337,7 +339,7 @@ export default function HotelManagementSoftwarePage() {
       </section>
 
       {/* 3. Main Features */}
-      <section id="features" className="py-20 bg-white dark:bg-[#050816]">
+      <section id="features" className="py-20 bg-white dark:bg-transparent">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-xs font-bold uppercase tracking-widest text-cyan-600 dark:text-cyan-400">
@@ -383,7 +385,7 @@ export default function HotelManagementSoftwarePage() {
       />
 
       {/* 5. Product Preview & Visual Proof */}
-      <section className="py-20 bg-white dark:bg-[#050816]">
+      <section className="py-20 bg-white dark:bg-transparent">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid items-center gap-12 lg:grid-cols-12">
             <div className="lg:col-span-6">

@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
 import Counter from "@/components/Counter";
-import { TechDotGrid, AmbientAtmosphereGlow, BlueprintGrid } from "@/components/ui/TechPattern";
+import { AmbientAtmosphereGlow } from "@/components/ui/TechPattern";
 
 const services = [
   {
@@ -83,9 +83,7 @@ const services = [
 export default function ServicesPage() {
   return (
     <section className="relative overflow-hidden bg-white py-24 text-slate-900 dark:bg-[#050816] dark:text-white min-h-screen">
-      {/* Background Decor to utilize empty space */}
-      <TechDotGrid opacity={0.035} />
-      <BlueprintGrid />
+      {/* Background Atmosphere Glow */}
       <AmbientAtmosphereGlow variant="cyan-blue" />
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">

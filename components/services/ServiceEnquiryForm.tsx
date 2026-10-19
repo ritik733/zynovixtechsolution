@@ -95,7 +95,7 @@ export default function ServiceEnquiryForm({
   };
 
   return (
-    <section id={id} className="py-20 bg-slate-50 dark:bg-[#070B18]">
+    <section id={id} className="py-20 bg-slate-50 dark:bg-transparent">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <div className="rounded-3xl border border-slate-200/90 bg-white p-8 sm:p-12 shadow-xl dark:border-slate-800 dark:bg-slate-900/80">
           <div className="text-center max-w-2xl mx-auto mb-10">

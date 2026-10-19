@@ -19,7 +19,7 @@ export default function ServiceProcessTimeline({
   steps,
 }: ServiceProcessTimelineProps) {
   return (
-    <section className="py-20 bg-slate-50/60 dark:bg-[#070B18]/60 border-y border-slate-200/70 dark:border-slate-800/80">
+    <section className="py-20 bg-slate-50/60 dark:bg-transparent border-y border-slate-200/70 dark:border-slate-800/80">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-xs font-bold uppercase tracking-widest text-cyan-600 dark:text-cyan-400">

@@ -24,7 +24,7 @@ export default function ProjectCard({ project }: { project: PortfolioProject }) 
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.4, ease: "easeOut" }}
       whileHover={{ y: -8 }}
-      className="group flex flex-col justify-between rounded-3xl border border-slate-200 bg-white/90 shadow-sm overflow-hidden hover:border-cyan-500 dark:border-slate-800 dark:bg-slate-900/90 dark:shadow-none"
+      className="group flex flex-col justify-between rounded-3xl border border-slate-200/90 bg-white/90 shadow-sm backdrop-blur-xl overflow-hidden transition-all duration-300 hover:border-cyan-500/60 hover:shadow-xl hover:shadow-cyan-500/10 dark:border-slate-800 dark:bg-slate-900/60 dark:hover:border-cyan-400"
     >
       <div>
         <Link

@@ -26,7 +26,7 @@ export default function ServiceFAQAccordion({
   };
 
   return (
-    <section className="py-20 bg-white dark:bg-[#050816]">
+    <section className="py-20 bg-white dark:bg-transparent">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <div className="inline-flex items-center gap-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-cyan-600 dark:text-cyan-400">

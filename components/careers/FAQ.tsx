@@ -40,7 +40,7 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="relative py-24 overflow-hidden bg-slate-50 text-slate-900 dark:bg-[#060818] dark:text-white">
+    <section className="relative py-24 overflow-hidden bg-slate-50 text-slate-900 dark:bg-transparent dark:text-white">
 
       {/* Glow */}
       <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-violet-600/10 blur-[150px]" />

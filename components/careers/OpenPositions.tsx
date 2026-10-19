@@ -53,7 +53,7 @@ export default function OpenPositions() {
 
               <div>
                 <h3 className="text-3xl font-semibold text-slate-900 dark:text-white">
-                  Fresher Internship Program
+                  Software Developer Internship 
                 </h3>
                 <p className="mt-2 text-slate-500 dark:text-slate-400 font-medium">
                   Learn, build, and ship real products with our team.

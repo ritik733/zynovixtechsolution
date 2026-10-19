@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, Sparkles } from "lucide-react";
 import ServiceBreadcrumbs from "./ServiceBreadcrumbs";
+import { HeroAtmosphereGlow } from "@/components/ui/TechPattern";
 
 interface ServiceHeroProps {
   badge: string;
@@ -27,11 +28,8 @@ export default function ServiceHero({
 }: ServiceHeroProps) {
   return (
     <section className="relative overflow-hidden pt-32 pb-16 lg:pt-36 lg:pb-24">
-      {/* Background glow effects */}
-      <div className="pointer-events-none absolute inset-0 -z-10 flex items-center justify-center">
-        <div className="h-[400px] w-[600px] rounded-full bg-cyan-500/10 blur-[130px] dark:bg-cyan-500/15" />
-        <div className="h-[350px] w-[500px] rounded-full bg-blue-600/10 blur-[140px] dark:bg-blue-600/15" />
-      </div>
+      {/* Background glow effects - Exact match to Homepage Hero */}
+      <HeroAtmosphereGlow />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <ServiceBreadcrumbs currentTitle={title} />

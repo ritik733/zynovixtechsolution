@@ -12,8 +12,8 @@ import {
   Cpu,
   Sparkles,
 } from "lucide-react";
+import { HeroAtmosphereGlow } from "@/components/ui/TechPattern";
 import ProjectEstimator from "@/components/interactive/ProjectEstimator";
-import { TechDotGrid, TechCircuitMesh, AmbientAtmosphereGlow, BlueprintGrid } from "@/components/ui/TechPattern";
 
 const services = [
   {
@@ -81,10 +81,8 @@ const services = [
 export default function ServicesPage() {
   return (
     <main className="relative min-h-screen bg-white text-slate-900 dark:bg-[#050816] dark:text-white">
-      {/* Background Decor */}
-      <TechDotGrid opacity={0.035} />
-      <TechCircuitMesh />
-      <AmbientAtmosphereGlow variant="cyan-blue" />
+      {/* Background Decor - Exact match to Homepage Hero */}
+      <HeroAtmosphereGlow />
 
       <div className="relative mx-auto max-w-7xl px-6 pt-32 pb-24">
         {/* Heading */}
@@ -175,7 +173,7 @@ export default function ServicesPage() {
               <p className="mt-2 text-xs sm:text-sm text-slate-600 dark:text-slate-400 font-medium">Projects Delivered</p>
             </div>
             <div>
-              <p className="text-4xl sm:text-5xl font-black text-cyan-500 dark:text-cyan-400">98%</p>
+              <p className="text-4xl sm:text-5xl font-black text-cyan-500 dark:text-cyan-400">99%</p>
               <p className="mt-2 text-xs sm:text-sm text-slate-600 dark:text-slate-400 font-medium">Success Rate</p>
             </div>
             <div>

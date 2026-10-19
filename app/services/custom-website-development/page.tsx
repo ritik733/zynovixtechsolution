@@ -28,6 +28,7 @@ import ServiceEnquiryForm, { FormFieldConfig } from "@/components/services/Servi
 import ServiceInternalLinks from "@/components/services/ServiceInternalLinks";
 import ServiceJsonLd from "@/components/services/ServiceJsonLd";
 import { WebsiteMockupVisual } from "@/components/services/ServiceVisuals";
+import { HeroAtmosphereGlow } from "@/components/ui/TechPattern";
 
 export const metadata: Metadata = {
   title: "Custom Website Development Services | Zynovix",
@@ -282,7 +283,9 @@ const relatedServices = [
 
 export default function CustomWebsiteDevelopmentPage() {
   return (
-    <main className="min-h-screen bg-white text-slate-900 dark:bg-[#050816] dark:text-white">
+    <main className="relative min-h-screen bg-white text-slate-900 overflow-hidden dark:bg-[#050816] dark:text-white">
+      {/* Background Decor - Exact match to Homepage Hero */}
+      <HeroAtmosphereGlow />
       <ServiceJsonLd
         serviceName="Custom Website Development"
         serviceDescription="Get a custom, responsive website tailored to your business goals. Explore website development, redesign and custom web application services from Zynovix."
@@ -307,7 +310,7 @@ export default function CustomWebsiteDevelopmentPage() {
       />
 
       {/* 2. Problem / Need: Generic Templates vs Custom Web Development */}
-      <section className="py-20 bg-slate-50/70 dark:bg-[#070B18]/70 border-y border-slate-200/80 dark:border-slate-800">
+      <section className="py-20 bg-slate-50/70 dark:bg-transparent border-y border-slate-200/80 dark:border-slate-800">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid items-center gap-12 lg:grid-cols-12">
             <div className="lg:col-span-5">
@@ -396,7 +399,7 @@ export default function CustomWebsiteDevelopmentPage() {
       </section>
 
       {/* 3. What We Build */}
-      <section className="py-20 bg-white dark:bg-[#050816]">
+      <section className="py-20 bg-white dark:bg-transparent">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-xs font-bold uppercase tracking-widest text-cyan-600 dark:text-cyan-400">
@@ -433,7 +436,7 @@ export default function CustomWebsiteDevelopmentPage() {
       </section>
 
       {/* 4. Features & Capabilities */}
-      <section className="py-20 bg-slate-50/70 dark:bg-[#070B18]/70 border-t border-slate-200/80 dark:border-slate-800">
+      <section className="py-20 bg-slate-50/70 dark:bg-transparent border-t border-slate-200/80 dark:border-slate-800">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-xs font-bold uppercase tracking-widest text-cyan-600 dark:text-cyan-400">
@@ -479,7 +482,7 @@ export default function CustomWebsiteDevelopmentPage() {
       />
 
       {/* 6. Proof & Portfolio Showcase */}
-      <section className="py-20 bg-white dark:bg-[#050816]">
+      <section className="py-20 bg-white dark:bg-transparent">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12">
             <div>

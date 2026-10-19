@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, ExternalLink, Sparkles, TrendingUp } from "lucide-react";
-import { TechDotGrid, AmbientAtmosphereGlow } from "@/components/ui/TechPattern";
+import { AmbientAtmosphereGlow } from "@/components/ui/TechPattern";
 
 const projects = [
   {
@@ -44,9 +44,8 @@ const projects = [
 
 export default function PortfolioPreview() {
   return (
-    <section className="relative overflow-hidden bg-white py-24 text-slate-900 dark:bg-[#070B18] dark:text-white border-t border-slate-200/80 dark:border-slate-800">
+    <section className="relative overflow-hidden bg-white py-24 text-slate-900 dark:bg-[#050816] dark:text-white border-t border-slate-200/80 dark:border-slate-800">
       {/* Pattern decor */}
-      <TechDotGrid opacity={0.035} />
       <AmbientAtmosphereGlow variant="cyan-blue" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

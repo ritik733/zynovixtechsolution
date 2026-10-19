@@ -4,6 +4,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ThemeProvider from "@/components/ThemeProvider";
 import ThemeControls from "@/components/ThemeControls";
+import MouseGlow from "@/components/MouseGlow";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://zynovixtechsolutions.com"),
@@ -21,8 +22,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="min-h-screen bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100">
+      <body className="min-h-screen bg-white text-slate-900 dark:bg-[#050816] dark:text-slate-100 selection:bg-cyan-500/20 selection:text-cyan-400">
         <ThemeProvider>
+          <MouseGlow />
           <Navbar />
           {children}
           <Footer />

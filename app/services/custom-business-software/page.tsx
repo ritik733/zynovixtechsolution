@@ -30,6 +30,7 @@ import ServiceEnquiryForm, { FormFieldConfig } from "@/components/services/Servi
 import ServiceInternalLinks from "@/components/services/ServiceInternalLinks";
 import ServiceJsonLd from "@/components/services/ServiceJsonLd";
 import { CustomBusinessSoftwareVisual } from "@/components/services/ServiceVisuals";
+import { HeroAtmosphereGlow } from "@/components/ui/TechPattern";
 
 export const metadata: Metadata = {
   title: "Custom Business Software Development Services | Zynovix",
@@ -287,7 +288,9 @@ const relatedServices = [
 
 export default function CustomBusinessSoftwarePage() {
   return (
-    <main className="min-h-screen bg-white text-slate-900 dark:bg-[#050816] dark:text-white">
+    <main className="relative min-h-screen bg-white text-slate-900 overflow-hidden dark:bg-[#050816] dark:text-white">
+      {/* Background Decor - Exact match to Homepage Hero */}
+      <HeroAtmosphereGlow />
       <ServiceJsonLd
         serviceName="Custom Business Software"
         serviceDescription="Build custom business software, internal dashboards and workflow applications designed to simplify operations and support business processes."
@@ -312,7 +315,7 @@ export default function CustomBusinessSoftwarePage() {
       />
 
       {/* 2. Before vs After Comparison */}
-      <section className="py-20 bg-slate-50/70 dark:bg-[#070B18]/70 border-y border-slate-200/80 dark:border-slate-800">
+      <section className="py-20 bg-slate-50/70 dark:bg-transparent border-y border-slate-200/80 dark:border-slate-800">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-xs font-bold uppercase tracking-widest text-cyan-600 dark:text-cyan-400">
@@ -415,7 +418,7 @@ export default function CustomBusinessSoftwarePage() {
       </section>
 
       {/* 3. Types of Software We Engineer */}
-      <section id="types" className="py-20 bg-white dark:bg-[#050816]">
+      <section id="types" className="py-20 bg-white dark:bg-transparent">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-xs font-bold uppercase tracking-widest text-cyan-600 dark:text-cyan-400">
@@ -452,7 +455,7 @@ export default function CustomBusinessSoftwarePage() {
       </section>
 
       {/* 4. Features & Capabilities */}
-      <section className="py-20 bg-slate-50/70 dark:bg-[#070B18]/70 border-t border-slate-200/80 dark:border-slate-800">
+      <section className="py-20 bg-slate-50/70 dark:bg-transparent border-t border-slate-200/80 dark:border-slate-800">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-xs font-bold uppercase tracking-widest text-cyan-600 dark:text-cyan-400">
@@ -498,7 +501,7 @@ export default function CustomBusinessSoftwarePage() {
       />
 
       {/* 6. Proof & Use Case Showcase */}
-      <section className="py-20 bg-white dark:bg-[#050816]">
+      <section className="py-20 bg-white dark:bg-transparent">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid items-center gap-12 lg:grid-cols-12">
             <div className="lg:col-span-6">

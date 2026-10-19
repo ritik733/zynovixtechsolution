@@ -63,7 +63,7 @@ const testimonials: Testimonial[] = [
 
 export default function Testimonials() {
   return (
-    <section className="relative overflow-hidden bg-white py-24 dark:bg-[#070B18]">
+    <section className="relative overflow-hidden bg-white py-24 dark:bg-[#050816]">
       {/* Background Glow */}
       <div className="absolute inset-0 -z-10 pointer-events-none">
         <div className="absolute left-1/4 top-1/2 h-80 w-80 -translate-y-1/2 rounded-full bg-blue-500/10 blur-[140px]" />

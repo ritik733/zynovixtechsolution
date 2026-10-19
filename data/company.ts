@@ -43,7 +43,7 @@ export const company = {
       label: "Projects Delivered",
     },
     {
-      value: "98%",
+      value: "99%",
       label: "Success Rate",
     },
     {

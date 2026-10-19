@@ -2,13 +2,13 @@
 
 import Link from "next/link";
 import { ArrowRight, Briefcase } from "lucide-react";
+import { HeroAtmosphereGlow } from "@/components/ui/TechPattern";
 
 export default function CareerHero() {
   return (
-    <section className="relative overflow-hidden pt-40 pb-28 bg-slate-50 text-slate-900 dark:bg-[#060818] dark:text-white">
+    <section className="relative overflow-hidden pt-40 pb-28 bg-slate-50 text-slate-900 dark:bg-transparent dark:text-white">
       {/* Background Glow */}
-      <div className="absolute left-1/2 top-[-150px] h-[350px] w-[900px] -translate-x-1/2 rounded-full bg-violet-600/20 blur-[150px]" />
-      <div className="absolute right-0 top-1/2 h-[350px] w-[350px] rounded-full bg-blue-500/10 blur-[120px]" />
+      <HeroAtmosphereGlow />
 
       <div className="relative mx-auto max-w-7xl px-6 text-center">
 

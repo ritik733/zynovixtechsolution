@@ -1,13 +1,11 @@
 import Link from "next/link";
 import { ArrowRight, ShieldCheck, Zap, Lock, Sparkles } from "lucide-react";
-import { TechCircuitMesh, BlueprintGrid, AmbientAtmosphereGlow } from "@/components/ui/TechPattern";
+import { AmbientAtmosphereGlow } from "@/components/ui/TechPattern";
 
 export default function CTA() {
   return (
     <section className="relative overflow-hidden bg-white py-28 text-slate-900 dark:bg-[#050816] dark:text-white">
-      {/* Background Decor to fill empty space */}
-      <TechCircuitMesh />
-      <BlueprintGrid />
+      {/* Background Decor */}
       <AmbientAtmosphereGlow variant="violet-cyan" />
 
       <div className="relative mx-auto max-w-5xl px-6">
