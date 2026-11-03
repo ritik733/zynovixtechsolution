@@ -90,7 +90,7 @@ export default async function ProjectDetailPage({
           <div className="mb-8">
             <Link
               href="/portfolio"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-slate-600 transition hover:text-cyan-600 dark:text-slate-400 dark:hover:text-cyan-400"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-slate-600 transition hover:text-cyan-600 dark:text-slate-400 dark:hover:text-cyan-400 touch-manipulation"
             >
               <ArrowLeft className="h-4 w-4" />
               Back to All Projects
@@ -176,6 +176,8 @@ export default async function ProjectDetailPage({
               alt={project.title}
               fill
               priority
+              quality={85}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1152px"
               className="object-cover object-center"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent pointer-events-none" />
@@ -185,7 +187,7 @@ export default async function ProjectDetailPage({
 
       {/* Impact & Key Results */}
       {project.results && project.results.length > 0 && (
-        <section className="pb-16">
+        <section className="pb-16 content-auto">
           <div className="mx-auto max-w-6xl px-6">
             <div className="rounded-3xl border border-cyan-500/20 bg-gradient-to-br from-cyan-500/5 via-transparent to-blue-500/5 p-8 dark:border-cyan-500/30">
               <div className="flex items-center gap-2 text-cyan-600 dark:text-cyan-400 font-semibold text-sm">
@@ -215,7 +217,7 @@ export default async function ProjectDetailPage({
       )}
 
       {/* Overview, Challenge & Solution */}
-      <section className="pb-16">
+      <section className="pb-16 content-auto">
         <div className="mx-auto max-w-6xl px-6">
           <div className="space-y-12">
             {/* Project Overview */}
@@ -269,7 +271,7 @@ export default async function ProjectDetailPage({
 
       {/* Key Features */}
       {project.keyFeatures && project.keyFeatures.length > 0 && (
-        <section className="pb-16">
+        <section className="pb-16 content-auto">
           <div className="mx-auto max-w-6xl px-6">
             <div className="text-center md:text-left">
               <span className="text-xs font-semibold uppercase tracking-wider text-cyan-600 dark:text-cyan-400">
@@ -303,7 +305,7 @@ export default async function ProjectDetailPage({
       )}
 
       {/* Tech Stack & Deliverables Grid */}
-      <section className="pb-16">
+      <section className="pb-16 content-auto">
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid gap-8 md:grid-cols-2">
             {/* Technologies */}
@@ -373,7 +375,7 @@ export default async function ProjectDetailPage({
       </section>
 
       {/* CTA Box */}
-      <section className="pb-20">
+      <section className="pb-20 content-auto">
         <div className="mx-auto max-w-6xl px-6">
           <div className="rounded-3xl bg-gradient-to-r from-blue-600 to-cyan-500 p-8 text-center text-white shadow-xl md:p-12">
             <h2 className="text-3xl font-bold md:text-4xl">
@@ -386,13 +388,13 @@ export default async function ProjectDetailPage({
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
               <Link
                 href="/contact"
-                className="rounded-xl bg-white px-8 py-3.5 font-semibold text-blue-700 transition hover:bg-blue-50 shadow-md"
+                className="rounded-xl bg-white px-8 py-3.5 font-semibold text-blue-700 transition hover:bg-blue-50 shadow-md touch-manipulation"
               >
                 Discuss Your Project
               </Link>
               <Link
                 href="/portfolio"
-                className="rounded-xl border border-white/30 bg-white/10 px-6 py-3.5 font-semibold text-white backdrop-blur transition hover:bg-white/20"
+                className="rounded-xl border border-white/30 bg-white/10 px-6 py-3.5 font-semibold text-white backdrop-blur transition hover:bg-white/20 touch-manipulation"
               >
                 Explore More Portfolio
               </Link>
@@ -403,7 +405,7 @@ export default async function ProjectDetailPage({
 
       {/* Related Projects */}
       {related.length > 0 && (
-        <section className="pb-24 border-t border-slate-200/60 dark:border-slate-800/60 pt-16">
+        <section className="pb-24 border-t border-slate-200/60 dark:border-slate-800/60 pt-16 content-auto">
           <div className="mx-auto max-w-6xl px-6">
             <div className="flex items-center justify-between mb-8">
               <div>
@@ -416,7 +418,7 @@ export default async function ProjectDetailPage({
               </div>
               <Link
                 href="/portfolio"
-                className="hidden md:inline-flex items-center gap-1.5 text-sm font-semibold text-cyan-600 dark:text-cyan-400 hover:underline"
+                className="hidden md:inline-flex items-center gap-1.5 text-sm font-semibold text-cyan-600 dark:text-cyan-400 hover:underline touch-manipulation"
               >
                 View All
                 <ArrowRight className="h-4 w-4" />

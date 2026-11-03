@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import {
   Rocket,
@@ -39,7 +37,7 @@ const reasons = [
 
 export default function WhyJoin() {
   return (
-    <section className="relative overflow-hidden py-24">
+    <section className="relative overflow-hidden py-24 content-auto">
       {/* Pattern decor */}
       <TechDotGrid opacity={0.035} />
       <AmbientAtmosphereGlow variant="violet-cyan" />
@@ -71,6 +69,8 @@ export default function WhyJoin() {
               fill
               sizes="(max-width: 1200px) 100vw, 1200px"
               className="object-cover"
+              loading="lazy"
+              quality={82}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent pointer-events-none" />
 

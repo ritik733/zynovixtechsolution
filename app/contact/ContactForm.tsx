@@ -1,19 +1,18 @@
 "use client";
 
-import { FormEvent, useState, useEffect } from "react";
+import { FormEvent, useState, useMemo } from "react";
 import { useSearchParams } from "next/navigation";
 
 export default function ContactForm() {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
   const [success, setSuccess] = useState(false);
-  const [projectText, setProjectText] = useState("");
 
   const searchParams = useSearchParams();
   const serviceParam = searchParams.get("service");
   const tierParam = searchParams.get("tier");
 
-  useEffect(() => {
+  const defaultText = useMemo(() => {
     if (serviceParam) {
       const serviceNames: Record<string, string> = {
         website: "Custom Website Development",
@@ -25,11 +24,13 @@ export default function ContactForm() {
       };
       const svc = serviceNames[serviceParam] || serviceParam;
       const tier = tierParam ? ` (${tierParam.toUpperCase()} Scope)` : "";
-      setProjectText(
-        `Hi Zynovix team, I am interested in your ${svc}${tier}. Please share the technical architecture proposal and schedule a discovery consultation.`
-      );
+      return `Hi Zynovix team, I am interested in your ${svc}${tier}. Please share the technical architecture proposal and schedule a discovery consultation.`;
     }
+    return "";
   }, [serviceParam, tierParam]);
+
+  const [projectText, setProjectText] = useState("");
+  const currentText = projectText !== "" ? projectText : defaultText;
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -46,7 +47,7 @@ export default function ContactForm() {
       name: formData.get("name"),
       email: formData.get("email"),
       phone: formData.get("phone"),
-      project: formData.get("project"),
+      project: formData.get("project") || currentText,
     };
 
     try {
@@ -164,7 +165,7 @@ export default function ContactForm() {
           name="project"
           required
           rows={4}
-          value={projectText}
+          value={currentText}
           onChange={(e) => setProjectText(e.target.value)}
           placeholder="Tell us about your project..."
           className="w-full resize-y rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-blue-600 focus:bg-white focus:ring-2 focus:ring-blue-200/60 dark:border-slate-700 dark:bg-slate-800/50 dark:text-white dark:focus:bg-slate-800"
@@ -175,7 +176,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={loading}
-        className="w-full rounded-xl bg-blue-600 py-3.5 text-base font-semibold text-white shadow-md shadow-blue-500/20 transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-60"
+        className="w-full rounded-xl bg-blue-600 py-3.5 text-base font-semibold text-white shadow-md shadow-blue-500/20 transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-60 touch-manipulation"
       >
         {loading ? "Sending..." : "Send Message"}
       </button>

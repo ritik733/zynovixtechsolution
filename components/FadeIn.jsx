@@ -8,10 +8,10 @@ export default function FadeIn({
   className = "",
 }) {
   const dirMap = {
-    up: { y: 40, x: 0 },
-    down: { y: -40, x: 0 },
-    left: { x: -40, y: 0 },
-    right: { x: 40, y: 0 },
+    up: { y: 20, x: 0 },
+    down: { y: -20, x: 0 },
+    left: { x: -20, y: 0 },
+    right: { x: 20, y: 0 },
     none: { x: 0, y: 0 },
   };
 
@@ -19,8 +19,8 @@ export default function FadeIn({
     <motion.div
       initial={{ opacity: 0, ...dirMap[direction] }}
       whileInView={{ opacity: 1, x: 0, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.6, delay, ease: "easeOut" }}
+      viewport={{ once: true, margin: "0px 0px -20px 0px" }}
+      transition={{ duration: 0.45, delay, ease: [0.21, 0.47, 0.32, 0.98] }}
       className={className}
     >
       {children}

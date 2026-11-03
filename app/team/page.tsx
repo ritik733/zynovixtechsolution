@@ -110,7 +110,7 @@ export default function TeamPage() {
             Meet Our <span className="text-violet-600 dark:text-violet-500">Team</span>
           </h1>
           <p className="text-slate-600 dark:text-slate-300 text-lg md:text-xl max-w-3xl mx-auto font-medium">
-            We're a diverse group of passionate professionals dedicated to
+            We&apos;re a diverse group of passionate professionals dedicated to
             delivering exceptional results for our clients.
           </p>
           <div className="flex justify-center gap-4 mt-8">
@@ -126,6 +126,7 @@ export default function TeamPage() {
                     fill
                     sizes="48px"
                     className="object-cover"
+                    quality={80}
                   />
                 </div>
               ))}
@@ -143,7 +144,7 @@ export default function TeamPage() {
       </section>
 
       {/* Team Grid by Department - Full Width Cards */}
-      <section className="py-12 px-4 md:px-8">
+      <section className="py-12 px-4 md:px-8 content-auto">
         <div className="container mx-auto max-w-7xl">
           {Object.entries(departments).map(([department, members]) => (
             <div key={department} className="mb-16">
@@ -170,6 +171,8 @@ export default function TeamPage() {
                           fill
                           sizes="128px"
                           className="object-cover"
+                          loading="lazy"
+                          quality={80}
                         />
                       </div>
 
@@ -255,19 +258,19 @@ export default function TeamPage() {
       </section>
 
       {/* Join Our Team CTA */}
-      <section className="py-20 px-4 md:px-8">
+      <section className="py-20 px-4 md:px-8 content-auto">
         <div className="container mx-auto max-w-4xl">
           <div className="bg-white rounded-2xl p-8 md:p-12 text-center border border-slate-200 transition-colors duration-300 dark:bg-[#0F1438] dark:border-violet-500/20">
             <h2 className="text-2xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
               Want to Join Our Team?
             </h2>
             <p className="text-slate-600 dark:text-slate-300 mb-6 max-w-2xl mx-auto">
-              We're always looking for talented individuals who are passionate
+              We&apos;re always looking for talented individuals who are passionate
               about making a difference. Check out our open positions!
             </p>
             <Link
               href="/careers"
-              className="inline-block px-8 py-3 bg-violet-600 hover:bg-violet-700 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105"
+              className="inline-block px-8 py-3 bg-violet-600 hover:bg-violet-700 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 touch-manipulation"
             >
               View Open Positions →
             </Link>

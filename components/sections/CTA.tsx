@@ -4,14 +4,14 @@ import { AmbientAtmosphereGlow } from "@/components/ui/TechPattern";
 
 export default function CTA() {
   return (
-    <section className="relative overflow-hidden bg-white py-28 text-slate-900 dark:bg-[#050816] dark:text-white">
+    <section className="relative overflow-hidden bg-white py-28 text-slate-900 dark:bg-[#050816] dark:text-white content-auto">
       {/* Background Decor */}
       <AmbientAtmosphereGlow variant="violet-cyan" />
 
       <div className="relative mx-auto max-w-5xl px-6">
         <div className="relative overflow-hidden rounded-3xl border border-violet-500/30 bg-white/95 p-8 sm:p-14 text-center backdrop-blur-2xl shadow-2xl text-slate-900 dark:border-violet-500/30 dark:bg-slate-900/80 dark:text-white dark:shadow-[0_20px_60px_rgba(110,80,255,0.15)]">
           <div className="inline-flex items-center gap-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-cyan-600 dark:text-cyan-400">
-            <Sparkles size={14} /> Let's Build Together
+            <Sparkles size={14} /> Let&apos;s Build Together
           </div>
 
           <h2 className="mt-6 text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white">

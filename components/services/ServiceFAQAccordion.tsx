@@ -26,7 +26,7 @@ export default function ServiceFAQAccordion({
   };
 
   return (
-    <section className="py-20 bg-white dark:bg-transparent">
+    <section className="py-20 bg-white dark:bg-transparent content-auto">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <div className="inline-flex items-center gap-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-cyan-600 dark:text-cyan-400">
@@ -52,7 +52,7 @@ export default function ServiceFAQAccordion({
                 <button
                   type="button"
                   onClick={() => toggle(idx)}
-                  className="flex w-full items-center justify-between px-6 py-5 text-left text-base sm:text-lg font-semibold text-slate-900 transition hover:text-cyan-600 dark:text-white dark:hover:text-cyan-400"
+                  className="flex w-full items-center justify-between px-6 py-5 text-left text-base sm:text-lg font-semibold text-slate-900 transition hover:text-cyan-600 dark:text-white dark:hover:text-cyan-400 touch-manipulation"
                   aria-expanded={isOpen}
                 >
                   <span className="pr-4">{faq.question}</span>

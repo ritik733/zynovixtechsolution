@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, ShieldCheck, Users, Zap } from "lucide-react";
+import { ArrowRight, CheckCircle2, ShieldCheck, Zap } from "lucide-react";
 import { AmbientAtmosphereGlow } from "@/components/ui/TechPattern";
 
 export default function AboutPreview() {
   return (
-    <section className="relative overflow-hidden bg-white text-slate-900 py-24 dark:bg-[#050816] dark:text-white">
+    <section className="relative overflow-hidden bg-white text-slate-900 py-24 dark:bg-[#050816] dark:text-white content-auto">
       {/* Decorative Atmosphere Glow */}
       <AmbientAtmosphereGlow variant="violet-cyan" />
 
@@ -65,13 +65,13 @@ export default function AboutPreview() {
                   fill
                   sizes="(max-width: 1024px) 100vw, 55vw"
                   className="object-cover transition-transform duration-700 hover:scale-105"
-                  priority
+                  loading="lazy"
                 />
                 {/* Gradient Rim Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
 
                 {/* Floating Badge Top Left */}
-                <div className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-xl border border-white/20 bg-slate-900/80 px-3.5 py-1.5 backdrop-blur-md text-xs font-semibold text-white shadow-lg">
+                <div className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-xl border border-white/20 bg-slate-950/80 px-3.5 py-1.5 backdrop-blur-md text-xs font-semibold text-white shadow-lg">
                   <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
                   <span>Engineering Pod • Live Sprints</span>
                 </div>

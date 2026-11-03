@@ -19,7 +19,7 @@ export default function OpenPositions() {
   return (
     <section
       id="open-positions"
-      className="relative py-24 overflow-hidden"
+      className="relative py-24 overflow-hidden content-auto"
     >
       {/* Background Glow */}
       <div className="absolute left-0 top-32 h-96 w-96 rounded-full bg-violet-600/10 blur-[150px]" />
@@ -33,11 +33,11 @@ export default function OpenPositions() {
           </span>
 
           <h2 className="mt-6 text-5xl font-bold text-slate-900 dark:text-white">
-            Who We're Looking For
+            Who We&apos;re Looking For
           </h2>
 
           <p className="mx-auto mt-5 max-w-3xl text-lg text-slate-600 dark:text-slate-400">
-            We're looking for passionate developers, designers, and problem-solvers at any level — freshers, interns, and experienced professionals ready to build real projects in Web Development, Frappe ERPNext, and Custom Software.
+            We&apos;re looking for passionate developers, designers, and problem-solvers at any level — freshers, interns, and experienced professionals ready to build real projects in Web Development, Frappe ERPNext, and Custom Software.
           </p>
         </div>
 
@@ -82,7 +82,7 @@ export default function OpenPositions() {
             {/* What you'll work on */}
             <div className="mt-8">
               <h4 className="text-lg font-semibold text-slate-900 dark:text-white mb-4">
-                What you'll work on
+                What you&apos;ll work on
               </h4>
               <ul className="space-y-2 text-slate-600 dark:text-slate-400">
                 <li className="flex items-center gap-2">
@@ -126,7 +126,7 @@ export default function OpenPositions() {
             <div className="mt-10">
               <button
                 onClick={scrollToForm}
-                className="flex items-center gap-2 rounded-xl bg-gradient-to-r from-violet-600 to-blue-500 px-8 py-4 font-semibold text-white transition hover:scale-105 shadow-md shadow-violet-500/20"
+                className="flex items-center gap-2 rounded-xl bg-gradient-to-r from-violet-600 to-blue-500 px-8 py-4 font-semibold text-white transition hover:scale-105 shadow-md shadow-violet-500/20 touch-manipulation"
               >
                 Apply Now
                 <ArrowRight size={18} />

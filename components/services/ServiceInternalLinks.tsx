@@ -34,7 +34,7 @@ export default function ServiceInternalLinks({
   ],
 }: ServiceInternalLinksProps) {
   return (
-    <section className="py-16 bg-white dark:bg-transparent border-t border-slate-200/80 dark:border-slate-800">
+    <section className="py-16 bg-white dark:bg-transparent border-t border-slate-200/80 dark:border-slate-800 content-auto">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-10 text-center sm:text-left">
           <span className="text-xs font-bold uppercase tracking-widest text-cyan-600 dark:text-cyan-400">
@@ -54,7 +54,7 @@ export default function ServiceInternalLinks({
             <Link
               key={rel.title}
               href={rel.href}
-              className="group flex flex-col justify-between rounded-2xl border border-slate-200/80 bg-slate-50/50 p-6 transition duration-300 hover:-translate-y-1 hover:border-cyan-500/50 hover:bg-white hover:shadow-md dark:border-slate-800 dark:bg-slate-900/40 dark:hover:bg-slate-900/80"
+              className="group flex flex-col justify-between rounded-2xl border border-slate-200/80 bg-slate-50/50 p-6 transition duration-300 hover:-translate-y-1 hover:border-cyan-500/50 hover:bg-white hover:shadow-md dark:border-slate-800 dark:bg-slate-900/40 dark:hover:bg-slate-900/80 touch-manipulation"
             >
               <div>
                 <span className="text-xs font-semibold uppercase tracking-wider text-cyan-600 dark:text-cyan-400">
@@ -92,7 +92,7 @@ export default function ServiceInternalLinks({
                   <Link
                     key={p.href}
                     href={p.href}
-                    className="flex items-center justify-between rounded-lg bg-white/70 px-3 py-2 text-xs font-medium text-slate-800 transition hover:bg-white hover:text-cyan-600 dark:bg-slate-800/60 dark:text-slate-200 dark:hover:text-cyan-400"
+                    className="flex items-center justify-between rounded-lg bg-white/70 px-3 py-2 text-xs font-medium text-slate-800 transition hover:bg-white hover:text-cyan-600 dark:bg-slate-800/60 dark:text-slate-200 dark:hover:text-cyan-400 touch-manipulation"
                   >
                     <span className="truncate pr-2">{p.title}</span>
                     <ArrowUpRight className="h-3.5 w-3.5 flex-shrink-0 text-slate-400" />
@@ -104,21 +104,21 @@ export default function ServiceInternalLinks({
             <div className="mt-6 pt-4 border-t border-slate-200/60 dark:border-slate-800 flex items-center justify-between text-xs font-semibold">
               <Link
                 href="/portfolio"
-                className="inline-flex items-center gap-1.5 text-slate-700 hover:text-cyan-600 dark:text-slate-300 dark:hover:text-cyan-400"
+                className="inline-flex items-center gap-1.5 text-slate-700 hover:text-cyan-600 dark:text-slate-300 dark:hover:text-cyan-400 touch-manipulation"
               >
                 <FolderGit2 className="h-3.5 w-3.5" />
                 <span>All Projects</span>
               </Link>
               <Link
                 href="/about"
-                className="inline-flex items-center gap-1.5 text-slate-700 hover:text-cyan-600 dark:text-slate-300 dark:hover:text-cyan-400"
+                className="inline-flex items-center gap-1.5 text-slate-700 hover:text-cyan-600 dark:text-slate-300 dark:hover:text-cyan-400 touch-manipulation"
               >
                 <Info className="h-3.5 w-3.5" />
                 <span>About Us</span>
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-1.5 text-slate-700 hover:text-cyan-600 dark:text-slate-300 dark:hover:text-cyan-400"
+                className="inline-flex items-center gap-1.5 text-slate-700 hover:text-cyan-600 dark:text-slate-300 dark:hover:text-cyan-400 touch-manipulation"
               >
                 <MessageSquare className="h-3.5 w-3.5" />
                 <span>Direct Contact</span>

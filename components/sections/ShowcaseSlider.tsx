@@ -103,16 +103,13 @@ const slides: ShowcaseSlide[] = [
 export default function ShowcaseSlider() {
   const [current, setCurrent] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
-  const [direction, setDirection] = useState(1);
   const touchStartX = useRef<number | null>(null);
 
   const nextSlide = useCallback(() => {
-    setDirection(1);
     setCurrent((prev) => (prev + 1) % slides.length);
   }, []);
 
   const prevSlide = useCallback(() => {
-    setDirection(-1);
     setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
   }, []);
 
@@ -153,23 +150,24 @@ export default function ShowcaseSlider() {
     >
       {/* Viewport Height Container (100% full width, edge-to-edge) */}
       <div className="relative w-full h-[540px] sm:h-[580px] lg:h-[620px] overflow-hidden">
-        <AnimatePresence mode="wait" initial={false}>
+        <AnimatePresence mode="popLayout" initial={false}>
           <motion.div
             key={slide.id}
-            initial={{ opacity: 0, scale: 1.03 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.6, ease: "easeInOut" }}
-            className="absolute inset-0 w-full h-full"
+            transition={{ duration: 0.45, ease: [0.25, 0.1, 0.25, 1] }}
+            className="absolute inset-0 w-full h-full will-change-[opacity]"
           >
             {/* Full-bleed background image spanning 100vw */}
             <Image
               src={slide.image}
               alt={slide.alt}
               fill
-              sizes="100vw"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1280px"
               className="object-cover object-center"
               priority={current === 0}
+              quality={82}
             />
 
             {/* Cinematic Gradient Overlays */}
@@ -194,7 +192,7 @@ export default function ShowcaseSlider() {
               <button
                 type="button"
                 onClick={() => setIsPaused((p) => !p)}
-                className="flex h-8 w-8 items-center justify-center rounded-xl border border-white/15 bg-slate-950/70 text-white backdrop-blur-md transition hover:border-cyan-400 hover:text-cyan-400"
+                className="flex h-8 w-8 items-center justify-center rounded-xl border border-white/15 bg-slate-950/70 text-white backdrop-blur-md transition hover:border-cyan-400 hover:text-cyan-400 touch-manipulation"
                 aria-label={isPaused ? "Play auto-slide" : "Pause auto-slide"}
                 title={isPaused ? "Play" : "Pause"}
               >
@@ -220,7 +218,7 @@ export default function ShowcaseSlider() {
             <div className="mt-6 flex flex-wrap items-center gap-3 sm:gap-4">
               <Link
                 href={slide.href}
-                className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 via-cyan-500 to-indigo-600 px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-cyan-500/25 transition hover:scale-105"
+                className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 via-cyan-500 to-indigo-600 px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-cyan-500/25 transition hover:scale-105 touch-manipulation"
               >
                 <span>Explore Solution</span>
                 <ArrowRight size={16} />
@@ -237,7 +235,7 @@ export default function ShowcaseSlider() {
         <button
           type="button"
           onClick={prevSlide}
-          className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-20 flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-2xl border border-white/20 bg-slate-950/70 text-white backdrop-blur-md transition hover:scale-110 hover:border-cyan-400 hover:bg-slate-900 shadow-2xl"
+          className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-20 flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-2xl border border-white/20 bg-slate-950/70 text-white backdrop-blur-md transition hover:scale-110 hover:border-cyan-400 hover:bg-slate-900 shadow-2xl touch-manipulation"
           aria-label="Previous slide"
         >
           <ChevronLeft size={24} />
@@ -246,7 +244,7 @@ export default function ShowcaseSlider() {
         <button
           type="button"
           onClick={nextSlide}
-          className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-20 flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-2xl border border-white/20 bg-slate-950/70 text-white backdrop-blur-md transition hover:scale-110 hover:border-cyan-400 hover:bg-slate-900 shadow-2xl"
+          className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-20 flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-2xl border border-white/20 bg-slate-950/70 text-white backdrop-blur-md transition hover:scale-110 hover:border-cyan-400 hover:bg-slate-900 shadow-2xl touch-manipulation"
           aria-label="Next slide"
         >
           <ChevronRight size={24} />
@@ -263,10 +261,9 @@ export default function ShowcaseSlider() {
                 key={`thumb-${s.id}`}
                 type="button"
                 onClick={() => {
-                  setDirection(idx > current ? 1 : -1);
                   setCurrent(idx);
                 }}
-                className={`relative flex items-center gap-3 p-3 sm:p-4 text-left transition-all ${
+                className={`relative flex items-center gap-3 p-3 sm:p-4 text-left transition-colors touch-manipulation ${
                   isActive
                     ? "bg-white/15 dark:bg-white/10 border-b-4 border-cyan-400"
                     : "opacity-60 hover:opacity-100 hover:bg-white/5"
@@ -279,6 +276,8 @@ export default function ShowcaseSlider() {
                     fill
                     sizes="64px"
                     className="object-cover"
+                    loading="lazy"
+                    quality={65}
                   />
                 </div>
                 <div className="min-w-0 flex-1">

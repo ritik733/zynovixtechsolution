@@ -62,7 +62,7 @@ export default function AboutPage() {
       </section>
 
       {/* Our Story – with Team Collaboration Image */}
-      <section className="relative py-20 border-t border-slate-200/70 dark:border-white/5">
+      <section className="relative py-20 border-t border-slate-200/70 dark:border-white/5 content-auto">
         <div className="relative mx-auto max-w-7xl px-6">
           <div className="grid items-center gap-12 lg:grid-cols-12">
             {/* Story Text (6 cols) */}
@@ -82,7 +82,7 @@ export default function AboutPage() {
               </p>
               <p className="text-sm sm:text-base leading-relaxed text-slate-600 dark:text-slate-300">
                 We believe that the best solutions emerge from a deep
-                understanding of our clients' workflows, combined with technical
+                understanding of our clients&apos; workflows, combined with technical
                 excellence and creative thinking. Our culture is built on
                 curiosity, continuous learning, and a commitment to delivering
                 measurable outcomes.
@@ -105,6 +105,8 @@ export default function AboutPage() {
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover transition-transform duration-700 hover:scale-105"
+                    loading="lazy"
+                    quality={82}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
 
@@ -129,7 +131,7 @@ export default function AboutPage() {
       </section>
 
       {/* Mission & Vision – with Innovation 3D Graphic */}
-      <section className="relative py-20 bg-slate-50/70 dark:bg-transparent border-y border-slate-200/70 dark:border-white/5">
+      <section className="relative py-20 bg-slate-50/70 dark:bg-transparent border-y border-slate-200/70 dark:border-white/5 content-auto">
         <div className="relative mx-auto max-w-7xl px-6">
           <div className="grid items-center gap-12 lg:grid-cols-12">
             {/* Visual Graphic (5 cols) */}
@@ -142,6 +144,8 @@ export default function AboutPage() {
                     fill
                     sizes="(max-width: 1024px) 100vw, 40vw"
                     className="object-cover transition-transform duration-700 hover:scale-105"
+                    loading="lazy"
+                    quality={82}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
 
@@ -216,7 +220,7 @@ export default function AboutPage() {
       </section>
 
       {/* Core Values */}
-      <section className="relative py-20">
+      <section className="relative py-20 content-auto">
         <div className="relative mx-auto max-w-7xl px-6">
           <div className="text-center max-w-2xl mx-auto mb-14">
             <span className="text-xs font-bold uppercase tracking-wider text-cyan-600 dark:text-cyan-400">
@@ -267,7 +271,7 @@ export default function AboutPage() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="relative py-20 bg-slate-50/60 dark:bg-transparent border-t border-slate-200/70 dark:border-white/5">
+      <section className="relative py-20 bg-slate-50/60 dark:bg-transparent border-t border-slate-200/70 dark:border-white/5 content-auto">
         <div className="relative mx-auto max-w-7xl px-6">
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             <div className="rounded-3xl border border-slate-200/90 bg-white/90 p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900/60">
@@ -311,13 +315,13 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="relative py-20 text-center">
+      <section className="relative py-20 text-center content-auto">
         <div className="mx-auto max-w-3xl px-6">
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
             Ready to Build Something Amazing?
           </h2>
           <p className="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300">
-            Let's talk about your project and how we can help you achieve your
+            Let&apos;s talk about your project and how we can help you achieve your
             goals with technology that works.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">

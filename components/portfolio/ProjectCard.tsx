@@ -19,11 +19,11 @@ export default function ProjectCard({ project }: { project: PortfolioProject }) 
   return (
     <motion.div
       layout
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
-      transition={{ duration: 0.4, ease: "easeOut" }}
-      whileHover={{ y: -8 }}
+      transition={{ duration: 0.35, ease: "easeOut" }}
+      whileHover={{ y: -6 }}
       className="group flex flex-col justify-between rounded-3xl border border-slate-200/90 bg-white/90 shadow-sm backdrop-blur-xl overflow-hidden transition-all duration-300 hover:border-cyan-500/60 hover:shadow-xl hover:shadow-cyan-500/10 dark:border-slate-800 dark:bg-slate-900/60 dark:hover:border-cyan-400"
     >
       <div>
@@ -36,10 +36,12 @@ export default function ProjectCard({ project }: { project: PortfolioProject }) 
             alt={`${project.title} - ${project.category} case study by Zynovix`}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            className="object-cover transition-transform duration-500 group-hover:scale-110"
+            quality={80}
+            loading="lazy"
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
           />
           {project.featured && (
-            <span className="absolute top-4 right-4 rounded-full bg-white/90 backdrop-blur px-3 py-1 text-xs font-semibold text-slate-900">
+            <span className="absolute top-4 right-4 rounded-full bg-white/90 backdrop-blur px-3 py-1 text-xs font-semibold text-slate-900 shadow-sm">
               ⭐ Featured
             </span>
           )}
@@ -63,7 +65,7 @@ export default function ProjectCard({ project }: { project: PortfolioProject }) 
             </h3>
           </Link>
 
-          <p className="mt-3 text-slate-600 dark:text-slate-300 leading-7">
+          <p className="mt-3 text-slate-600 dark:text-slate-300 leading-7 text-sm">
             {project.description}
           </p>
 
@@ -83,7 +85,7 @@ export default function ProjectCard({ project }: { project: PortfolioProject }) 
       <div className="px-6 pb-6 pt-2">
         <Link
           href={projectHref}
-          className="inline-flex items-center font-medium text-cyan-600 dark:text-cyan-400 transition hover:text-cyan-500 dark:hover:text-cyan-300 group-hover:translate-x-2"
+          className="inline-flex items-center font-medium text-cyan-600 dark:text-cyan-400 transition hover:text-cyan-500 dark:hover:text-cyan-300 group-hover:translate-x-2 text-sm"
         >
           View Project
           <ArrowRight className="ml-2 h-4 w-4" />

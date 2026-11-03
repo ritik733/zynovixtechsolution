@@ -1,28 +1,13 @@
-"use client";
-
 import Image from "next/image";
 import {
-  CheckCircle,
   Database,
   Layers,
   Lock,
   Server,
   Zap,
-  Globe,
-  Smartphone,
   Cpu,
-  RefreshCw,
-  Sliders,
-  DollarSign,
-  Activity,
-  HardDrive,
-  Calendar,
-  BedDouble,
-  UserCheck,
   Receipt,
-  FileSpreadsheet,
-  CheckCircle2,
-  XCircle,
+  BedDouble,
   Link2,
 } from "lucide-react";
 
@@ -54,6 +39,7 @@ export function WebsiteMockupVisual() {
             alt="Custom responsive website development and Next.js 16 web application interface engineered by Zynovix"
             fill
             sizes="(max-width: 1024px) 100vw, 50vw"
+            quality={82}
             className="object-cover"
             priority
           />
@@ -116,7 +102,9 @@ export function ERPNextMockupVisual() {
             alt="Enterprise Frappe ERPNext accounting, multi-warehouse stock, and custom DocType workflow dashboard by Zynovix"
             fill
             sizes="(max-width: 1024px) 100vw, 50vw"
+            quality={82}
             className="object-cover"
+            priority
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
           <div className="absolute bottom-3 left-3 inline-flex items-center gap-1.5 rounded-lg border border-white/20 bg-slate-950/80 px-2.5 py-1 text-xs font-semibold text-white backdrop-blur-md">
@@ -184,7 +172,9 @@ export function HotelMockupVisual() {
             alt="Hotel PMS software tablet interface with room booking calendar and live OTA channel manager sync by Zynovix"
             fill
             sizes="(max-width: 1024px) 100vw, 50vw"
+            quality={82}
             className="object-cover"
+            priority
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
           <div className="absolute bottom-3 left-3 inline-flex items-center gap-1.5 rounded-lg border border-white/20 bg-slate-950/80 px-2.5 py-1 text-xs font-semibold text-white backdrop-blur-md">
@@ -229,7 +219,9 @@ export function CustomBusinessSoftwareVisual() {
             alt="Custom enterprise business software and automated workflow pipeline dashboard designed by Zynovix"
             fill
             sizes="(max-width: 1024px) 100vw, 50vw"
+            quality={82}
             className="object-cover"
+            priority
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
           <div className="absolute bottom-3 left-3 inline-flex items-center gap-1.5 rounded-lg border border-white/20 bg-slate-950/80 px-2.5 py-1 text-xs font-semibold text-white backdrop-blur-md">
@@ -280,7 +272,9 @@ export function ApiIntegrationsVisual() {
             alt="3D enterprise API data pipeline connecting microservices and secure payment gateways engineered by Zynovix"
             fill
             sizes="(max-width: 1024px) 100vw, 50vw"
+            quality={82}
             className="object-cover"
+            priority
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
           <div className="absolute bottom-3 left-3 inline-flex items-center gap-1.5 rounded-lg border border-white/20 bg-slate-950/80 px-2.5 py-1 text-xs font-semibold text-white backdrop-blur-md">
@@ -328,7 +322,9 @@ export function CloudHostingVisual() {
             alt="High-availability enterprise cloud server infrastructure and 99.9% uptime monitoring console by Zynovix"
             fill
             sizes="(max-width: 1024px) 100vw, 50vw"
+            quality={82}
             className="object-cover"
+            priority
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
           <div className="absolute bottom-3 left-3 inline-flex items-center gap-1.5 rounded-lg border border-white/20 bg-slate-950/80 px-2.5 py-1 text-xs font-semibold text-white backdrop-blur-md">

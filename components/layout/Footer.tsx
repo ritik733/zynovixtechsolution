@@ -13,7 +13,7 @@ export default function Footer() {
   return (
     <footer
       id="contact"
-      className="bg-white text-slate-900 dark:bg-[#050816] dark:text-slate-300"
+      className="bg-white text-slate-900 dark:bg-[#050816] dark:text-slate-300 content-auto"
     >
       <div className="mx-auto max-w-7xl px-6 py-20">
 

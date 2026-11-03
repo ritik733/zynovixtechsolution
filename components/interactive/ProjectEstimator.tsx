@@ -133,7 +133,7 @@ export default function ProjectEstimator() {
   const currentRecommendation = getArchitectureRecommendation();
 
   return (
-    <section className="relative overflow-hidden bg-slate-50/70 py-24 dark:bg-[#050816]">
+    <section className="relative overflow-hidden bg-slate-50/70 py-24 dark:bg-[#050816] content-auto">
       {/* Background Ambience */}
       <div className="absolute inset-0 -z-10 pointer-events-none">
         <div className="absolute left-1/3 top-1/4 h-96 w-96 rounded-full bg-violet-600/10 blur-[180px]" />
@@ -176,7 +176,7 @@ export default function ProjectEstimator() {
                       key={svc.id}
                       type="button"
                       onClick={() => setSelectedService(svc.id)}
-                      className={`flex items-start gap-3 rounded-xl p-4 text-left transition-all duration-200 border ${
+                      className={`flex items-start gap-3 rounded-xl p-4 text-left transition-all duration-200 border touch-manipulation ${
                         isSelected
                           ? "border-cyan-500 bg-cyan-50/50 shadow-md shadow-cyan-500/10 dark:border-cyan-400 dark:bg-cyan-500/10"
                           : "border-slate-200 bg-white hover:border-slate-300 dark:border-slate-800 dark:bg-slate-900/40 dark:hover:border-slate-700"
@@ -205,8 +205,8 @@ export default function ProjectEstimator() {
             </div>
           </div>
 
-          {/* Blueprint Card - Right 5 cols (Sticky) */}
-          <div className="lg:col-span-5 sticky top-28">
+          {/* Blueprint Card - Right 5 cols (Sticky on desktop only) */}
+          <div className="lg:col-span-5 lg:sticky lg:top-28">
             <div className="rounded-3xl border border-violet-500/30 bg-white/95 p-6 sm:p-8 shadow-2xl backdrop-blur-2xl dark:bg-[#050816]/95 dark:shadow-[0_20px_60px_rgba(110,80,255,.2)]">
               {/* Header */}
               <div className="flex items-center justify-between pb-4 border-b border-slate-200/80 dark:border-white/10">
@@ -277,7 +277,7 @@ export default function ProjectEstimator() {
               <div className="mt-8 pt-6 border-t border-slate-200/80 dark:border-white/10">
                 <Link
                   href={`/contact?service=${selectedService}`}
-                  className="flex items-center justify-center gap-2 w-full rounded-xl bg-gradient-to-r from-blue-600 via-cyan-500 to-indigo-600 px-6 py-4 font-bold text-white transition hover:scale-[1.02] shadow-lg shadow-cyan-500/25 text-sm"
+                  className="flex items-center justify-center gap-2 w-full rounded-xl bg-gradient-to-r from-blue-600 via-cyan-500 to-indigo-600 px-6 py-4 font-bold text-white transition hover:scale-[1.02] shadow-lg shadow-cyan-500/25 text-sm touch-manipulation"
                 >
                   Request Technical Proposal & Discovery Call
                   <ArrowRight size={16} />

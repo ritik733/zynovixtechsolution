@@ -40,7 +40,7 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="relative py-24 overflow-hidden bg-slate-50 text-slate-900 dark:bg-transparent dark:text-white">
+    <section className="relative py-24 overflow-hidden bg-slate-50 text-slate-900 dark:bg-transparent dark:text-white content-auto">
 
       {/* Glow */}
       <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-violet-600/10 blur-[150px]" />
@@ -79,7 +79,7 @@ export default function FAQ() {
                   onClick={() =>
                     setOpenIndex(open ? null : index)
                   }
-                  className="flex w-full items-center justify-between p-6 text-left"
+                  className="flex w-full items-center justify-between p-6 text-left touch-manipulation"
                 >
 
                   <span className="text-lg font-semibold text-slate-900 dark:text-white">

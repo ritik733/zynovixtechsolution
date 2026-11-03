@@ -22,11 +22,11 @@ function Starfield({ count = 45 }: { count?: number }) {
     () =>
       Array.from({ length: count }).map((_, i) => ({
         id: i,
-        top: Math.random() * 100,
-        left: Math.random() * 100,
-        size: Math.random() * 2 + 1,
-        delay: Math.random() * 4,
-        duration: Math.random() * 3 + 2,
+        top: ((i * 37.3) % 100),
+        left: ((i * 59.7) % 100),
+        size: ((i * 1.3) % 2) + 1,
+        delay: ((i * 0.7) % 4),
+        duration: ((i * 0.9) % 3) + 2,
       })),
     [count]
   );

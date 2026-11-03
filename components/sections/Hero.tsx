@@ -1,8 +1,5 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import {
   ArrowRight,
   Rocket,
@@ -31,7 +28,7 @@ export default function Hero() {
           <div className="lg:col-span-6 xl:col-span-6 text-left z-10">
             {/* Top Badge: Rocket + Technology Partner */}
             <div className="inline-flex">
-              <div className="inline-flex items-center gap-2.5 rounded-full bg-[#EAF3FF] dark:bg-sky-950/70 border border-[#BFDBFE]/90 dark:border-sky-800/60 px-4 py-1.5 shadow-xs transition-all hover:border-[#93C5FD]">
+              <div className="inline-flex items-center gap-2.5 rounded-full bg-[#EAF3FF] dark:bg-sky-950/70 border border-[#BFDBFE]/90 dark:border-sky-800/60 px-4 py-1.5 shadow-xs transition-colors hover:border-[#93C5FD]">
                 <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#0076FF] text-white shadow-xs">
                   <Rocket className="h-3 w-3" />
                 </span>
@@ -42,7 +39,7 @@ export default function Hero() {
             </div>
 
             {/* Main Headline */}
-            <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl lg:text-[54px] xl:text-[64px] font-extrabold tracking-tight text-[#0B192C] dark:text-white leading-[1.08]">
+            <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl lg:text-[54px] xl:text-[64px] font-extrabold tracking-tight text-[#0B192C] dark:text-white leading-[1.08] break-words">
               Transform Your Ideas
               <span className="block mt-1 sm:mt-1.5">Into Powerful</span>
               <span className="block mt-1 sm:mt-1.5 text-[#0076FF] dark:text-[#38BDF8]">
@@ -61,7 +58,7 @@ export default function Hero() {
               {/* Primary Blue Button */}
               <Link
                 href="/contact"
-                className="group inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r from-[#006CEE] to-[#0084FF] px-7 sm:px-9 py-3.5 sm:py-4 text-sm sm:text-base font-semibold text-white shadow-lg shadow-blue-500/25 transition-all duration-200 hover:shadow-blue-500/45 hover:scale-[1.02] active:scale-[0.98]"
+                className="group inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r from-[#006CEE] to-[#0084FF] px-7 sm:px-9 py-3.5 sm:py-4 text-sm sm:text-base font-semibold text-white shadow-lg shadow-blue-500/25 transition-transform duration-200 hover:shadow-blue-500/45 hover:scale-[1.02] active:scale-[0.98] touch-manipulation"
               >
                 <span>Start Your Project</span>
                 <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 transition-transform duration-200 group-hover:translate-x-1" />
@@ -70,7 +67,7 @@ export default function Hero() {
               {/* Secondary Pill Button */}
               <Link
                 href="/portfolio"
-                className="group inline-flex items-center gap-2 rounded-full border border-slate-900/80 dark:border-slate-600 bg-white dark:bg-slate-900/90 px-7 sm:px-9 py-3.5 sm:py-4 text-sm sm:text-base font-semibold text-slate-900 dark:text-white shadow-xs transition-all duration-200 hover:bg-slate-50 dark:hover:bg-slate-800 hover:border-slate-950 dark:hover:border-slate-400 hover:scale-[1.02] active:scale-[0.98]"
+                className="group inline-flex items-center gap-2 rounded-full border border-slate-900/80 dark:border-slate-600 bg-white dark:bg-slate-900/90 px-7 sm:px-9 py-3.5 sm:py-4 text-sm sm:text-base font-semibold text-slate-900 dark:text-white shadow-xs transition-colors duration-200 hover:bg-slate-50 dark:hover:bg-slate-800 hover:border-slate-950 dark:hover:border-slate-400 hover:scale-[1.02] active:scale-[0.98] touch-manipulation"
               >
                 <span>Explore Our Work</span>
                 <span className="text-[11px] ml-1 text-slate-900 dark:text-white transition-transform duration-200 group-hover:translate-x-0.5">
@@ -83,7 +80,7 @@ export default function Hero() {
             <div className="mt-10 pt-4 flex flex-wrap items-center gap-4 sm:gap-6 text-xs sm:text-sm font-semibold text-slate-800 dark:text-slate-200">
               <Link
                 href="/services/custom-website-development"
-                className="inline-flex items-center gap-2 transition hover:text-[#0076FF]"
+                className="inline-flex items-center gap-2 transition-colors hover:text-[#0076FF]"
               >
                 <Code2 className="h-4 w-4 sm:h-5 sm:w-5 text-[#0076FF]" strokeWidth={2.2} />
                 <span>Web Development</span>
@@ -93,7 +90,7 @@ export default function Hero() {
 
               <Link
                 href="/services/frappe-erpnext-solutions"
-                className="inline-flex items-center gap-2 transition hover:text-[#0076FF]"
+                className="inline-flex items-center gap-2 transition-colors hover:text-[#0076FF]"
               >
                 <Boxes className="h-4 w-4 sm:h-5 sm:w-5 text-[#0076FF]" strokeWidth={2} />
                 <span>Frappe & ERPNext</span>
@@ -103,7 +100,7 @@ export default function Hero() {
 
               <Link
                 href="/services/custom-business-software"
-                className="inline-flex items-center gap-2 transition hover:text-[#0076FF]"
+                className="inline-flex items-center gap-2 transition-colors hover:text-[#0076FF]"
               >
                 <Settings2 className="h-4 w-4 sm:h-5 sm:w-5 text-[#0076FF]" strokeWidth={2} />
                 <span>Custom Software</span>
@@ -112,10 +109,7 @@ export default function Hero() {
           </div>
 
           {/* RIGHT COLUMN: Realistic 3D Workspace Mockup with ERPNext Dashboard, Laptop & Phone */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.96 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+          <div
             className="lg:col-span-6 xl:col-span-6 relative flex items-center justify-center lg:justify-end mt-4 lg:mt-0"
           >
             {/* Ambient Backlight Glow */}
@@ -128,11 +122,12 @@ export default function Hero() {
                 width={1002}
                 height={670}
                 priority
-                quality={92}
+                quality={85}
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 85vw, 680px"
                 className="w-full h-auto object-contain drop-shadow-2xl"
               />
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
 

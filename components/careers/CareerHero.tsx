@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import { ArrowRight, Briefcase } from "lucide-react";
 import { HeroAtmosphereGlow } from "@/components/ui/TechPattern";
@@ -15,7 +13,7 @@ export default function CareerHero() {
         {/* Badge */}
         <div className="inline-flex items-center gap-2 rounded-full border border-violet-500/30 bg-violet-500/10 px-5 py-2 text-violet-500/90 backdrop-blur-xl">
           <Briefcase size={18} />
-          <span className="text-slate-900 dark:text-white">We're Hiring</span>
+          <span className="text-slate-900 dark:text-white">We&apos;re Hiring</span>
         </div>
 
         {/* Heading */}
@@ -38,7 +36,7 @@ export default function CareerHero() {
 
           <Link
             href="#open-positions"
-            className="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-violet-600 to-blue-500 px-8 py-4 font-semibold text-white transition duration-300 hover:scale-105"
+            className="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-violet-600 to-blue-500 px-8 py-4 font-semibold text-white transition duration-300 hover:scale-105 touch-manipulation"
           >
             View Open Positions
             <ArrowRight className="ml-2 h-5 w-5" />
@@ -46,7 +44,7 @@ export default function CareerHero() {
 
           <Link
             href="#application-form"
-            className="inline-flex items-center justify-center rounded-xl border border-violet-500/30 bg-slate-950/5 px-8 py-4 font-semibold text-slate-900 backdrop-blur-xl transition duration-300 hover:bg-slate-100 dark:bg-white/5 dark:text-white dark:hover:bg-white/10"
+            className="inline-flex items-center justify-center rounded-xl border border-violet-500/30 bg-slate-950/5 px-8 py-4 font-semibold text-slate-900 backdrop-blur-xl transition duration-300 hover:bg-slate-100 dark:bg-white/5 dark:text-white dark:hover:bg-white/10 touch-manipulation"
           >
             Apply Now
           </Link>

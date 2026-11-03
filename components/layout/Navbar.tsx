@@ -88,21 +88,30 @@ export default function Navbar() {
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  // Handle scroll effect
+  // Handle high-performance RAF throttled scroll effect
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 15);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close menus when route changes
-  useEffect(() => {
+  // Close menus when route changes without cascading effect renders
+  const [prevPathname, setPrevPathname] = useState(pathname);
+  if (prevPathname !== pathname) {
+    setPrevPathname(pathname);
     setIsOpen(false);
     setServicesDropdownOpen(false);
     setMobileServicesOpen(false);
-  }, [pathname]);
+  }
 
   // Handle hover for desktop dropdown with debounced close
   const handleMouseEnterServices = () => {
@@ -124,16 +133,15 @@ export default function Navbar() {
     setServicesDropdownOpen(false);
   };
 
-  // Prevent body scroll when mobile menu is open
+  // Prevent body scroll when mobile menu is open with clean restoration
   useEffect(() => {
     if (isOpen) {
+      const originalOverflow = document.body.style.overflow;
       document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
+      return () => {
+        document.body.style.overflow = originalOverflow || "";
+      };
     }
-    return () => {
-      document.body.style.overflow = "unset";
-    };
   }, [isOpen]);
 
   // Check if a nav item is active
@@ -146,15 +154,17 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-2 z-50 transition-[colors,transform] duration-300 ${
-        isScrolled ? "top-0" : "top-2"
+      className={`fixed inset-x-0 top-0 z-50 pt-2 transition-transform duration-300 [contain:layout] ${
+        isScrolled ? "sm:pt-2" : "sm:pt-3"
       }`}
     >
       <div className="mx-auto max-w-[1650px] px-4 sm:px-6 lg:px-8">
-        {/* Outer Glass */}
+        {/* Outer Glass Container */}
         <div
-          className={`flex h-16 sm:h-20 lg:h-24 items-center justify-between rounded-[28px] border border-violet-500/30 bg-white/80 px-4 sm:px-6 lg:px-10 backdrop-blur-2xl shadow-[0_0_60px_rgba(110,80,255,.15)] transition-[colors,transform] duration-300 dark:bg-[#050816]/80 dark:shadow-[0_0_60px_rgba(110,80,255,.35)] ${
-            isScrolled ? "rounded-[20px] shadow-[0_0_40px_rgba(110,80,255,.25)]" : ""
+          className={`flex items-center justify-between rounded-[24px] sm:rounded-[28px] border border-violet-500/30 bg-white/80 px-4 sm:px-6 lg:px-10 backdrop-blur-2xl shadow-[0_0_60px_rgba(110,80,255,.15)] transition-all duration-300 dark:bg-[#050816]/80 dark:shadow-[0_0_60px_rgba(110,80,255,.35)] ${
+            isScrolled
+              ? "h-14 sm:h-16 lg:h-20 shadow-[0_0_40px_rgba(110,80,255,.25)]"
+              : "h-16 sm:h-20 lg:h-24"
           }`}
         >
           {/* Logo */}
@@ -163,14 +173,18 @@ export default function Navbar() {
             className="flex items-center gap-3 sm:gap-4 flex-shrink-0"
             onClick={handleLinkClick}
           >
-            <Image
-              src="/images/logo/Zynovix-logo-Z.webp"
-              alt="Zynovix Tech Solutions Logo"
-              width={197}
-              height={146}
-              className="h-12 w-auto sm:h-14 lg:h-16 object-contain drop-shadow-sm"
-              priority
-            />
+            <div className={`transition-transform duration-300 origin-left flex-shrink-0 ${
+              isScrolled ? "scale-90" : "scale-100"
+            }`}>
+              <Image
+                src="/images/logo/Zynovix-logo-Z.webp"
+                alt="Zynovix Tech Solutions Logo"
+                width={197}
+                height={146}
+                className="w-auto h-12 sm:h-14 lg:h-16 object-contain drop-shadow-sm"
+                priority
+              />
+            </div>
             <div className="hidden sm:block">
               <h2 className="text-lg sm:text-xl lg:text-2xl font-black tracking-widest uppercase text-slate-900 dark:text-white leading-tight">
                 Zynovix
@@ -182,7 +196,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center rounded-2xl border border-slate-200/80 bg-slate-100/90 p-2 backdrop-blur-xl dark:border-white/10 dark:bg-black/50">
+          <div className="hidden lg:flex items-center rounded-2xl border border-slate-200/80 bg-slate-100/90 p-1.5 xl:p-2 backdrop-blur-xl dark:border-white/10 dark:bg-black/50">
             {navItems.map((item, index) => {
               const active = isActive(item.href);
 
@@ -197,7 +211,7 @@ export default function Navbar() {
                     <Link
                       href={item.href}
                       onClick={handleLinkClick}
-                      className={`flex items-center gap-1.5 rounded-xl px-4 xl:px-6 py-2 xl:py-3 text-sm xl:text-[15px] font-medium transition-[colors,transform] duration-300 whitespace-nowrap ${
+                      className={`flex items-center gap-1.5 rounded-xl px-3.5 xl:px-6 py-2 xl:py-2.5 text-sm xl:text-[15px] font-medium transition-colors duration-200 whitespace-nowrap ${
                         active
                           ? "bg-white text-slate-900 shadow-sm dark:bg-white/10 dark:text-white font-semibold"
                           : "text-slate-700 hover:text-slate-900 hover:bg-slate-200/70 dark:text-slate-300 dark:hover:text-white dark:hover:bg-white/5"
@@ -244,7 +258,7 @@ export default function Navbar() {
                                   key={svc.href}
                                   href={svc.href}
                                   onClick={handleLinkClick}
-                                  className={`group flex items-start gap-3 rounded-xl p-3 transition-all duration-200 ${
+                                  className={`group flex items-start gap-3 rounded-xl p-3 transition-colors duration-200 ${
                                     isSvcActive
                                       ? "bg-violet-50 dark:bg-violet-500/15 border border-violet-500/30"
                                       : "hover:bg-slate-100/90 dark:hover:bg-white/5 border border-transparent"
@@ -297,7 +311,7 @@ export default function Navbar() {
                 <Link
                   key={index}
                   href={item.href}
-                  className={`flex items-center gap-1 rounded-xl px-4 xl:px-6 py-2 xl:py-3 text-sm xl:text-[15px] font-medium transition-[colors,transform] duration-300 whitespace-nowrap ${
+                  className={`flex items-center gap-1 rounded-xl px-3.5 xl:px-6 py-2 xl:py-2.5 text-sm xl:text-[15px] font-medium transition-colors duration-200 whitespace-nowrap ${
                     active
                       ? "bg-white text-slate-900 shadow-sm dark:bg-white/10 dark:text-white font-semibold"
                       : "text-slate-700 hover:text-slate-900 hover:bg-slate-200/70 dark:text-slate-300 dark:hover:text-white dark:hover:bg-white/5"
@@ -310,7 +324,7 @@ export default function Navbar() {
 
             <Link
               href="/contact"
-              className="ml-2 xl:ml-4 flex items-center gap-2 rounded-xl bg-gradient-to-r from-violet-600 to-blue-500 px-5 xl:px-7 py-2 xl:py-3 font-semibold text-white transition hover:scale-105 shadow-md shadow-violet-500/20 text-sm xl:text-base whitespace-nowrap"
+              className="ml-2 xl:ml-3 flex items-center gap-2 rounded-xl bg-gradient-to-r from-violet-600 to-blue-500 px-4 xl:px-6 py-2 xl:py-2.5 font-semibold text-white transition-transform hover:scale-[1.02] shadow-md shadow-violet-500/20 text-sm xl:text-base whitespace-nowrap touch-manipulation"
             >
               Book Free Consultation
               <ArrowUpRight size={16} className="hidden sm:inline" />
@@ -320,7 +334,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden flex items-center justify-center w-10 h-10 rounded-xl bg-slate-100 border border-slate-200 hover:bg-slate-200 transition-[colors,transform] duration-300 text-slate-800 dark:bg-white/5 dark:border-white/10 dark:hover:bg-white/10 dark:text-white"
+            className="lg:hidden flex items-center justify-center w-10 h-10 rounded-xl bg-slate-100 border border-slate-200 hover:bg-slate-200 transition-colors duration-200 text-slate-800 dark:bg-white/5 dark:border-white/10 dark:hover:bg-white/10 dark:text-white touch-manipulation"
             aria-label="Toggle menu"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -329,13 +343,13 @@ export default function Navbar() {
 
         {/* Mobile Navigation Menu */}
         <div
-          className={`lg:hidden fixed inset-x-0 top-[72px] sm:top-[88px] mx-4 sm:mx-6 transition-[colors,transform] duration-300 ease-in-out transform ${
+          className={`lg:hidden fixed inset-x-0 top-[70px] sm:top-[84px] mx-4 sm:mx-6 transition-all duration-300 ease-in-out transform ${
             isOpen
               ? "opacity-100 translate-y-0 pointer-events-auto"
               : "opacity-0 -translate-y-4 pointer-events-none"
           }`}
         >
-          <div className="bg-white/95 text-slate-900 border border-slate-200/80 backdrop-blur-2xl rounded-2xl p-4 shadow-2xl dark:bg-[#050816]/95 dark:text-white dark:border-violet-500/30 dark:shadow-[0_20px_60px_rgba(0,0,0,0.8)] max-h-[calc(100vh-120px)] overflow-y-auto">
+          <div className="bg-white/95 text-slate-900 border border-slate-200/80 backdrop-blur-2xl rounded-2xl p-4 shadow-2xl dark:bg-[#050816]/95 dark:text-white dark:border-violet-500/30 dark:shadow-[0_20px_60px_rgba(0,0,0,0.8)] max-h-[calc(100vh-100px)] overflow-y-auto">
             <div className="flex flex-col space-y-1">
               {navItems.map((item, index) => {
                 const active = isActive(item.href);
@@ -344,7 +358,7 @@ export default function Navbar() {
                   return (
                     <div key={index} className="flex flex-col">
                       <div
-                        className={`flex items-center justify-between px-4 py-3 rounded-xl text-base font-medium transition-[colors,transform] duration-200 ${
+                        className={`flex items-center justify-between px-4 py-3 rounded-xl text-base font-medium transition-colors duration-200 ${
                           active
                             ? "bg-violet-50 text-violet-700 font-semibold dark:bg-violet-500/20 dark:text-white"
                             : "text-slate-700 hover:text-slate-900 hover:bg-slate-100 dark:text-slate-300 dark:hover:text-white dark:hover:bg-white/5"
@@ -360,7 +374,7 @@ export default function Navbar() {
                         <button
                           type="button"
                           onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                          className="p-1 rounded-lg hover:bg-slate-200 dark:hover:bg-white/10 text-slate-500 dark:text-slate-400"
+                          className="p-1 rounded-lg hover:bg-slate-200 dark:hover:bg-white/10 text-slate-500 dark:text-slate-400 touch-manipulation"
                           aria-label="Toggle services submenu"
                         >
                           <ChevronDown
@@ -406,7 +420,7 @@ export default function Navbar() {
                     key={index}
                     href={item.href}
                     onClick={handleLinkClick}
-                    className={`flex items-center justify-between px-4 py-3 rounded-xl text-base font-medium transition-[colors,transform] duration-200 ${
+                    className={`flex items-center justify-between px-4 py-3 rounded-xl text-base font-medium transition-colors duration-200 ${
                       active
                         ? "bg-violet-50 text-violet-700 font-semibold dark:bg-violet-500/20 dark:text-white"
                         : "text-slate-700 hover:text-slate-900 hover:bg-slate-100 dark:text-slate-300 dark:hover:text-white dark:hover:bg-white/5"
@@ -417,11 +431,11 @@ export default function Navbar() {
                 );
               })}
 
-              <div className="pt-3 mt-2 border-t border-white/10">
+              <div className="pt-3 mt-2 border-t border-slate-200/80 dark:border-white/10">
                 <Link
                   href="/contact"
                   onClick={handleLinkClick}
-                  className="flex items-center justify-center gap-2 w-full rounded-xl bg-gradient-to-r from-violet-600 to-blue-500 px-6 py-3.5 font-semibold text-white transition hover:scale-[1.02] text-base"
+                  className="flex items-center justify-center gap-2 w-full rounded-xl bg-gradient-to-r from-violet-600 to-blue-500 px-6 py-3.5 font-semibold text-white transition-transform hover:scale-[1.02] text-base touch-manipulation"
                 >
                   Book Free Consultation
                   <ArrowUpRight size={18} />
@@ -436,6 +450,7 @@ export default function Navbar() {
           <div
             className="lg:hidden fixed inset-0 bg-black/60 backdrop-blur-sm -z-10"
             onClick={() => setIsOpen(false)}
+            aria-hidden="true"
           />
         )}
       </div>

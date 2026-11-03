@@ -82,7 +82,7 @@ const services = [
 
 export default function ServicesPage() {
   return (
-    <section className="relative overflow-hidden bg-white py-24 text-slate-900 dark:bg-[#050816] dark:text-white min-h-screen">
+    <section className="relative overflow-hidden bg-white py-24 text-slate-900 dark:bg-[#050816] dark:text-white min-h-screen content-auto">
       {/* Background Atmosphere Glow */}
       <AmbientAtmosphereGlow variant="cyan-blue" />
 
@@ -111,11 +111,11 @@ export default function ServicesPage() {
                 key={service.title}
                 initial={{ opacity: 0, y: 35 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
+                viewport={{ once: true, margin: "0px 0px -20px 0px" }}
                 transition={{
                   duration: 0.5,
                   delay: i * 0.08,
-                  ease: "easeOut",
+                  ease: [0.21, 0.47, 0.32, 0.98],
                 }}
               >
                 <Link
@@ -130,6 +130,8 @@ export default function ServicesPage() {
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                      quality={80}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent pointer-events-none" />
 

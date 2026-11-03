@@ -42,7 +42,7 @@ const stats = [
 
 export default function Stats() {
   return (
-    <section className="relative overflow-hidden bg-white py-20 dark:bg-[#050816]">
+    <section className="relative overflow-hidden bg-white py-20 dark:bg-[#050816] content-auto">
       {/* Pattern decor */}
       <AmbientAtmosphereGlow variant="cyan-blue" />
 
@@ -56,11 +56,11 @@ export default function Stats() {
                 key={item.title}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
+                viewport={{ once: true, margin: "0px 0px -20px 0px" }}
                 transition={{
                   duration: 0.5,
                   delay: i * 0.1,
-                  ease: "easeOut",
+                  ease: [0.21, 0.47, 0.32, 0.98],
                 }}
                 className="group relative rounded-3xl border border-slate-200/90 bg-white/90 p-8 text-center shadow-sm backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/10 dark:border-slate-800 dark:bg-slate-900/60 dark:shadow-none"
               >

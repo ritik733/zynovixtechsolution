@@ -2,14 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
-  Code,
-  Hotel,
-  LayoutDashboard,
-  Layers,
-  Cloud,
   Globe,
   Database,
+  Hotel,
   Cpu,
+  Layers,
+  Cloud,
   Sparkles,
 } from "lucide-react";
 import { HeroAtmosphereGlow } from "@/components/ui/TechPattern";
@@ -99,14 +97,14 @@ export default function ServicesPage() {
         </div>
 
         {/* Service Cards Grid */}
-        <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3 content-auto">
           {services.map((service) => {
             const Icon = service.icon;
             return (
               <Link
                 key={service.title}
                 href={service.href}
-                className="group flex flex-col justify-between overflow-hidden rounded-3xl border border-slate-200/90 bg-white/90 shadow-sm backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:border-cyan-500 hover:shadow-xl hover:shadow-cyan-500/10 dark:border-slate-800 dark:bg-slate-900/60 dark:hover:border-cyan-400"
+                className="group flex flex-col justify-between overflow-hidden rounded-3xl border border-slate-200/90 bg-white/90 shadow-sm backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:border-cyan-500 hover:shadow-xl hover:shadow-cyan-500/10 dark:border-slate-800 dark:bg-slate-900/60 dark:hover:border-cyan-400 touch-manipulation"
               >
                 {/* Image Banner */}
                 <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-100 dark:bg-slate-950">
@@ -116,6 +114,8 @@ export default function ServicesPage() {
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                    quality={80}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent pointer-events-none" />
 
@@ -160,7 +160,7 @@ export default function ServicesPage() {
         </div>
 
         {/* Why Choose Us */}
-        <div className="relative mt-24 overflow-hidden rounded-3xl border border-slate-200/80 bg-slate-100/90 p-8 sm:p-12 text-slate-900 shadow-md transition-colors duration-300 dark:border-slate-800 dark:bg-slate-900/60 dark:text-white">
+        <div className="relative mt-24 overflow-hidden rounded-3xl border border-slate-200/80 bg-slate-100/90 p-8 sm:p-12 text-slate-900 shadow-md transition-colors duration-300 dark:border-slate-800 dark:bg-slate-900/60 dark:text-white content-auto">
           <h3 className="text-center text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
             Why Choose Zynovix?
           </h3>
@@ -188,7 +188,7 @@ export default function ServicesPage() {
           <div className="mt-10 text-center">
             <Link
               href="/contact"
-              className="inline-flex items-center rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 px-8 py-4 font-semibold text-white transition hover:scale-105 shadow-md shadow-blue-500/20"
+              className="inline-flex items-center rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 px-8 py-4 font-semibold text-white transition hover:scale-105 shadow-md shadow-blue-500/20 touch-manipulation"
             >
               Book Free Consultation
               <ArrowRight className="ml-2 h-5 w-5" />

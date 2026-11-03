@@ -44,7 +44,7 @@ const projects = [
 
 export default function PortfolioPreview() {
   return (
-    <section className="relative overflow-hidden bg-white py-24 text-slate-900 dark:bg-[#050816] dark:text-white border-t border-slate-200/80 dark:border-slate-800">
+    <section className="relative overflow-hidden bg-white py-24 text-slate-900 dark:bg-[#050816] dark:text-white border-t border-slate-200/80 dark:border-slate-800 content-auto">
       {/* Pattern decor */}
       <AmbientAtmosphereGlow variant="cyan-blue" />
 
@@ -83,6 +83,8 @@ export default function PortfolioPreview() {
                     fill
                     sizes="(max-width: 768px) 100vw, 33vw"
                     className="object-cover transition duration-500 group-hover:scale-105"
+                    loading="lazy"
+                    quality={80}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent pointer-events-none" />
                   <div className="absolute top-3 left-3 rounded-full bg-slate-900/85 px-3 py-1 text-[11px] font-semibold text-white backdrop-blur-md">

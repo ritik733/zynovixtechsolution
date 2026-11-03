@@ -22,7 +22,7 @@ export default function ContactPage() {
             <Sparkles size={14} /> Direct Architectural Discovery
           </div>
           <h1 className="mt-4 text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white md:text-5xl lg:text-6xl">
-            Let's Build Something <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-500 bg-clip-text text-transparent">Extraordinary</span>
+            Let&apos;s Build Something <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-500 bg-clip-text text-transparent">Extraordinary</span>
           </h1>
 
           <p className="mx-auto mt-4 max-w-2xl text-base font-medium text-slate-600 dark:text-slate-300 md:text-lg leading-relaxed">
@@ -58,7 +58,7 @@ export default function ContactPage() {
             </h2>
 
             <p className="mt-2 text-sm text-slate-500 dark:text-slate-400 md:text-base">
-              Tell us about your project and we'll contact you shortly.
+              Tell us about your project and we&apos;ll contact you shortly.
             </p>
 
             {/* Functional Contact Form */}
@@ -77,7 +77,7 @@ export default function ContactPage() {
               </h2>
 
               <p className="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300 md:text-base">
-                Whether you're looking to build a website, mobile app, AI
+                Whether you&apos;re looking to build a website, mobile app, AI
                 solution, or enterprise software, our team is ready to help.
               </p>
             </div>
@@ -175,7 +175,7 @@ export default function ContactPage() {
               </h3>
 
               <p className="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300 md:text-base">
-                Let's discuss your requirements and create a solution that
+                Let&apos;s discuss your requirements and create a solution that
                 helps your business grow.
               </p>
 

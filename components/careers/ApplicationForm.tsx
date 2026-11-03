@@ -50,7 +50,7 @@ export default function ApplicationForm() {
       setStatus("success");
       formEl.reset();
       setFileName("");
-    } catch (err) {
+    } catch {
       setErrorMsg("Network error. Please check your connection.");
       setStatus("error");
     }
@@ -59,7 +59,7 @@ export default function ApplicationForm() {
   return (
     <section
       id="application-form"
-      className="relative py-24 overflow-hidden"
+      className="relative py-24 overflow-hidden content-auto"
     >
       <div className="absolute left-1/2 top-0 h-96 w-96 -translate-x-1/2 rounded-full bg-violet-600/10 blur-[160px]" />
 
@@ -75,7 +75,7 @@ export default function ApplicationForm() {
           </h2>
 
           <p className="mt-5 text-lg text-slate-600 dark:text-slate-400">
-            Fill in your details and we'll get back to you within 2–3 days.
+            Fill in your details and we&apos;ll get back to you within 2–3 days.
           </p>
         </div>
 
@@ -201,7 +201,7 @@ export default function ApplicationForm() {
             <button
               type="submit"
               disabled={status === "loading"}
-              className="mt-8 flex items-center gap-3 rounded-xl bg-gradient-to-r from-violet-600 to-blue-500 px-8 py-4 font-semibold text-white transition hover:scale-105 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
+              className="mt-8 flex items-center gap-3 rounded-xl bg-gradient-to-r from-violet-600 to-blue-500 px-8 py-4 font-semibold text-white transition hover:scale-105 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100 touch-manipulation"
             >
               {status === "loading" ? "Sending..." : "Submit Application"}
               <Send size={18} />

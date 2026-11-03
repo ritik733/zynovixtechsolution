@@ -1,5 +1,3 @@
-"use client";
-
 import {
   Laptop,
   GraduationCap,
@@ -56,7 +54,7 @@ const benefits = [
 
 export default function Benefits() {
   return (
-    <section className="relative py-24">
+    <section className="relative py-24 content-auto">
 
       {/* Background Glow */}
       <div className="absolute left-1/2 top-0 h-80 w-80 -translate-x-1/2 rounded-full bg-violet-600/10 blur-[140px]" />
@@ -70,11 +68,11 @@ export default function Benefits() {
           </span>
 
           <h2 className="mt-6 text-4xl md:text-5xl font-bold text-slate-900 dark:text-white">
-            Why You'll Love Working Here
+            Why You&apos;ll Love Working Here
           </h2>
 
           <p className="mx-auto mt-5 max-w-3xl text-lg text-slate-600 dark:text-slate-400">
-            We believe great people deserve a great workplace. That's why
+            We believe great people deserve a great workplace. That&apos;s why
             we invest in your growth, wellbeing, and success.
           </p>
 

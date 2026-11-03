@@ -1,5 +1,3 @@
-"use client";
-
 import {
   FileText,
   PhoneCall,
@@ -43,7 +41,7 @@ const steps = [
 
 export default function HiringProcess() {
   return (
-    <section className="relative py-24 overflow-hidden">
+    <section className="relative py-24 overflow-hidden content-auto">
 
       {/* Glow */}
       <div className="absolute left-1/2 top-0 h-80 w-80 -translate-x-1/2 rounded-full bg-violet-600/10 blur-[150px]" />
@@ -62,7 +60,7 @@ export default function HiringProcess() {
           </h2>
 
           <p className="mx-auto mt-5 max-w-3xl text-lg text-slate-600 dark:text-slate-400">
-            We've designed a transparent hiring process so you always know
+            We&apos;ve designed a transparent hiring process so you always know
             what comes next.
           </p>
 

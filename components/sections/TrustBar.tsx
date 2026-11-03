@@ -1,7 +1,4 @@
-"use client";
-
 import Image from "next/image";
-import { motion } from "framer-motion";
 import ShowcaseSlider from "./ShowcaseSlider";
 import {
   siMariadb,
@@ -191,7 +188,7 @@ const rowTwo: TechItem[] = [
 
 function TechCard({ item }: { item: TechItem }) {
   return (
-    <div className="flex items-center gap-3 rounded-2xl border border-slate-200/80 bg-white/90 px-4 py-3 shadow-sm backdrop-blur-md transition-all hover:border-cyan-500 hover:shadow-cyan-500/10 dark:border-slate-800/80 dark:bg-slate-900/60 dark:hover:border-cyan-400">
+    <div className="flex items-center gap-3 rounded-2xl border border-slate-200/80 bg-white/90 px-4 py-3 shadow-sm backdrop-blur-md transition-all duration-200 hover:border-cyan-500 hover:shadow-cyan-500/10 dark:border-slate-800/80 dark:bg-slate-900/60 dark:hover:border-cyan-400">
       <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-slate-50 dark:bg-white/5 p-1.5">
         {item.icon}
       </div>
@@ -208,7 +205,7 @@ function TechCard({ item }: { item: TechItem }) {
 }
 
 export default function TrustBar() {
-  // Duplicate arrays for infinite loop
+  // Duplicate arrays for seamless infinite loop
   const marqueeRowOne = [...rowOne, ...rowOne, ...rowOne];
   const marqueeRowTwo = [...rowTwo, ...rowTwo, ...rowTwo];
 
@@ -236,37 +233,19 @@ export default function TrustBar() {
 
       {/* Marquee Wrapper with Edge Masking */}
       <div className="relative mt-12 w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
-        {/* Row 1: Leftward Scrolling */}
-        <motion.div
-          className="flex gap-4 sm:gap-6 py-2 w-max"
-          animate={{ x: ["0%", "-33.333%"] }}
-          transition={{
-            repeat: Infinity,
-            ease: "linear",
-            duration: 35,
-          }}
-          whileHover={{ animationPlayState: "paused" }}
-        >
+        {/* Row 1: Leftward Scrolling with GPU Compositor Acceleration */}
+        <div className="flex gap-4 sm:gap-6 py-2 w-max animate-marquee-left hover:[animation-play-state:paused]">
           {marqueeRowOne.map((item, index) => (
             <TechCard key={`row1-${item.name}-${index}`} item={item} />
           ))}
-        </motion.div>
+        </div>
 
-        {/* Row 2: Rightward Scrolling */}
-        <motion.div
-          className="flex gap-4 sm:gap-6 py-2 w-max mt-3"
-          animate={{ x: ["-33.333%", "0%"] }}
-          transition={{
-            repeat: Infinity,
-            ease: "linear",
-            duration: 38,
-          }}
-          whileHover={{ animationPlayState: "paused" }}
-        >
+        {/* Row 2: Rightward Scrolling with GPU Compositor Acceleration */}
+        <div className="flex gap-4 sm:gap-6 py-2 w-max mt-3 animate-marquee-right hover:[animation-play-state:paused]">
           {marqueeRowTwo.map((item, index) => (
             <TechCard key={`row2-${item.name}-${index}`} item={item} />
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

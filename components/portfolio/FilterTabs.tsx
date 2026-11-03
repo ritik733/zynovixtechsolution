@@ -23,7 +23,7 @@ export default function FilterTabs({ active, onChange, counts }: Props) {
           <button
             key={filter}
             onClick={() => onChange(filter)}
-            className={`relative rounded-full px-6 py-3 text-sm font-semibold transition-colors ${
+            className={`relative rounded-full px-6 py-3 text-sm font-semibold transition-colors touch-manipulation ${
               isActive
                 ? "text-white"
                 : "text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
