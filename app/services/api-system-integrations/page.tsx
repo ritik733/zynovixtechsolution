@@ -35,15 +35,40 @@ export const metadata: Metadata = {
   title: "API Integration Services & System Connectivity | Zynovix",
   description:
     "Connect ERP systems, websites, payment gateways and third-party platforms with API integration, data synchronization and workflow automation.",
+  keywords: [
+    "API integration services",
+    "System integration services",
+    "REST API development",
+    "ERP integration",
+    "Third-party API integration",
+    "Payment gateway integration",
+    "Webhook integration",
+    "Cloud system connectivity",
+  ],
   alternates: {
     canonical: "/services/api-system-integrations",
   },
   openGraph: {
-    title: "API & System Integration Services | Zynovix Tech Solutions",
+    title: "API Integration Services & System Connectivity | Zynovix",
     description:
-      "Connect existing applications, business platforms and third-party services with integrations designed to improve data flow and reduce manual work.",
+      "Connect ERP systems, websites, payment gateways and third-party platforms with API integration, data synchronization and workflow automation.",
     url: "https://zynovixtechsolutions.com/services/api-system-integrations",
     type: "website",
+    images: [
+      {
+        url: "/images/services/api-system-integrations.webp",
+        width: 1200,
+        height: 630,
+        alt: "API Integration Services & System Connectivity - Zynovix",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "API Integration Services & System Connectivity | Zynovix",
+    description:
+      "Connect ERP systems, websites, payment gateways and third-party platforms with API integration, data synchronization and workflow automation.",
+    images: ["/images/services/api-system-integrations.webp"],
   },
 };
 

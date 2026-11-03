@@ -1,96 +1,111 @@
-"use client";
-
-import { useState, useMemo } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Sparkles, Zap, Lock, ShieldCheck } from "lucide-react";
-import ProjectCard from "@/components/portfolio/ProjectCard";
-import FilterTabs from "@/components/portfolio/FilterTabs";
-import {
-  portfolioProjects,
-  type PortfolioCategory,
-} from "@/data/portfolio";
+import PortfolioClient from "@/components/portfolio/PortfolioClient";
+import { portfolioProjects } from "@/data/portfolio";
 import { HeroAtmosphereGlow } from "@/components/ui/TechPattern";
 
-type Filter = "All" | PortfolioCategory;
+export const metadata: Metadata = {
+  title: "Portfolio & Case Studies | Production Software Deployments",
+  description:
+    "Explore our battle-tested portfolio across custom Frappe ERPNext implementations, sub-second Next.js web applications, and enterprise automation engines.",
+  keywords: [
+    "Zynovix portfolio",
+    "ERPNext case studies",
+    "Next.js web applications",
+    "custom enterprise software",
+    "hotel management software portfolio",
+    "Frappe ERP implementation examples",
+  ],
+  alternates: {
+    canonical: "/portfolio",
+  },
+  openGraph: {
+    title: "Portfolio & Case Studies | Zynovix Tech Solutions",
+    description:
+      "Explore our battle-tested portfolio across custom Frappe ERPNext implementations, sub-second Next.js web applications, and enterprise automation engines.",
+    url: "https://zynovixtechsolutions.com/portfolio",
+    type: "website",
+    images: [
+      {
+        url: "/images/hero-final-preview.png",
+        width: 1200,
+        height: 630,
+        alt: "Zynovix Tech Solutions Case Studies and Portfolio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Portfolio & Case Studies | Zynovix Tech Solutions",
+    description:
+      "Explore our battle-tested portfolio across custom Frappe ERPNext implementations, sub-second Next.js web applications, and enterprise automation engines.",
+    images: ["/images/hero-final-preview.png"],
+  },
+};
+
+const portfolioSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: "https://zynovixtechsolutions.com",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Portfolio",
+          item: "https://zynovixtechsolutions.com/portfolio",
+        },
+      ],
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://zynovixtechsolutions.com/portfolio/#webpage",
+      url: "https://zynovixtechsolutions.com/portfolio",
+      name: "Portfolio & Case Studies | Zynovix Tech Solutions",
+      description:
+        "Explore our battle-tested portfolio across custom Frappe ERPNext implementations, sub-second Next.js web applications, and enterprise automation engines.",
+      isPartOf: {
+        "@type": "WebSite",
+        "@id": "https://zynovixtechsolutions.com/#website",
+        name: "Zynovix Tech Solutions",
+        url: "https://zynovixtechsolutions.com",
+      },
+      mainEntity: {
+        "@type": "ItemList",
+        itemListElement: portfolioProjects.map((p, idx) => ({
+          "@type": "ListItem",
+          position: idx + 1,
+          url: `https://zynovixtechsolutions.com/portfolio/${p.slug || p.id}`,
+          name: p.title,
+        })),
+      },
+    },
+  ],
+};
 
 export default function PortfolioPage() {
-  const [filter, setFilter] = useState<Filter>("All");
-
-  const filtered = useMemo(() => {
-    if (filter === "All") return portfolioProjects;
-    return portfolioProjects.filter((p) => p.category === filter);
-  }, [filter]);
-
-  const counts = useMemo(() => {
-    return {
-      All: portfolioProjects.length,
-      ERP: portfolioProjects.filter((p) => p.category === "ERP").length,
-      "Web App": portfolioProjects.filter((p) => p.category === "Web App").length,
-      "Custom Software": portfolioProjects.filter((p) => p.category === "Custom Software").length,
-    };
-  }, []);
-
   return (
     <main className="relative overflow-hidden bg-white text-slate-900 min-h-screen dark:bg-[#050816] dark:text-white">
-      {/* Background Decor - Exact match to Homepage Hero */}
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(portfolioSchema).replace(/</g, "\\u003c"),
+        }}
+      />
+
+      {/* Background Decor */}
       <HeroAtmosphereGlow />
 
-      <section className="relative pt-32 pb-12 text-center md:pt-40 md:pb-16">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="inline-flex items-center gap-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-cyan-600 dark:text-cyan-400 mb-4">
-            <Sparkles size={14} /> Production Deployments & Case Studies
-          </div>
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight"
-          >
-            Engineered For Scale. <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-500 bg-clip-text text-transparent">Proven in Production.</span>
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.15 }}
-            className="mx-auto mt-6 max-w-3xl text-base sm:text-lg text-slate-600 dark:text-slate-300 font-medium leading-relaxed"
-          >
-            Explore our battle-tested portfolio across custom Frappe ERPNext implementations, sub-second Next.js web applications, and enterprise automation engines.
-          </motion.p>
-        </div>
-      </section>
-
-      <section className="pb-8">
-        <div className="mx-auto max-w-7xl px-6">
-          <FilterTabs active={filter} onChange={setFilter} counts={counts} />
-        </div>
-      </section>
-
-      <section className="py-8 pb-24">
-        <div className="mx-auto max-w-7xl px-6">
-          {filtered.length === 0 ? (
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="text-center text-slate-500 dark:text-slate-400 py-20"
-            >
-              No projects in this category yet. Check back soon!
-            </motion.p>
-          ) : (
-            <motion.div
-              layout
-              className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
-            >
-              <AnimatePresence mode="popLayout">
-                {filtered.map((project) => (
-                  <ProjectCard key={project.id} project={project} />
-                ))}
-              </AnimatePresence>
-            </motion.div>
-          )}
-        </div>
-      </section>
+      {/* Client-side Tabs & Filtered Grid */}
+      <PortfolioClient projects={portfolioProjects} />
 
       {/* Bottom CTA Card */}
       <section className="relative py-20 pb-28 text-center">

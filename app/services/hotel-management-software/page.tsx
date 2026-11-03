@@ -35,15 +35,40 @@ export const metadata: Metadata = {
   title: "Hotel Management Software for Reservations & Front Desk | Zynovix",
   description:
     "Explore hotel management software for room reservations, guest records, check-in/check-out, billing and daily hospitality operations.",
+  keywords: [
+    "Hotel management software",
+    "Hotel management system",
+    "Hotel booking management software",
+    "Hotel front desk software",
+    "Hotel billing software",
+    "Property management system",
+    "Hospitality management software",
+    "Hotel reservation system",
+  ],
   alternates: {
     canonical: "/services/hotel-management-software",
   },
   openGraph: {
-    title: "Hotel Management Software | Zynovix Tech Solutions",
+    title: "Hotel Management Software for Reservations & Front Desk | Zynovix",
     description:
-      "Manage reservations, room availability, guest information and front-desk activities through a streamlined hotel management solution.",
+      "Explore hotel management software for room reservations, guest records, check-in/check-out, billing and daily hospitality operations.",
     url: "https://zynovixtechsolutions.com/services/hotel-management-software",
     type: "website",
+    images: [
+      {
+        url: "/images/services/hotel-management-software.webp",
+        width: 1200,
+        height: 630,
+        alt: "Hotel Management Software for Reservations & Front Desk - Zynovix",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Hotel Management Software for Reservations & Front Desk | Zynovix",
+    description:
+      "Explore hotel management software for room reservations, guest records, check-in/check-out, billing and daily hospitality operations.",
+    images: ["/images/services/hotel-management-software.webp"],
   },
 };
 

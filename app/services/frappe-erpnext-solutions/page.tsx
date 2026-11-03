@@ -37,15 +37,40 @@ export const metadata: Metadata = {
   title: "Frappe & ERPNext Implementation and Customization | Zynovix",
   description:
     "Explore ERPNext implementation, Frappe customization, business workflow automation and system integration solutions for your operations.",
+  keywords: [
+    "Frappe ERPNext solutions",
+    "ERPNext implementation",
+    "ERPNext customization",
+    "Frappe development",
+    "ERP software implementation",
+    "ERPNext support",
+    "Enterprise ERP software",
+    "Workflow automation",
+  ],
   alternates: {
     canonical: "/services/frappe-erpnext-solutions",
   },
   openGraph: {
-    title: "Frappe & ERPNext Solutions | Zynovix Tech Solutions",
+    title: "Frappe & ERPNext Implementation and Customization | Zynovix",
     description:
-      "Simplify business operations with ERPNext implementation, Frappe customization and integrated workflows designed around your business processes.",
+      "Explore ERPNext implementation, Frappe customization, business workflow automation and system integration solutions for your operations.",
     url: "https://zynovixtechsolutions.com/services/frappe-erpnext-solutions",
     type: "website",
+    images: [
+      {
+        url: "/images/services/frappe-erpnext-solutions.webp",
+        width: 1200,
+        height: 630,
+        alt: "Frappe & ERPNext Implementation and Customization - Zynovix",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Frappe & ERPNext Implementation and Customization | Zynovix",
+    description:
+      "Explore ERPNext implementation, Frappe customization, business workflow automation and system integration solutions for your operations.",
+    images: ["/images/services/frappe-erpnext-solutions.webp"],
   },
 };
 

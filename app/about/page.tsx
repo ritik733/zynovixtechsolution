@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -16,14 +17,94 @@ import {
 } from "lucide-react";
 import { HeroAtmosphereGlow } from "@/components/ui/TechPattern";
 
-export const metadata = {
-  title: "About Us | Zynovix Tech Solutions",
-  description: "Learn about Zynovix – our mission, values, and how we deliver modern websites, Frappe ERPNext solutions, and custom business software.",
+export const metadata: Metadata = {
+  title: "About Us | Modern Web & ERP Software Engineering",
+  description:
+    "Learn about Zynovix – our mission, values, and how we deliver modern websites, Frappe ERPNext solutions, and custom business software.",
+  keywords: [
+    "About Zynovix",
+    "Zynovix Tech Solutions",
+    "software engineering company Udaipur",
+    "Frappe ERPNext partner",
+    "custom software development team",
+    "Next.js web agency",
+  ],
+  alternates: {
+    canonical: "/about",
+  },
+  openGraph: {
+    title: "About Us | Zynovix Tech Solutions",
+    description:
+      "Learn about Zynovix – our mission, values, and how we deliver modern websites, Frappe ERPNext solutions, and custom business software.",
+    url: "https://zynovixtechsolutions.com/about",
+    type: "website",
+    images: [
+      {
+        url: "/images/hero-final-preview.png",
+        width: 1200,
+        height: 630,
+        alt: "About Zynovix Tech Solutions",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Us | Zynovix Tech Solutions",
+    description:
+      "Learn about Zynovix – our mission, values, and how we deliver modern websites, Frappe ERPNext solutions, and custom business software.",
+    images: ["/images/hero-final-preview.png"],
+  },
+};
+
+const aboutSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: "https://zynovixtechsolutions.com",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "About Us",
+          item: "https://zynovixtechsolutions.com/about",
+        },
+      ],
+    },
+    {
+      "@type": "AboutPage",
+      "@id": "https://zynovixtechsolutions.com/about/#webpage",
+      url: "https://zynovixtechsolutions.com/about",
+      name: "About Us | Zynovix Tech Solutions",
+      description:
+        "Learn about Zynovix – our mission, values, and how we deliver modern websites, Frappe ERPNext solutions, and custom business software.",
+      isPartOf: {
+        "@type": "WebSite",
+        "@id": "https://zynovixtechsolutions.com/#website",
+      },
+      about: {
+        "@id": "https://zynovixtechsolutions.com/#organization",
+      },
+    },
+  ],
 };
 
 export default function AboutPage() {
   return (
     <main className="relative min-h-screen bg-white text-slate-900 dark:bg-[#050816] dark:text-white overflow-hidden">
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(aboutSchema).replace(/</g, "\\u003c"),
+        }}
+      />
+
       {/* Background Decor - Exact match to Homepage Hero */}
       <HeroAtmosphereGlow />
 

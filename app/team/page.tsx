@@ -1,6 +1,46 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { HeroAtmosphereGlow } from "@/components/ui/TechPattern";
+
+export const metadata: Metadata = {
+  title: "Leadership & Engineering Team | Zynovix",
+  description:
+    "Meet the engineers, architects, and leaders behind Zynovix Tech Solutions driving enterprise ERPNext and modern web innovation.",
+  keywords: [
+    "Zynovix team",
+    "software engineers",
+    "Praveen Sharma",
+    "Piyush Dadhich",
+    "ERPNext architects",
+    "tech leadership",
+  ],
+  alternates: {
+    canonical: "/team",
+  },
+  openGraph: {
+    title: "Leadership & Engineering Team | Zynovix Tech Solutions",
+    description:
+      "Meet the engineers, architects, and leaders behind Zynovix Tech Solutions driving enterprise ERPNext and modern web innovation.",
+    url: "https://zynovixtechsolutions.com/team",
+    type: "website",
+    images: [
+      {
+        url: "/images/hero-final-preview.png",
+        width: 1200,
+        height: 630,
+        alt: "Zynovix Tech Solutions Team",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Leadership & Engineering Team | Zynovix Tech Solutions",
+    description:
+      "Meet the engineers, architects, and leaders behind Zynovix Tech Solutions driving enterprise ERPNext and modern web innovation.",
+    images: ["/images/hero-final-preview.png"],
+  },
+};
 
 interface TeamMember {
   id: number;
@@ -88,6 +128,48 @@ const teamMembers: TeamMember[] = [
   },
 ];
 
+const teamSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: "https://zynovixtechsolutions.com",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Team",
+          item: "https://zynovixtechsolutions.com/team",
+        },
+      ],
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://zynovixtechsolutions.com/team/#webpage",
+      url: "https://zynovixtechsolutions.com/team",
+      name: "Leadership & Engineering Team | Zynovix Tech Solutions",
+      description:
+        "Meet the engineers, architects, and leaders behind Zynovix Tech Solutions driving enterprise ERPNext and modern web innovation.",
+      mainEntity: {
+        "@type": "ItemList",
+        itemListElement: teamMembers.map((member, idx) => ({
+          "@type": "Person",
+          position: idx + 1,
+          name: member.name,
+          jobTitle: member.role,
+          description: member.bio,
+          image: `https://zynovixtechsolutions.com${member.image}`,
+        })),
+      },
+    },
+  ],
+};
+
 export default function TeamPage() {
   // Group team members by department
   const departments = teamMembers.reduce((acc, member) => {
@@ -100,6 +182,14 @@ export default function TeamPage() {
 
   return (
     <main className="relative overflow-hidden bg-white text-slate-900 min-h-screen dark:bg-[#050816] dark:text-white">
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(teamSchema).replace(/</g, "\\u003c"),
+        }}
+      />
+
       {/* Background Decor - Exact match to Homepage Hero */}
       <HeroAtmosphereGlow />
 

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -12,6 +13,47 @@ import {
 } from "lucide-react";
 import { HeroAtmosphereGlow } from "@/components/ui/TechPattern";
 import ProjectEstimator from "@/components/interactive/ProjectEstimator";
+
+export const metadata: Metadata = {
+  title: "Software Engineering & ERP Services | Zynovix",
+  description:
+    "Explore our full suite of digital engineering services: Custom Website Development, Frappe ERPNext Solutions, Hotel Management Systems, Custom Business Software, API Integrations, and Cloud Hosting.",
+  keywords: [
+    "Custom website development",
+    "Frappe ERPNext solutions",
+    "Hotel management software",
+    "Custom business software",
+    "API integration services",
+    "Cloud hosting and maintenance services",
+    "Next.js web development",
+    "ERP implementation Udaipur",
+  ],
+  alternates: {
+    canonical: "/services",
+  },
+  openGraph: {
+    title: "Software Engineering & ERP Services | Zynovix Tech Solutions",
+    description:
+      "Explore our full suite of digital engineering services: Custom Website Development, Frappe ERPNext Solutions, Hotel Management Systems, Custom Business Software, API Integrations, and Cloud Hosting.",
+    url: "https://zynovixtechsolutions.com/services",
+    type: "website",
+    images: [
+      {
+        url: "/images/hero-final-preview.png",
+        width: 1200,
+        height: 630,
+        alt: "Zynovix Tech Solutions Engineering Services",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Software Engineering & ERP Services | Zynovix Tech Solutions",
+    description:
+      "Explore our full suite of digital engineering services: Custom Website Development, Frappe ERPNext Solutions, Hotel Management Systems, Custom Business Software, API Integrations, and Cloud Hosting.",
+    images: ["/images/hero-final-preview.png"],
+  },
+};
 
 const services = [
   {
@@ -76,9 +118,62 @@ const services = [
   },
 ];
 
+const servicesSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: "https://zynovixtechsolutions.com",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Services",
+          item: "https://zynovixtechsolutions.com/services",
+        },
+      ],
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://zynovixtechsolutions.com/services/#webpage",
+      url: "https://zynovixtechsolutions.com/services",
+      name: "Software Engineering & ERP Services | Zynovix Tech Solutions",
+      description:
+        "Comprehensive suite of enterprise web development, Frappe ERPNext implementations, hotel management tools, and custom software.",
+      isPartOf: {
+        "@type": "WebSite",
+        "@id": "https://zynovixtechsolutions.com/#website",
+      },
+      mainEntity: {
+        "@type": "ItemList",
+        itemListElement: services.map((s, idx) => ({
+          "@type": "ListItem",
+          position: idx + 1,
+          url: `https://zynovixtechsolutions.com${s.href}`,
+          name: s.title,
+          description: s.desc,
+        })),
+      },
+    },
+  ],
+};
+
 export default function ServicesPage() {
   return (
     <main className="relative min-h-screen bg-white text-slate-900 dark:bg-[#050816] dark:text-white">
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(servicesSchema).replace(/</g, "\\u003c"),
+        }}
+      />
+
       {/* Background Decor - Exact match to Homepage Hero */}
       <HeroAtmosphereGlow />
 

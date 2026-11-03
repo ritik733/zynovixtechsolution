@@ -1,17 +1,109 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
 import { Mail, Phone, MapPin, Clock, Sparkles, ShieldCheck, Zap, Lock } from "lucide-react";
 import ContactForm from "./ContactForm";
 import { HeroAtmosphereGlow } from "@/components/ui/TechPattern";
 
-export const metadata = {
-  title: "Contact Us | Zynovix Tech Solutions",
-  description: "Get in touch with us for your next modern web, Frappe ERPNext, or custom software project.",
+export const metadata: Metadata = {
+  title: "Contact Us & Project Discovery | Zynovix",
+  description:
+    "Schedule a direct engineering consultation or request a project proposal for web development, ERPNext implementation, or custom software.",
+  keywords: [
+    "contact Zynovix",
+    "hire ERPNext developer",
+    "software development inquiry",
+    "custom software quotation",
+    "Udaipur software company",
+    "Next.js developers contact",
+  ],
+  alternates: {
+    canonical: "/contact",
+  },
+  openGraph: {
+    title: "Contact Us & Project Discovery | Zynovix Tech Solutions",
+    description:
+      "Schedule a direct engineering consultation or request a project proposal for web development, ERPNext implementation, or custom software.",
+    url: "https://zynovixtechsolutions.com/contact",
+    type: "website",
+    images: [
+      {
+        url: "/images/hero-final-preview.png",
+        width: 1200,
+        height: 630,
+        alt: "Contact Zynovix Tech Solutions",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact Us & Project Discovery | Zynovix Tech Solutions",
+    description:
+      "Schedule a direct engineering consultation or request a project proposal for web development, ERPNext implementation, or custom software.",
+    images: ["/images/hero-final-preview.png"],
+  },
+};
+
+const contactSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: "https://zynovixtechsolutions.com",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Contact",
+          item: "https://zynovixtechsolutions.com/contact",
+        },
+      ],
+    },
+    {
+      "@type": "ContactPage",
+      "@id": "https://zynovixtechsolutions.com/contact/#webpage",
+      url: "https://zynovixtechsolutions.com/contact",
+      name: "Contact Us & Project Discovery | Zynovix Tech Solutions",
+      description:
+        "Schedule a direct engineering consultation or request a project proposal for web development, ERPNext implementation, or custom software.",
+      isPartOf: {
+        "@type": "WebSite",
+        "@id": "https://zynovixtechsolutions.com/#website",
+      },
+      mainEntity: {
+        "@type": "Organization",
+        name: "Zynovix Tech Solutions",
+        email: "work@zynovixtechsolutions.com",
+        telephone: "+91 6367500528",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "2nd Floor, 12 Amrit Nagar, Opposite of Pacific University, Debari",
+          addressLocality: "Udaipur",
+          addressRegion: "Rajasthan",
+          postalCode: "313024",
+          addressCountry: "IN",
+        },
+      },
+    },
+  ],
 };
 
 export default function ContactPage() {
   return (
     <main className="relative overflow-hidden bg-white text-slate-900 dark:bg-[#050816] dark:text-white min-h-screen">
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(contactSchema).replace(/</g, "\\u003c"),
+        }}
+      />
+
       {/* Background Decor - Exact match to Homepage Hero */}
       <HeroAtmosphereGlow />
 

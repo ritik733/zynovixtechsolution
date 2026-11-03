@@ -36,15 +36,40 @@ export const metadata: Metadata = {
   title: "Custom Business Software Development Services | Zynovix",
   description:
     "Build custom business software, internal dashboards and workflow applications designed to simplify operations and support business processes.",
+  keywords: [
+    "Custom business software development",
+    "Business process automation software",
+    "Bespoke software development",
+    "Custom enterprise software",
+    "Business management system",
+    "Internal business applications",
+    "Operations management software",
+    "Custom SaaS development",
+  ],
   alternates: {
     canonical: "/services/custom-business-software",
   },
   openGraph: {
-    title: "Custom Business Software Development | Zynovix Tech Solutions",
+    title: "Custom Business Software Development Services | Zynovix",
     description:
-      "Replace disconnected tools and repetitive manual processes with tailored software designed for your business requirements and operational workflows.",
+      "Build custom business software, internal dashboards and workflow applications designed to simplify operations and support business processes.",
     url: "https://zynovixtechsolutions.com/services/custom-business-software",
     type: "website",
+    images: [
+      {
+        url: "/images/services/custom-business-software.webp",
+        width: 1200,
+        height: 630,
+        alt: "Custom Business Software Development Services - Zynovix",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Custom Business Software Development Services | Zynovix",
+    description:
+      "Build custom business software, internal dashboards and workflow applications designed to simplify operations and support business processes.",
+    images: ["/images/services/custom-business-software.webp"],
   },
 };
 

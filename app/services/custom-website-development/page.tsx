@@ -34,15 +34,40 @@ export const metadata: Metadata = {
   title: "Custom Website Development Services | Zynovix",
   description:
     "Get a custom, responsive website tailored to your business goals. Explore website development, redesign and custom web application services from Zynovix.",
+  keywords: [
+    "Custom website development",
+    "Business website development",
+    "Responsive web design",
+    "Custom web application development",
+    "Website redesign",
+    "Next.js development",
+    "Full-stack web development",
+    "Modern web development services",
+  ],
   alternates: {
     canonical: "/services/custom-website-development",
   },
   openGraph: {
-    title: "Custom Website Development Services | Zynovix Tech Solutions",
+    title: "Custom Website Development Services | Zynovix",
     description:
-      "Build a professional, responsive website tailored to your business goals—from corporate websites and e-commerce stores to custom web applications.",
+      "Get a custom, responsive website tailored to your business goals. Explore website development, redesign and custom web application services from Zynovix.",
     url: "https://zynovixtechsolutions.com/services/custom-website-development",
     type: "website",
+    images: [
+      {
+        url: "/images/services/custom-website-development.webp",
+        width: 1200,
+        height: 630,
+        alt: "Custom Website Development Services - Zynovix",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Custom Website Development Services | Zynovix",
+    description:
+      "Get a custom, responsive website tailored to your business goals. Explore website development, redesign and custom web application services from Zynovix.",
+    images: ["/images/services/custom-website-development.webp"],
   },
 };
 

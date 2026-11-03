@@ -33,15 +33,40 @@ export const metadata: Metadata = {
   title: "Cloud Hosting & Website Maintenance Services | Zynovix",
   description:
     "Explore cloud hosting setup, application deployment, backups, monitoring and ongoing website and server maintenance for business applications.",
+  keywords: [
+    "Cloud hosting and maintenance services",
+    "Cloud server management",
+    "Website maintenance services",
+    "Cloud infrastructure management",
+    "Application hosting",
+    "Server monitoring and backups",
+    "Website performance optimization",
+    "DevOps and deployment services",
+  ],
   alternates: {
     canonical: "/services/cloud-hosting-maintenance",
   },
   openGraph: {
-    title: "Cloud Hosting & Maintenance Services | Zynovix Tech Solutions",
+    title: "Cloud Hosting & Website Maintenance Services | Zynovix",
     description:
-      "Maintain websites and business applications with hosting setup, deployment support, monitoring, backups and ongoing technical maintenance.",
+      "Explore cloud hosting setup, application deployment, backups, monitoring and ongoing website and server maintenance for business applications.",
     url: "https://zynovixtechsolutions.com/services/cloud-hosting-maintenance",
     type: "website",
+    images: [
+      {
+        url: "/images/services/cloud-hosting-maintenance.webp",
+        width: 1200,
+        height: 630,
+        alt: "Cloud Hosting & Website Maintenance Services - Zynovix",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Cloud Hosting & Website Maintenance Services | Zynovix",
+    description:
+      "Explore cloud hosting setup, application deployment, backups, monitoring and ongoing website and server maintenance for business applications.",
+    images: ["/images/services/cloud-hosting-maintenance.webp"],
   },
 };
 

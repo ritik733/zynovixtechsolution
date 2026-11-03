@@ -42,9 +42,45 @@ export async function generateMetadata({
     };
   }
 
+  const projectUrl = `https://zynovixtechsolutions.com/portfolio/${project.slug || project.id}`;
+  const imageUrl = project.image.startsWith("http")
+    ? project.image
+    : `https://zynovixtechsolutions.com${project.image}`;
+
   return {
-    title: `${project.title} | Zynovix Tech Solutions Portfolio`,
+    title: `${project.title} | Case Study`,
     description: project.description,
+    keywords: [
+      project.title,
+      project.category,
+      ...project.tags,
+      "case study",
+      "Zynovix portfolio",
+      "software architecture",
+    ],
+    alternates: {
+      canonical: `/portfolio/${project.slug || project.id}`,
+    },
+    openGraph: {
+      title: `${project.title} | Zynovix Tech Solutions`,
+      description: project.description,
+      url: projectUrl,
+      type: "article",
+      images: [
+        {
+          url: imageUrl,
+          width: 1200,
+          height: 675,
+          alt: project.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${project.title} | Zynovix Tech Solutions`,
+      description: project.description,
+      images: [imageUrl],
+    },
   };
 }
 
@@ -78,8 +114,58 @@ export default async function ProjectDetailPage({
   const related = getRelatedProjects(project.id, 2);
   const catTheme = categoryStyles[project.category] || categoryStyles["Web App"];
 
+  const projectSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://zynovixtechsolutions.com",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Portfolio",
+            item: "https://zynovixtechsolutions.com/portfolio",
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: project.title,
+            item: `https://zynovixtechsolutions.com/portfolio/${project.slug || project.id}`,
+          },
+        ],
+      },
+      {
+        "@type": "SoftwareApplication",
+        name: project.title,
+        description: project.description,
+        applicationCategory: project.category === "ERP" ? "BusinessApplication" : "WebApplication",
+        operatingSystem: "Cloud, Web",
+        image: `https://zynovixtechsolutions.com${project.image}`,
+        author: {
+          "@type": "Organization",
+          name: "Zynovix Tech Solutions",
+          url: "https://zynovixtechsolutions.com",
+        },
+      },
+    ],
+  };
+
   return (
     <main className="relative overflow-hidden min-h-screen bg-white text-slate-900 dark:bg-[#050816] dark:text-white">
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(projectSchema).replace(/</g, "\\u003c"),
+        }}
+      />
+
       {/* Background Decor - Exact match to Homepage Hero */}
       <HeroAtmosphereGlow />
 
