@@ -95,6 +95,17 @@ export default function ApplicationForm() {
             onSubmit={handleSubmit}
             className="rounded-3xl border border-slate-200/70 bg-white/90 p-8 backdrop-blur-xl dark:border-violet-500/20 dark:bg-[#0F1438]/80"
           >
+            {/* Anti-spam honeypot (invisible to human visitors) */}
+            <div className="hidden" aria-hidden="true" style={{ display: "none" }}>
+              <label htmlFor="careers-website">Do not fill this field</label>
+              <input
+                type="text"
+                id="careers-website"
+                name="website"
+                tabIndex={-1}
+                autoComplete="off"
+              />
+            </div>
             <div className="grid gap-6 md:grid-cols-2">
 
               <div>

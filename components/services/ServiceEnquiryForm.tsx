@@ -45,6 +45,7 @@ export default function ServiceEnquiryForm({
 
     const payload: Record<string, unknown> = {
       serviceName,
+      website: formData.get("website") || "",
     };
 
     fields.forEach((field) => {
@@ -131,6 +132,17 @@ export default function ServiceEnquiryForm({
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Anti-spam honeypot (invisible to human visitors) */}
+              <div className="hidden" aria-hidden="true" style={{ display: "none" }}>
+                <label htmlFor="enquiry-website">Do not fill this field</label>
+                <input
+                  type="text"
+                  id="enquiry-website"
+                  name="website"
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
+              </div>
               {errorMsg && (
                 <div className="flex items-center gap-3 rounded-xl border border-rose-500/30 bg-rose-50/50 p-4 text-sm text-rose-600 dark:bg-rose-950/20 dark:text-rose-400">
                   <AlertCircle className="h-5 w-5 flex-shrink-0" />

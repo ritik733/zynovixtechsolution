@@ -40,7 +40,6 @@ export default function ContactForm() {
     setSuccess(false);
 
     const form = event.currentTarget;
-
     const formData = new FormData(form);
 
     const data = {
@@ -48,6 +47,7 @@ export default function ContactForm() {
       email: formData.get("email"),
       phone: formData.get("phone"),
       project: formData.get("project") || currentText,
+      website: formData.get("website") || "",
     };
 
     try {
@@ -62,7 +62,7 @@ export default function ContactForm() {
       const result = await response.json();
 
       if (!response.ok || !result.success) {
-        throw new Error("Failed to submit form");
+        throw new Error(result.error || "Failed to submit form");
       }
 
       setSuccess(true);
@@ -72,12 +72,12 @@ export default function ContactForm() {
 
       form.reset();
       setProjectText("");
-    } catch (error) {
+    } catch (error: any) {
       console.error("Contact form error:", error);
 
       setSuccess(false);
       setMessage(
-        "Something went wrong. Please try again or contact us directly."
+        error?.message || "Something went wrong. Please try again or contact us directly."
       );
     } finally {
       setLoading(false);
@@ -86,6 +86,17 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="mt-8 space-y-5">
+      {/* Anti-spam honeypot (invisible to human visitors) */}
+      <div className="hidden" aria-hidden="true" style={{ display: "none" }}>
+        <label htmlFor="contact-website">Do not fill this field</label>
+        <input
+          type="text"
+          id="contact-website"
+          name="website"
+          tabIndex={-1}
+          autoComplete="off"
+        />
+      </div>
 
       {/* Full Name */}
       <div>
@@ -109,7 +120,6 @@ export default function ContactForm() {
 
       {/* Email + Phone */}
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-
         {/* Email */}
         <div>
           <label
