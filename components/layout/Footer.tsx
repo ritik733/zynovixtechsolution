@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import {
   Mail,
@@ -24,17 +25,20 @@ export default function Footer() {
           <div>
 
             <div className="mb-5 flex items-center gap-3">
-
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 text-xl font-bold text-white">
-                Z
-              </div>
-
-              <div>
-                <h2 className="text-xl font-bold text-slate-900 dark:text-white">
-                  {company.name}
-                </h2>
-              </div>
-
+              <Link href="/" className="flex items-center gap-3 flex-shrink-0 group">
+                <Image
+                  src="/images/logo/Zynovix-logo-Z.webp"
+                  alt="Zynovix Tech Solutions Logo"
+                  width={197}
+                  height={146}
+                  className="h-12 w-auto object-contain drop-shadow-sm transition-transform duration-300 group-hover:scale-105"
+                />
+                <div>
+                  <h2 className="text-xl font-bold text-slate-900 dark:text-white transition group-hover:text-cyan-600 dark:group-hover:text-cyan-400">
+                    {company.name}
+                  </h2>
+                </div>
+              </Link>
             </div>
 
             <p className="leading-8 text-slate-600 dark:text-slate-400">
