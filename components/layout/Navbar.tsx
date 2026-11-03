@@ -21,12 +21,12 @@ import { useState, useEffect, useRef } from "react";
 
 const navItems = [
   { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
   { name: "Services", href: "/services", hasDropdown: true },
   { name: "Portfolio", href: "/portfolio" },
+  { name: "Contact", href: "/contact" },
   { name: "Team", href: "/team" },
   { name: "Careers", href: "/careers" },
-  { name: "Contact", href: "/contact" },
+  { name: "About", href: "/about" },
 ];
 
 const serviceLinks = [
