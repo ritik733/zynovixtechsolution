@@ -96,7 +96,7 @@ export default function ServicesPage() {
             <h2 className="mt-4 text-3xl font-extrabold text-slate-900 md:text-5xl dark:text-white tracking-tight">
               Our Core Services & Solutions
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-slate-600 dark:text-slate-400 text-base md:text-lg">
+            <p className="mx-auto mt-4 max-w-2xl text-slate-600 dark:text-slate-400 text-sm sm:text-base">
               We provide specialized web engineering, robust Frappe ERPNext deployments, and custom operational software designed to accelerate business growth.
             </p>
           </div>

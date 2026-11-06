@@ -15,11 +15,12 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: Arial, Helvetica, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 html {
+  font-family: Arial, Helvetica, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   scroll-behavior: smooth;
   scroll-padding-top: 5.5rem;
   text-rendering: optimizeLegibility;
@@ -31,9 +32,18 @@ html {
 body {
   background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.875rem; /* 14px - matches the sleek font size used in the navbar */
+  line-height: 1.6;
   overflow-x: hidden;
   min-height: 100vh;
+}
+
+input,
+textarea,
+select,
+button {
+  font-family: inherit;
 }
 
 /* Smooth native touch scrolling on iOS */

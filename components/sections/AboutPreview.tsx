@@ -25,7 +25,7 @@ export default function AboutPreview() {
               </span>
             </h2>
 
-            <p className="mt-6 text-base md:text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+            <p className="mt-5 text-sm sm:text-base leading-relaxed text-slate-600 dark:text-slate-300">
               We empower startups, hotels, and established enterprises to modernize operations
               and accelerate digital revenue through high-velocity web engineering and robust Frappe ERPNext deployments.
             </p>

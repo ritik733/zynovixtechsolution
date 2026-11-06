@@ -154,49 +154,54 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 pt-2 transition-transform duration-300 [contain:layout] ${
-        isScrolled ? "sm:pt-2" : "sm:pt-3"
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 [contain:layout] ${
+        isScrolled ? "pt-2 sm:pt-2.5" : "pt-3 sm:pt-4"
       }`}
     >
-      <div className="mx-auto max-w-[1650px] px-4 sm:px-6 lg:px-8">
-        {/* Outer Glass Container */}
-        <div
-          className={`flex items-center justify-between rounded-[24px] sm:rounded-[28px] border border-violet-500/30 bg-white/80 px-4 sm:px-6 lg:px-10 backdrop-blur-2xl shadow-[0_0_60px_rgba(110,80,255,.15)] transition-all duration-300 dark:bg-[#050816]/80 dark:shadow-[0_0_60px_rgba(110,80,255,.35)] ${
-            isScrolled
-              ? "h-14 sm:h-16 lg:h-20 shadow-[0_0_40px_rgba(110,80,255,.25)]"
-              : "h-16 sm:h-20 lg:h-24"
-          }`}
-        >
-          {/* Logo */}
+      <div className="mx-auto max-w-[1600px] px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between gap-4">
+          {/* Company Logo and Name - Hanging Outside of the Navbar */}
           <Link
             href="/"
-            className="flex items-center gap-3 sm:gap-4 flex-shrink-0"
+            className="flex items-center gap-2.5 sm:gap-3.5 flex-shrink-0 group touch-manipulation py-1 focus:outline-none"
             onClick={handleLinkClick}
           >
-            <div className={`transition-transform duration-300 origin-left flex-shrink-0 ${
-              isScrolled ? "scale-90" : "scale-100"
-            }`}>
+            <div
+              className={`relative transition-all duration-300 origin-left flex-shrink-0 ${
+                isScrolled ? "scale-90" : "scale-100"
+              }`}
+            >
               <Image
                 src="/images/logo/Zynovix-logo-Z.webp"
                 alt="Zynovix Tech Solutions Logo"
                 width={197}
                 height={146}
-                className="w-auto h-12 sm:h-14 lg:h-16 object-contain drop-shadow-sm"
+                className="w-auto h-12 sm:h-14 lg:h-15 object-contain drop-shadow-[0_4px_16px_rgba(110,80,255,0.35)] transition-transform duration-300 group-hover:scale-105"
                 priority
               />
             </div>
             <div className="hidden sm:block">
-              <h2 className="text-lg sm:text-xl lg:text-2xl font-black tracking-widest uppercase text-slate-900 dark:text-white leading-tight">
-                Zynovix
-              </h2>
-              <p className="text-[10px] sm:text-[11px] font-semibold tracking-[0.25em] uppercase text-slate-500 dark:text-slate-400 leading-tight">
+              <div className="flex items-center gap-1.5">
+                <h2 className="text-xl sm:text-2xl font-black tracking-wider uppercase text-slate-900 dark:text-white leading-none transition-colors group-hover:text-cyan-600 dark:group-hover:text-cyan-400">
+                  Zynovix
+                </h2>
+                <span className="h-1.5 w-1.5 rounded-full bg-cyan-400 shadow-[0_0_8px_#22d3ee] animate-pulse" />
+              </div>
+              <p className="mt-1 text-[10px] sm:text-[11px] font-bold tracking-[0.25em] uppercase text-slate-500 dark:text-slate-400 leading-none">
                 Tech Solutions
               </p>
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center rounded-2xl border border-slate-200/80 bg-slate-100/90 p-1.5 xl:p-2 backdrop-blur-xl dark:border-white/10 dark:bg-black/50">
+          {/* Desktop Glass Navbar - The Rest in Glass Design */}
+          <nav
+            aria-label="Main Navigation"
+            className={`hidden lg:flex items-center gap-1 xl:gap-1.5 rounded-full p-1.5 xl:p-2 transition-all duration-300 backdrop-blur-2xl backdrop-saturate-150 ${
+              isScrolled
+                ? "bg-white/80 dark:bg-[#070b1e]/80 border border-slate-200/90 dark:border-violet-500/35 shadow-[0_12px_40px_rgba(0,0,0,0.1),0_0_30px_rgba(110,80,255,0.15)] ring-1 ring-black/5 dark:ring-white/10"
+                : "bg-white/65 dark:bg-[#070b1e]/65 border border-white/60 dark:border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.06),0_0_20px_rgba(110,80,255,0.08)] ring-1 ring-white/40 dark:ring-white/5"
+            }`}
+          >
             {navItems.map((item, index) => {
               const active = isActive(item.href);
 
@@ -211,10 +216,10 @@ export default function Navbar() {
                     <Link
                       href={item.href}
                       onClick={handleLinkClick}
-                      className={`flex items-center gap-1.5 rounded-xl px-3.5 xl:px-6 py-2 xl:py-2.5 text-sm xl:text-[15px] font-medium transition-colors duration-200 whitespace-nowrap ${
+                      className={`flex items-center gap-1.5 rounded-full px-3.5 xl:px-5 py-2 xl:py-2.5 text-xs xl:text-sm font-medium transition-all duration-200 whitespace-nowrap ${
                         active
-                          ? "bg-white text-slate-900 shadow-sm dark:bg-white/10 dark:text-white font-semibold"
-                          : "text-slate-700 hover:text-slate-900 hover:bg-slate-200/70 dark:text-slate-300 dark:hover:text-white dark:hover:bg-white/5"
+                          ? "bg-slate-900 text-white shadow-sm dark:bg-white/15 dark:text-white font-semibold"
+                          : "text-slate-700 hover:text-slate-900 hover:bg-white/70 dark:text-slate-300 dark:hover:text-white dark:hover:bg-white/10"
                       }`}
                     >
                       <span>{item.name}</span>
@@ -226,10 +231,10 @@ export default function Navbar() {
                       />
                     </Link>
 
-                    {/* Services Mega-Menu Dropdown */}
+                    {/* Services Mega-Menu Dropdown with matching Glassmorphism */}
                     {servicesDropdownOpen && (
-                      <div className="absolute left-1/2 -translate-x-1/2 top-full pt-3 w-[720px] z-50">
-                        <div className="rounded-2xl border border-slate-200/90 bg-white/95 p-5 shadow-2xl backdrop-blur-2xl dark:border-violet-500/30 dark:bg-[#050816]/95 dark:shadow-[0_20px_60px_rgba(0,0,0,0.85)]">
+                      <div className="absolute left-1/2 -translate-x-1/2 top-full pt-3 w-[720px] max-w-[calc(100vw-32px)] z-50">
+                        <div className="rounded-3xl border border-white/70 dark:border-violet-500/30 bg-white/92 dark:bg-[#070b1e]/92 p-5 shadow-2xl backdrop-blur-2xl ring-1 ring-black/5 dark:ring-white/10 dark:shadow-[0_20px_60px_rgba(0,0,0,0.85),0_0_40px_rgba(110,80,255,0.18)]">
                           {/* Dropdown Header */}
                           <div className="flex items-center justify-between pb-3 mb-3 border-b border-slate-200/70 dark:border-white/10">
                             <div className="flex items-center gap-2">
@@ -258,14 +263,14 @@ export default function Navbar() {
                                   key={svc.href}
                                   href={svc.href}
                                   onClick={handleLinkClick}
-                                  className={`group flex items-start gap-3 rounded-xl p-3 transition-colors duration-200 ${
+                                  className={`group flex items-start gap-3 rounded-2xl p-3 transition-all duration-200 ${
                                     isSvcActive
-                                      ? "bg-violet-50 dark:bg-violet-500/15 border border-violet-500/30"
-                                      : "hover:bg-slate-100/90 dark:hover:bg-white/5 border border-transparent"
+                                      ? "bg-violet-500/10 dark:bg-violet-500/20 border border-violet-500/30"
+                                      : "hover:bg-slate-100/80 dark:hover:bg-white/5 border border-transparent"
                                   }`}
                                 >
                                   <div
-                                    className={`flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg border ${svc.color} transition-transform group-hover:scale-105`}
+                                    className={`flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl border ${svc.color} transition-transform group-hover:scale-105`}
                                   >
                                     <IconComponent size={20} />
                                   </div>
@@ -288,7 +293,7 @@ export default function Navbar() {
                           </div>
 
                           {/* Dropdown Footer CTA */}
-                          <div className="mt-3 pt-3 border-t border-slate-200/70 dark:border-white/10 flex items-center justify-between text-xs bg-slate-50/70 dark:bg-white/[0.02] -mx-5 -mb-5 p-4 rounded-b-2xl">
+                          <div className="mt-3 pt-3 border-t border-slate-200/70 dark:border-white/10 flex items-center justify-between text-xs bg-slate-50/70 dark:bg-white/[0.02] -mx-5 -mb-5 p-4 rounded-b-3xl">
                             <span className="text-slate-600 dark:text-slate-400">
                               Need a custom architecture recommendation?
                             </span>
@@ -311,10 +316,10 @@ export default function Navbar() {
                 <Link
                   key={index}
                   href={item.href}
-                  className={`flex items-center gap-1 rounded-xl px-3.5 xl:px-6 py-2 xl:py-2.5 text-sm xl:text-[15px] font-medium transition-colors duration-200 whitespace-nowrap ${
+                  className={`flex items-center gap-1 rounded-full px-3.5 xl:px-5 py-2 xl:py-2.5 text-xs xl:text-sm font-medium transition-all duration-200 whitespace-nowrap ${
                     active
-                      ? "bg-white text-slate-900 shadow-sm dark:bg-white/10 dark:text-white font-semibold"
-                      : "text-slate-700 hover:text-slate-900 hover:bg-slate-200/70 dark:text-slate-300 dark:hover:text-white dark:hover:bg-white/5"
+                      ? "bg-slate-900 text-white shadow-sm dark:bg-white/15 dark:text-white font-semibold"
+                      : "text-slate-700 hover:text-slate-900 hover:bg-white/70 dark:text-slate-300 dark:hover:text-white dark:hover:bg-white/10"
                   }`}
                 >
                   {item.name}
@@ -322,34 +327,37 @@ export default function Navbar() {
               );
             })}
 
+            {/* Book Consultation Button inside the Glass Dock */}
             <Link
               href="/contact"
-              className="ml-2 xl:ml-3 flex items-center gap-2 rounded-xl bg-gradient-to-r from-violet-600 to-blue-500 px-4 xl:px-6 py-2 xl:py-2.5 font-semibold text-white transition-transform hover:scale-[1.02] shadow-md shadow-violet-500/20 text-sm xl:text-base whitespace-nowrap touch-manipulation"
+              onClick={handleLinkClick}
+              className="ml-1 xl:ml-2 flex items-center gap-1.5 xl:gap-2 rounded-full bg-gradient-to-r from-violet-600 via-blue-600 to-cyan-500 px-4 xl:px-6 py-2 xl:py-2.5 font-semibold text-white transition-all duration-200 hover:scale-[1.03] hover:shadow-lg hover:shadow-cyan-500/25 shadow-md shadow-violet-500/25 text-xs xl:text-sm whitespace-nowrap touch-manipulation"
             >
-              Book Free Consultation
-              <ArrowUpRight size={16} className="hidden sm:inline" />
+              <span className="hidden xl:inline">Book Free Consultation</span>
+              <span className="xl:hidden">Consultation</span>
+              <ArrowUpRight size={15} />
             </Link>
-          </div>
+          </nav>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Glass Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden flex items-center justify-center w-10 h-10 rounded-xl bg-slate-100 border border-slate-200 hover:bg-slate-200 transition-colors duration-200 text-slate-800 dark:bg-white/5 dark:border-white/10 dark:hover:bg-white/10 dark:text-white touch-manipulation"
+            className="lg:hidden flex items-center justify-center w-11 h-11 rounded-full border border-white/60 dark:border-white/15 bg-white/70 dark:bg-[#070b1e]/75 backdrop-blur-xl shadow-md text-slate-800 dark:text-white hover:bg-white/90 dark:hover:bg-[#070b1e]/90 transition-all duration-200 touch-manipulation"
             aria-label="Toggle menu"
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
 
-        {/* Mobile Navigation Menu */}
+        {/* Mobile Navigation Menu with matching Glass Design */}
         <div
-          className={`lg:hidden fixed inset-x-0 top-[70px] sm:top-[84px] mx-4 sm:mx-6 transition-all duration-300 ease-in-out transform ${
+          className={`lg:hidden fixed inset-x-0 top-[76px] sm:top-[86px] mx-4 sm:mx-6 transition-all duration-300 ease-in-out transform ${
             isOpen
               ? "opacity-100 translate-y-0 pointer-events-auto"
               : "opacity-0 -translate-y-4 pointer-events-none"
           }`}
         >
-          <div className="bg-white/95 text-slate-900 border border-slate-200/80 backdrop-blur-2xl rounded-2xl p-4 shadow-2xl dark:bg-[#050816]/95 dark:text-white dark:border-violet-500/30 dark:shadow-[0_20px_60px_rgba(0,0,0,0.8)] max-h-[calc(100vh-100px)] overflow-y-auto">
+          <div className="bg-white/85 text-slate-900 border border-white/60 backdrop-blur-2xl rounded-3xl p-5 shadow-2xl dark:bg-[#070b1e]/92 dark:text-white dark:border-violet-500/30 dark:shadow-[0_20px_60px_rgba(0,0,0,0.85)] max-h-[calc(100vh-100px)] overflow-y-auto">
             <div className="flex flex-col space-y-1">
               {navItems.map((item, index) => {
                 const active = isActive(item.href);
@@ -358,10 +366,10 @@ export default function Navbar() {
                   return (
                     <div key={index} className="flex flex-col">
                       <div
-                        className={`flex items-center justify-between px-4 py-3 rounded-xl text-base font-medium transition-colors duration-200 ${
+                        className={`flex items-center justify-between px-4 py-3 rounded-2xl text-base font-medium transition-colors duration-200 ${
                           active
                             ? "bg-violet-50 text-violet-700 font-semibold dark:bg-violet-500/20 dark:text-white"
-                            : "text-slate-700 hover:text-slate-900 hover:bg-slate-100 dark:text-slate-300 dark:hover:text-white dark:hover:bg-white/5"
+                            : "text-slate-700 hover:text-slate-900 hover:bg-slate-100/70 dark:text-slate-300 dark:hover:text-white dark:hover:bg-white/5"
                         }`}
                       >
                         <Link
@@ -374,7 +382,7 @@ export default function Navbar() {
                         <button
                           type="button"
                           onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                          className="p-1 rounded-lg hover:bg-slate-200 dark:hover:bg-white/10 text-slate-500 dark:text-slate-400 touch-manipulation"
+                          className="p-1 rounded-xl hover:bg-slate-200/70 dark:hover:bg-white/10 text-slate-500 dark:text-slate-400 touch-manipulation"
                           aria-label="Toggle services submenu"
                         >
                           <ChevronDown
@@ -398,10 +406,10 @@ export default function Navbar() {
                                 key={svc.href}
                                 href={svc.href}
                                 onClick={handleLinkClick}
-                                className={`flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm transition-colors ${
+                                className={`flex items-center gap-2.5 px-3 py-2 rounded-xl text-sm transition-colors ${
                                   isSvcActive
                                     ? "bg-cyan-50 text-cyan-700 font-semibold dark:bg-cyan-500/20 dark:text-cyan-300"
-                                    : "text-slate-600 hover:text-slate-900 hover:bg-slate-100 dark:text-slate-400 dark:hover:text-white dark:hover:bg-white/5"
+                                    : "text-slate-600 hover:text-slate-900 hover:bg-slate-100/70 dark:text-slate-400 dark:hover:text-white dark:hover:bg-white/5"
                                 }`}
                               >
                                 <IconComponent size={16} className="text-cyan-500 flex-shrink-0" />
@@ -420,10 +428,10 @@ export default function Navbar() {
                     key={index}
                     href={item.href}
                     onClick={handleLinkClick}
-                    className={`flex items-center justify-between px-4 py-3 rounded-xl text-base font-medium transition-colors duration-200 ${
+                    className={`flex items-center justify-between px-4 py-3 rounded-2xl text-base font-medium transition-colors duration-200 ${
                       active
                         ? "bg-violet-50 text-violet-700 font-semibold dark:bg-violet-500/20 dark:text-white"
-                        : "text-slate-700 hover:text-slate-900 hover:bg-slate-100 dark:text-slate-300 dark:hover:text-white dark:hover:bg-white/5"
+                        : "text-slate-700 hover:text-slate-900 hover:bg-slate-100/70 dark:text-slate-300 dark:hover:text-white dark:hover:bg-white/5"
                     }`}
                   >
                     <span>{item.name}</span>
@@ -435,7 +443,7 @@ export default function Navbar() {
                 <Link
                   href="/contact"
                   onClick={handleLinkClick}
-                  className="flex items-center justify-center gap-2 w-full rounded-xl bg-gradient-to-r from-violet-600 to-blue-500 px-6 py-3.5 font-semibold text-white transition-transform hover:scale-[1.02] text-base touch-manipulation"
+                  className="flex items-center justify-center gap-2 w-full rounded-2xl bg-gradient-to-r from-violet-600 to-blue-500 px-6 py-3.5 font-semibold text-white transition-transform hover:scale-[1.02] text-base touch-manipulation shadow-lg shadow-violet-500/25"
                 >
                   Book Free Consultation
                   <ArrowUpRight size={18} />

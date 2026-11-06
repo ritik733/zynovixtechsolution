@@ -53,7 +53,7 @@ export default function PortfolioClient({ projects }: PortfolioClientProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="mx-auto mt-6 max-w-3xl text-base sm:text-lg text-slate-600 dark:text-slate-300 font-medium leading-relaxed"
+            className="mx-auto mt-6 max-w-3xl text-sm sm:text-base text-slate-600 dark:text-slate-300 font-medium leading-relaxed"
           >
             Explore our battle-tested portfolio across custom Frappe ERPNext implementations, sub-second Next.js web applications, and enterprise automation engines.
           </motion.p>

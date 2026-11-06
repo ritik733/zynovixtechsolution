@@ -61,7 +61,7 @@ export default function PortfolioPreview() {
               Verified Case Studies
             </span>
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-slate-600 dark:text-slate-400 font-medium text-base sm:text-lg">
+          <p className="mx-auto mt-4 max-w-2xl text-slate-600 dark:text-slate-400 font-medium text-sm sm:text-base">
             Explore how we architect modern websites, customized Frappe ERPNext systems,
             and tailored software suites that solve real operational bottlenecks.
           </p>

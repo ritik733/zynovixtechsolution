@@ -31,17 +31,23 @@ export default function Footer() {
                   alt="Zynovix Tech Solutions Logo"
                   width={197}
                   height={146}
-                  className="h-12 w-auto object-contain drop-shadow-sm transition-transform duration-300 group-hover:scale-105"
+                  className="h-12 w-auto object-contain drop-shadow-[0_4px_16px_rgba(110,80,255,0.25)] transition-transform duration-300 group-hover:scale-105"
                 />
                 <div>
-                  <h2 className="text-xl font-bold text-slate-900 dark:text-white transition group-hover:text-cyan-600 dark:group-hover:text-cyan-400">
-                    {company.name}
-                  </h2>
+                  <div className="flex items-center gap-1.5">
+                    <h2 className="text-xl font-black tracking-wider uppercase text-slate-900 dark:text-white leading-none transition-colors group-hover:text-cyan-600 dark:group-hover:text-cyan-400">
+                      Zynovix
+                    </h2>
+                    <span className="h-1.5 w-1.5 rounded-full bg-cyan-400 shadow-[0_0_8px_#22d3ee] animate-pulse" />
+                  </div>
+                  <p className="mt-1 text-[10px] sm:text-[11px] font-bold tracking-[0.25em] uppercase text-slate-500 dark:text-slate-400 leading-none">
+                    Tech Solutions
+                  </p>
                 </div>
               </Link>
             </div>
 
-            <p className="leading-8 text-slate-600 dark:text-slate-400">
+            <p className="text-xs sm:text-sm leading-relaxed text-slate-600 dark:text-slate-400">
               {company.about.description}
             </p>
 
@@ -51,11 +57,11 @@ export default function Footer() {
 
           <div>
 
-            <h3 className="mb-6 text-lg font-semibold text-slate-900 dark:text-white">
+            <h3 className="mb-5 text-sm font-bold uppercase tracking-wider text-slate-900 dark:text-white">
               Navigation
             </h3>
 
-            <ul className="space-y-4 text-slate-600 dark:text-slate-400">
+            <ul className="space-y-3 text-xs sm:text-sm text-slate-600 dark:text-slate-400 font-medium">
 
               {navigation.map((item) => (
                 <li key={item.name}>
@@ -76,11 +82,11 @@ export default function Footer() {
 
           <div>
 
-            <h3 className="mb-6 text-lg font-semibold text-slate-900 dark:text-white">
+            <h3 className="mb-5 text-sm font-bold uppercase tracking-wider text-slate-900 dark:text-white">
               Services
             </h3>
 
-            <ul className="space-y-4 text-slate-600 dark:text-slate-400 font-medium">
+            <ul className="space-y-3 text-xs sm:text-sm text-slate-600 dark:text-slate-400 font-medium">
 
               <li>
                 <Link href="/services/custom-website-development" className="transition hover:text-cyan-600 dark:hover:text-cyan-400">
@@ -126,11 +132,11 @@ export default function Footer() {
 
           <div>
 
-            <h3 className="mb-6 text-lg font-semibold text-slate-900 dark:text-white">
+            <h3 className="mb-5 text-sm font-bold uppercase tracking-wider text-slate-900 dark:text-white">
               Contact
             </h3>
 
-            <div className="space-y-5 text-slate-600 dark:text-slate-400 font-medium">
+            <div className="space-y-4 text-xs sm:text-sm text-slate-600 dark:text-slate-400 font-medium">
 
               <div className="flex items-start gap-3">
 

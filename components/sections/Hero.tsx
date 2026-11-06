@@ -48,7 +48,7 @@ export default function Hero() {
             </h1>
 
             {/* Subheading / Value Proposition */}
-            <p className="mt-6 max-w-xl text-base sm:text-lg md:text-[19px] leading-relaxed text-slate-600 dark:text-slate-300 font-normal">
+            <p className="mt-6 max-w-xl text-sm sm:text-base leading-relaxed text-slate-600 dark:text-slate-300 font-normal">
               We build modern websites, intelligent ERP solutions and custom software
               that help businesses streamline operations and accelerate growth.
             </p>

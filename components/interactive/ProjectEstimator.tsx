@@ -149,7 +149,7 @@ export default function ProjectEstimator() {
           <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white">
             Estimate Your Project Scope & Timeline
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-400">
+          <p className="mt-4 text-sm sm:text-base text-slate-600 dark:text-slate-400">
             Select your service requirements below to receive an instant engineering architecture recommendation, timeline estimate, and delivery blueprint.
           </p>
         </div>

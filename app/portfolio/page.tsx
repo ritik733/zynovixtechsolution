@@ -119,7 +119,7 @@ export default function PortfolioPage() {
               Have an Enterprise Project in Mind?
             </h2>
 
-            <p className="mx-auto mt-4 max-w-2xl text-base sm:text-lg text-slate-600 dark:text-slate-300 font-medium leading-relaxed">
+            <p className="mx-auto mt-4 max-w-2xl text-sm sm:text-base text-slate-600 dark:text-slate-300 font-medium leading-relaxed">
               Whether you need an enterprise Frappe ERPNext implementation, a custom Next.js web application, or hospitality software, our engineers are ready to build.
             </p>
 

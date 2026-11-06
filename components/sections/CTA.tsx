@@ -21,7 +21,7 @@ export default function CTA() {
             </span>
           </h2>
 
-          <p className="mx-auto mt-6 max-w-2xl text-base sm:text-lg text-slate-600 dark:text-slate-300 font-medium leading-relaxed">
+          <p className="mx-auto mt-6 max-w-2xl text-sm sm:text-base text-slate-600 dark:text-slate-300 font-medium leading-relaxed">
             Whether you need a high-velocity Next.js 16 storefront, a customized Frappe ERPNext deployment, or an intelligent hotel management platform, our senior engineers are ready to build.
           </p>
 

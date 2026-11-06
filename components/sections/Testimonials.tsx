@@ -79,7 +79,7 @@ export default function Testimonials() {
           <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white">
             Trusted by Fast-Scaling Enterprises & Industry Leaders
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-400">
+          <p className="mt-4 text-sm sm:text-base text-slate-600 dark:text-slate-400">
             Real stories of business automation, zero-downtime migrations, and high-performance digital architectures delivered by Zynovix.
           </p>
         </div>

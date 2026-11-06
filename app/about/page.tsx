@@ -120,7 +120,7 @@ export default function AboutPage() {
               Built for Your Business
             </span>
           </h1>
-          <p className="mx-auto mt-6 max-w-3xl text-base sm:text-lg text-slate-600 dark:text-slate-300 font-medium leading-relaxed">
+          <p className="mx-auto mt-6 max-w-3xl text-sm sm:text-base text-slate-600 dark:text-slate-300 font-medium leading-relaxed">
             We help businesses, hotels, and enterprises streamline operations
             and accelerate growth with modern website development, Frappe
             ERPNext implementations, and bespoke management software.
