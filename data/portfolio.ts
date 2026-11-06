@@ -45,7 +45,6 @@ export const portfolioProjects: PortfolioProject[] = [
     slug: "frappe-erpnext-enterprise-setup",
     title: "Frappe ERPNext Enterprise Setup",
     category: "ERP",
-    client: "Apex Manufacturing Ltd.",
     image: "/images/portfolio/erpnext.webp",
     description:
       "Comprehensive ERPNext implementation with custom Doctypes, automated billing, multi-location inventory, and role-based permissions.",
@@ -115,7 +114,6 @@ export const portfolioProjects: PortfolioProject[] = [
     slug: "frappe-retail-management-system",
     title: "Frappe Retail Management System",
     category: "ERP",
-    client: "Multi-Store Retail Chain",
     image: "/images/portfolio/frappe-retail.webp",
     description:
       "Complete retail solution built on Frappe — POS billing, multi-store inventory, customer loyalty, and real-time sales analytics.",
@@ -184,7 +182,6 @@ export const portfolioProjects: PortfolioProject[] = [
     slug: "hospitality-hotel-management-suite",
     title: "Hospitality & Hotel Management Suite",
     category: "Web App",
-    client: "Boutique Hotel & Resort",
     image: "/images/portfolio/hotel-suite.webp",
     description:
       "All-in-one software for hotel bookings, room inventory, guest check-in/out, POS billing, and housekeeping management.",
@@ -254,7 +251,6 @@ export const portfolioProjects: PortfolioProject[] = [
     slug: "high-performance-ecommerce-portal",
     title: "High-Performance E-commerce Web Portal",
     category: "Web App",
-    client: "Direct-to-Consumer (D2C) Brand",
     image: "/images/portfolio/e-commerce.webp",
     description:
       "Full-featured e-commerce platform with product catalog, cart, secure checkout, and order management — built with Next.js, React, and Stripe integration.",
@@ -323,7 +319,6 @@ export const portfolioProjects: PortfolioProject[] = [
     slug: "business-workflow-automation-platform",
     title: "Business Workflow Automation Platform",
     category: "Custom Software",
-    client: "Logistics & Freight Corporation",
     image: "/images/portfolio/automation.webp",
     description:
       "Custom admin dashboard and workflow automation tool that reduced manual data entry by 70% for a logistics company.",

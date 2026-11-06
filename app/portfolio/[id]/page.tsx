@@ -7,7 +7,6 @@ import {
   ArrowRight,
   CheckCircle,
   Calendar,
-  Building2,
   TrendingUp,
   Layers,
   Sparkles,
@@ -208,17 +207,7 @@ export default async function ProjectDetailPage({
           )}
 
           {/* Key Meta Strip */}
-          <div className="mt-10 grid grid-cols-2 gap-4 rounded-3xl border border-slate-200 bg-slate-50/70 p-6 md:grid-cols-4 dark:border-slate-800 dark:bg-slate-900/60">
-            <div>
-              <span className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
-                <Building2 className="h-3.5 w-3.5" />
-                Client
-              </span>
-              <p className="mt-1.5 text-base font-semibold text-slate-900 dark:text-white">
-                {project.client || "Confidential Enterprise"}
-              </p>
-            </div>
-
+          <div className="mt-10 grid grid-cols-1 gap-4 rounded-3xl border border-slate-200 bg-slate-50/70 p-6 sm:grid-cols-3 dark:border-slate-800 dark:bg-slate-900/60">
             <div>
               <span className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                 <Calendar className="h-3.5 w-3.5" />

@@ -52,11 +52,6 @@ export default function ProjectCard({ project }: { project: PortfolioProject }) 
             <span className={`rounded-full border px-3 py-1 text-xs font-semibold ${accent}`}>
               {project.category}
             </span>
-            {project.client && (
-              <span className="text-xs font-medium text-slate-500 dark:text-slate-400">
-                {project.client}
-              </span>
-            )}
           </div>
 
           <Link href={projectHref}>
